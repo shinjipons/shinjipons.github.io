@@ -4,17 +4,22 @@
 }
 
 :root {
-    --text-size: 16px;
+    --text-size: 18px;
+    --white: white;
+    --black: black;
 }
 
 html {
-    /* using the variable */
-    /* font-size: var(--text-size); */
-    font-size: 16px;
-    color: black;
-    background-color: white;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: var(--text-size);
 }
 
-p { 
+p, a { 
     font-family: "nb-akademie-light";
+}
+
+.slide {
+    height: 100svh;
+    width: 100svw;
 }
