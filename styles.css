@@ -9,7 +9,8 @@
 
 html {
     /* using the variable */
-    font-size: var(--text-size);
+    /* font-size: var(--text-size); */
+    font-size: 16px;
     color: black;
     background-color: white;
 }
