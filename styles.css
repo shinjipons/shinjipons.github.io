@@ -3,8 +3,17 @@
     src: url("nb-akademie-light.otf");
 }
 
+:root {
+    --text-size: 10px;
+}
+
 html {
-    font-size: 10px;
+    /* using the variable */
+    font-size: var(--text-size);
     color: black;
     background-color: white;
+}
+
+p { 
+    font-family: "nb-akademie-light";
 }
