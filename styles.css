@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "nb-akademie-light";
+    src: url("nb-akademie-light.otf");
+}
+
+html {
+    font-size: 10px;
+    color: black;
+    background-color: white;
+}
