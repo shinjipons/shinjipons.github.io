@@ -5,13 +5,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Shinji Pons</title>
 	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
-	<div class="slide">
-		<p>Hello.</p>
-		<p>My name is Shinji Pons.</p>
-		<p>I'm a designer.</p>
-		<p>This is my portfolio.</p>
+
+	<div class="main-carousel">
+		<div class="carousel-cell">
+			<p>Hello.</p>
+			<p>My name is Shinji Pons.</p>
+			<p>I'm a designer.</p>
+			<p>This is my portfolio.</p>
+		</div>
+
+		<div class="carousel-cell">
+			<img src="images/placeholder-1.png" alt="">
+		</div>
+
+		<div class="carousel-cell">
+			<img src="images/landscape.png" alt="">
+		</div>
 	</div>
+
+	<!-- JavaScript -->
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<script>
+		// for documentation on Flickity, check: https://flickity.metafizzy.co/options.html
+		var elem = document.querySelector('.main-carousel');
+		var flkty = new Flickity( elem, {
+			// options
+			cellAlign: 'left', 
+			contain: true,
+			freeScroll: true,
+			fullscreen: true,
+			lazyLoad: 1,
+			pageDots: false
+		});
+	</script>
+
 </body>
 </html>
