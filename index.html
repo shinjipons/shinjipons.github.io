@@ -5,42 +5,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Shinji Pons</title>
 	<link rel="stylesheet" href="styles.css" />
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
 
-	<div class="main-carousel">
-		<div class="carousel-cell">
-			<p>Hello.</p>
-			<p>My name is Shinji Pons.</p>
+	<div class="grid">
+		
+		<div>
+			<p>Shinji Pons</p>
+		</div>
+
+		<div>
 			<p>I'm a designer.</p>
-			<p>This is my portfolio.</p>
+			
+			<ul>Ways to contact me:
+				<li><a href="mailto:mail@shinjipons.com">Email</a></li>
+				<li><a href="https://linkedin.com/in/shinjipons/">LinkedIn</a></li>
+				<li><a href="https://twitter.com/shinjipons/">Twitter</a></li>
+				<li><a href="https://read.cv/shinjipons">Read.cv</a></li>
+				<li><a href="https://cal.com/shinjipons">Cal.com</a></li>
+			</ul>
+			
+			<ul>This is my work.
+				<li><a href="ragdoll-dynamics.html">Ragdoll Dynamics</a></li>
+				<li><a href="louvre-abu-dhabi.html">Louvre Abu Dhabi</a></li>
+				<li><a href="lego-digital-designer-pro.html">LEGO Digital Designer Pro</a></li>
+				<li><a href="autodesk-alias-subd.html">Autodesk Alias SubD</a></li>
+				<li><a href="dynamo-for-alias.html">Dynamo for Alias</a></li>
+			</ul>
+			
+			<img src="./images/landscape.png" alt="">
+			<img src="./images/placeholder-1.png" alt="">
+			<img src="./images/portrait.png" alt="">
+
 		</div>
 
-		<div class="carousel-cell">
-			<img src="images/placeholder-1.png" alt="">
-		</div>
-
-		<div class="carousel-cell">
-			<img src="images/landscape.png" alt="">
-		</div>
 	</div>
-
-	<!-- JavaScript -->
-	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-	<script>
-		// for documentation on Flickity, check: https://flickity.metafizzy.co/options.html
-		var elem = document.querySelector('.main-carousel');
-		var flkty = new Flickity( elem, {
-			// options
-			cellAlign: 'left', 
-			contain: true,
-			freeScroll: true,
-			fullscreen: true,
-			lazyLoad: 1,
-			pageDots: false
-		});
-	</script>
 
 </body>
 </html>

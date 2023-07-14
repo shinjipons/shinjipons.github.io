@@ -4,50 +4,53 @@
 }
 
 :root {
-    --text-size: 22px;
-    --white: white;
-    --black: black;
-}
+    /* must be between 0 and 360 */
+    --hue: 300;
 
-/* * {
-    box-sizing: border-box;
-} */
-
-html {
-    background-color: var(--white);
-    color: var(--black);
-    font-size: var(--text-size);
-    /* margin: 0px; */
-    /* padding: 0px; */
+    --text-size:    22px;
+    --background:   hsl(var(--hue), 8%,   12%);
+    --foreground:   hsl(var(--hue), 8%,   88%);
+    --accent:       hsl(var(--hue), 24%,  60%);
+    --accent-hover: hsl(var(--hue), 100%, 60%);
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    background: var(--background);
+    padding-top: 50px;
 }
 
-p, a { 
+p, ul, li { 
+    color: var(--foreground);
     font-family: "nb-akademie-light";
+    font-size: var(--text-size);
 }
 
-.main-carousel {
-    height: 100vh;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.carousel-cell {
-    width: 100%;
-    height: 100%;
-    /* center images with flexbox */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1px;
+    padding-left: 100px;
 }
 
-.carousel.is-fullscreen .carousel-cell {
-    height: 100%;
-}
-
-.carousel-cell img {
+img {
     display: block;
-    max-height: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+
+    /* duration of the hover out transition */
+    transition-duration: 1s;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    transition-duration: 0.1s;
 }
