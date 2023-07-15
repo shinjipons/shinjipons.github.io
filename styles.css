@@ -10,7 +10,7 @@
     --foreground:   hsl(var(--hue), 8%,   88%);
     --accent:       hsl(var(--hue), 24%,  60%);
     --accent-hover: hsl(var(--hue), 100%, 60%);
-    --text-size:    16px;
+    --text-size:    18px;
     --line-height:  120%;
 }
 

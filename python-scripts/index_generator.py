@@ -1,4 +1,7 @@
+import projects_list_generator
+import menu_generator
 
+html_code = """
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +21,7 @@
 		<div>
 			<ul>
 				<!-- Insert menu here -->
-                <li><a href="index.html">Projects</a></li>
-				
+                {}
 			</ul>
 		</div>
 
@@ -47,9 +49,7 @@
 			
 			<ul>This is my work.
                 <!-- Insert projects list here -->
-				<li><a href="louvre-abu-dhabi.html">Louvre Abu Dhabi</a></li>
-				<li><a href="ragdoll-dynamics.html">Ragdoll Dynamics</a></li>
-				
+				{}
 			</ul>
             
             <ul>Previous companies.
@@ -67,3 +67,11 @@
 
 </body>
 </html>
+"""
+
+# Formatting the string with the provided values
+formatted_html_code = html_code.format(menu_generator.menu_html, projects_list_generator.projects_list_html)
+
+# Create a new HTML file and write the HTML code into it
+with open("index.html", "w") as file:
+    file.write(formatted_html_code)
