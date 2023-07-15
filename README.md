@@ -5,4 +5,4 @@ Portfolio website replacing Webflow
 In the terminal, use `npm run build`.
 
 # On MacOS
-To be completed.
+In the terminal, use `npm start`.
