@@ -5,4 +5,6 @@ Portfolio website replacing Webflow
 In the terminal, use `npm run build`.
 
 # On MacOS
-In the terminal, use `npm start`.
+In the terminal, use `npm start`. But it opens a new tab each time...
+
+`npm run build` works now...
