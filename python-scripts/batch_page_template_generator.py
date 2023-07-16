@@ -14,13 +14,8 @@ import menu_generator
 projects_with_descriptions_slugs_and_folder_paths = projects.projects_with_descriptions
 
 for project in projects_with_descriptions_slugs_and_folder_paths:
-    # create the slug
-    slug = project[0].lower().replace(" ", "-")
-    project.append(slug)
-    
-    # create the image folder path
-    images_folder_path = "./images/" + slug + "/"
-    project.append(images_folder_path)
+    slug = project[2]
+    images_folder_path = project[3]
 
     # Navigate to the corresponding images folder
     os.chdir(images_folder_path)
@@ -30,7 +25,11 @@ for project in projects_with_descriptions_slugs_and_folder_paths:
     image_tags = ""
 
     for image_file_name in images_file_names:
-        image_tags += "<img src=" + "\"" + images_folder_path + "/" + image_file_name + "\"" + " alt=\"\">\n\t\t\t\t"
+        if image_file_name == images_file_names[-1]:
+            # no new line character needed
+            image_tags += "<img src=" + "\"" + images_folder_path + image_file_name + "\"" + " alt=\"\">\t\t\t\t"
+        else:
+            image_tags += "<img src=" + "\"" + images_folder_path + image_file_name + "\"" + " alt=\"\">\n\t\t\t\t"
 
     # The actual HTML code
     html_code = """
@@ -86,5 +85,5 @@ for project in projects_with_descriptions_slugs_and_folder_paths:
     updated_dir = os.getcwd()
 
     # Create a new HTML file and write the HTML code into it
-    with open(slug + ".html", "w") as file:
+    with open(slug, "w") as file:
         file.write(formatted_html_code)

@@ -6,7 +6,7 @@ projects_with_descriptions = [
 
 for project in projects_with_descriptions:
     slug = project[0].lower().replace(" ", "-")
-    project.append(slug + ".html")
-
     folder_path = "./images/" + slug + "/"
+
+    project.append(slug + ".html")
     project.append(folder_path)
