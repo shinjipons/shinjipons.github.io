@@ -5,11 +5,5 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.29.3"
-  },
-  "dependencies": {
-    "gulp": "^4.0.2"
-  }
+  "license": "ISC"
 }
