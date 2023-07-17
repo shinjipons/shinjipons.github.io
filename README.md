@@ -1,10 +1,20 @@
 # shinjipons.github.io
 Portfolio website replacing Webflow
 
-# On Windows 
-In the terminal, use `npm run build`.
+# MacOS
 
-# On MacOS
-In the terminal, use `npm start`. But it opens a new tab each time...
+# Requirements on MacOS
+- Install `node` globally
+- Install `gulp` globally 
+- Install `browser-sync` locally using `--save-dev`
 
-`npm run build` works now...
+# Windows
+
+## Requirements on Windows
+- Use the `powershell` terminal
+- Install `node` globally
+- Install `gulp` locally using `--save-dev`
+- Install `browser-sync` locally using `--save-dev`
+
+## How to run on Windows
+Run `gulp watch` in the `powershell` terminal.
