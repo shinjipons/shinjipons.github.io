@@ -37,7 +37,7 @@ html_code = """
 
 		<div>
         
-			<p>I'm a designer.</p>
+			<p>I'm a designer. I'm currently not taking extra projects.</p>
 			
 			<ul>Ways to contact me.
 				<li><a target="_blank" href="mailto:mail@shinjipons.com">Email</a></li>
@@ -47,12 +47,12 @@ html_code = """
 				<li><a target="_blank" href="https://cal.com/shinjipons">Cal.com</a></li>
 			</ul>
 			
-			<ul>This is my work.
+			<ul>My work.
                 <!-- Insert projects list here -->
 				{}
 			</ul>
             
-            <ul>Previous companies.
+            <ul>Current and previous clients.
 				<li>Ragdoll Dynamics</li>
 				<li>Electronic Arts</li>
 				<li>Autodesk</li>

@@ -12,6 +12,8 @@
     --accent-hover: hsl(var(--hue), 100%, 60%);
     --text-size:    18px;
     --line-height:  120%;
+    --timing-in:    0.1s;
+    --timing-out:   1.0s;
 }
 
 /* Tags */
@@ -75,9 +77,15 @@ a:hover {
     display: flex;
     object-fit: cover;
     object-position: center;
-    filter: saturate(0%);
+    filter: saturate(50%);
+    overflow: hidden;
+
+    /* duration of the hover out transition */
+    transition-duration: var(--timing-out);
 }
 
 .gallery img:hover {
     filter: saturate(100%);
+    /* transition-duration: 0.1s; */
+    transition-duration: var(--timing-in);
 }
