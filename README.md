@@ -21,7 +21,7 @@ Portfolio website replacing Webflow
 
 ## How to run on Windows
 
-Run `gulp watch` in the `powershell` terminal.
+Run `gulp watch` in the `Command Prompt` terminal.
 
 # Todo
 
