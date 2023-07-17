@@ -4,13 +4,15 @@
   "description": "Portfolio website replacing Webflow",
   "main": "index.js",
   "devDependencies": {
-    "browser-sync": "^2.29.3",
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.29.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }
