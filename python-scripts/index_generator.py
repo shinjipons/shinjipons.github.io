@@ -64,6 +64,8 @@ html_code = """
 		</div>
 
 	</div>
+    
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
 
 </body>
 </html>
