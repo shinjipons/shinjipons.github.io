@@ -72,15 +72,6 @@ a:hover {
     margin-bottom: 50px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px;
-}
-
-.packery-grid {
-}
-
 .packery-grid-item {
     width: 25%;
 }
@@ -92,4 +83,14 @@ a:hover {
 .packery-grid-item a img {
     object-fit: cover;
     width: 100%;
+    filter: saturate(0%);
 }
+
+.packery-grid-item a img:hover {
+    filter: saturate(100%);
+}
+
+.packery-width-1 { width: 50%;}
+.packery-width-2 { width: 33%;}
+.packery-width-3 { width: 25%;}
+.packery-width-4 { width: 12.5%;}
