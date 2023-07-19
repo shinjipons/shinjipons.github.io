@@ -5,11 +5,12 @@
 
 :root {
     /* must be between 0 and 360 */
-    --hue: 200;
-    --background:   hsl(var(--hue), 8%,   12%);
-    --foreground:   hsl(var(--hue), 8%,   88%);
-    --accent:       hsl(var(--hue), 24%,  60%);
-    --accent-hover: hsl(var(--hue), 100%, 60%);
+    --hue:          69;
+    --saturation:   10%;
+    --background:   hsl(var(--hue), var(--saturation), 20%);
+    --foreground:   hsl(var(--hue), var(--saturation), 80%);
+    --accent:       hsl(var(--hue), var(--saturation), 100%);
+    --accent-hover: hsl(var(--hue), var(--saturation), 60%);
     --text-size:    18px;
     --line-height:  120%;
     --timing-in:    0.1s;
@@ -86,6 +87,7 @@ a:hover {
 
 .gallery img:hover {
     filter: saturate(100%);
+
     /* transition-duration: 0.1s; */
     transition-duration: var(--timing-in);
 }
