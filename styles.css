@@ -7,14 +7,18 @@
     /* must be between 0 and 360 */
     --hue:          69;
     --saturation:   10%;
+
     --background:   hsl(var(--hue), var(--saturation), 20%);
-    --foreground:   hsl(var(--hue), var(--saturation), 80%);
-    --accent:       hsl(var(--hue), var(--saturation), 100%);
-    --accent-hover: hsl(var(--hue), var(--saturation), 60%);
+    --foreground:   hsl(var(--hue), var(--saturation), 100%);
+    
+    --accent:       hsl(var(--hue), var(--saturation), 50%);
+    --accent-hover: hsl(var(--hue), var(--saturation), 75%);
+    
     --text-size:    18px;
     --line-height:  120%;
+    
     --timing-in:    0.1s;
-    --timing-out:   1.0s;
+    --timing-out:   0.2s;
 }
 
 /* Tags */
@@ -48,12 +52,13 @@ a {
     text-decoration: none;
     
     /* duration of the hover out transition */
-    transition-duration: 1s;
+    transition-duration: var(--timing-out);
 }
 
 a:hover {
     color: var(--accent-hover);
-    transition-duration: 0.1s;
+    /* transition-duration: 0.1s; */
+    /* transition-duration: var(--timing-in); */
 }
 
 /* Classes */
@@ -73,21 +78,18 @@ a:hover {
     gap: 0px;
 }
 
-.gallery img {
-    aspect-ratio: 1;
-    display: flex;
-    object-fit: cover;
-    object-position: center;
-    filter: saturate(50%);
-    overflow: hidden;
-
-    /* duration of the hover out transition */
-    transition-duration: var(--timing-out);
+.packery-grid {
 }
 
-.gallery img:hover {
-    filter: saturate(100%);
+.packery-grid-item {
+    width: 25%;
+}
 
-    /* transition-duration: 0.1s; */
-    transition-duration: var(--timing-in);
+.packery-grid a {
+    width: 100%;
+}
+
+.packery-grid-item a img {
+    object-fit: cover;
+    width: 100%;
 }

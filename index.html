@@ -59,7 +59,45 @@
 
 	</div>
 
+	<div class="packery-grid">
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/banana.jpg"></a>
+		</div>
+		
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/dice.jpg" alt=""></a>
+		</div>
+
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/giraffe.webp" alt=""></a>
+		</div>
+
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/random-words.jpg" alt=""></a>
+		</div>
+
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/shrek.jpg" alt=""></a>
+		</div>
+
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/smoke.webp" alt=""></a>
+		</div>
+		
+		<div class="packery-grid-item">
+			<a href="test.html"><img src="images/index/soccer-random.avif" alt=""></a>
+		</div>
+	</div>
+
 	<script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+	<script>
+		var elem = document.querySelector('.packery-grid');
+		var pckry = new Packery( elem, {
+  			// options
+  			itemSelector: '.packery-grid-item',
+  			gutter: 0
+		});
+	</script>
 
 </body>
 </html>
