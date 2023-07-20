@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Shinji Pons</title>
 	<link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 </head>
 <body>
 
@@ -27,10 +29,13 @@
 	<div class="grid">
 		
 		<div>
+        
 			<p>Welcome.</p>
+            
 		</div>
 
 		<div>
+        
 			<p>I'm a designer. I'm currently not taking extra projects.</p>
 			
 			<ul>Ways to contact me.
@@ -55,49 +60,31 @@
 				<li>Microsoft</li>
 				<li>Ateliers Jean Nouvel</li>
 			</ul>
+
 		</div>
 
 	</div>
-
-	<div class="packery-grid">
-		<div class="packery-grid-item packery-width-1">
-			<a href="test.html"><img src="images/index/banana.jpg"></a>
-		</div>
+    
+    <div class="packery-grid">
+		<!-- insert all image tags from the './images/index/' folder -->
 		
-		<div class="packery-grid-item packery-width-2">
-			<a href="test.html"><img src="images/index/dice.jpg" alt=""></a>
+    	<div class="packery-grid-item">
+			<a href="louvre-abu-dhabi.html">
+				<img src="./images/louvre-abu-dhabi/landscape.png" alt="">
+			</a>
 		</div>
 
-		<div class="packery-grid-item packery-width-3">
-			<a href="test.html"><img src="images/index/giraffe.webp" alt=""></a>
+	
+    	<div class="packery-grid-item">
+			<a href="ragdoll-dynamics.html">
+				<img src="./images/ragdoll-dynamics/landscape.png" alt="">
+			</a>
 		</div>
 
-		<div class="packery-grid-item packery-width-4">
-			<a href="test.html"><img src="images/index/random-words.jpg" alt=""></a>
-		</div>
-
-		<div class="packery-grid-item packery-width-3">
-			<a href="test.html"><img src="images/index/shrek.jpg" alt=""></a>
-		</div>
-
-		<div class="packery-grid-item packery-width-2">
-			<a href="test.html"><img src="images/index/smoke.webp" alt=""></a>
-		</div>
-		
-		<div class="packery-grid-item packery-width-1">
-			<a href="test.html"><img src="images/index/soccer-random.avif" alt=""></a>
-		</div>
-	</div>
-
-	<script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
-	<script>
-		var elem = document.querySelector('.packery-grid');
-		var pckry = new Packery( elem, {
-  			// options
-  			itemSelector: '.packery-grid-item',
-  			gutter: 0
-		});
-	</script>
+	
+    </div>
+    
+    <script src="script.js"></script>
 
 </body>
 </html>

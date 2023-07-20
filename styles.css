@@ -1,30 +1,9 @@
 @font-face {
-    font-family: "nb-akademie-light";
-    src: url("./fonts/nb-akademie-light.otf");
-}
-
-@font-face {
-    font-family: "offbit-regular";
-    src: url("./fonts/OffBitTrial-Regular.otf");
-}
-
-@font-face {
-    font-family: "offbit-101";
-    src: url("./fonts/OffBitTrial-101.otf");
-}
-
-@font-face {
     font-family: "offbit-bold";
     src: url("./fonts/OffBitTrial-Bold.otf");
 }
 
-@font-face {
-    font-family: "offbit-dot-bold";
-    src: url("./fonts/OffBitTrial-DotBold.otf");
-}
-
 :root {
-    /* must be between 0 and 360 */
     --hue:          69;
     --saturation:   10%;
 
@@ -34,10 +13,10 @@
     --accent:       hsl(var(--hue), var(--saturation), 50%);
     --accent-hover: hsl(var(--hue), var(--saturation), 75%);
     
-    --text-size:    18px;
+    --text-size:    30px;
     --line-height:  120%;
     
-    --timing-in:    0.1s;
+    --timing-in:    0.5s;
     --timing-out:   0.2s;
 }
 
@@ -45,17 +24,13 @@
 
 body {
     background: var(--background);
-    padding-top: 50px;
-    margin-bottom: 25svh;
+    margin: 0;
+    padding: 0;
 }
 
 p, ul, li { 
+    font-family: "offbit-bold";
     color: var(--foreground);
-    font-family: "nb-akademie-light";
-    /* font-family: "offbit-regular"; */
-    /* font-family: "offbit-101"; */
-    /* font-family: "offbit-bold"; */
-    /* font-family: "offbit-dot-bold"; */
     font-size: var(--text-size);
     line-height: var(--line-height);
 }
@@ -74,15 +49,11 @@ img {
 a {
     color: var(--accent);
     text-decoration: none;
-    
-    /* duration of the hover out transition */
     transition-duration: var(--timing-out);
 }
 
 a:hover {
     color: var(--accent-hover);
-    /* transition-duration: 0.1s; */
-    /* transition-duration: var(--timing-in); */
 }
 
 /* Classes */
@@ -100,21 +71,13 @@ a:hover {
     width: 25%;
 }
 
-.packery-grid a {
-    width: 100%;
-}
-
-.packery-grid-item a img {
+.packery-grid-item a img{
     object-fit: cover;
     width: 100%;
-    filter: saturate(0%);
+    filter: grayscale(0%);
+    transition-duration: var(--timing-out);
 }
 
 .packery-grid-item a img:hover {
-    filter: saturate(100%);
+    filter: grayscale(1000%);
 }
-
-.packery-width-1 { width: 50%;}
-.packery-width-2 { width: 33%;}
-.packery-width-3 { width: 25%;}
-.packery-width-4 { width: 12.5%;}
