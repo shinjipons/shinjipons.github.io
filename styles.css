@@ -1,6 +1,26 @@
 @font-face {
     font-family: "nb-akademie-light";
-    src: url("nb-akademie-light.otf");
+    src: url("./fonts/nb-akademie-light.otf");
+}
+
+@font-face {
+    font-family: "offbit-regular";
+    src: url("./fonts/OffBitTrial-Regular.otf");
+}
+
+@font-face {
+    font-family: "offbit-101";
+    src: url("./fonts/OffBitTrial-101.otf");
+}
+
+@font-face {
+    font-family: "offbit-bold";
+    src: url("./fonts/OffBitTrial-Bold.otf");
+}
+
+@font-face {
+    font-family: "offbit-dot-bold";
+    src: url("./fonts/OffBitTrial-DotBold.otf");
 }
 
 :root {
@@ -32,6 +52,10 @@ body {
 p, ul, li { 
     color: var(--foreground);
     font-family: "nb-akademie-light";
+    /* font-family: "offbit-regular"; */
+    /* font-family: "offbit-101"; */
+    /* font-family: "offbit-bold"; */
+    /* font-family: "offbit-dot-bold"; */
     font-size: var(--text-size);
     line-height: var(--line-height);
 }
