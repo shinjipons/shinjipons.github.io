@@ -10,8 +10,8 @@ const elementsWithClass = document.querySelectorAll('.packery-grid-item');
 // Loop through all elements
 for (const element of elementsWithClass) {
     // Add random width to each element
-    const randomWidth = getRandomNumber(300, 600);
-    element.style.width = `${randomWidth}px`;
+    const randomWidth = getRandomNumber(10, 50);
+    element.style.width = `${randomWidth}%`;
 }
 
 // wait for the document to be fully loaded
