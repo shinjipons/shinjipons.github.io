@@ -25,8 +25,8 @@ Run `gulp watch` in the `Command Prompt` terminal.
 
 # Todo
 
-- [ ] Use Packery to create a cool layout on the index.html with project images
-    - [ ] each project images is a link to the corresponding project page
-    - [ ] Use `ImagesLoaded` to ensure that the images are loaded before Packery is triggered (https://chat.openai.com/share/ec78e7ed-3125-4b6f-babc-84474732975c)
-- [ ] Make an Opengraph image
+- [x] Use Packery to create a cool layout on the index.html with project images
+    - [x] each project images is a link to the corresponding project page
+    - [x] Use `ImagesLoaded` to ensure that the images are loaded before Packery is triggered (https://chat.openai.com/share/ec78e7ed-3125-4b6f-babc-84474732975c)
 - [ ] Come up with a way to take a bunch of images from a given `source-folder` and spit out a bunch of resized *.webp images in the `dist-folder`
+- [ ] Make an Opengraph image
