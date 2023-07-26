@@ -15,9 +15,6 @@
     
     --text-size:    30px;
     --line-height:  120%;
-    
-    --timing-in:    0.5s;
-    --timing-out:   0.2s;
 }
 
 /* Tags */
@@ -49,7 +46,6 @@ img {
 a {
     color: var(--accent);
     text-decoration: none;
-    transition-duration: var(--timing-out);
 }
 
 a:hover {
@@ -69,15 +65,17 @@ a:hover {
 
 .packery-grid-item {
     width: 25%;
+    position: relative;
 }
 
 .packery-grid-item a img{
     object-fit: cover;
     width: 100%;
-    filter: grayscale(0%);
-    transition-duration: var(--timing-out);
 }
 
-.packery-grid-item a img:hover {
-    filter: grayscale(100%);
+.packery-grid-item a p {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 10px;
 }
