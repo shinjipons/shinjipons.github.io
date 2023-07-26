@@ -7,6 +7,7 @@ all_packery_items = ""
 
 for project in projects.projects_with_descriptions:        
 
+	project_name = project[0]
 	project_image_path = project[-1]
 	slug = project[2]
 
@@ -21,11 +22,14 @@ for project in projects.projects_with_descriptions:
     \t<div class="packery-grid-item">
 	\t\t<a href="{}">
 	\t\t\t<img src="{}" alt="">
+	\t\t\t<div class="packery-grid-item-overlay">
+	\t\t\t\t<p>{}<p>
+    \t\t\t</div>
 	\t\t</a>
 	\t</div>\n
 	"""
     
-	formatted_packery_grid_item_html_code = packery_grid_item_html_code.format(slug, first_image_path)
+	formatted_packery_grid_item_html_code = packery_grid_item_html_code.format(slug, first_image_path, project_name)
 	all_packery_items += formatted_packery_grid_item_html_code
     
 	# Navigate back to the root folder, which is up two levels from the current working directory
@@ -102,7 +106,7 @@ html_code = """
 	</div>
     
     <div class="packery-grid">
-		<!-- insert all image tags from the './images/index/' folder -->
+		<!-- insert all div tags with packery-grid-item class -->
 		{}
     </div>
     

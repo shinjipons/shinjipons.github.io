@@ -1,20 +1,22 @@
 @font-face {
-    font-family: "offbit-bold";
-    src: url("./fonts/OffBitTrial-Bold.otf");
+    font-family: "body-font";
+    src: url("./fonts/FTSystem-BlankLight.otf");
 }
 
 :root {
-    --hue:          69;
-    --saturation:   10%;
+    --hue:          30;
+    --saturation:   100%;
 
     --background:   hsl(var(--hue), var(--saturation), 20%);
     --foreground:   hsl(var(--hue), var(--saturation), 100%);
     
-    --accent:       hsl(var(--hue), var(--saturation), 50%);
-    --accent-hover: hsl(var(--hue), var(--saturation), 75%);
+    --accent-hover: hsl(var(--hue), var(--saturation), 50%);
+    --accent:       hsl(var(--hue), var(--saturation), 75%);
     
-    --text-size:    30px;
-    --line-height:  120%;
+    --text-size:    20px;
+    --line-height:  130%;
+
+    --body-font: "body-font";
 }
 
 /* Tags */
@@ -26,7 +28,7 @@ body {
 }
 
 p, ul, li { 
-    font-family: "offbit-bold";
+    font-family: var(--body-font);
     color: var(--foreground);
     font-size: var(--text-size);
     line-height: var(--line-height);
@@ -65,7 +67,7 @@ a:hover {
 
 .packery-grid-item {
     width: 25%;
-    position: relative;
+    overflow: hidden;
 }
 
 .packery-grid-item a img{
@@ -73,9 +75,22 @@ a:hover {
     width: 100%;
 }
 
-.packery-grid-item a p {
+.packery-grid-item-overlay {
     position: absolute;
     top: 0px;
     left: 0px;
-    margin: 10px;
+    margin: 0px;
+    padding: 10px 10px;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-hover);
+    opacity: 0;
+}
+
+.packery-grid-item-overlay:hover {
+    opacity: 1;
+}
+
+.packery-grid-item-overlay p {
+    margin: 8px 0px 0px 10px;
 }

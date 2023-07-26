@@ -14,7 +14,7 @@ Portfolio website replacing Webflow
 
 ## Requirements on Windows
 
-- Use the `powershell` terminal
+- Use the `cmd` terminal (not the `powershell` terminal)
 - Install `node` globally
 - Install `gulp` locally using `--save-dev`
 - Install `browser-sync` locally using `--save-dev`
@@ -30,6 +30,8 @@ Run `gulp watch` in the `Command Prompt` terminal.
     - [x] Use `ImagesLoaded` to ensure that the images are loaded before Packery is triggered (https://chat.openai.com/share/ec78e7ed-3125-4b6f-babc-84474732975c)
 - [ ] Come up with a way to take a bunch of images from a given `source-folder` and spit out a bunch of resized *.webp images in the `dist-folder`
 - [ ] Make an Opengraph image
+- [x] Make each project image 25% width
+- [x] Change font to FT System
 
 # Workflow for images
 
