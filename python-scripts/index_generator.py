@@ -77,7 +77,8 @@ html_code = """
 
 		<div>
         
-			<p>I'm a designer. I'm currently not taking extra projects.</p>
+			<p>I design 3D software tools for creative professionals.</p>
+        	<p>I'm currently not taking extra projects.</p>`
 			
 			<ul>Ways to contact me.
 				<li><a target="_blank" href="mailto:mail@shinjipons.com">Email</a></li>

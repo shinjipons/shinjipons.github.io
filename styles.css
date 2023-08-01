@@ -1,6 +1,8 @@
 @font-face {
     font-family: "body-font";
-    src: url("./fonts/FTSystem-BlankLight.otf");
+    /* src: url("./fonts/Geomanist-Regular.otf"); */
+    src: url("./fonts/EudoxusSansGX.ttf");
+    font-weight: 400;
 }
 
 :root {
