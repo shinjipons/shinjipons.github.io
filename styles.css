@@ -1,0 +1,21 @@
+:root {
+    --text-primary: #F6F6F6;
+    --background: #000; 
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url(./fonts/GeistVF.woff2);
+}
+
+html {
+    background: var(--background);
+}
+
+h1, p {
+    font-family: "Geist", sans-serif;
+    color: var(--text-primary, #F6F6F6);
+    font-weight: 42;
+    font-size: 30px;
+    line-height: 110%;
+}
