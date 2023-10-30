@@ -4,11 +4,15 @@ Portfolio website replacing Webflow
 
 # MacOS
 
-# Requirements on MacOS
+## Requirements on MacOS
 
 - Install `node` globally
 - Install `gulp` globally 
 - Install `browser-sync` locally using `--save-dev`
+
+## How to run on Mac
+
+Run `gulp watch` in the MacOS Terminal.
 
 # Windows
 
