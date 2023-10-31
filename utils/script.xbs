@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><XnView_script version="1.0" name="script">
+    <Resize mode="5" width="2000" height="600" unit="0" ratio="true" orientation="false" enlarge="1" resample="7" gamma_correct="false"/>
+    <Output folder="/Users/shinjipons/Documents/GitHub/shinjipons.github.io/images/" filename="{Filename}_result" case="0" startIndex="1" format="WEBP">
+        <Options overwrite="0" orgDate="false" keepMeta="true" keepICC="false" keepFolder="false" checkFilesize="false" keepParentFolder="false" keepExtension="false" delOrg="false" multipage="false" allPages="false" openExplorer="false" beep="true" openBrowser="false" clearItems="true"/>
+        <WEBP method="0" quality="80" filesize="128" compress="4" strength="60" sharpness="0" preset="0" sharpyuv="false"/>
+    </Output>
+</XnView_script>
