@@ -1,7 +1,10 @@
 :root {
     --text-primary: #F6F6F6;
     --text-secondary: #B0B0B0;
-    --background: #000; 
+    --background: #000;
+    --spacing-small:  2px;
+    --spacing-medium: 16px;
+    --spacing-large:  32px;
 }
 
 @font-face {
@@ -13,6 +16,8 @@
     font-family: "Geist-Mono";
     src: url(./fonts/GeistMonoVF.woff2);
 }
+
+/* TAGS */
 
 html {
     background: var(--background);;
@@ -33,9 +38,13 @@ h1, p, ul, li, a {
 }
 
 a {
-    /* font-family: "Geist-Mono"; */
     font-family: "Geist";
-    color: rgb(255, 0, 0);
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-primary);
 }
 
 h1, p {
@@ -52,27 +61,15 @@ li {
     color: var(--text-secondary);
 }
 
-
 section {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-top:    32px;
-    padding-bottom: 32px;
+    padding-top:    var(--spacing-large);
+    padding-bottom: var(--spacing-large);
 }
 
-.pill-list > li {
-    color: var(--text-primary);
-    border: 1px solid var(--text-primary);
-    border-radius: 999px;
-    padding-left:  24px;
-    padding-right: 24px;
-    padding-top:    4px;
-    padding-bottom: 8px;
-    margin-bottom:  8px;
-    display: inline-block;
-    font-family: "Geist-Mono";
-}
+/* GENERAL CLASSES */
 
 .call-to-action {
     width: auto;
@@ -91,17 +88,64 @@ section {
     text-transform: lowercase;
 }
 
-.projects-grid {
-    width: 100%;
+.one-col-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-small);
+    grid-row-gap:    var(--spacing-small);
+}
+
+.two-col-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
+    grid-column-gap: var(--spacing-small);
+    grid-row-gap:    var(--spacing-small);
+}
+
+.one-col-grid > img,
+.two-col-grid > img,
+.two-col-grid > div > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* INDEX CLASSES */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background);
+    position: sticky;
+    top: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80px;
+}
+
+nav > .menu > a {
+    margin-left: 16px;
+}
+
+nav > div > a:hover {
+    border-bottom: 1px solid var(--text-primary);
+}
+
+
+.two-col-grid > a {
+    height: 450px;
+}
+
+.two-col-grid > a:hover {
+    /* border: 1px solid red; */
+    text-decoration: none;
 }
 
 .project-item {
-    height: 450px;
+    width: 100%;
+    height: 100%;
 }
 
 .project-item > img {
@@ -111,9 +155,34 @@ section {
     object-fit: cover;
 }
 
-.two-col-grid {
+/* PROJECT PAGE CLASSES */
+
+.project-navigation {
+    display: block;
+    position: sticky;
+    top: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    background: var(--background);
+    grid-column-gap: var(--spacing-small);
+    grid-row-gap:    var(--spacing-small);
+}
+
+.project-navigation > p > a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    padding: 0px;
+}
+
+.hero-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
