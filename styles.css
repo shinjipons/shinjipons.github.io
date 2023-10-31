@@ -69,7 +69,9 @@ section {
     padding-right: 24px;
     padding-top:    4px;
     padding-bottom: 8px;
-    margin-bottom: 8px;
+    margin-bottom:  8px;
+    display: inline-block;
+    font-family: "Geist-Mono";
 }
 
 .call-to-action {
@@ -86,20 +88,19 @@ section {
     border-radius: 999px;
     border: 1px solid var(--text-primary);
     background-color: transparent;
+    text-transform: lowercase;
 }
 
 .projects-grid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns of equal size */
-    grid-template-rows: repeat(2, 1fr); /* Two rows of equal size */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 2px;
     grid-row-gap: 2px;
 }
 
 .project-item {
-    border-radius: 4px;
-    overflow: hidden;
     height: 450px;
 }
 
@@ -108,4 +109,11 @@ section {
     height: 100%;
     display: block;
     object-fit: cover;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
 }
