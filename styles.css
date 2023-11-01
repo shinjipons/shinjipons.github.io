@@ -1,10 +1,26 @@
 :root {
-    --text-primary: #F6F6F6;
-    --text-secondary: #B0B0B0;
-    --background: #000;
-    --spacing-small:  2px;
+    /* colors */
+    --text-primary:  #F6F6F6;
+    --text-secondary:#B0B0B0;
+    --background:    #000000;
+    --background_40p: rgba(0, 0, 0, 0.4);
+
+    /* spacing */
+    --spacing-small:   2px;
     --spacing-medium: 16px;
     --spacing-large:  32px;
+
+    /* typograhy */
+    --text-size:    18px;
+    --text-size-2x: 36px;
+    --font-weight:  80;
+    --line-height:  150%;
+
+    /* overall widths */
+    --width-desktop: 800px;
+
+    /* transition */
+    --transition: 0.15s all cubic-bezier(0, .51, .52, 1);
 }
 
 @font-face {
@@ -17,7 +33,7 @@
     src: url(./fonts/GeistMonoVF.woff2);
 }
 
-/* TAGS */
+/* Tags */
 
 html {
     background: var(--background);;
@@ -27,15 +43,29 @@ body {
     margin: 0px;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography */
+
 h1, p, ul, li, a {
-    font-weight: 42;
-    font-size: 30px;
-    line-height: 110%;
+    font-weight: var(--font-weight);
+    font-size: var(--text-size);
+    line-height: var(--line-height);
 }
 
 h1, p, ul, li, a {
     font-family: "Geist", sans-serif;
 }
+
+h1, p {
+    color: var(--text-primary);
+}
+
+/* Links */
 
 a {
     font-family: "Geist";
@@ -47,9 +77,7 @@ a:hover {
     color: var(--text-primary);
 }
 
-h1, p {
-    color: var(--text-primary);
-}
+/* Lists */
 
 ul {
     color: var(--text-primary);
@@ -61,32 +89,17 @@ li {
     color: var(--text-secondary);
 }
 
+/* Width of the site */
+
 section {
-    width: 80%;
+    width: var(--width-desktop);
     margin-left: auto;
     margin-right: auto;
     padding-top:    var(--spacing-large);
     padding-bottom: var(--spacing-large);
 }
 
-/* GENERAL CLASSES */
-
-.call-to-action {
-    width: auto;
-    height: 65px;
-    color: var(--text-primary);
-    font-size: 30px;
-    font-weight: 42;
-    text-decoration: none;
-    padding-left:  24px;
-    padding-right: 24px;
-    padding-top:    4px;
-    padding-bottom: 8px;
-    border-radius: 999px;
-    border: 1px solid var(--text-primary);
-    background-color: transparent;
-    text-transform: lowercase;
-}
+/* Grids */
 
 .one-col-grid {
     display: grid;
@@ -102,78 +115,104 @@ section {
     grid-row-gap:    var(--spacing-small);
 }
 
-.one-col-grid > img,
-.two-col-grid > img,
-.two-col-grid > div > img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
+/* Call to action */
+
+.call-to-action {
+    width: auto;
+    height: 65px;
+    color: var(--text-primary);
+    font-size: var(--text-size);
+    font-weight: var(--font-weight);
+    text-decoration: none;
+    padding-left:  16px;
+    padding-right: 16px;
+    padding-top:    4px;
+    padding-bottom: 8px;
+    border-radius: 1000px;
+    border: 1px solid var(--text-primary);
+    background-color: transparent;
+    text-transform: lowercase;
 }
 
-/* INDEX CLASSES */
+.call-to-action:hover {
+    color: var(--background);
+    background: var(--text-primary);
+}
+
+/* Navigation at the top of the index and project page */
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: var(--background);
     position: sticky;
     top: 0px;
-    padding-left: 10%;
-    padding-right: 10%;
     height: 80px;
 }
 
-nav > .menu > a {
-    margin-left: 16px;
+.inner-section { 
+    /* this is to center the nav in the website */
+    width: var(--width-desktop);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav > div > a:hover {
+/* Menu inside of the nav on the index page */
+
+.menu > a {
+    margin-left: var(--spacing-medium);
+}
+
+.menu > a:hover {
     border-bottom: 1px solid var(--text-primary);
 }
 
+/* Projects grid */
 
-.two-col-grid > a {
-    height: 450px;
+.project-card {
+    height: 300px;
+    position: relative;
 }
 
-.two-col-grid > a:hover {
-    /* border: 1px solid red; */
-    text-decoration: none;
-}
-
-.project-item {
+.overlay-text-container {
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* overlay opacity */
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: var(--transition);
 }
 
-.project-item > img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+.overlay-text-container:hover {
+    opacity: 1;
+    transition: var(--transition);
 }
 
-/* PROJECT PAGE CLASSES */
-
-.project-navigation {
-    display: block;
-    position: sticky;
-    top: 0px;
-    padding-left: 10%;
-    padding-right: 10%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background: var(--background);
-    grid-column-gap: var(--spacing-small);
-    grid-row-gap:    var(--spacing-small);
-}
-
-.project-navigation > p > a {
+.overlay-text-container > p {
     color: var(--text-primary);
-    text-decoration: none;
+    font-size: var(--text-size);
+    text-align: center;
+
+    transform: translateY(33%);
+    transition: var(--transition);
+    text-shadow: 0px 1px 2px var(--background_40p);
 }
+
+.overlay-text-container:hover > p {
+    transform: translateY(0%);
+    transition: var(--transition);
+}
+
+/* Project page styles */
 
 .hero-image {
     width: 100%;
