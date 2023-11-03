@@ -244,7 +244,7 @@ nav {
 }
 
 .project-card:hover > img {
-    transform: scale(1.02);
+    /* transform: scale(1.01); */
     transition: var(--transition);
 }
 
@@ -258,7 +258,7 @@ nav {
     justify-content: center;
     align-items: center;
     
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.9);
     opacity: 0;
     transition: var(--transition);
 }
@@ -273,12 +273,10 @@ nav {
     font-size: var(--text-size);
     text-align: center;
 
-    /* transform: translateY(33%); */
     transition: var(--transition);
     text-shadow: 0px 1px 2px var(--shadow-color);
 }
 
 .overlay-text-container:hover > p {
-    /* transform: translateY(0%); */
     transition: var(--transition);
 }
