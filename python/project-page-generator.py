@@ -7,6 +7,18 @@ pages_data = {
     }
 }
 
+shared_footer = """
+    <section>
+        <div class="four-col-grid">
+            <a href="test.html" class="call-to-action two-wide">Get in touch</a>
+            <a href="test.html" class="call-to-action two-wide">Book a call</a>
+            <a href="https://www.linkedin.com/in/shinjipons/" class="call-to-action" target="_blank">Linkedin</a>
+            <a href="https://twitter.com/shinjipons" class="call-to-action" target="_blank">Twitter</a>
+            <a href="https://twitter.com/shinjipons" class="call-to-action" target="_blank">Gumroad</a>
+            <a href="https://etsy.com/" class="call-to-action" target="_blank">Etsy</a>
+        </div>
+    </section>"""
+
 html_template = """
 <!DOCTYPE html>
 <html lang="en">
@@ -53,25 +65,16 @@ html_template = """
         <img src="https://picsum.photos/800/1400">
     </section>
 
-    <section>
-        <div class="four-col-grid">
-            <a href="test.html" class="call-to-action two-wide">Get in touch</a>
-            <a href="test.html" class="call-to-action two-wide">Book a call</a>
-			<a href="https://www.linkedin.com/in/shinjipons/" class="call-to-action" target="_blank">Linkedin</a>
-			<a href="https://twitter.com/shinjipons" class="call-to-action" target="_blank">Twitter</a>
-			<a href="https://twitter.com/shinjipons" class="call-to-action" target="_blank">Gumroad</a>
-			<a href="https://etsy.com/" class="call-to-action" target="_blank">Etsy</a>
-		</div>
-    </section>
+    {shared_footer}
 
 </body>
-</html>
-"""
+</html>"""
 
 # You can then generate each page by using the key for that page
 def generate_page(page_key):
     page_data = pages_data.get(page_key)
     if page_data is not None:
+        page_data['shared_footer'] = shared_footer
         formatted_html = html_template.format(**page_data)
         with open(f"{page_key}.html", "w") as html_file:
             html_file.write(formatted_html)
