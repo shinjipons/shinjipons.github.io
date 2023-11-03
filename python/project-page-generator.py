@@ -15,26 +15,28 @@ html_template = """
                 <a href="index.html">Close</a>
             </div>
             <div>
-                <p>Louvre Abu Dhabi</p>
+                <p>{title}</p>
             </div>
         </div>
     </nav>
 
     <section>
         <div>
-            <p>While at Ateliers Jean Nouvel, I worked on the typographic signage and icon design for the Louvre Abu Dhabi museum. Under the the creative direction of Philippe Apeloig and Clovis Vallois, I sketched, designed and mocked up several physical designs for the typographic system in French, English and Arabic.</p>
+            <p>{paragraph_1}</p>
         </div>
     </section>
 
+    <!-- Pack 1 images -->    
     <section class="one-col-grid">
         <img src="https://picsum.photos/2000/1200">
         <img src="https://picsum.photos/2000/1600">
     </section>
     
     <section>
-        <p>The graphic designers were in constant collaboration with the architects to decide the size and location of the signage, but also to remove walls where needed to increase signage visibility.</p>
+        <p>{paragraph_2}</p>
     </section>
     
+    <!-- Pack 2 images -->    
     <section class="one-col-grid">
         <img src="https://picsum.photos/2000/800">
         <img src="https://picsum.photos/800/1200">
@@ -59,8 +61,10 @@ html_template = """
 
 # Content to insert in the placeholders
 title = "Louvre Abu Dhabi"
+paragraph_1 = "While at Ateliers Jean Nouvel, I worked on the typographic signage and icon design for the Louvre Abu Dhabi museum. Under the the creative direction of Philippe Apeloig and Clovis Vallois, I sketched, designed and mocked up several physical designs for the typographic system in French, English and Arabic."
+paragraph_2 = "The graphic designers were in constant collaboration with the architects to decide the size and location of the signage, but also to remove walls where needed to increase signage visibility."
 
-final_html_content = html_template.format(title=title)
+final_html_content = html_template.format(title=title, paragraph_1=paragraph_1, paragraph_2=paragraph_2)
 
 # Write the HTML code to a file
 with open("python-output.html", "w") as html_file:
