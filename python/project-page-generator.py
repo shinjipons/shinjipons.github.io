@@ -1,3 +1,12 @@
+# Content to insert in the placeholders
+pages_data = {
+    "louvre-abu-dhabi": {
+        "title": "Louvre Abu Dhabi",
+        "paragraph_1": "While at Ateliers Jean Nouvel, I worked on the typographic signage and icon design for the Louvre Abu Dhabi museum. Under the the creative direction of Philippe Apeloig and Clovis Vallois, I sketched, designed and mocked up several physical designs for the typographic system in French, English and Arabic.",
+        "paragraph_2": "The graphic designers were in constant collaboration with the architects to decide the size and location of the signage, but also to remove walls where needed to increase signage visibility."
+    }
+}
+
 html_template = """
 <!DOCTYPE html>
 <html lang="en">
@@ -59,15 +68,17 @@ html_template = """
 </html>
 """
 
-# Content to insert in the placeholders
-title = "Louvre Abu Dhabi"
-paragraph_1 = "While at Ateliers Jean Nouvel, I worked on the typographic signage and icon design for the Louvre Abu Dhabi museum. Under the the creative direction of Philippe Apeloig and Clovis Vallois, I sketched, designed and mocked up several physical designs for the typographic system in French, English and Arabic."
-paragraph_2 = "The graphic designers were in constant collaboration with the architects to decide the size and location of the signage, but also to remove walls where needed to increase signage visibility."
+# You can then generate each page by using the key for that page
+def generate_page(page_key):
+    page_data = pages_data.get(page_key)
+    if page_data is not None:
+        formatted_html = html_template.format(**page_data)
+        with open(f"{page_key}.html", "w") as html_file:
+            html_file.write(formatted_html)
+        print(f"{page_key.capitalize()} page created successfully!")
+    else:
+        print(f"No data found for the {page_key} page.")
 
-final_html_content = html_template.format(title=title, paragraph_1=paragraph_1, paragraph_2=paragraph_2)
-
-# Write the HTML code to a file
-with open("python-output.html", "w") as html_file:
-    html_file.write(final_html_content)
-
-print("HTML page created successfully!")
+# Generate all pages
+for page_key in pages_data.keys():
+    generate_page(page_key)
