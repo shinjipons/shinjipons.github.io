@@ -1,11 +1,42 @@
+import os
 from pages_data import pages as pages_data
 
 # Read the shared footer from a file
 with open('python/shared_footer.html', 'r') as file:
     shared_footer = file.read()
 
-html_template = """
-<!DOCTYPE html>
+# Function to get all webp images from a specific folder
+def get_image_tags(image_folder):
+    # Get all webp images and sort them
+    files = sorted([f for f in os.listdir(image_folder) if f.endswith('.webp')])
+    
+    # Separate the first image if the list is not empty
+    first_img_tag = ''
+    other_img_tags = []
+    if files:
+        # Generate the img tag for the first image
+        first_img_tag = f'<img src="{image_folder}/{files[0]}">'
+        # Generate img tags for the rest of the images
+        other_img_tags = [
+            f'\t\t<img src="{image_folder}/{file}">' for file in files[1:]
+        ]
+
+    other_img_tags[0] = other_img_tags[0].replace("\t\t", "")
+
+    return first_img_tag, other_img_tags
+
+# You can then generate each page by using the key for that page
+def generate_page(page_key, page_data):
+    image_folder = page_data.get('image_folder', '')
+    first_image_tag, other_image_tags = get_image_tags(image_folder) if image_folder else ('', [])
+
+    # Include the shared HTML block, the first image, and other image tags in the page data dictionary
+    page_data['shared_footer'] = shared_footer
+    page_data['first_image'] = first_image_tag
+    page_data['other_images'] = '\n'.join(other_image_tags)
+
+    # The HTML template with all the placeholders
+    html_template = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +66,7 @@ html_template = """
 
     <!-- The first image -->    
     <section class="one-col-grid">
-        <img src="https://picsum.photos/2000/1200">
+        {first_image}
     </section>
     
     <section>
@@ -45,30 +76,21 @@ html_template = """
     
     <!-- All the other images -->    
     <section class="one-col-grid">
-        <img src="https://picsum.photos/2000/1600">
-        <img src="https://picsum.photos/2000/800">
-        <img src="https://picsum.photos/800/1200">
-        <img src="https://picsum.photos/900/600">
-        <img src="https://picsum.photos/800/1400">
+        {other_images}
     </section>
 
     {shared_footer}
 
 </body>
-</html>"""
+</html>
+"""
 
-# You can then generate each page by using the key for that page
-def generate_page(page_key):
-    page_data = pages_data.get(page_key)
-    if page_data is not None:
-        page_data['shared_footer'] = shared_footer
-        formatted_html = html_template.format(**page_data)
-        with open(f"{page_key}.html", "w") as html_file:
-            html_file.write(formatted_html)
-        print(f"{page_key.capitalize()} page created successfully!")
-    else:
-        print(f"No data found for the {page_key} page.")
+    formatted_html = html_template.format(**page_data)
+
+    with open(f"{page_key}.html", "w") as html_file:
+        html_file.write(formatted_html)
+    print(f"{page_key.capitalize()} page created successfully!")
 
 # Generate all pages
-for page_key in pages_data.keys():
-    generate_page(page_key)
+for page_key, page_data in pages_data.items():
+    generate_page(page_key, page_data)
