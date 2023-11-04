@@ -110,7 +110,7 @@ section:last-child {
 
 /* Grids */
 
-.one-col-grid, .two-col-grid, .four-col-grid {
+.one-col-grid, .two-col-grid, .three-col-grid, .four-col-grid {
     display: grid;
     grid-column-gap: var(--spacing-small);
     grid-row-gap:    var(--spacing-small);
@@ -122,6 +122,10 @@ section:last-child {
 
 .two-col-grid {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.three-col-grid {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .four-col-grid {
@@ -258,7 +262,7 @@ nav {
     justify-content: center;
     align-items: center;
     
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.4);
     opacity: 0;
     transition: var(--transition);
 }
