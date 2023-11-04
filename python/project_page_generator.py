@@ -29,21 +29,23 @@ html_template = """
     <section>
         <div>
             <p>{paragraph_1}</p>
+            <p>{paragraph_2}</p>
         </div>
     </section>
 
-    <!-- Pack 1 images -->    
+    <!-- The first image -->    
     <section class="one-col-grid">
         <img src="https://picsum.photos/2000/1200">
-        <img src="https://picsum.photos/2000/1600">
     </section>
     
     <section>
-        <p>{paragraph_2}</p>
+            <p>{paragraph_3}</p>
+            <p>{paragraph_4}</p>
     </section>
     
-    <!-- Pack 2 images -->    
+    <!-- All the other images -->    
     <section class="one-col-grid">
+        <img src="https://picsum.photos/2000/1600">
         <img src="https://picsum.photos/2000/800">
         <img src="https://picsum.photos/800/1200">
         <img src="https://picsum.photos/900/600">
