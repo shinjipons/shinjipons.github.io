@@ -240,6 +240,12 @@ nav {
     position: relative;
     overflow: hidden;
     border-radius: 2px;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-1px);
+    transition: var(--transition);
 }
 
 .project-card > img {
