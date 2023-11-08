@@ -60,7 +60,6 @@ def generate_page(page_key, page_data):
     <section>
         <div>
             <p>{paragraph_1}</p>
-            <p>{paragraph_2}</p>
         </div>
     </section>
 
@@ -70,8 +69,7 @@ def generate_page(page_key, page_data):
     </section>
     
     <section>
-            <p>{paragraph_3}</p>
-            <p>{paragraph_4}</p>
+            <p>{paragraph_2}</p>
     </section>
     
     <!-- All the other images -->    
