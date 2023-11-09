@@ -20,7 +20,7 @@ def get_image_tags(image_folder):
         other_img_tags = [
             f'\t\t<img src="{image_folder}/{file}">' for file in files[1:]
         ]
-
+    # Purely cosmetic: the first image tag needs more tab spaces
     other_img_tags[0] = other_img_tags[0].replace("\t\t", "")
 
     return first_img_tag, other_img_tags
@@ -59,8 +59,8 @@ def generate_page(page_key, page_data):
 
     <section>
         <div class="two-col-grid">
-            <p>{paragraph_1}</p>
             <div class="empty-cell"></div>
+            <p>{paragraph_1}</p>
             <div class="empty-cell"></div>
             <p>{paragraph_2}</p>
         </div>
@@ -75,8 +75,8 @@ def generate_page(page_key, page_data):
         <div class="two-col-grid">
             <p>{paragraph_3}</p>
             <div class="empty-cell"></div>
-            <div class="empty-cell"></div>
             <p>{paragraph_4}</p>
+            <div class="empty-cell"></div>
         </div>
     </section>
     
