@@ -40,6 +40,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0px;
 }
 
@@ -92,8 +95,6 @@ li {
 
 section {
     width: var(--width-desktop);
-    margin-left: auto;
-    margin-right: auto;
     padding-top:    var(--spacing-large);
     padding-bottom: var(--spacing-large);
 }
@@ -168,13 +169,6 @@ section:last-child {
     color: rgb(255, 255, 255);
     box-shadow: 0px 4px 8px var(--shadow-color), inset 0px 0px 36px 2px rgba(255, 255, 255, 0.16);
     text-shadow: 0px 0px 16px rgba(255, 255, 255, 0.7);
-}
-
-.linkedin:hover {
-    color: #50A5FF;
-    border-top: 1px solid rgba(59, 154, 255, 0.45);
-    box-shadow: 0px 4px 8px var(--shadow-color), inset 0px 0px 36px 2px rgba(28, 63, 101, 0.58);
-    text-shadow: 0px 0px 16px rgba(12, 116, 225, 0.5);
 }
 
 .two-wide {
@@ -272,6 +266,6 @@ nav {
     text-align: left;
     text-shadow: 0px 1px 2px var(--shadow-color);
 
-    margin-left: 0px;
+    margin-left: 5px;
     margin-bottom: 0px;
 }
