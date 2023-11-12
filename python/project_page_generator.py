@@ -59,10 +59,10 @@ def generate_page(page_key, page_data):
 
     <section>
         <div class="two-col-grid">
-            <div class="empty-cell"></div>
             <p>{paragraph_1}</p>
             <div class="empty-cell"></div>
             <p>{paragraph_2}</p>
+            <div class="empty-cell"></div>
         </div>
     </section>
 
