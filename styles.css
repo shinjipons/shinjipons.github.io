@@ -2,8 +2,9 @@
     /* colors */
     --primary-color:    #F6F6F6;
     --secondary-color:  #959595;
-    --accent-color:     #10F96D;
     --background-color:rgba(12, 12, 12, 1.0);
+
+    --accent-color:     #10F96D;
     --shadow-color:    rgba( 0,  0,  0, 0.4);
     
     /* spacing */
@@ -13,7 +14,7 @@
 
     /* typograhy */
     --font-family: "Manrope";
-    --text-size:       16px;
+    --text-size:       15px;
     --font-weight:      500;
     --letter-spacing: 0.2px;
     --line-height:     166%;
@@ -153,7 +154,7 @@ section:last-child {
     border-radius: var(--spacing-small);
     border-top:    1px solid rgba(215, 215, 215, 0.27);
     border-bottom: 1px solid rgba( 26,  26,  26, 0.37);
-    background: linear-gradient(rgba(55, 55, 55, 0.5), rgba(44, 44, 44, 0.5));
+    background: linear-gradient(rgba(35, 35, 35, 1), rgba(24, 24, 24, 1));
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -340,4 +341,78 @@ nav {
 
 .product-list > li {
     color: var(--primary-color);
+}
+
+/* Client vs designer messaging thread */
+
+.thread {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.client-message, .designer-message {
+    /* max-width: 270px; */
+    max-width: 80%;
+    padding-top:    10px;
+    padding-bottom: 10px;
+    padding-left:   16px;
+    padding-right:  16px;
+    border-radius: 16px;
+    border: 1px solid rgba(215, 215, 215, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.client-message {
+    align-self: flex-start;
+    border-radius: 24px 24px 24px 4px;
+    background: #191919;
+}
+
+.client-avatar, .designer-avatar {
+    width:  32px;
+    height: 32px;
+    border-radius: 39px;
+}
+
+.client-avatar {
+    align-self: flex-start;
+}
+
+.designer-avatar {
+    align-self: flex-end;
+}
+
+.designer-message {
+    align-self: flex-end;
+    border-radius: 24px 24px 2px 24px;
+    background: #288AFB;
+}
+
+.client-message > p, .designer-message > p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--primary-color);
+}
+
+.client-message > .avatar, .designer-message > .avatar {
+    position: absolute;
+    width:  32px;
+    height: 32px;
+    border-radius: 39px;
+}
+
+.designer-message > a > button {
+    background: var(--primary-color);
+    border: 0px;
+    line-height: 100%;
+    color: #288AFB;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-size: var(--text-size);
+    margin-top: 8px;
+    margin-bottom: 4px;
+    padding: 8px 12px;
+    border-radius: 100px;
 }
