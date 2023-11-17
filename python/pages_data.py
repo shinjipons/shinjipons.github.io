@@ -23,7 +23,7 @@ pages = {
         "paragraph_3": "To accompany the building's unique design, Philippe Apeloig had devised a system using the dome's light patterns. The challenge was to make the icons understandable from every culture.",
         "paragraph_4": "After many iterations, the result was an elegant and timeless system for a global audience. I am still very proud to have contributed to this project to this day.",
         "image_folder": "images/louvre-abu-dhabi/"
-    }, 
+    },
     "lego-digital-designer-pro": {
         "title": "LEGO Digital Designer Pro",
         "tagline": "CAD software for LEGO sets",
@@ -35,7 +35,7 @@ pages = {
         "paragraph_2": "LEGO's design process is hindered by manual labor, as brick counting and instruction creation are time-consuming and error-prone. Streamlining these steps could improve efficiency and reduce risks to the business. The LEGO Group was in the transition phase from relying on an outdated Maya plugin to LEGO Digital Designer Pro. However, redesigning the entire pipeline came with huge challenges in supporting customers during this transition phase without disrupting the normal flow of business.",
         "paragraph_3": "The design process of LEGO sets and building instructions was ripe for automation. Many of the steps, such as determining the manufacturing cost of a set, detecting duplicate assemblies, and creating marketing material, were still done manually by humans instead of machines and software. The principle was to let computers do as much of the boring work as possible.",
         "paragraph_4": "Some of my work ended up saving LEGO model designers a lot of time when building their sets. While most of the designs were not the most innovative, the basics were much more efficient and quicker than with the Maya plugin."
-    }, 
+    },
     "alias-subd": {
         "title": "Autodesk Alias SubD",
         "tagline": "Making Alias better for everyone",
@@ -47,7 +47,7 @@ pages = {
         "paragraph_2": "The main issue with Alias is its steep learning curve. New users have to face a lack of available educational content to bridge their skill gap in NURBS modelling. This limited the growth of Alias.",
         "paragraph_3": "Thanks to these tools that work just like subdivision surfaces, new users can produce 3D models that can be refined and reworked by more experienced users without ever exporting anything, or compromising on quality.",
         "paragraph_4": "Many customers now enjoy shorter delivery times for their concept models and Alias is now more than ever horizontally integrated in the automotive design studio."
-    }, 
+    },
     "dynamo-for-alias": {
         "title": "Dynamo for Alias",
         "tagline": "Augmenting Alias with generative algorithms",
@@ -59,5 +59,30 @@ pages = {
         "paragraph_2": "Some automotive surfaces increasingly feature intricate details such as front grilles. To speed up the design of these complex parts, Dynamo brings a visual programming environment to automate the task of producing geometry.",
         "paragraph_3": "The main Issues were the surface quality of Dynamo surfaces and switching tools in Alias broke the live connection with Dynamo. At the end of the project, I was able to recreate the Mac Pro grille entirely using Dynamo.",
         "paragraph_4": "Even while in a prototype phase, Dynamo for Alias was successfully used on a concept vehicle design for Tata, the 45X, which drastically reduced creative waste and modelling hours."
+    },
+    "david-bowie": {
+        "title": "Nothing has Changed",
+        "tagline": "Artworking for David Bowie's album",
+        "client": "Barnbrook and David Bowie",
+        "type": "Graphic Design",
+        "year": "2014",
+        "image_folder": "images/david-bowie",
+        "paragraph_1": "During my internship at Barnbrook, I was exposed to a professional environment known for its design expertise. The experience was a mix of excitement and learning, with each day bringing new insights into the design industry.",
+        "paragraph_2": "My primary task involved artworking for a David Bowie album. This role, while introductory, taught me the importance of precision in layout adjustments and visual alignment, essential for conveying the album's themes.",
+        "paragraph_3": "In this role, I gained insight into the design process, observing how ideas transitioned from concepts to finalized artwork. Contributing to a project associated with a renowned artist like Bowie was a valuable learning experience.",
+        "paragraph_4": "This internship was an important step in my career, emphasizing the significance of detail and teamwork in design. It has motivated me to further my skills and pursue my career with renewed focus."
     }
 }
+
+# "david-bowie": {
+#     "title": "Nothing has Changed",
+#     "tagline": "Artworking for David Bowie's album",
+#     "client": "Barnbrook and David Bowie",
+#     "type": "Graphic Design",
+#     "year": "2014",
+#     "image_folder": "images/david-bowie",
+#     "paragraph_1": "During my internship at Barnbrook, I did some simple artworking for this David Bowie album.",
+#     "paragraph_2": "",
+#     "paragraph_3": "",
+#     "paragraph_4": ""
+# }
