@@ -6,11 +6,11 @@
 
     --accent-color:     #10F96D;
     --shadow-color:    rgba( 0,  0,  0, 0.4);
-    
+
     /* spacing */
     --spacing-small:   4px;
     --spacing-medium: 16px;
-    --spacing-large:  32px;
+    --spacing-large:  56px;
 
     /* typograhy */
     --font-family: "Manrope";
@@ -20,7 +20,7 @@
     --line-height:     166%;
 
     /* overall widths */
-    --width-desktop: 800px;
+    --width-desktop: 80%;
 
     /* transition */
     --transition: 0.15s all cubic-bezier(0, .5, .5, 1);
@@ -69,6 +69,21 @@ h1, p {
     color: var(--primary-color);
 }
 
+.accent-text {
+    color: var(--accent-color) !important;
+}
+
+.secondary-text {
+    color: var(--secondary-color);
+}
+
+.monospace-text {
+    font-family: "Geist Mono";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+
 /* Links */
 
 a {
@@ -95,7 +110,7 @@ li {
 
 /* Width of the site */
 
-section {
+section, footer {
     width: var(--width-desktop);
     padding-top:    var(--spacing-large);
     padding-bottom: var(--spacing-large);
@@ -107,10 +122,11 @@ section:last-child {
 
 /* Grids */
 
-.one-col-grid, 
-.two-col-grid, 
-.three-col-grid, 
-.four-col-grid {
+.one-col-grid,
+.two-col-grid,
+.three-col-grid,
+.four-col-grid,
+.six-col-grid {
     display: grid;
     grid-column-gap: var(--spacing-small);
     grid-row-gap:    var(--spacing-small);
@@ -120,8 +136,9 @@ section:last-child {
 .two-col-grid   {grid-template-columns: repeat(2, 1fr);}
 .three-col-grid {grid-template-columns: repeat(3, 1fr);}
 .four-col-grid  {grid-template-columns: repeat(4, 1fr);}
+.six-col-grid   {grid-template-columns: repeat(6, 1fr);}
 
-.two-col-grid > .call-to-action, 
+.two-col-grid > .call-to-action,
 .four-col-grid > .call-to-action {
     margin-bottom: 0px;
 }
@@ -131,6 +148,10 @@ section:last-child {
     background: transparent;
     color: transparent;
     user-select: none;
+}
+
+.two-wide {
+    grid-column: span 2;
 }
 
 /* Call to action */
@@ -159,14 +180,10 @@ section:last-child {
 }
 
 .call-to-action:hover {
-    transition: var(--transition);    
+    transition: var(--transition);
     color: rgb(255, 255, 255);
     box-shadow: 0px 4px 8px var(--shadow-color), inset 0px 0px 36px 2px rgba(255, 255, 255, 0.16);
     text-shadow: 0px 0px 16px rgba(255, 255, 255, 0.7);
-}
-
-.two-wide {
-    grid-column: span 2;
 }
 
 /* Navigation at the top of the index and project page */
@@ -178,25 +195,23 @@ nav {
     background: var(--background-color);
     position: sticky;
     top: 0px;
-    height: 80px;
+    width: 100%;
+    height: var(--spacing-large);
     z-index: 100;
 }
 
-.inner-section { 
-    /* this is to center the nav in the website */
+.inner-section {
     width: var(--width-desktop);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Menu inside of the nav on the index page */
-
 .menu > a {
     margin-left: var(--spacing-medium);
 }
 
-/* other home page styles */
+/* Info page  */
 
 .profile-photo {
     height: 100px;
@@ -206,10 +221,10 @@ nav {
     box-shadow: 0px 4px 8px var(--shadow-color);
 }
 
-/* Projects grid */
+/* Home page grid */
 
 .project-card {
-    height: 350px;
+    height: 280px;
     position: relative;
     overflow: hidden;
     border-radius: 2px;
@@ -236,11 +251,11 @@ nav {
     bottom: 0;
 
     display: flex;
-    justify-content: left;
-    align-items: end;
-    padding: 8px;
-    
-    background: linear-gradient(8deg, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0) 50%);
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    background: rgba(0,0,0,0.6);
     opacity: 0;
     transition: var(--transition);
 }
@@ -253,7 +268,7 @@ nav {
 .overlay-text-container > p {
     color: var(--primary-color);
     font-size: var(--text-size);
-    text-align: left;
+    text-align: center;
     text-shadow: 0px 1px 2px var(--shadow-color);
 
     margin-left: 5px;
@@ -292,55 +307,35 @@ nav {
     grid-gap: 16px;
 }
 
-/* Product card */
+.pricing-item {
+    align-self: center;
+    width: 60%;
+    padding: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 
-.product-card {
+    border-radius: 8px;
+    border-top:    1px solid rgba(215, 215, 215, 0.2);
+    border-bottom: 1px solid rgba( 26,  26,  26, 0.3);
+
+    background: linear-gradient(rgba(35, 35, 35, 1), rgba(29, 29, 29, 1));
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    gap: 32px;
-    background: #191919;
-    color: var(--primary-color);
-    border-radius: var(--spacing-small);
+    gap: 16px;
 }
 
-.product-card > ul > li {
-    color: var(--primary-color);
+.pricing-item > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.product-header > p {
-    padding-top: 0px;
-    margin: 0px;
-}
-
-.product-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.product-description > p {
-    color: var(--secondary-color);
-    margin: 0px;
-}
-
-.product-card > ul {
-    padding-top: 0px;
-}
-
-.accent-text {
-    color: var(--accent-color) !important;
+.pricing-item > * {
+    text-align: center;
 }
 
 .product-list {
     margin-top: 0px;
-    list-style-position: inside;
-    padding-left: 0px;
-    text-align: center;
-}
-
-.product-list > li {
-    color: var(--primary-color);
 }
 
 /* Client vs designer messaging thread */
@@ -352,22 +347,25 @@ nav {
 }
 
 .client-message, .designer-message {
-    /* max-width: 270px; */
-    max-width: 80%;
+    max-width: 60%;
     padding-top:    10px;
     padding-bottom: 10px;
     padding-left:   16px;
     padding-right:  16px;
-    border-radius: 16px;
     border: 1px solid rgba(215, 215, 215, 0.1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
 }
 
 .client-message {
     align-self: flex-start;
-    border-radius: 24px 24px 24px 4px;
+    border-radius: 16px 16px 16px 4px;
     background: #191919;
+}
+
+.designer-message {
+    align-self: flex-end;
+    border-radius: 16px 16px 4px 16px;
+    background: #288AFB;
 }
 
 .client-avatar, .designer-avatar {
@@ -382,12 +380,6 @@ nav {
 
 .designer-avatar {
     align-self: flex-end;
-}
-
-.designer-message {
-    align-self: flex-end;
-    border-radius: 24px 24px 2px 24px;
-    background: #288AFB;
 }
 
 .client-message > p, .designer-message > p {
@@ -415,4 +407,26 @@ nav {
     margin-bottom: 4px;
     padding: 8px 12px;
     border-radius: 100px;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+/* Simple hero section */
+
+.headline-text {
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 145%;
+}
+
+.hero > h1 > span {
+    color: var(--secondary-color);
 }
