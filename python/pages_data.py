@@ -71,17 +71,53 @@ pages = {
         "paragraph_2": "My primary task involved artworking for a David Bowie album. This role, while introductory, taught me the importance of precision in layout adjustments and visual alignment, essential for conveying the album's themes.",
         "paragraph_3": "In this role, I gained insight into the design process, observing how ideas transitioned from concepts to finalized artwork. Contributing to a project associated with a renowned artist like Bowie was a valuable learning experience.",
         "paragraph_4": "This internship was an important step in my career, emphasizing the significance of detail and teamwork in design. It has motivated me to further my skills and pursue my career with renewed focus."
+    },
+    "basiljs": {
+        "title": "Computational Typography in InDesign",
+        "tagline": "Automating tasks in InDesign with code",
+        "client": "Personal Project",
+        "type": "Graphic Design",
+        "year": "2014",
+        "image_folder": "images/basiljs",
+        "paragraph_1": "My final major project at the London College of Communication was around exploring scripting inside of Adobe InDesign using a library called basil.js to create artwork that would impossible to make using the graphical user interface.",
+        "paragraph_2": "While working on Modulo, my layered typeface, I realized how tedious and inefficient it was to manually overlay hundreds of individual text frames for my type tests. I researched using the raw InDesign SDK and Processing but settled on Basil.js.",
+        "paragraph_3": "People at the Basel School of Design have open-sourced a library that allows anyone with access to InDesign to use scripting.",
+        "paragraph_4": "Thanks to this project, I understood that code could be used for creative purposes but more importantly, that it was an incredible way to automate tedious tasks and reduce errors while creating work that would have been unfeasible by hand. All while using open source!"
+    },
+    "ipod-shuffle": {
+        "title": "iPod Shuffle Alias Model",
+        "tagline": "Accurate modelling with G3 continuity",
+        "client": "Personal Project",
+        "type": "Alias 3D Modelling",
+        "year": "2021",
+        "image_folder": "images/ipod-shuffle",
+        "paragraph_1": "I purchased an iPod Shuffle on eBay, studied it and after using reference technical drawings along with my own measurements, I modeled this fourth generation iPod Shuffle in Alias while ensuring G3 continuity in even the smallest of fillets.",
+        "paragraph_2": "The geometry looks simple but attention needs to be paid to the large blends. Softening the radius allowed space for a better transition from the flat area. The graphics are trimmed surfaces to be positioned perfectly.",
+        "paragraph_3": "The finished file has a power button and an accurately modelled 1/8\" female audio jack. All the surface transitions are G3, even the ones that don't need to be, such as the 90° intersections on the frame and the rear-clip.",
+        "paragraph_4": "In refining the design, functionality and durability were prioritized alongside aesthetics. The exact modeling of the power button and audio jack enhances user experience with smooth operation and reliable connections. Additionally, the G3 continuity, applied consistently across the design, contributes to the product's resilience and sleek look, ensuring it withstands daily use."
+    },
+    "modulo": {
+        "title": "Modulo",
+        "tagline": "Multi-layer geometric typeface",
+        "client": "Personal Project",
+        "type": "Typeface Design",
+        "year": "2014",
+        "image_folder": "images/modulo",
+        "paragraph_1": "Modulo is a typeface based on a 128 units square grid. After designing the typeface, I made posters to display the typeface, which is free and open-source.",
+        "paragraph_2": "I wanted to learn the intricate details of typeface design and development, while making something I could use for myself in future design work. A layered typeface was something that I always wanted to try.",
+        "paragraph_3": "I had to restart making all 168 font files five or six times after realizing that I fell in technical pitfalls such as using incorrect UPM sizes, path directions, undesired optical corrections in Glyphs, forgetting glyphs...",
+        "paragraph_4": "This project made realize the amount of work, care and detail that goes into making professional grade typefaces. More importantly, it gave me my first opportunity to learn about Bézier splines, which are important in Alias."
     }
 }
 
 # "david-bowie": {
-#     "title": "Nothing has Changed",
-#     "tagline": "Artworking for David Bowie's album",
-#     "client": "Barnbrook and David Bowie",
-#     "type": "Graphic Design",
+#     "title": "",
+#     "tagline": "",
+#     "client": "",
+#     "type": "",
 #     "year": "2014",
-#     "image_folder": "images/david-bowie",
-#     "paragraph_1": "During my internship at Barnbrook, I did some simple artworking for this David Bowie album.",
+#     "image_folder": "images/",
+#     "paragraph_1": "",
 #     "paragraph_2": "",
 #     "paragraph_3": "",
 #     "paragraph_4": ""
