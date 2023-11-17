@@ -31,6 +31,11 @@
     src: url("./fonts/Manrope-Variable.ttf");
 }
 
+@font-face {
+    font-family: "Geist Mono";
+    src: url("./fonts/GeistMonoVF.ttf");
+}
+
 /* Tags */
 
 * {
@@ -78,7 +83,6 @@ h1, p {
 }
 
 .monospace-text {
-    /* font-family: var(--font-family); */
     font-family: "Geist Mono";
     text-transform: uppercase;
     letter-spacing: 2px;
