@@ -107,6 +107,18 @@ pages = {
         "paragraph_2": "I wanted to learn the intricate details of typeface design and development, while making something I could use for myself in future design work. A layered typeface was something that I always wanted to try.",
         "paragraph_3": "I had to restart making all 168 font files five or six times after realizing that I fell in technical pitfalls such as using incorrect UPM sizes, path directions, undesired optical corrections in Glyphs, forgetting glyphs...",
         "paragraph_4": "This project made realize the amount of work, care and detail that goes into making professional grade typefaces. More importantly, it gave me my first opportunity to learn about Bézier splines, which are important in Alias."
+    },
+    "corvette-model": {
+        "title": "High quality 3D model of a Chevrolet Corvette C6",
+        "tagline": "Modelling a full car in Blender",
+        "client": "Personal Project",
+        "type": "3D Modelling",
+        "year": "2022",
+        "image_folder": "images/corvette",
+        "paragraph_1": "I took a self-learning course called Master Car Creation in Blender by CGMasters. The course focuses on advanced modelling techniques to achieve the highest quality in terms of reflections. By using a guide mesh and Blender’s modifier stack, it is possible to get excellent looking surfaces by only using SubDs. I completed this self-paced course during my free time between Spring 2021 and Spring 2022.",
+        "paragraph_2": "After working on the Autodesk Alias SubD toolset, I wanted to improve my polygonal modelling skills. While poly models are more easily editable, their surface quality is perceptibly lower than with NURBS surfaces.",
+        "paragraph_3": "This course teaches a technique which consists of using a lower res mesh which is shrink-wrapped to a high res guide mesh. This achieves great surface quality while retaining the flexibility of polygonal modelling.",
+        "paragraph_4": "Compared to Alias, Blender was quicker and more productive at the beginning of the process. Modelling and shading all surfaces in one software package is great but I did miss the flawless quality of NURBS surfaces."
     }
 }
 
