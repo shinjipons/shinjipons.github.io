@@ -9,7 +9,7 @@ with open('python/shared_footer.html', 'r') as file:
 def get_image_tags(image_folder):
     # Get all webp images and sort them
     files = sorted([f for f in os.listdir(image_folder) if f.endswith('.webp')])
-    
+
     # Separate the first image if the list is not empty
     first_img_tag = ''
     other_img_tags = []
@@ -40,7 +40,7 @@ def generate_page(page_key, page_data):
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons - {title}</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -66,11 +66,11 @@ def generate_page(page_key, page_data):
         </div>
     </section>
 
-    <!-- The first image -->    
+    <!-- The first image -->
     <section class="one-col-grid">
         {first_image}
     </section>
-    
+
     <section>
         <div class="two-col-grid">
             <p>{paragraph_3}</p>
@@ -79,8 +79,8 @@ def generate_page(page_key, page_data):
             <div class="empty-cell"></div>
         </div>
     </section>
-    
-    <!-- All the other images -->    
+
+    <!-- All the other images -->
     <section class="one-col-grid">
         {other_images}
     </section>
