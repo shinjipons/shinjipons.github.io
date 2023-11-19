@@ -14,13 +14,18 @@
 
     /* typograhy */
     --font-family: "Manrope";
+
     --text-size:       15px;
+    --text-size-large: 40px;
+
     --font-weight:      500;
     --letter-spacing: 0.2px;
     --line-height:     166%;
 
     /* overall widths */
     --width-desktop: 70%;
+    --width-tablet: 80%;
+    --width-mobile: 90%;
 
     /* transition */
     --transition: 0.15s all cubic-bezier(0, .5, .5, 1);
@@ -63,6 +68,9 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px;
+    /* width: 100% !important; */
+    /* min-width: fit-content; */
+    border: 1px solid red;
 }
 
 img {
@@ -102,7 +110,7 @@ h1, p {
 }
 
 .headline-text {
-    font-size: 40px;
+    font-size: var(--text-size-large);
     font-weight: 200;
     line-height: 145%;
 }
@@ -207,7 +215,6 @@ li {
 nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     background: var(--background-color);
     position: sticky;
     top: 0px;
@@ -450,7 +457,6 @@ nav {
 }
 
 /* Footer */
-
 footer {
     display: flex;
     flex-direction: row;
@@ -460,13 +466,11 @@ footer {
 }
 
 /* Simple hero section */
-
 .hero > h1 > span {
     color: var(--secondary-color);
 }
 
 /* Biography */
-
 .biography {
     column-count: 2;
     column-gap: 80px;
