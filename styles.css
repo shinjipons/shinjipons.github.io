@@ -15,8 +15,14 @@
     /* typograhy */
     --font-family: "Manrope";
 
-    --text-size:       15px;
-    --text-size-large: 40px;
+    --text-size-regular-desktop: 15px;
+    --text-size-large-desktop:   40px;
+
+    --text-size-regular-tablet:  15px;
+    --text-size-large-tablet:    30px;
+
+    --text-size-regular-mobile:  15px;
+    --text-size-large-mobile:    26px;
 
     --font-weight:      500;
     --letter-spacing: 0.2px;
@@ -47,6 +53,7 @@ section, footer {
     width: var(--width-desktop);
     padding-top:    var(--spacing-large);
     padding-bottom: var(--spacing-large);
+    transition: var(--transition);
 }
 
 section:last-child {
@@ -68,9 +75,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    /* width: 100% !important; */
-    /* min-width: fit-content; */
-    border: 1px solid red;
 }
 
 img {
@@ -85,7 +89,7 @@ img {
 h1, p, ul, li, a {
     font-family: var(--font-family);
     font-weight: var(--font-weight);
-    font-size: var(--text-size);
+    font-size: var(--text-size-regular-desktop);
     line-height: var(--line-height);
     letter-spacing: var(--letter-spacing);
 }
@@ -110,7 +114,7 @@ h1, p {
 }
 
 .headline-text {
-    font-size: var(--text-size-large);
+    font-size: var(--text-size-large-desktop);
     font-weight: 200;
     line-height: 145%;
 }
@@ -146,15 +150,19 @@ li {
 
 /* Grids */
 
-.one-col-grid,
-.two-col-grid,
-.three-col-grid,
-.four-col-grid,
-.six-col-grid {
+.one-col-grid, .two-col-grid, .three-col-grid, .four-col-grid, .six-col-grid {
     display: grid;
     grid-column-gap: var(--spacing-small);
     grid-row-gap:    var(--spacing-small);
 }
+
+/* .one-col-grid > p,
+.two-col-grid > p,
+.three-col-grid > p,
+.four-col-grid > p,
+.six-col-grid > p {
+    padding-right: var(--spacing-medium);
+} */
 
 .one-col-grid   {grid-template-columns: repeat(1, 1fr);}
 .two-col-grid   {grid-template-columns: repeat(2, 1fr);}
@@ -185,7 +193,7 @@ li {
     width: auto;
     height: 65px;
     color: var(--secondary-color);
-    font-size: var(--text-size);
+    font-size: var(--text-size-regular-desktop);
     font-weight: var(--font-weight);
     text-decoration: none;
     padding-top:   2px;
@@ -247,11 +255,11 @@ nav {
 /* Home page grid */
 
 .project-card {
-    height: 280px;
     position: relative;
     overflow: hidden;
     border-radius: 2px;
     transition: var(--transition);
+    aspect-ratio: 1;
 }
 
 .project-card:hover {
@@ -290,7 +298,7 @@ nav {
 
 .overlay-text-container > p {
     color: var(--primary-color);
-    font-size: var(--text-size);
+    font-size: var(--text-size-regular-desktop);
     text-align: center;
     text-shadow: 0px 1px 2px var(--shadow-color);
 
@@ -449,7 +457,7 @@ nav {
     color: #288AFB;
     font-family: var(--font-family);
     font-weight: var(--font-weight);
-    font-size: var(--text-size);
+    font-size: var(--text-size-regular-desktop);
     margin-top: 8px;
     margin-bottom: 4px;
     padding: 8px 12px;
@@ -479,4 +487,51 @@ footer {
 
 .biography > p {
     margin-top: 0px;
+}
+
+@media screen and (min-width: 440px) and (max-width: 799px) {
+    section, footer {
+        width: var(--width-tablet);
+    }
+    .inner-section {
+        width: var(--width-tablet);
+    }
+    .headline-text {
+        font-size: var(--text-size-large-tablet);
+    }
+    .three-col-grid, .four-col-grid, .six-col-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .two-col-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .empty-cell {
+        display: none;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 439px) {
+    section, footer {
+        width: var(--width-mobile);
+    }
+    .inner-section {
+        width: var(--width-mobile);
+    }
+    .headline-text {
+        font-size: var(--text-size-large-mobile);
+    }
+    .three-col-grid, .four-col-grid, .six-col-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .two-col-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .empty-cell {
+        display: none;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
