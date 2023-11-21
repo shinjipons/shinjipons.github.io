@@ -2,10 +2,9 @@
     /* colors */
     --primary-color:    #F6F6F6;
     --secondary-color:  #959595;
-    --background-color:rgba(12, 12, 12, 1.0);
-
+    --background-color: rgba(12, 12, 12, 1.0);
     --accent-color:     #10F96D;
-    --shadow-color:    rgba( 0,  0,  0, 0.4);
+    --shadow-color:     rgba( 0,  0,  0, 0.4);
 
     /* spacing */
     --spacing-small:   4px;
@@ -25,8 +24,8 @@
     --text-size-large-mobile:    22px;
 
     --font-weight:      500;
-    --letter-spacing: 0.2px;
     --line-height:     166%;
+    --letter-spacing: 0.2px;
 
     /* overall widths */
     --width-desktop: 70%;
@@ -112,12 +111,16 @@ h1, p {
     letter-spacing: 2px;
     font-weight: 70;
     color: var(--secondary-color);
+    margin-top:    16px;
+    margin-bottom: 16px;
 }
 
 .headline-text {
     font-size: var(--text-size-large-desktop);
     font-weight: 200;
     line-height: 145%;
+    margin-top:    32px;
+    margin-bottom: 32px;
 }
 
 .headline-text > a {
@@ -467,7 +470,6 @@ footer {
 .hero > h1 > span {
     color: var(--secondary-color);
 }
-
 /* Biography */
 .biography {
     column-count: 2;
@@ -536,5 +538,8 @@ footer {
     }
     .project-card {
         height: 240px;
+    }
+    .project-title {
+        display: none;
     }
 }

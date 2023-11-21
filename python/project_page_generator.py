@@ -52,7 +52,7 @@ def generate_page(page_key, page_data):
                 <a href="index.html">Close</a>
             </div>
             <div>
-                <p>{title}</p>
+                <p class="project-title">{title}</p>
             </div>
         </div>
     </nav>
