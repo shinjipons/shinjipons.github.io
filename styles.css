@@ -13,6 +13,7 @@
 
     /* typograhy */
     --font-family: "Manrope";
+    --font-monospace: "Geist Mono";
 
     --text-size-regular-desktop: 15px;
     --text-size-large-desktop:   40px;
@@ -23,9 +24,10 @@
     --text-size-regular-mobile:  15px;
     --text-size-large-mobile:    22px;
 
-    --font-weight:      500;
-    --line-height:     166%;
-    --letter-spacing: 0.2px;
+    --font-weight:           500;
+    --font-weight-monospace:  70;
+    --line-height:          166%;
+    --letter-spacing:      0.2px;
 
     /* overall widths */
     --width-desktop: 70%;
@@ -106,10 +108,10 @@ h1, p {
 }
 
 .monospace-text {
-    font-family: "Geist Mono";
+    font-family: var(--font-monospace);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 70;
+    font-weight: var(--font-weight-monospace);
     color: var(--secondary-color);
     margin-top:    16px;
     margin-bottom: 16px;
