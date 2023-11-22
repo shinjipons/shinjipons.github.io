@@ -85,6 +85,13 @@ def generate_page(page_key, page_data):
         {other_images}
     </section>
 
+    <!-- Call to action -->
+    <section class="call-to-action-block for-project">
+        <a href="mailto:hello@shinjipons.com" class="call-to-action">
+            <p class="headline-text">Get in touch</p>
+        </a>
+    </section>
+
     {shared_footer}
 
 </body>
