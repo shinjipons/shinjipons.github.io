@@ -94,9 +94,6 @@ h1, p, ul, li, a {
 h1, p {
     color: var(--primary-color);
 }
-.accent-text {
-    color: var(--accent-color) !important;
-}
 .secondary-text {
     color: var(--secondary-color);
 }
@@ -130,18 +127,6 @@ a {
 }
 a:hover {
     color: var(--primary-color);
-}
-
-/* Lists */
-
-ul {
-    color: var(--primary-color);
-    list-style-type: none;
-    padding-left: 0px;
-    margin-bottom: 0px;
-}
-li {
-    color: var(--secondary-color);
 }
 
 /* Grids */
@@ -205,15 +190,33 @@ nav {
     width: 100%;
     height: var(--spacing-large);
     z-index: 100;
+    box-shadow: 0px 0px 16px hsla(var(--hue), var(--saturation), 5%, 0.6);
 }
-
 .inner-section {
     width: var(--width-desktop);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
+.inner-section > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.inner-section > div > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+.current-page {
+    border-bottom: 1px solid var(--primary-color) !important;
+    color: var(--primary-color);
+}
+.inner-section > div > a:hover {
+    border-bottom: 1px solid var(--primary-color);
+}
 .menu > a {
     margin-left: var(--spacing-medium);
 }
@@ -227,47 +230,38 @@ nav {
     transition: var(--transition);
     height: 400px;
 }
-
 .project-card:hover {
     transition: var(--transition);
 }
-
 .project-card > img {
     transition: var(--transition);
     transform: scale(1);
 }
-
 .project-card:hover > img {
     transition: var(--transition);
 }
-
 .overlay-text-container {
     position: absolute;
     width: 100%;
     height: 100%;
     bottom: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 64px;
-
     background: rgba(0,0,0,0.6);
     opacity: 0;
     transition: var(--transition);
 }
-
 .overlay-text-container:hover {
     opacity: 1;
     transition: var(--transition);
 }
-
 .overlay-text-container > p {
     color: var(--primary-color);
     font-size: var(--text-size-regular-desktop);
     text-align: center;
     text-shadow: 0px 1px 2px var(--shadow-color);
-
     margin-left: 5px;
     margin-bottom: 0px;
     text-wrap: balance;
@@ -336,7 +330,6 @@ footer {
     .call-to-action {
         border: 1px solid var(--secondary-color);
         padding: auto;
-        /* text-align: center; */
     }
     .call-to-action-block {
         padding-top: 16px;
