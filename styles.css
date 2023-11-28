@@ -13,9 +13,10 @@
     --spacing-large:  56px;
 
     /* typograhy */
-    --font-family: "Manrope";
+    --regular-text: "Mondwest";
+    --bold-text: "Mondwest Bold";
 
-    --text-size-regular-desktop: 15px;
+    --text-size-regular-desktop: 20px;
     --text-size-large-desktop:   40px;
 
     --text-size-regular-tablet:  15px;
@@ -24,10 +25,9 @@
     --text-size-regular-mobile:  15px;
     --text-size-large-mobile:    22px;
 
-    --font-weight:           500;
-    --font-weight-headline:  560;
-    --line-height:          166%;
-    --letter-spacing:      0.2px;
+    --line-height:               166%;
+    --letter-spacing-headline:  0.2px;
+    --letter-spacing-text:        1px;
 
     /* overall widths */
     --width-desktop: 70%;
@@ -39,8 +39,12 @@
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("./fonts/Manrope-Variable.ttf");
+    font-family: "Mondwest";
+    src: url("./fonts/PPMondwest-Regular.ttf");
+}
+@font-face {
+    font-family: "Mondwest Bold";
+    src: url("./fonts/PPMondwest-Bold.ttf");
 }
 
 /* Width of the site */
@@ -78,18 +82,22 @@ img {
 
 /* Typography */
 h1, p, ul, li, a {
-    font-family: var(--font-family);
-    font-weight: var(--font-weight);
+    font-family: var(--regular-text);
     font-size: var(--text-size-regular-desktop);
     line-height: var(--line-height);
-    letter-spacing: var(--letter-spacing);
 }
 h1, p {
     color: var(--primary-color);
 }
+h1 {
+    letter-spacing: var(--letter-spacing-headline);
+}
+p {
+    letter-spacing: var(--letter-spacing-text);
+}
 .headline-text {
     font-size: var(--text-size-large-desktop);
-    font-weight: var(--font-weight-headline);
+    font-family: var(--bold-text);
     line-height: 145%;
     margin-top:    32px;
     margin-bottom: 32px;
@@ -101,13 +109,13 @@ h1, p {
     animation-name: colorChange;
     animation-fill-mode: forwards;
 }
+.headline-text > a {
+    font-family: var(--bold-text);
+    font-size: var(--text-size-large-desktop);
+}
 @keyframes colorChange {
     from {color: var(--secondary-color);}
     to   {color: var(--primary-color);}
-}
-.headline-text > a {
-    font-size: inherit;
-    font-weight: inherit;
 }
 
 /* Links */
@@ -155,7 +163,7 @@ a:hover {
 }
 .call-to-action {
     background: var(--secondary-color);
-    padding: 16px 26px 21px 25px;
+    padding: 16px 26px 15px 25px;
     border-radius: 1000px;
 }
 .call-to-action:hover {
