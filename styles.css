@@ -25,7 +25,6 @@
     --text-size-large-mobile:    22px;
 
     --font-weight:           500;
-    --font-weight-bold:      700;
     --font-weight-headline:  560;
     --line-height:          166%;
     --letter-spacing:      0.2px;
@@ -48,7 +47,7 @@
 
 section {
     width: var(--width-desktop);
-    padding-top:    var(--spacing-large);
+    padding-top: var(--spacing-large);
     transition: var(--transition);
 }
 footer {
@@ -78,7 +77,6 @@ img {
 }
 
 /* Typography */
-
 h1, p, ul, li, a {
     font-family: var(--font-family);
     font-weight: var(--font-weight);
@@ -88,9 +86,6 @@ h1, p, ul, li, a {
 }
 h1, p {
     color: var(--primary-color);
-}
-.secondary-text {
-    color: var(--secondary-color);
 }
 .headline-text {
     font-size: var(--text-size-large-desktop);
@@ -107,12 +102,8 @@ h1, p {
     animation-fill-mode: forwards;
 }
 @keyframes colorChange {
-    from {
-        color: var(--secondary-color);
-    }
-    to {
-        color: var(--primary-color);
-    }
+    from {color: var(--secondary-color);}
+    to   {color: var(--primary-color);}
 }
 .headline-text > a {
     font-size: inherit;
