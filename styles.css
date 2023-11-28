@@ -1,10 +1,10 @@
 :root {
     /* colors */
-    --hue: 169;
-    --saturation: 10%;
-    --primary-color:    hsl(var(--hue), var(--saturation), 78%);
-    --secondary-color:  hsl(var(--hue), var(--saturation), 53%);
-    --background-color: hsl(var(--hue), var(--saturation), 5%);
+    --hue: 180;
+    --saturation: 3%;
+    --primary-color:    hsl(var(--hue), var(--saturation), 68%);
+    --secondary-color:  hsl(var(--hue), var(--saturation), 33%);
+    --background-color: hsl(var(--hue), var(--saturation),  3%);
     --shadow-color:     rgba( 0,  0,  0, 0.4);
 
     /* spacing */
