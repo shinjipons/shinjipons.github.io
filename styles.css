@@ -115,6 +115,9 @@ h1, p {
     margin-bottom: 32px;
     color: var(--secondary-color);
 }
+.headline-text > span {
+    color: var(--primary-color) !important;
+}
 .headline-text > a {
     font-size: inherit;
     font-weight: inherit;
