@@ -120,16 +120,13 @@ h1, p {
     animation-iteration-count: 1;
     animation-name: colorChange;
     animation-fill-mode: forwards;
-    opacity: 0;
 }
 @keyframes colorChange {
     from {
         color: var(--secondary-color);
-        opacity: 0;
     }
     to {
         color: var(--primary-color);
-        opacity: 1;
     }
 }
 .headline-text > a {
