@@ -2,8 +2,8 @@
     /* colors */
     --hue: 180;
     --saturation: 3%;
-    --primary-color:    hsl(var(--hue), var(--saturation), 68%);
-    --secondary-color:  hsl(var(--hue), var(--saturation), 33%);
+    --primary-color:    hsl(var(--hue), var(--saturation), 90%);
+    --secondary-color:  hsl(var(--hue), var(--saturation), 50%);
     --background-color: hsl(var(--hue), var(--saturation),  3%);
     --shadow-color:     rgba( 0,  0,  0, 0.4);
 
@@ -13,10 +13,11 @@
     --spacing-large:  56px;
 
     /* typograhy */
-    --regular-text: "Mondwest";
-    --bold-text: "Mondwest Bold";
+    --font-family: "Inter Variable";
+    --font-weight-regular: 400;
+    --font-weight-bold:    600;
 
-    --text-size-regular-desktop: 20px;
+    --text-size-regular-desktop: 16px;
     --text-size-large-desktop:   40px;
 
     --text-size-regular-tablet:  15px;
@@ -25,9 +26,9 @@
     --text-size-regular-mobile:  15px;
     --text-size-large-mobile:    22px;
 
-    --line-height:               166%;
+    --line-height:               148%;
     --letter-spacing-headline:  0.2px;
-    --letter-spacing-text:        1px;
+    --letter-spacing-text:        0px;
 
     /* overall widths */
     --width-desktop: 70%;
@@ -37,14 +38,9 @@
     /* transition */
     --transition: 0.15s all cubic-bezier(0, .5, .5, 1);
 }
-
 @font-face {
-    font-family: "Mondwest";
-    src: url("./fonts/PPMondwest-Regular.ttf");
-}
-@font-face {
-    font-family: "Mondwest Bold";
-    src: url("./fonts/PPMondwest-Bold.ttf");
+    font-family: "Inter Variable";
+    src: url("./fonts/InterVariable.ttf");
 }
 
 /* Width of the site */
@@ -82,7 +78,7 @@ img {
 
 /* Typography */
 h1, p, ul, li, a {
-    font-family: var(--regular-text);
+    font-family: var(--font-family);
     font-size: var(--text-size-regular-desktop);
     line-height: var(--line-height);
 }
@@ -91,13 +87,14 @@ h1, p {
 }
 h1 {
     letter-spacing: var(--letter-spacing-headline);
+    font-weight: var(--font-weight-bold);
 }
 p {
     letter-spacing: var(--letter-spacing-text);
 }
 .headline-text {
     font-size: var(--text-size-large-desktop);
-    font-family: var(--bold-text);
+    font-family: var(--font-family);
     line-height: 145%;
     margin-top:    32px;
     margin-bottom: 32px;
@@ -110,7 +107,7 @@ p {
     animation-fill-mode: forwards;
 }
 .headline-text > a {
-    font-family: var(--bold-text);
+    font-family: var(--font-family);
     font-size: var(--text-size-large-desktop);
 }
 @keyframes colorChange {
@@ -163,8 +160,8 @@ a:hover {
 }
 .call-to-action {
     background: var(--secondary-color);
-    padding: 16px 26px 15px 25px;
-    border-radius: 1000px;
+    padding: 16px 26px 16px 25px;
+    border-radius: var(--spacing-small);
 }
 .call-to-action:hover {
     background: var(--primary-color);
@@ -280,9 +277,14 @@ footer {
     color: var(--secondary-color);
 }
 
-@media screen and (min-width: 440px) and (max-width: 799px) {
+@media screen and (min-width: 440px) and (max-width: 910px) {
     section, footer {
         width: var(--width-tablet);
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
     .inner-section {
         width: var(--width-tablet);
@@ -309,7 +311,7 @@ footer {
     .inner-section {
         width: var(--width-mobile);
     }
-    .headline-text {
+    .headline-text, .headline-text > a {
         font-size: var(--text-size-large-mobile);
     }
     .three-col-grid, .four-col-grid, .six-col-grid {
@@ -320,6 +322,10 @@ footer {
     }
     .empty-cell {
         display: none;
+    }
+    .call-to-action-block {
+        padding-top: 16px;
+        flex-direction: column;
     }
     footer {
         flex-direction: column;
