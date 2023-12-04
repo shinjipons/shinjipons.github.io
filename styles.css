@@ -161,7 +161,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 16px;
+    gap: var(--spacing-small);
 }
 .call-to-action-block.for-project {
     justify-content: center;
@@ -170,10 +170,14 @@ a:hover {
     background: var(--secondary-color);
     padding: 16px 26px 16px 25px;
     border-radius: var(--spacing-small);
+    transition: var(--transition);
+    box-shadow: 0px 0px 0px 0px hsla(var(--hue), var(--saturation), 5%, 0);
 }
 .call-to-action:hover {
     background: var(--primary-color);
-    transform: scale3d(1.01, 1.01, 1.01);
+    /* transform: scale3d(1.01, 1.01, 1.01); */
+    transform: translate3d(0px, -2px, 0px);
+    box-shadow: 0px 8px 16px 0px hsla(var(--hue), var(--saturation), 5%, 0.5);
 }
 .call-to-action > p {
     line-height: 100%;
