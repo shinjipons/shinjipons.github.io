@@ -11,7 +11,7 @@
 
     /* spacing */
     --spacing-small:   4px;
-    --spacing-medium: 16px;
+    --spacing-medium: 24px;
     --spacing-large:  64px;
 
     /* typograhy */
@@ -218,7 +218,13 @@ nav {
     overflow: hidden;
     border-radius: 2px;
     transition: var(--transition);
+
+    grid-column: span 2;
     height: 600px;
+}
+.project-card:nth-child(3n+2), .project-card:nth-child(3n+3) {
+    grid-column: span 1;
+    height: 400px;
 }
 .project-card:hover {
     transition: var(--transition);
