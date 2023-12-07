@@ -17,18 +17,18 @@
     /* typograhy */
     --font-family: "Inter Variable";
     --font-weight: 450;
-    --line-height: 118%;
+    --line-height: 120%;
 
     --font-size-desktop: 26px;
     --font-size-tablet:  20px;
-    --font-size-mobile:  16px;
+    --font-size-mobile:  18px;
 
     --letter-spacing:  0.2px;
 
     /* overall widths */
     --width-desktop: 70%;
-    --width-tablet: 80%;
-    --width-mobile: 90%;
+    --width-tablet:  80%;
+    --width-mobile:  95%;
 
     /* transition */
     --transition: 0.15s all cubic-bezier(0, .5, .5, 1);
@@ -85,7 +85,7 @@ h1, p {
 .headline-text {
     font-size: var(--font-size-desktop);
     font-family: var(--font-family);
-    line-height: 145%;
+    line-height: var(--line-height);
     margin-top:    32px;
     margin-bottom: 32px;
     color: var(--secondary-color);
@@ -330,7 +330,7 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
     .two-col-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .empty-cell {
         display: none;
@@ -354,7 +354,7 @@ footer {
     }
     .project-card {
         grid-column: span 1;
-        height: 150px !important;
+        height: 300px !important;
     }
     .project-title {
         display: none;
