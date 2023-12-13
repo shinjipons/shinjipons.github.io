@@ -216,7 +216,7 @@ nav {
 .project-card {
     position: relative;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: var(--spacing-small);
     transition: var(--transition);
 
     grid-column: span 2;
