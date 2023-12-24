@@ -98,7 +98,7 @@ h1, p {
 }
 .headline-text > a {
     font-family: var(--font-family);
-    font-size: var(--font-size-desktop);
+    font-size: var(--font-size-desktop-large);
 }
 @keyframes colorChange {
     from {color: var(--secondary-color);}

@@ -66,8 +66,7 @@ def generate_page(page_key, page_data):
     </nav>
 
     <section>
-        <div class="three-col-grid">
-            <div class="empty-cell"></div>
+        <div class="two-col-grid">
             <div>
                 <p>{paragraph_1}</p>
                 <p>{paragraph_2}</p>
@@ -82,8 +81,7 @@ def generate_page(page_key, page_data):
     </section>
 
     <section>
-        <div class="three-col-grid">
-            <div class="empty-cell"></div>
+        <div class="two-col-grid">
             <div>
                 <p>{paragraph_3}</p>
                 <p>{paragraph_4}</p>
