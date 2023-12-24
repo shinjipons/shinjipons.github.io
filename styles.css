@@ -10,7 +10,7 @@
     --shadow-color:     rgba( 0,  0,  0, 0.4);
 
     /* spacing */
-    --spacing-small:   4px;
+    --spacing-small:   8px;
     --spacing-medium: 24px;
     --spacing-large:  64px;
 
@@ -19,14 +19,15 @@
     --font-weight: 450;
     --line-height: 120%;
 
-    --font-size-desktop: 26px;
+    --font-size-desktop: 16px;
+    --font-size-desktop-large: 30px;
     --font-size-tablet:  20px;
     --font-size-mobile:  18px;
 
     --letter-spacing:  0.2px;
 
     /* overall widths */
-    --width-desktop: 70%;
+    --width-desktop: 80%;
     --width-tablet:  80%;
     --width-mobile:  95%;
 
@@ -68,7 +69,6 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--spacing-small);
 }
 
 /* Typography */
@@ -83,7 +83,7 @@ h1, p {
     letter-spacing: var(--letter-spacing);
 }
 .headline-text {
-    font-size: var(--font-size-desktop);
+    font-size: var(--font-size-desktop-large);
     font-family: var(--font-family);
     line-height: var(--line-height);
     margin-top:    32px;
@@ -151,7 +151,7 @@ a:hover {
 .call-to-action {
     background: var(--secondary-color);
     padding: 12px 16px;
-    border-radius: var(--spacing-small);
+    /* border-radius: var(--spacing-small); */
     transition: var(--transition);
     box-shadow: 0px 0px 0px 0px hsla(var(--hue), var(--saturation), 5%, 0);
 }
@@ -213,54 +213,19 @@ nav {
 
 /* Home page grid */
 
-.project-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--spacing-small);
-    transition: var(--transition);
-
-    grid-column: span 2;
-    height: 600px;
-}
-.project-card:nth-child(3n+2), .project-card:nth-child(3n+3) {
-    grid-column: span 1;
-    height: 400px;
-}
 .project-card:hover {
     transition: var(--transition);
 }
 .project-card > img {
+    height: 220px;
     transition: var(--transition);
-    transform: scale(1);
 }
 .project-card:hover > img {
     transition: var(--transition);
-}
-.overlay-text-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 64px;
-    background: rgba(0,0,0,0.6);
-    opacity: 0;
-    transition: var(--transition);
-}
-.overlay-text-container:hover {
-    opacity: 1;
-    transition: var(--transition);
+    filter: brightness(70%);
 }
 .overlay-text-container > p {
-    color: var(--background-color);
-    font-size: var(--font-size-desktop);
-    text-align: center;
-    text-shadow: 0px 1px 2px var(--shadow-color);
-    margin-left: 5px;
-    margin-bottom: 0px;
-    text-wrap: balance;
+    margin: var(--spacing-small) 0px var(--spacing-medium) 0px;
 }
 
 /* Footer */
