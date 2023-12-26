@@ -19,10 +19,14 @@
     --font-weight: 450;
     --line-height: 120%;
 
-    --font-size-desktop: 16px;
-    --font-size-desktop-large: 30px;
-    --font-size-tablet:  20px;
-    --font-size-mobile:  18px;
+    --font-size-desktop:       16px;
+    --font-size-desktop-large: 32px;
+
+    --font-size-tablet:        16px;
+    --font-size-tablet-large:  32px;
+
+    --font-size-mobile:        18px;
+    --font-size-mobile-large:  36px;
 
     --letter-spacing:  0.2px;
 
@@ -217,7 +221,7 @@ nav {
     transition: var(--transition);
 }
 .project-card > img {
-    height: 220px;
+    height: 310px;
     transition: var(--transition);
 }
 .project-card:hover > img {
@@ -243,7 +247,7 @@ footer {
 }
 
 /* Tablet styles */
-@media screen and (min-width: 440px) and (max-width: 910px) {
+@media screen and (min-width: 627px) and (max-width: 910px) {
     h1, p, ul, li, a {
         font-size: var(--font-size-tablet);
     }
@@ -258,8 +262,8 @@ footer {
     .inner-section {
         width: var(--width-tablet);
     }
-    .headline-text {
-        font-size: var(--font-size-tablet);
+    .headline-text, .headline-text > a {
+        font-size: var(--font-size-tablet-large);
     }
     .three-col-grid, .four-col-grid, .six-col-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -270,14 +274,14 @@ footer {
     .empty-cell {
         display: none;
     }
-    .project-card {
-        grid-column: span 1;
-        height: 260px !important;
+    .project-card > img {
+        height: 210px;
+        transition: var(--transition);
     }
 }
 
 /* Mobile styles */
-@media screen and (max-width: 439px) {
+@media screen and (max-width: 626px) {
     h1, p, ul, li, a {
         font-size: var(--font-size-mobile);
     }
@@ -289,7 +293,7 @@ footer {
         width: var(--width-mobile);
     }
     .headline-text, .headline-text > a {
-        font-size: var(--font-size-mobile);
+        font-size: var(--font-size-mobile-large);
     }
     .three-col-grid, .four-col-grid, .six-col-grid {
         grid-template-columns: repeat(1, 1fr);
@@ -317,9 +321,9 @@ footer {
         padding-top: 16px;
         flex-direction: column;
     }
-    .project-card {
-        grid-column: span 1;
-        height: 300px !important;
+    .project-card > img {
+        height: 310px;
+        transition: var(--transition);
     }
     .project-title {
         display: none;
