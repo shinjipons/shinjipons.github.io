@@ -148,27 +148,42 @@ a:hover {
     flex-wrap: nowrap;
     gap: var(--spacing-small);
 }
-.call-to-action-block.for-project {
-    justify-content: center;
-}
-.call-to-action {
-    background: var(--secondary-color);
-    padding: 12px 16px;
+
+/* Neuomorphic call to action */
+.neuomorphic-cta__outer > * {
     transition: var(--transition);
-    box-shadow: 0px 0px 0px 0px hsla(var(--hue), var(--saturation), 5%, 0);
 }
-.call-to-action:hover {
-    background: var(--primary-color);
-    transform: translate3d(0px, -2px, 0px);
-    box-shadow: 0px 8px 16px 0px hsla(var(--hue), var(--saturation), 5%, 0.5);
+.neuomorphic-cta__outer {
+    border-radius: 22px;
+
+    background: linear-gradient(180deg, #DFDFDF 0%, #FFF 100%);
+    padding: 4px;
 }
-.call-to-action > p {
-    line-height: 100%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: var(--background-color);
-    text-align: center;
-    font-weight: var(--font-weight);
+.neuomorphic-cta__gap {
+    border-radius: 18px;
+
+    padding: 2px;
+    background: rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.18) inset;
+}
+.neuomorphic-cta__inner {
+    border-radius: 16px;
+
+    padding: 15px 66px;
+    border: 4px solid var(--background-color);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.00) 100%), #F5F5F5;
+}
+.neuomorphic-cta__inner > .headline-text {
+    margin: 0px;
+}
+.neuomorphic-cta__outer:hover .neuomorphic-cta__inner {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.02) 100%), #F5F5F5;
+}
+.neuomorphic-cta__outer:hover .neuomorphic-cta__inner > .headline-text {
+    color: var(--primary-color);
+}
+.neuomorphic-cta__outer:hover .neuomorphic-cta__gap {
+    background: rgba(0, 0, 0, 0.32);
 }
 
 /* Navigation at the top of the index and project page */
