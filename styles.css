@@ -171,18 +171,20 @@ a:hover {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.00) 100%), #F5F5F5;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 4px 7px -2px rgba(0, 0, 0, 0.5);
 }
 .neuomorphic-cta__inner > .headline-text {
     margin: 0px;
 }
 .neuomorphic-cta__outer:hover .neuomorphic-cta__inner {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.02) 100%), #F5F5F5;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
 .neuomorphic-cta__outer:hover .neuomorphic-cta__inner > .headline-text {
     color: var(--primary-color);
 }
 .neuomorphic-cta__outer:hover .neuomorphic-cta__gap {
-    background: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Navigation at the top of the index and project page */
