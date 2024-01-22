@@ -103,6 +103,9 @@ h1, p {
     animation-name: colorChange;
     animation-fill-mode: forwards;
 }
+#fr-number, #uk-number {
+    animation: none;
+}
 .headline-text > a {
     font-family: var(--font-family);
     font-size: var(--font-size-desktop-large);
