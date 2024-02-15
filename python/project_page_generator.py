@@ -46,7 +46,7 @@ def generate_page(page_key, page_data):
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 	<link rel="apple-touch-icon" sizes="180x180"    href="/icons/favicon-ios.png">
-    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.jpg" />
+    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png" />
 	<meta property="og:title" content="Shinji Pons | Product Designer | {title}" />
 	<meta property="og:description" content="A multi-disciplinary experience designer for software applications" />
 	<meta property="og:url" content="https://www.shinjipons.com/" />
