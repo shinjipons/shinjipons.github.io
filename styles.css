@@ -203,7 +203,7 @@ nav {
     width: 100%;
     height: var(--spacing-large);
     z-index: 100;
-    box-shadow: 0px 0px 2px hsla(var(--hue), var(--saturation), 5%, 0.1);
+    /* box-shadow: 0px 0px 2px hsla(var(--hue), var(--saturation), 5%, 0.1); */
 }
 .inner-section {
     width: var(--width-desktop);
