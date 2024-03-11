@@ -98,7 +98,7 @@ h1, p {
     line-height: var(--line-height);
     margin-top:    32px;
     margin-bottom: 32px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 .headline-text > span {
     animation-duration: 1s;
@@ -191,6 +191,23 @@ a:hover {
 }
 .neuomorphic-cta__outer:hover .neuomorphic-cta__gap {
     background: rgba(0, 0, 0, 0.6);
+}
+
+/* v2 of the CTA button */
+.cta-v2 {
+    background: var(--primary-color);
+    border: none;
+    color: var(--background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-desktop-large);
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: 16px;
+    transition: var(--transition);
+}
+.cta-v2:hover {
+    background: var(--secondary-color);
+    cursor:pointer;
 }
 
 /* Navigation at the top of the index and project page */
