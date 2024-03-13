@@ -289,6 +289,12 @@ footer {
 .hero > h1 > span {
     color: var(--secondary-color);
 }
+.profile-picture {
+    width:  152px;
+    height: 152px;
+    object-fit: cover;
+    border-radius: 100%;
+}
 
 /* Tablet styles */
 @media screen and (min-width: 690px) and (max-width: 910px) {
@@ -326,12 +332,15 @@ footer {
 
 /* Mobile styles */
 @media screen and (max-width: 679px) {
+    html, body {
+        max-width: 100%;
+    }
     h1, p, ul, li, a {
         font-size: var(--font-size-mobile);
     }
     section, footer {
         width: var(--width-mobile);
-        padding-top: var(--spacing-medium);
+        padding-top: var(--spacing-large);
     }
     footer {
         flex-direction: column;
