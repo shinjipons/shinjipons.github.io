@@ -10,7 +10,7 @@
 
     /* spacing */
     --spacing-small:   8px;
-    --spacing-medium: 24px;
+    --spacing-medium: 12px;
     --spacing-large:  64px;
 
     /* typograhy */
@@ -18,7 +18,7 @@
     --font-weight: 370;
     --line-height: 120%;
 
-    --font-size-desktop:       16px;
+    --font-size-desktop:       18px;
     --font-size-desktop-large: 32px;
 
     --font-size-tablet:        16px;
@@ -51,7 +51,8 @@
 /* Width of the site */
 section {
     width: var(--width-desktop);
-    padding-top: var(--spacing-large);
+    padding-top:    var(--spacing-medium);
+    padding-bottom: var(--spacing-medium);
     transition: var(--transition);
 }
 footer {
@@ -126,8 +127,8 @@ a:hover {
 /* Grids */
 .one-col-grid, .two-col-grid, .three-col-grid, .four-col-grid, .six-col-grid {
     display: grid;
-    grid-column-gap: var(--spacing-small);
-    grid-row-gap:    var(--spacing-small);
+    grid-column-gap: var(--spacing-medium);
+    grid-row-gap:    var(--spacing-medium);
     grid-template-rows: repeat(1, 1fr);
 }
 .one-col-grid   {grid-template-columns: repeat(1, 1fr);}
@@ -202,7 +203,6 @@ a:hover {
     font-size: var(--font-size-desktop-large);
     line-height: 100%;
     padding: 16px 24px;
-    border-radius: 16px;
     transition: var(--transition);
 }
 .cta-v2:hover {
@@ -364,7 +364,7 @@ footer {
         display: none;
     }
     .call-to-action-block {
-        padding-top: 16px;
+        /* padding-top: 16px; */
         flex-direction: column;
     }
     .call-to-action {
