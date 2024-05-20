@@ -64,7 +64,14 @@ body {
 }
 
 /* Grids */
-.one-col-grid, .two-col-grid, .three-col-grid, .four-col-grid, .six-col-grid {
+.one-col-grid,
+.two-col-grid,
+.three-col-grid,
+.four-col-grid,
+.five-col-grid,
+.six-col-grid,
+.seven-col-grid,
+.eight-col-grid {
     display: grid;
     grid-column-gap: 16px;
     grid-row-gap:    16px;
@@ -74,7 +81,10 @@ body {
 .two-col-grid   {grid-template-columns: repeat(2, 1fr);}
 .three-col-grid {grid-template-columns: repeat(3, 1fr);}
 .four-col-grid  {grid-template-columns: repeat(4, 1fr);}
+.five-col-grid  {grid-template-columns: repeat(4, 1fr);}
 .six-col-grid   {grid-template-columns: repeat(6, 1fr);}
+.seven-col-grid {grid-template-columns: repeat(7, 1fr);}
+.eight-col-grid {grid-template-columns: repeat(8, 1fr);}
 .empty-cell {
     display: block;
     background: transparent;
@@ -296,6 +306,12 @@ button.cta:hover {
     object-fit: contain;
 }
 
+/* project-page.html */
+.project-text-block > .project-text {
+    grid-column-start: 5;
+    grid-column-end: 8;
+}
+
 /* Tablet styles */
 @media screen and (min-width: 690px) and (max-width: 910px) {
 
@@ -305,5 +321,8 @@ button.cta:hover {
 @media screen and (max-width: 679px) {
     html, body {
         max-width: 100%;
+    }
+    .empty-cell {
+        display: none;
     }
 }
