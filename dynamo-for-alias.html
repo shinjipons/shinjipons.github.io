@@ -16,26 +16,18 @@
 </head>
 <body>
 
-    <nav>
-        <div class="inner-section">
-            <div>
-                <a href="index.html">Close</a>
-            </div>
-            <div>
-                <p class="project-title">Dynamo for Alias</p>
-            </div>
-        </div>
-    </nav>
+    <!-- The menu -->
+<nav>
+    <a href="index.html">Shinji Pons</a>
+    <button id="menuTrigger"><img src="./images/menu-icon.svg" alt=""></button>
+</nav>
 
-    <section>
-        <div class="two-col-grid">
-            <div>
-                <p>While at Autodesk, I worked on the integration of Dynamo, a visual programming environment, into Alias. This workflow improvement empowered designers to leverage scripting to create and iterate on complex surfaces that are otherwise too time-consuming to model using the graphical user interface.</p>
-                <p>Some automotive surfaces increasingly feature intricate details such as front grilles. To speed up the design of these complex parts, Dynamo brings a visual programming environment to automate the task of producing geometry.</p>
-            </div>
-            <div class="empty-cell"></div>
-        </div>
-    </section>
+<div id="menuPage" class="menu menu-closed">
+    <a href="index.html"><h1>Work</h1></a>
+    <a href="about.html"><h1>About</h1></a>
+    <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><h1>Resume</h1></a>
+</div>
+<!-- End of menu -->
 
     <!-- The first image -->
     <section class="one-col-grid">
@@ -43,12 +35,15 @@
     </section>
 
     <section>
-        <div class="two-col-grid">
-            <div>
+        <div class="eight-col-grid project-text-block">
+            <div class="project-text">
+                <h1 class="monospace">About</h1>
+                <p>While at Autodesk, I worked on the integration of Dynamo, a visual programming environment, into Alias. This workflow improvement empowered designers to leverage scripting to create and iterate on complex surfaces that are otherwise too time-consuming to model using the graphical user interface.</p>
+                <p>Some automotive surfaces increasingly feature intricate details such as front grilles. To speed up the design of these complex parts, Dynamo brings a visual programming environment to automate the task of producing geometry.</p>
+                <h1 class="monospace">My role</h1>
                 <p>The main Issues were the surface quality of Dynamo surfaces and switching tools in Alias broke the live connection with Dynamo. At the end of the project, I was able to recreate the Mac Pro grille entirely using Dynamo.</p>
                 <p>Even while in a prototype phase, Dynamo for Alias was successfully used on a concept vehicle design for Tata, the 45X, which drastically reduced creative waste and modelling hours.</p>
             </div>
-            <div class="empty-cell"></div>
         </div>
     </section>
 
@@ -66,25 +61,24 @@
 		<img src="images/dynamo-for-alias/dynamo-for-alias-11.webp">
     </section>
 
-    <!-- Call to action -->
-    <section class="call-to-action-block__for-project">
-        <div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
-		</div>
-    </section>
-
-    <footer>
-    <a href="mailto:pretended_thicken957@magic.8shield.net">Email</a>
-    <a href="https://www.linkedin.com/in/shinjipons/" target="_blank">Linkedin</a>
-    <a href="https://twitter.com/shinjipons" target="_blank">Twitter</a>
-    <a href="https://shinjipons.gumroad.com/" target="_blank">Gumroad</a>
-    <a href="https://discord.gg/rxcJtffhE9" target="_blank">Discord</a>
-    <a href="https://read.cv/shinjipons" target="_blank">Read.cv</a>
-    <a href="https://layers.to/shinjipons" target="_blank">Layers</a>
-    <a href="./files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+    <footer class="two-col-grid">
+    <div>
+        <h1>Based in France.</h1>
+        <h1>Online Worldwide.</h1>
+        <h1><a href="mailto:hello@shinjipons.com">Say hello.</a></h1>
+    </div>
+    <ul class="monospace">
+        <!-- Maybe use the same copy email trick -->
+        <li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+        <li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://twitter.com/shinjipons/" target="_blank">x.com</a></li>
+        <li><a href="https://read.cv/shinjipons/" target="_blank">Read.cv</a></li>
+        <li><a href="https://layers.to/shinjipons/" target="_blank">Layers</a></li>
+        <li><a href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf">Resume</a></li>
+    </ul>
 </footer>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
