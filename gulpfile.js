@@ -13,6 +13,12 @@ function css() {
     .pipe(browserSync.stream());
 }
 
+// New: watch for changes in *.js files and reload the browser automatically
+function js() {
+  return gulp.src('*.js')
+    .pipe(browserSync.stream()); // let's try streaming tho it prollyh won't work
+}
+
 // Watch task to set up the watchers for *.html and *.css files
 function watch() {
   browserSync.init({
@@ -23,6 +29,7 @@ function watch() {
 
   gulp.watch('*.html', html);
   gulp.watch('*.css', css);
+  gulp.watch('*.js', js);
 }
 
 exports.watch = watch;
