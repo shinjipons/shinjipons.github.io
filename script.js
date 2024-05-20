@@ -2,8 +2,11 @@ const menu = document.getElementById('menuPage');
 const trigger = document.getElementById('menuTrigger');
 
 trigger.addEventListener('click', function() {
-    // console.log('working');
-    console.log(menu.classList)
+    menuTriggerClickHandler();
+})
+
+menu.addEventListener('click', function() {
+    menuTriggerClickHandler();
 })
 
 function menuTriggerClickHandler() {
