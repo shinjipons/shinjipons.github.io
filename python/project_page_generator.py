@@ -2,6 +2,10 @@ import os
 from pages_data import pages as pages_data
 
 # Read the shared footer from a file
+with open('python/shared_nav.html', 'r') as file:
+    shared_nav = file.read()
+
+# Read the shared footer from a file
 with open('python/shared_footer.html', 'r') as file:
     shared_footer = file.read()
 
@@ -31,6 +35,7 @@ def generate_page(page_key, page_data):
     first_image_tag, other_image_tags = get_image_tags(image_folder) if image_folder else ('', [])
 
     # Include the shared HTML block, the first image, and other image tags in the page data dictionary
+    page_data['shared_nav'] = shared_nav
     page_data['shared_footer'] = shared_footer
     page_data['first_image'] = first_image_tag
     page_data['other_images'] = '\n'.join(other_image_tags)
@@ -54,26 +59,7 @@ def generate_page(page_key, page_data):
 </head>
 <body>
 
-    <nav>
-        <div class="inner-section">
-            <div>
-                <a href="index.html">Close</a>
-            </div>
-            <div>
-                <p class="project-title">{title}</p>
-            </div>
-        </div>
-    </nav>
-
-    <section>
-        <div class="two-col-grid">
-            <div>
-                <p>{paragraph_1}</p>
-                <p>{paragraph_2}</p>
-            </div>
-            <div class="empty-cell"></div>
-        </div>
-    </section>
+    {shared_nav}
 
     <!-- The first image -->
     <section class="one-col-grid">
@@ -81,12 +67,15 @@ def generate_page(page_key, page_data):
     </section>
 
     <section>
-        <div class="two-col-grid">
-            <div>
+        <div class="eight-col-grid project-text-block">
+            <div class="project-text">
+                <h1 class="monospace">About</h1>
+                <p>{paragraph_1}</p>
+                <p>{paragraph_2}</p>
+                <h1 class="monospace">My role</h1>
                 <p>{paragraph_3}</p>
                 <p>{paragraph_4}</p>
             </div>
-            <div class="empty-cell"></div>
         </div>
     </section>
 
@@ -95,16 +84,9 @@ def generate_page(page_key, page_data):
         {other_images}
     </section>
 
-    <!-- Call to action -->
-    <section class="call-to-action-block__for-project">
-        <div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
-		</div>
-    </section>
-
     {shared_footer}
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
