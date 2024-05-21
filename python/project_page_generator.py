@@ -84,6 +84,15 @@ def generate_page(page_key, page_data):
         {other_images}
     </section>
 
+    <!-- Next project -->
+    <section class="next-project">
+        <a href="" id="next-project-link">
+            <h1>Next</h1>
+            <h1 id="next-project-title">Project Title</h1>
+            <img id="next-project-image" src="" alt="">
+        </a>
+    </section>
+
     {shared_footer}
 
     <script type="text/javascript" src="script.js"></script>
