@@ -16,26 +16,28 @@
 </head>
 <body>
 
+    <!-- The menu -->
     <nav>
-        <div class="inner-section">
-            <div>
-                <a href="index.html">Close</a>
-            </div>
-            <div>
-                <p class="project-title">Autodesk Alias SubD</p>
-            </div>
-        </div>
+        <a href="index.html">Shinji Pons</a>
+        <button id="menuTrigger"><img src="./images/menu-icon.svg" alt=""></button>
     </nav>
 
-    <section>
-        <div class="two-col-grid">
-            <div>
-                <p>Autodesk Alias is an industry-leading computer-aided design software application that empowers designers to create high-quality, manufacturable surfaces. This powerful tool is widely used in automotive and industrial design to bring aesthetically pleasing and feasible objects to life. As a digital product designer, I had the privilege of designing the user experience for the SubD toolset within Alias. My work ensured seamless integration with the existing NURBS tools, making the entire design process more efficient and intuitive.</p>
-                <p>The main issue with Alias is its steep learning curve. New users have to face a lack of available educational content to bridge their skill gap in NURBS modelling. This limited the growth of Alias.</p>
-            </div>
-            <div class="empty-cell"></div>
+    <div id="menuPage" class="menu menu-closed">
+        <div>
+            <h1 class="available-pill">Available for work</h1>
         </div>
-    </section>
+
+        <div>
+            <a href="index.html"><h1>Work</h1></a>
+            <a href="about.html"><h1>About</h1></a>
+            <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><h1>Resume</h1></a>
+        </div>
+
+        <div>
+            <h1>hello@shinjipons.com</h1>
+        </div>
+    </div>
+    <!-- End of menu -->
 
     <!-- The first image -->
     <section class="one-col-grid">
@@ -43,12 +45,15 @@
     </section>
 
     <section>
-        <div class="two-col-grid">
-            <div>
+        <div class="eight-col-grid project-text-block">
+            <div class="project-text">
+                <h1 class="monospace">About</h1>
+                <p>Autodesk Alias is an industry-leading computer-aided design software application that empowers designers to create high-quality, manufacturable surfaces. This powerful tool is widely used in automotive and industrial design to bring aesthetically pleasing and feasible objects to life. As a digital product designer, I had the privilege of designing the user experience for the SubD toolset within Alias. My work ensured seamless integration with the existing NURBS tools, making the entire design process more efficient and intuitive.</p>
+                <p>The main issue with Alias is its steep learning curve. New users have to face a lack of available educational content to bridge their skill gap in NURBS modelling. This limited the growth of Alias.</p>
+                <h1 class="monospace">My role</h1>
                 <p>Thanks to these tools that work just like subdivision surfaces, new users can produce 3D models that can be refined and reworked by more experienced users without ever exporting anything, or compromising on quality.</p>
                 <p>Many customers now enjoy shorter delivery times for their concept models and Alias is now more than ever horizontally integrated in the automotive design studio.</p>
             </div>
-            <div class="empty-cell"></div>
         </div>
     </section>
 
@@ -64,25 +69,33 @@
 		<img src="images/alias-subd/alias-subd-09.webp">
     </section>
 
-    <!-- Call to action -->
-    <section class="call-to-action-block__for-project">
-        <div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
-		</div>
+    <!-- Next project -->
+    <section class="next-project">
+        <a href="" id="next-project-link">
+            <h1>Next</h1>
+            <h1 id="next-project-title">Project Title</h1>
+            <img id="next-project-image" src="" alt="">
+        </a>
     </section>
 
-    <footer>
-    <a href="mailto:pretended_thicken957@magic.8shield.net">Email</a>
-    <a href="https://www.linkedin.com/in/shinjipons/" target="_blank">Linkedin</a>
-    <a href="https://twitter.com/shinjipons" target="_blank">Twitter</a>
-    <a href="https://shinjipons.gumroad.com/" target="_blank">Gumroad</a>
-    <a href="https://discord.gg/rxcJtffhE9" target="_blank">Discord</a>
-    <a href="https://read.cv/shinjipons" target="_blank">Read.cv</a>
-    <a href="https://layers.to/shinjipons" target="_blank">Layers</a>
-    <a href="./files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
-</footer>
+    <footer class="two-col-grid">
+        <div>
+            <h1>Located in France.</h1>
+            <h1>Accessible globally through the Internet.</h1>
+            <h1><a href="mailto:hello@shinjipons.com">Drop a greeting.</a></h1>
+        </div>
+        <ul class="monospace">
+            <!-- Maybe use the same copy email trick -->
+            <li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+            <li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/shinjipons/" target="_blank">x.com</a></li>
+            <li><a href="https://read.cv/shinjipons/" target="_blank">Read.cv</a></li>
+            <li><a href="https://layers.to/shinjipons/" target="_blank">Layers</a></li>
+            <li><a href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf">Resume</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>

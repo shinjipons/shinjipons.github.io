@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png" />
 	<meta property="og:title" content="Shinji Pons | Product Designer" />
-	<meta property="og:description" content="A multi-disciplinary experience designer for software applications" />
+	<meta property="og:description" content="A product designer for software applications" />
 	<meta property="og:url" content="https://www.shinjipons.com/" />
 	<meta property="og:type" content="website" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -16,105 +16,160 @@
 </head>
 <body>
 
+	<!-- The menu -->
 	<nav>
-		<div class="inner-section">
-			<div>
-				<a class="current-page" href="index.html">Shinji Pons</a>
-			</div>
-			<div class="menu">
-				<a href="about.html">About</a>
-				<a href="mailto:hello@shinjipons.com" class="menu-button">Email</a>
-			</div>
-		</div>
+		<a href="index.html">Shinji Pons</a>
+		<button id="menuTrigger"><img src="./images/menu-icon.svg" alt=""></button>
 	</nav>
 
-	<section class="hero">
-		<img src="/images/profile-photo.jpg" alt="Profile picture of Shinji Pons" class="profile-picture">
+	<div id="menuPage" class="menu menu-closed">
+		<div>
+			<h1 class="available-pill">Available for work</h1>
+		</div>
 
-		<h1 class="headline-text">
-			Meet Shinji: an innovative experience designer shaping tomorrow's digital landscapes through expertly crafted user interfaces, tools, workflows, websites, graphics, and 3D models.
-		</h1>
+		<div>
+			<a href="index.html"><h1>Work</h1></a>
+			<a href="about.html"><h1>About</h1></a>
+			<a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><h1>Resume</h1></a>
+		</div>
 
-		<div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
+		<div>
+			<h1>hello@shinjipons.com</h1>
+		</div>
+	</div>
+	<!-- End of menu -->
+
+    <section class="two-col-grid">
+		<div class="two-col-grid">
+			<div>
+				<h1 class="monospace">About</h1>
+				<p class="monospace">A product designer from France.</p>
+				<p class="monospace">I specialize in the design and user experience of 3D design applications for professionals.</p>
+				<button class="cta" id="copy-email">hello@shinjipons.com</button>
+			</div>
+		</div>
+		<div class="two-col-grid">
+			<div>
+				<ul class="monospace">Status
+					<li id="text-to-scramble" class="available-for-work"></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="monospace">Contact
+					<!-- javascript copy the email -->
+					<li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+					<li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="monospace">Online
+					<li><a href="https://read.cv/shinjipons" target="_blank">Read.cv</a></li>
+					<li><a href="https://layers.to/shinjipons" target="_blank">Layers.to</a></li>
+					<li><a href="https://twitter.com/shinjipons" target="_blank">x.com</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="monospace">Location
+					<li>France</li>
+					<li>Toulouse</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 
+	<!-- Portfolio items -->
 	<section class="two-col-grid">
-		<!-- In the future, generate this with Python -->
-		<a href="lego-digital-designer-pro.html" class="project-card">
-			<img src="images/ldd-pro/ldd-pro-01.webp">
-			<div class="overlay-text-container">
-				<p>LEGO Digital Designer Pro</p>
-			</div>
-		</a>
-		<a href="alias-subd.html" class="project-card">
-			<img src="images/alias-subd/alias-subd-01.webp">
-			<div class="overlay-text-container">
-				<p>Autodesk Alias SubD</p>
-			</div>
-		</a>
-		<a href="dynamo-for-alias.html" class="project-card">
-			<img src="images/dynamo-for-alias/dynamo-for-alias-01.webp">
-			<div class="overlay-text-container">
-				<p>Dynamo for Alias</p>
-			</div>
-		</a>
-		<a href="apple-letter.html" class="project-card">
-			<img src="images/apple-letter/apple-letter-01.webp">
-			<div class="overlay-text-container">
-				<p>Apple Bubble Letter</p>
-			</div>
-		</a>
-		<a href="ipod-shuffle.html" class="project-card">
-			<img src="images/ipod-shuffle/ipod-shuffle-01.webp" alt="">
-			<div class="overlay-text-container">
-				<p>iPod Shuffle in Alias</p>
-			</div>
-		</a>
-		<a href="corvette-model.html" class="project-card">
-			<img src="images/corvette/corvette-01.webp" alt="">
-			<div class="overlay-text-container">
-				<p>Corvette C6 in Blender</p>
-			</div>
-		</a>
-		<a href="louvre-abu-dhabi.html" class="project-card">
-			<img src="images/louvre-abu-dhabi/louvre-abu-dhabi-01.webp">
-			<div class="overlay-text-container">
-				<p>Louvre Abu Dhabi</p>
-			</div>
-		</a>
-		<a href="basiljs.html" class="project-card">
-			<img src="images/basiljs/basiljs-01.webp" alt="">
-			<div class="overlay-text-container">
-				<p>Computational Typography</p>
-			</div>
-		</a>
-		<a href="modulo.html" class="project-card">
-			<img src="images/modulo/modulo-01.webp" alt="">
-			<div class="overlay-text-container">
-				<p>Modulo Typeface</p>
-			</div>
-		</a>
-		<a href="david-bowie.html" class="project-card">
-			<img src="images/david-bowie/david-bowie-01.webp">
-			<div class="overlay-text-container">
-				<p>Nothing has Changed</p>
-			</div>
-		</a>
+
+		<div class="project">
+			<a href="lego-digital-designer-pro.html">
+				<img src="images/ldd-pro/ldd-pro-01.webp" alt="">
+				<h1>LEGO Digital Designer Pro</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="alias-subd.html">
+				<img src="images/alias-subd/alias-subd-01.webp" alt="">
+				<h1>Autodesk Alias SubD</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="basiljs.html">
+				<img src="images/basiljs/basiljs-01.webp" alt="">
+				<h1>InDesign Scripting</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="corvette-model.html">
+				<img src="images/corvette/corvette-01.webp" alt="">
+				<h1>Corvette C8 3D Model</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="david-bowie.html">
+				<img src="images/david-bowie/david-bowie-01.webp" alt="">
+				<h1>David Bowie</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="dynamo-for-alias.html">
+				<img src="images/dynamo-for-alias/dynamo-for-alias-01.webp" alt="">
+				<h1>Dynamo for Alias</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="ipod-shuffle.html">
+				<img src="images/ipod-shuffle/ipod-shuffle-01.webp" alt="">
+				<h1>iPod Shuffle Alias Model</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="louvre-abu-dhabi.html">
+				<img src="images/louvre-abu-dhabi/louvre-abu-dhabi-01.webp" alt="">
+				<h1>Louvre Abu Dhabi</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="modulo.html">
+				<img src="images/modulo/modulo-01.webp" alt="">
+				<h1>Modulo Typeface</h1>
+			</a>
+		</div>
+
+		<div class="project">
+			<a href="apple-letter.html">
+				<img src="images/apple-letter/apple-letter-01.webp" alt="">
+				<h1>Apple Bubble Letter</h1>
+			</a>
+		</div>
+
+
 	</section>
 
-	<footer>
-		<a href="mailto:pretended_thicken957@magic.8shield.net">Email</a>
-		<a href="https://www.linkedin.com/in/shinjipons/" target="_blank">Linkedin</a>
-		<a href="https://twitter.com/shinjipons" target="_blank">Twitter</a>
-		<a href="https://shinjipons.gumroad.com/" target="_blank">Gumroad</a>
-		<a href="https://discord.gg/rxcJtffhE9" target="_blank">Discord</a>
-		<a href="https://read.cv/shinjipons" target="_blank">Read.cv</a>
-		<a href="https://layers.to/shinjipons" target="_blank">Layers</a>
-		<a href="./files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+	<footer class="two-col-grid">
+		<div>
+			<h1>Located in France.</h1>
+            <h1>Accessible globally through the Internet.</h1>
+            <h1><a href="mailto:hello@shinjipons.com">Drop a greeting.</a></h1>
+		</div>
+		<ul class="monospace">
+			<!-- Maybe use the same copy email trick -->
+			<li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+			<li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+			<li><a href="https://twitter.com/shinjipons/" target="_blank">x.com</a></li>
+			<li><a href="https://read.cv/shinjipons/" target="_blank">Read.cv</a></li>
+			<li><a href="https://layers.to/shinjipons/" target="_blank">Layers</a></li>
+			<li><a href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf">Resume</a></li>
+		</ul>
 	</footer>
+
+	<script type="text/javascript" src="script.js"></script>
 
 </html>

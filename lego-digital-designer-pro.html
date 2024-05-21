@@ -16,26 +16,28 @@
 </head>
 <body>
 
+    <!-- The menu -->
     <nav>
-        <div class="inner-section">
-            <div>
-                <a href="index.html">Close</a>
-            </div>
-            <div>
-                <p class="project-title">LEGO Digital Designer Pro</p>
-            </div>
-        </div>
+        <a href="index.html">Shinji Pons</a>
+        <button id="menuTrigger"><img src="./images/menu-icon.svg" alt=""></button>
     </nav>
 
-    <section>
-        <div class="two-col-grid">
-            <div>
-                <p>While at the LEGO Group, I had the privilege of working on designing tools and workflows for LEGO's in-house software for designing virtual LEGO sets and authoring digital building instructions. Along with another product designer, I was tasked with improving efficiency and reducing costs for the business by streamlining processes and automating tedious tasks.</p>
-                <p>LEGO's design process is hindered by manual labor, as brick counting and instruction creation are time-consuming and error-prone. Streamlining these steps could improve efficiency and reduce risks to the business. The LEGO Group was in the transition phase from relying on an outdated Maya plugin to LEGO Digital Designer Pro. However, redesigning the entire pipeline came with huge challenges in supporting customers during this transition phase without disrupting the normal flow of business.</p>
-            </div>
-            <div class="empty-cell"></div>
+    <div id="menuPage" class="menu menu-closed">
+        <div>
+            <h1 class="available-pill">Available for work</h1>
         </div>
-    </section>
+
+        <div>
+            <a href="index.html"><h1>Work</h1></a>
+            <a href="about.html"><h1>About</h1></a>
+            <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><h1>Resume</h1></a>
+        </div>
+
+        <div>
+            <h1>hello@shinjipons.com</h1>
+        </div>
+    </div>
+    <!-- End of menu -->
 
     <!-- The first image -->
     <section class="one-col-grid">
@@ -43,12 +45,15 @@
     </section>
 
     <section>
-        <div class="two-col-grid">
-            <div>
+        <div class="eight-col-grid project-text-block">
+            <div class="project-text">
+                <h1 class="monospace">About</h1>
+                <p>While at the LEGO Group, I had the privilege of working on designing tools and workflows for LEGO's in-house software for designing virtual LEGO sets and authoring digital building instructions. Along with another product designer, I was tasked with improving efficiency and reducing costs for the business by streamlining processes and automating tedious tasks.</p>
+                <p>LEGO's design process is hindered by manual labor, as brick counting and instruction creation are time-consuming and error-prone. Streamlining these steps could improve efficiency and reduce risks to the business. The LEGO Group was in the transition phase from relying on an outdated Maya plugin to LEGO Digital Designer Pro. However, redesigning the entire pipeline came with huge challenges in supporting customers during this transition phase without disrupting the normal flow of business.</p>
+                <h1 class="monospace">My role</h1>
                 <p>The design process of LEGO sets and building instructions was ripe for automation. Many of the steps, such as determining the manufacturing cost of a set, detecting duplicate assemblies, and creating marketing material, were still done manually by humans instead of machines and software. The principle was to let computers do as much of the boring work as possible.</p>
                 <p>Some of my work ended up saving LEGO model designers a lot of time when building their sets. While most of the designs were not the most innovative, the basics were much more efficient and quicker than with the Maya plugin.</p>
             </div>
-            <div class="empty-cell"></div>
         </div>
     </section>
 
@@ -72,25 +77,33 @@
 		<img src="images/ldd-pro/ldd-pro-17.webp">
     </section>
 
-    <!-- Call to action -->
-    <section class="call-to-action-block__for-project">
-        <div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
-		</div>
+    <!-- Next project -->
+    <section class="next-project">
+        <a href="" id="next-project-link">
+            <h1>Next</h1>
+            <h1 id="next-project-title">Project Title</h1>
+            <img id="next-project-image" src="" alt="">
+        </a>
     </section>
 
-    <footer>
-    <a href="mailto:pretended_thicken957@magic.8shield.net">Email</a>
-    <a href="https://www.linkedin.com/in/shinjipons/" target="_blank">Linkedin</a>
-    <a href="https://twitter.com/shinjipons" target="_blank">Twitter</a>
-    <a href="https://shinjipons.gumroad.com/" target="_blank">Gumroad</a>
-    <a href="https://discord.gg/rxcJtffhE9" target="_blank">Discord</a>
-    <a href="https://read.cv/shinjipons" target="_blank">Read.cv</a>
-    <a href="https://layers.to/shinjipons" target="_blank">Layers</a>
-    <a href="./files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
-</footer>
+    <footer class="two-col-grid">
+        <div>
+            <h1>Located in France.</h1>
+            <h1>Accessible globally through the Internet.</h1>
+            <h1><a href="mailto:hello@shinjipons.com">Drop a greeting.</a></h1>
+        </div>
+        <ul class="monospace">
+            <!-- Maybe use the same copy email trick -->
+            <li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+            <li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/shinjipons/" target="_blank">x.com</a></li>
+            <li><a href="https://read.cv/shinjipons/" target="_blank">Read.cv</a></li>
+            <li><a href="https://layers.to/shinjipons/" target="_blank">Layers</a></li>
+            <li><a href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf">Resume</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>

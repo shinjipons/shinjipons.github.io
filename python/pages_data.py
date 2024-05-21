@@ -108,7 +108,7 @@ pages = {
         "paragraph_3": "I had to restart making all 168 font files five or six times after realizing that I fell in technical pitfalls such as using incorrect UPM sizes, path directions, undesired optical corrections in Glyphs, forgetting glyphs...",
         "paragraph_4": "This project made realize the amount of work, care and detail that goes into making professional grade typefaces. More importantly, it gave me my first opportunity to learn about Bézier splines, which are important in Alias."
     },
-    "corvette-model": {
+    "corvette": {
         "title": "High quality 3D model of a Chevrolet Corvette C6",
         "tagline": "Modelling a full car in Blender",
         "client": "Personal Project",
@@ -121,6 +121,8 @@ pages = {
         "paragraph_4": "Compared to Alias, Blender was quicker and more productive at the beginning of the process. Modelling and shading all surfaces in one software package is great but I did miss the flawless quality of NURBS surfaces."
     }
 }
+
+# in vase I need to add another new project...
 
 # "david-bowie": {
 #     "title": "",

@@ -16,26 +16,28 @@
 </head>
 <body>
 
+    <!-- The menu -->
     <nav>
-        <div class="inner-section">
-            <div>
-                <a href="index.html">Close</a>
-            </div>
-            <div>
-                <p class="project-title">Nothing has Changed</p>
-            </div>
-        </div>
+        <a href="index.html">Shinji Pons</a>
+        <button id="menuTrigger"><img src="./images/menu-icon.svg" alt=""></button>
     </nav>
 
-    <section>
-        <div class="two-col-grid">
-            <div>
-                <p>During my internship at Barnbrook, I was exposed to a professional environment known for its design expertise. The experience was a mix of excitement and learning, with each day bringing new insights into the design industry.</p>
-                <p>My primary task involved artworking for a David Bowie album. This role, while introductory, taught me the importance of precision in layout adjustments and visual alignment, essential for conveying the album's themes.</p>
-            </div>
-            <div class="empty-cell"></div>
+    <div id="menuPage" class="menu menu-closed">
+        <div>
+            <h1 class="available-pill">Available for work</h1>
         </div>
-    </section>
+
+        <div>
+            <a href="index.html"><h1>Work</h1></a>
+            <a href="about.html"><h1>About</h1></a>
+            <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><h1>Resume</h1></a>
+        </div>
+
+        <div>
+            <h1>hello@shinjipons.com</h1>
+        </div>
+    </div>
+    <!-- End of menu -->
 
     <!-- The first image -->
     <section class="one-col-grid">
@@ -43,12 +45,15 @@
     </section>
 
     <section>
-        <div class="two-col-grid">
-            <div>
+        <div class="eight-col-grid project-text-block">
+            <div class="project-text">
+                <h1 class="monospace">About</h1>
+                <p>During my internship at Barnbrook, I was exposed to a professional environment known for its design expertise. The experience was a mix of excitement and learning, with each day bringing new insights into the design industry.</p>
+                <p>My primary task involved artworking for a David Bowie album. This role, while introductory, taught me the importance of precision in layout adjustments and visual alignment, essential for conveying the album's themes.</p>
+                <h1 class="monospace">My role</h1>
                 <p>In this role, I gained insight into the design process, observing how ideas transitioned from concepts to finalized artwork. Contributing to a project associated with a renowned artist like Bowie was a valuable learning experience.</p>
                 <p>This internship was an important step in my career, emphasizing the significance of detail and teamwork in design. It has motivated me to further my skills and pursue my career with renewed focus.</p>
             </div>
-            <div class="empty-cell"></div>
         </div>
     </section>
 
@@ -57,25 +62,33 @@
         <img src="images/david-bowie/david-bowie-02.webp">
     </section>
 
-    <!-- Call to action -->
-    <section class="call-to-action-block__for-project">
-        <div class="call-to-action-block">
-			<a href="mailto:pretended_thicken957@magic.8shield.net">
-				<button class="cta-v2">Get in touch</button>
-			</a>
-		</div>
+    <!-- Next project -->
+    <section class="next-project">
+        <a href="" id="next-project-link">
+            <h1>Next</h1>
+            <h1 id="next-project-title">Project Title</h1>
+            <img id="next-project-image" src="" alt="">
+        </a>
     </section>
 
-    <footer>
-    <a href="mailto:pretended_thicken957@magic.8shield.net">Email</a>
-    <a href="https://www.linkedin.com/in/shinjipons/" target="_blank">Linkedin</a>
-    <a href="https://twitter.com/shinjipons" target="_blank">Twitter</a>
-    <a href="https://shinjipons.gumroad.com/" target="_blank">Gumroad</a>
-    <a href="https://discord.gg/rxcJtffhE9" target="_blank">Discord</a>
-    <a href="https://read.cv/shinjipons" target="_blank">Read.cv</a>
-    <a href="https://layers.to/shinjipons" target="_blank">Layers</a>
-    <a href="./files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
-</footer>
+    <footer class="two-col-grid">
+        <div>
+            <h1>Located in France.</h1>
+            <h1>Accessible globally through the Internet.</h1>
+            <h1><a href="mailto:hello@shinjipons.com">Drop a greeting.</a></h1>
+        </div>
+        <ul class="monospace">
+            <!-- Maybe use the same copy email trick -->
+            <li><a href="mailto:hello@shinjipons.com">E-mail</a></li>
+            <li><a href="https://linkedin.com/in/shinjipons/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/shinjipons/" target="_blank">x.com</a></li>
+            <li><a href="https://read.cv/shinjipons/" target="_blank">Read.cv</a></li>
+            <li><a href="https://layers.to/shinjipons/" target="_blank">Layers</a></li>
+            <li><a href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf">Resume</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
