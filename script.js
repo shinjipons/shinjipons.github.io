@@ -6,7 +6,10 @@ const trigger = document.getElementById('menuTrigger');
 var copyEmailButton = document.getElementById('copy-email');
 var myEmailAddress = 'hello@shinjipons.com';
 
-copyEmailButton.addEventListener('click', clickToCopyEmail);
+if (copyEmailButton) {
+    copyEmailButton.addEventListener('click', clickToCopyEmail);
+}
+
 
 function clickToCopyEmail() {
     navigator.clipboard.writeText(myEmailAddress)
