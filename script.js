@@ -61,13 +61,9 @@ if (textToModify) {
 // Open and close the menu
 
 const menu = document.getElementById('menu-page');
-const trigger = document.getElementById('menu-trigger');
+const menuTrigger = document.getElementById('menu-trigger');
 
-trigger.addEventListener('click', function() {
-    menuTriggerClickHandler();
-})
-
-menu.addEventListener('click', function() {
+menuTrigger.addEventListener('click', function() {
     menuTriggerClickHandler();
 })
 
@@ -80,15 +76,11 @@ function menuTriggerClickHandler() {
 
         // make the html non scrollable
         document.body.style.overflow = 'hidden';
-    } else {
-        // but if you click a nav menu item, ignore the class removing and adding since it's not needed
-        if (target.tagName === 'a') {
-            console.log('you clicked on an <a> tag');
-        } else {
-            // then "close" the menu by adding and removing the right class
-            menu.classList.remove('menu-open');
-            menu.classList.add('menu-closed');
-        }
+
+    } else if (menu.classList.contains('menu-open')) {
+        // then close the menu back down
+        menu.classList.remove('menu-open');
+        menu.classList.add('menu-closed');
 
         // make the html scrollable again
         document.body.style.overflow = 'auto';

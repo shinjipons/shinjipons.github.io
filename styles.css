@@ -207,6 +207,7 @@ nav > button {
     height: 48px;
     background: transparent;
     border: none;
+    z-index: 999;
 }
 ul.monospace {
     padding-left: 0px;
