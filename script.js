@@ -1,5 +1,3 @@
-const menu = document.getElementById('menuPage');
-const trigger = document.getElementById('menuTrigger');
 
 // Copy my email address to the clipboard when clicking a button
 
@@ -13,13 +11,7 @@ if (copyEmailButton) {
 function clickToCopyEmail() {
     navigator.clipboard.writeText(myEmailAddress)
     .then(function() {
-        console.log('Text copied successfully');
         copyEmailButton.innerHTML = 'Copied!';
-
-        // wait one second, then restore the original button label
-        // setTimeout(() => {
-        //     copyEmailButton.innerHTML = myEmailAddress;
-        // }, 1000);
 
         // or replace the original text on mouse leave
         copyEmailButton.addEventListener('mouseleave', function() {
@@ -37,7 +29,7 @@ const textToModify = document.getElementById('text-to-scramble');
 var finalMessage = 'available for work';
 var characters = '-abcdefghijklmnopqrstuvwxyz0123456789, [](){}';
 
-function messageInitializer(inputMessage) {
+function messageInitializer() {
     if (textToModify) {
         var initialMessage = "";
         for (var i = 0; i < finalMessage.length; i++) {
@@ -71,7 +63,10 @@ if (textToModify) {
     }, 3);
 }
 
-// Menu open and close code
+// Open and close the menu
+
+const menu = document.getElementById('menuPage');
+const trigger = document.getElementById('menuTrigger');
 
 trigger.addEventListener('click', function() {
     menuTriggerClickHandler();
@@ -87,10 +82,16 @@ function menuTriggerClickHandler() {
         // then "open" the menu by adding and removing the right class
         menu.classList.remove('menu-closed');
         menu.classList.add('menu-open');
+
+        // make the html non scrollable
+        document.body.style.overflow = 'hidden';
     } else {
         // then "close" the menu by adding and removing the right class
         menu.classList.remove('menu-open');
         menu.classList.add('menu-closed');
+
+        // make the html scrollable again
+        document.body.style.overflow = 'auto';
     }
 }
 
