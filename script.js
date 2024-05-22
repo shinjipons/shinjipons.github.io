@@ -5,7 +5,7 @@ var copyEmailButton = document.getElementById('copy-email');
 var myEmailAddress = 'hello@shinjipons.com';
 
 if (copyEmailButton) {
-    copyEmailButton.addEventListener('pointerdown', clickToCopyEmail);
+    copyEmailButton.addEventListener('click', clickToCopyEmail);
 
     // replace the original text on mouse leave
     copyEmailButton.addEventListener('mouseleave', function() {
@@ -14,13 +14,7 @@ if (copyEmailButton) {
 }
 
 function clickToCopyEmail() {
-    navigator.clipboard.writeText(myEmailAddress)
-    .then(function() {
-        copyEmailButton.innerHTML = 'Copied!';
-    })
-    .catch(function(err) {
-        console.log('Unable to copy text: ', err);
-    });
+    navigator.clipboard.writeText(copyEmailButton.innerHTML)
 }
 
 // document.addEventListener('DOMContentLoaded', function() {
