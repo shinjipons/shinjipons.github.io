@@ -10,10 +10,14 @@ if (copyEmailButton) {
     copyEmailButton.addEventListener('mouseleave', function() {
         copyEmailButton.innerHTML = myEmailAddress;
     })
+    copyEmailButton.addEventListener('pointerup', function() {
+        copyEmailButton.innerHTML = myEmailAddress;
+    })
 }
 
 function clickToCopyEmail() {
     navigator.clipboard.writeText(copyEmailButton.innerHTML)
+    copyEmailButton.innerHTML = 'copied!'
 }
 
 // Create a fake decrypting effect for my work status
