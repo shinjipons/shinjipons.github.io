@@ -355,7 +355,7 @@ button.cta:hover {
 /* project.html */
 .project-text-block > .project-text {
     grid-column-start: 5;
-    grid-column-end: 8;
+    grid-column-end:   9;
 }
 .next-project {
     padding-bottom: 0px;
