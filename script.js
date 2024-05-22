@@ -1,4 +1,3 @@
-
 // Copy my email address to the clipboard when clicking a button
 
 var copyEmailButton = document.getElementById('copy-email');
@@ -16,35 +15,6 @@ if (copyEmailButton) {
 function clickToCopyEmail() {
     navigator.clipboard.writeText(copyEmailButton.innerHTML)
 }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     var copyEmailButton = document.getElementById('copy-email');
-//     var myEmailAddress = 'hello@shinjipons.com';
-//     var originalText = copyEmailButton ? copyEmailButton.innerHTML : '';
-
-//     if (copyEmailButton) {
-//         copyEmailButton.addEventListener('pointerdown', clickToCopyEmail);
-
-//         copyEmailButton.addEventListener('mouseleave', function() {
-//             copyEmailButton.innerHTML = originalText;
-//         });
-//     }
-
-//     function clickToCopyEmail() {
-//         // Ensure the clipboard API is available
-//         if (navigator.clipboard && navigator.clipboard.writeText) {
-//             // Directly call the clipboard writeText method within the pointerdown event
-//             navigator.clipboard.writeText(myEmailAddress)
-//             .then(function() {
-//                 copyEmailButton.innerHTML = 'Copied!';
-//             })
-//             .catch(function(err) {
-//                 console.error('Unable to copy text: ', err);
-//             });
-//         }
-//     }
-// });
-
 
 // Create a fake decrypting effect for my work status
 
