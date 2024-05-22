@@ -10,11 +10,21 @@ if (copyEmailButton) {
     copyEmailButton.addEventListener('click', clickToCopyEmail);
 }
 
-
 function clickToCopyEmail() {
     navigator.clipboard.writeText(myEmailAddress)
     .then(function() {
         console.log('Text copied successfully');
+        copyEmailButton.innerHTML = 'Copied!';
+
+        // wait one second, then restore the original button label
+        // setTimeout(() => {
+        //     copyEmailButton.innerHTML = myEmailAddress;
+        // }, 1000);
+
+        // or replace the original text on mouse leave
+        copyEmailButton.addEventListener('mouseleave', function() {
+            copyEmailButton.innerHTML = myEmailAddress;
+        })
     })
     .catch(function(err) {
         console.log('Unable to copy text: ', err);
