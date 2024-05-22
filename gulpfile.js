@@ -24,7 +24,8 @@ function watch() {
   browserSync.init({
     server: {
       baseDir: './'
-    }
+    },
+    notify: false
   });
 
   gulp.watch('*.html', html);
