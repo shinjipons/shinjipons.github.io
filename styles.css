@@ -44,6 +44,9 @@
     --grid-gap: 8px;
 
     /* overall widths */
+    --width-desktop-xl: 100%;
+    --padding-w-desktop-xl: 20%;
+
     --width-desktop: 100%;
     --padding-w-desktop: 15%;
 
@@ -136,7 +139,7 @@ h1, h2, h3, h4, p {
 /* everywhere */
 .menu {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     position: fixed;
     top: 0px;
@@ -146,7 +149,7 @@ h1, h2, h3, h4, p {
     background: var(--background-color);
     z-index: 99;
     color: var(--primary-color);
-    padding: 32px;
+    /* padding: 128px; */
     user-select: none;
     overflow: hidden;
 }
@@ -201,13 +204,13 @@ nav {
     font-size: var(--monospace-desktop);
     color: var(--primary-color);
     text-transform: uppercase;
+    z-index: 998;
 }
 nav > button {
     width: 48px;
     height: 48px;
     background: transparent;
     border: none;
-    z-index: 999;
 }
 ul.monospace {
     padding-left: 0px;
@@ -402,6 +405,17 @@ button.cta:hover {
 }
 .desktop-and-tablet {
     display: inline-block;
+}
+
+/* Extra wide monitor */
+@media screen and (min-width: 2400px) {
+    section, nav, footer {
+        padding-right: var(--padding-w-desktop-xl);
+        padding-left:  var(--padding-w-desktop-xl);
+    }
+    .project > a > img {
+        height: 400px;
+    }
 }
 
 /* Tablet styles */
