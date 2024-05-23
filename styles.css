@@ -17,13 +17,15 @@
     --monospace-weight: 500;
 
     /* font sizes */
-    --p-desktop: 14px;
-    --p-tablet:  17px;
-    --p-mobile:  14px;
+    --p-desktop-xl: 16px;
+    --p-desktop:    14px;
+    --p-tablet:     17px;
+    --p-mobile:     14px;
 
-    --monospace-desktop: 12px;
-    --monospace-tablet:  12px;
-    --monospace-mobile:  12px;
+    --monospace-desktop-xl: 14px;
+    --monospace-desktop:    12px;
+    --monospace-tablet:     12px;
+    --monospace-mobile:     12px;
 
     --h1-desktop: 20px;
     --h1-tablet:  22px;
@@ -416,6 +418,12 @@ button.cta:hover {
     .project > a > img {
         height: 400px;
     }
+    p {
+        font-size: var(--p-desktop-xl);
+    }
+    nav, .monospace {
+        font-size: var(--monospace-desktop-xl);
+    }
 }
 
 /* Tablet styles */
@@ -427,7 +435,7 @@ button.cta:hover {
         padding-right: var(--padding-w-tablet);
         padding-left:  var(--padding-w-tablet);
     }
-    nav {
+    nav, .monospace {
         font-size: var(--monospace-tablet);
     }
     section {
@@ -453,9 +461,6 @@ button.cta:hover {
     .desktop-and-tablet {
         display: inline-block;
     }
-    .monospace {
-        font-size: var(--monospace-tablet);
-    }
     .headline {
         font-size: var(--headline-tablet);
     }
@@ -470,7 +475,7 @@ button.cta:hover {
         padding-right: var(--padding-w-mobile);
         padding-left:  var(--padding-w-mobile);
     }
-    nav {
+    nav, .monospace {
         font-size: var(--monospace-mobile);
     }
     section {
@@ -504,9 +509,6 @@ button.cta:hover {
     .project-text-block > .project-text, .about-me > div {
         grid-column-start: 1;
         grid-column-end:   9;
-    }
-    .monospace {
-        font-size: var(--monospace-mobile);
     }
     .one-col-grid,
     .two-col-grid,
