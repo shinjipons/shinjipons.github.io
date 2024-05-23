@@ -149,7 +149,6 @@ function addNextProject() {
     var path = window.location.pathname;
     var filename = path.split('/').pop();
     var randomIndex = Math.floor(Math.random() * projects.length);
-    var indexToSkip = 0;
 
     // catch error or check that the .next-project class exists
     if (link) {
