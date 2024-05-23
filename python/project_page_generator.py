@@ -46,16 +46,29 @@ def generate_page(page_key, page_data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>Shinji Pons - {title}</title>
+    <title>Shinji Pons | Product Designer of 3D Tools & Beyond | {title}</title>
+    <meta name="description" content="{description}">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://shinjipons.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond | {title}">
+    <meta property="og:description" content="{description}">
+    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="shinjipons.com">
+    <meta property="twitter:url" content="https://shinjipons.com">
+    <meta name="twitter:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond | {title}">
+    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.png">
+
+    <!-- Favicon Tags -->
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-	<link rel="apple-touch-icon" sizes="180x180"    href="/icons/favicon-ios.png">
-    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png" />
-	<meta property="og:title" content="Shinji Pons | Product Designer | {title}" />
-	<meta property="og:description" content="A multi-disciplinary experience designer for software applications" />
-	<meta property="og:url" content="https://www.shinjipons.com/" />
-	<meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180"    href="/icons/favicon-ios.png">
 </head>
 <body>
 
