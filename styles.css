@@ -94,6 +94,7 @@ html {
     background: var(--background-color);
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 body {
     display: flex;
@@ -295,6 +296,8 @@ li > a {
     font-size: var(--headline-desktop);
     font-weight: var(--headline-weight);
     color: var(--accent-color);
+    text-indent: 10ch;
+    orphans: 3;
 }
 
 /* index.html */
@@ -366,10 +369,8 @@ li > a {
     height: 2px;
     margin-top: 4px;
     margin-bottom: 14px;
-    background: linear-gradient(90deg,
-    var(--accent-color) 0%,
-    var(--background-color) 40% 60%,
-    var(--accent-color) 100%);
+    background: linear-gradient(90deg, var(--accent-color) 0%, var(--background-color) 40% 60%, var(--accent-color) 100%);
+    border-radius: 99px;
 }
 .experience > .two-col-grid:last-child::after {
     display: none;
