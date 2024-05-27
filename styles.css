@@ -310,7 +310,7 @@ li > a {
 .cta-block {
     grid-column: span 3;
 }
-button.cta {
+.cta {
     width: 100%;
     color: var(--accent-color);
     font-family: var(--monospace-font);
@@ -322,11 +322,18 @@ button.cta {
     padding-top:    16px;
     padding-bottom: 16px;
     line-height: 100%;
+    transition: none;
 }
-button.cta:hover {
+.cta:hover {
     background: var(--accent-color);
     color: var(--background-color);
-    /* outline: 2px solid var(--available-color) */
+}
+.cta > a {
+    color: var(--accent-color);
+    transition: none;
+}
+.cta:hover > a {
+    color: var(--background-color);
 }
 .project > a > h1 {
     margin-top: 8px;

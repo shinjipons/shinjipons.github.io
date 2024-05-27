@@ -1,22 +1,22 @@
 // Copy my email address to the clipboard when clicking a button
 
-var copyEmailButton = document.getElementById('copy-email');
-var myEmailAddress = 'hello@shinjipons.com';
+// var copyEmailButton = document.getElementById('copy-email');
+// var myEmailAddress = 'hello@shinjipons.com';
 
-if (copyEmailButton) {
-    copyEmailButton.addEventListener('click', clickToCopyEmail);
-    copyEmailButton.addEventListener('touchstart', clickToCopyEmail);
+// if (copyEmailButton) {
+//     copyEmailButton.addEventListener('click', clickToCopyEmail);
+//     copyEmailButton.addEventListener('touchstart', clickToCopyEmail);
 
-    // replace the original text on mouse leave
-    copyEmailButton.addEventListener('mouseleave', function() {
-        copyEmailButton.innerHTML = myEmailAddress;
-    })
-}
+//     // replace the original text on mouse leave
+//     copyEmailButton.addEventListener('mouseleave', function() {
+//         copyEmailButton.innerHTML = myEmailAddress;
+//     })
+// }
 
-function clickToCopyEmail() {
-    navigator.clipboard.writeText(copyEmailButton.innerHTML)
-    copyEmailButton.innerHTML = 'copied!'
-}
+// function clickToCopyEmail() {
+//     navigator.clipboard.writeText(copyEmailButton.innerHTML)
+//     copyEmailButton.innerHTML = 'copied!';
+// }
 
 // Create a fake decrypting effect for my work status
 
