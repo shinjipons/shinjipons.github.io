@@ -55,7 +55,7 @@ def generate_page(page_key, page_data):
     <meta property="og:type" content="website">
     <meta property="og:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond | {title}">
     <meta property="og:description" content="{description}">
-    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png">
+    <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.jpg">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -63,7 +63,7 @@ def generate_page(page_key, page_data):
     <meta property="twitter:url" content="https://shinjipons.com">
     <meta name="twitter:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond | {title}">
     <meta name="twitter:description" content="{description}">
-    <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.png">
+    <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.jpg">
 
     <!-- Favicon Tags -->
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
