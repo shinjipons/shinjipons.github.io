@@ -35,9 +35,10 @@
     --h1-menu-tablet:  48px;
     --h1-menu-mobile:  48px;
 
-    --headline-desktop: 50px;
-    --headline-tablet:  50px;
-    --headline-mobile:  40px;
+    --headline-desktop-xl: 50px;
+    --headline-desktop:    40px;
+    --headline-tablet:     30px;
+    --headline-mobile:     18px;
 
     /* spacings */
     --spacing-desktop: 40px;
@@ -431,6 +432,9 @@ li > a {
     }
     nav, .monospace {
         font-size: var(--monospace-desktop-xl);
+    }
+    .headline {
+        font-size: var(--headline-desktop-xl);
     }
 }
 
