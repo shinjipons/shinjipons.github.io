@@ -384,8 +384,8 @@ li > a {
 
 /* project.html */
 .project-text-block > .project-text {
-    grid-column-start: 5;
-    grid-column-end:   9;
+    grid-column-start: 3;
+    grid-column-end:   7;
 }
 .next-project {
     padding-bottom: 0px;
