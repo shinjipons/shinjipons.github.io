@@ -125,10 +125,23 @@ pages = {
         "year": "2022",
         "description": "Explore Shinji Pons' high-quality 3D model of the Chevrolet Corvette C6, created using advanced modeling techniques in Blender. Learn how he mastered surface quality and polygonal modeling through self-paced learning.",
         "image_folder": "images/corvette",
-        "paragraph_1": "I took a self-learning course called Master Car Creation in Blender by CGMasters. The course focuses on advanced modelling techniques to achieve the highest quality in terms of reflections. By using a guide mesh and Blender’s modifier stack, it is possible to get excellent looking surfaces by only using SubDs. I completed this self-paced course during my free time between Spring 2021 and Spring 2022.",
+        "paragraph_1": "I took a self-learning course called Master Car Creation in Blender by CGMasters. The course focuses on advanced modelling techniques to achieve the highest quality in terms of reflections. By using a guide mesh and Blender's modifier stack, it is possible to get excellent looking surfaces by only using SubDs. I completed this self-paced course during my free time between Spring 2021 and Spring 2022.",
         "paragraph_2": "After working on the Autodesk Alias SubD toolset, I wanted to improve my polygonal modelling skills. While poly models are more easily editable, their surface quality is perceptibly lower than with NURBS surfaces.",
         "paragraph_3": "This course teaches a technique which consists of using a lower res mesh which is shrink-wrapped to a high res guide mesh. This achieves great surface quality while retaining the flexibility of polygonal modelling.",
         "paragraph_4": "Compared to Alias, Blender was quicker and more productive at the beginning of the process. Modelling and shading all surfaces in one software package is great but I did miss the flawless quality of NURBS surfaces."
+    },
+    "midjourney": {
+        "title": "My Midjourney portfolio",
+        "tagline": "Learning to use Midjourney",
+        "client": "Personal Project",
+        "type": "AI Imagery",
+        "year": "2024",
+        "description": "Explore Shinji's collection of images generated using Midjourney.",
+        "image_folder": "images/midjourney",
+        "paragraph_1": "This is an evergrowing compilation of my images generated using Midjourney.",
+        "paragraph_2": "More images will be added on a regular basis.",
+        "paragraph_3": "I just type words.",
+        "paragraph_4": "And pretty images come out."
     }
 }
 
