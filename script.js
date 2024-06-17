@@ -1,7 +1,7 @@
 // Copy my email address to the clipboard when clicking a button
 
 // var copyEmailButton = document.getElementById('copy-email');
-// var myEmailAddress = 'hello@shinjipons.com';
+// var myEmailAddress = 'contact@shinjipons.com';
 
 // if (copyEmailButton) {
 //     copyEmailButton.addEventListener('click', clickToCopyEmail);
