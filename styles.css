@@ -191,7 +191,7 @@ a {
     transition: var(--transition);
 }
 a:hover {
-    color: white;
+    color: var(--available-color);
 }
 nav {
     display: flex;
