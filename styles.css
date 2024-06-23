@@ -225,7 +225,6 @@ li:first-child {
     margin-top: 14px;
 }
 footer {
-    background: #262626;
     background: var(--tertiary-color);
     display: flex;
     flex-direction: row;
