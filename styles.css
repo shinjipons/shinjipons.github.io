@@ -2,6 +2,7 @@
     /* dark mode */
     --primary-color:    #DBDBDB;
     --secondary-color: #ABABAB;
+    --tertiary-color: #262626;
     --accent-color: #CBC3A7;
     --background-color: rgba(22, 22, 22, 1);
     --background-color-nav: rgba(22, 22, 22, 0.8);
@@ -225,6 +226,7 @@ li:first-child {
 }
 footer {
     background: #262626;
+    background: var(--tertiary-color);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
