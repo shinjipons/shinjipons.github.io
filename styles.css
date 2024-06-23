@@ -2,9 +2,12 @@
     /* dark mode */
     --primary-color:    #DBDBDB;
     --secondary-color: #ABABAB;
+    --tertiary-color: #262626;
     --accent-color: #CBC3A7;
-    --background-color: #161616;
-    --available-color: #00FF85;
+    --background-color: rgba(22, 22, 22, 1);
+    --background-color-nav: rgba(22, 22, 22, 0.5);
+    --available-color: rgb(0, 255, 133);
+    --available-color-nav-button: rgba(0, 255, 133, 0.2);
 
     /* fonts */
     --monospace-font: "Geist Mono Medium";
@@ -42,9 +45,10 @@
 
     /* spacings */
     --spacing-desktop: 80px;
+    --spacing-desktop-double: 160px;
     --spacing-tablet:  40px;
-    --spacing-mobile:  24px;
-    --grid-gap: 8px;
+    --spacing-mobile:  40px;
+    --grid-gap: 16px;
 
     /* overall widths */
     --width-desktop-xl: 100%;
@@ -110,22 +114,14 @@ h1, h2, h3, h4, p {
 }
 
 /* Grids */
-.one-col-grid,
-.one-col-grid-mobile,
-.two-col-grid,
-.two-col-grid-mobile,
-.three-col-grid,
-.three-col-grid-mobile,
-.four-col-grid,
-.four-col-grid-mobile,
-.five-col-grid,
-.five-col-grid-mobile,
-.six-col-grid,
-.six-col-grid-mobile,
-.seven-col-grid,
-.seven-col-grid-mobile,
-.eight-col-grid,
-.eight-col-grid-mobile {
+.one-col-grid,.one-col-grid-mobile, .one-col-grid-tablet,
+.two-col-grid,.two-col-grid-tablet, .two-col-grid-mobile,
+.three-col-grid,.three-col-grid-tablet, .three-col-grid-mobile,
+.four-col-grid,.four-col-grid-tablet, .four-col-grid-mobile,
+.five-col-grid,.five-col-grid-tablet, .five-col-grid-mobile,
+.six-col-grid,.six-col-grid-tablet, .six-col-grid-mobile,
+.seven-col-grid,.seven-col-grid-tablet, .seven-col-grid-mobile,
+.eight-col-grid,.eight-col-grid-tablet, .eight-col-grid-mobile {
     display: grid;
     grid-column-gap: var(--grid-gap);
     grid-row-gap:    var(--grid-gap);
@@ -153,7 +149,6 @@ h1, h2, h3, h4, p {
     background: var(--background-color);
     z-index: 99;
     color: var(--primary-color);
-    /* padding: 128px; */
     user-select: none;
     overflow: hidden;
 }
@@ -193,29 +188,42 @@ a {
 a:hover {
     color: var(--available-color);
 }
+/* navigation */
 nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    width: var(--width-desktop);
-    height: 80px;
-    padding-left: var(--padding-w-desktop);
-    padding-right: var(--padding-w-desktop);
-    background: var(--background-color);
-    font-family: var(--monospace-font);
-    font-size: var(--monospace-desktop);
-    color: var(--primary-color);
-    text-transform: uppercase;
-    z-index: 998;
+    bottom: 32px;
+    background: var(--background-color-nav);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 10px;
+    padding: 4px;
+    gap:     4px;
+    width: 400px;
 }
-nav > button {
-    width: 48px;
-    height: 48px;
+nav > div > a > button {
     background: transparent;
+    outline: none;
     border: none;
+    padding: var(--grid-gap);
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 6px;
 }
+nav > div > a:hover > button {
+    background: var(--tertiary-color);
+    /* color: var(--primary-color) !important; */
+}
+.button-special {
+    background: var(--available-color-nav-button);
+    color: var(--available-color) !important;
+}
+.button-special:hover {
+    background: var(--available-color);
+    color: var(--background-color) !important;
+}
+
 ul.monospace {
     padding-left: 0px;
     color: var(--accent-color);
@@ -229,7 +237,7 @@ li:first-child {
     margin-top: 14px;
 }
 footer {
-    background: #262626;
+    background: var(--tertiary-color);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -239,7 +247,7 @@ footer {
     padding-left:   var(--padding-w-desktop);
     padding-right:  var(--padding-w-desktop);
     padding-top:    var(--spacing-desktop);
-    padding-bottom: var(--spacing-desktop);
+    padding-bottom: var(--spacing-desktop-double);
     /* make the footer stick to the bottom */
     margin-top: auto;
 }
@@ -402,7 +410,7 @@ li > a {
 
 /* Extra wide monitor */
 @media screen and (min-width: 2400px) {
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-desktop-xl);
         padding-left:  var(--padding-w-desktop-xl);
     }
@@ -411,6 +419,9 @@ li > a {
     }
     p {
         font-size: var(--p-desktop-xl);
+    }
+    nav {
+        width: 440px;
     }
     nav, .monospace {
         font-size: var(--monospace-desktop-xl);
@@ -425,12 +436,15 @@ li > a {
     body, section, nav, footer {
         width: var(--width-tablet);
     }
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-tablet);
         padding-left:  var(--padding-w-tablet);
     }
     nav, .monospace {
         font-size: var(--monospace-tablet);
+    }
+    nav {
+        width: 400px;
     }
     section, footer {
         padding-top:    var(--spacing-tablet);
@@ -458,6 +472,14 @@ li > a {
     .headline {
         font-size: var(--headline-tablet);
     }
+    .one-col-grid-tablet   {grid-template-columns: repeat(1, 1fr);}
+    .two-col-grid-tablet   {grid-template-columns: repeat(2, 1fr);}
+    .three-col-grid-tablet {grid-template-columns: repeat(3, 1fr);}
+    .four-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
+    .five-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
+    .six-col-grid-tablet   {grid-template-columns: repeat(6, 1fr);}
+    .seven-col-grid-tablet {grid-template-columns: repeat(7, 1fr);}
+    .eight-col-grid-tablet {grid-template-columns: repeat(8, 1fr);}
 }
 
 /* Mobile styles */
@@ -465,12 +487,17 @@ li > a {
     body, section, nav, footer {
         width: var(--width-mobile);
     }
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-mobile);
         padding-left:  var(--padding-w-mobile);
     }
     nav, .monospace {
         font-size: var(--monospace-mobile);
+    }
+    nav {
+        /* width: 330px; */
+        width: 87%;
+        bottom: 16px;
     }
     section, footer {
         padding-top:    var(--spacing-mobile);
@@ -514,7 +541,15 @@ li > a {
     .eight-col-grid {
         grid-template-columns: repeat(1, 1fr);
     }
-    .two-col-grid-mobile {grid-template-columns: repeat(2, 1fr);}
+    .one-col-grid-mobile   {grid-template-columns: repeat(1, 1fr);}
+    .two-col-grid-mobile   {grid-template-columns: repeat(2, 1fr);}
+    .three-col-grid-mobile {grid-template-columns: repeat(3, 1fr);}
+    .four-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
+    .five-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
+    .six-col-grid-mobile   {grid-template-columns: repeat(6, 1fr);}
+    .seven-col-grid-mobile {grid-template-columns: repeat(7, 1fr);}
+    .eight-col-grid-mobile {grid-template-columns: repeat(8, 1fr);}
+
     .headline {
         font-size: var(--headline-mobile);
     }
