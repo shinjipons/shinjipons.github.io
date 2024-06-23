@@ -112,22 +112,14 @@ h1, h2, h3, h4, p {
 }
 
 /* Grids */
-.one-col-grid,
-.one-col-grid-mobile,
-.two-col-grid,
-.two-col-grid-mobile,
-.three-col-grid,
-.three-col-grid-mobile,
-.four-col-grid,
-.four-col-grid-mobile,
-.five-col-grid,
-.five-col-grid-mobile,
-.six-col-grid,
-.six-col-grid-mobile,
-.seven-col-grid,
-.seven-col-grid-mobile,
-.eight-col-grid,
-.eight-col-grid-mobile {
+.one-col-grid,.one-col-grid-mobile, .one-col-grid-tablet,
+.two-col-grid,.two-col-grid-tablet, .two-col-grid-mobile,
+.three-col-grid,.three-col-grid-tablet, .three-col-grid-mobile,
+.four-col-grid,.four-col-grid-tablet, .four-col-grid-mobile,
+.five-col-grid,.five-col-grid-tablet, .five-col-grid-mobile,
+.six-col-grid,.six-col-grid-tablet, .six-col-grid-mobile,
+.seven-col-grid,.seven-col-grid-tablet, .seven-col-grid-mobile,
+.eight-col-grid,.eight-col-grid-tablet, .eight-col-grid-mobile {
     display: grid;
     grid-column-gap: var(--grid-gap);
     grid-row-gap:    var(--grid-gap);
@@ -462,6 +454,14 @@ li > a {
     .headline {
         font-size: var(--headline-tablet);
     }
+    .one-col-grid-tablet   {grid-template-columns: repeat(1, 1fr);}
+    .two-col-grid-tablet   {grid-template-columns: repeat(2, 1fr);}
+    .three-col-grid-tablet {grid-template-columns: repeat(3, 1fr);}
+    .four-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
+    .five-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
+    .six-col-grid-tablet   {grid-template-columns: repeat(6, 1fr);}
+    .seven-col-grid-tablet {grid-template-columns: repeat(7, 1fr);}
+    .eight-col-grid-tablet {grid-template-columns: repeat(8, 1fr);}
 }
 
 /* Mobile styles */
@@ -518,7 +518,15 @@ li > a {
     .eight-col-grid {
         grid-template-columns: repeat(1, 1fr);
     }
-    .two-col-grid-mobile {grid-template-columns: repeat(2, 1fr);}
+    .one-col-grid-mobile   {grid-template-columns: repeat(1, 1fr);}
+    .two-col-grid-mobile   {grid-template-columns: repeat(2, 1fr);}
+    .three-col-grid-mobile {grid-template-columns: repeat(3, 1fr);}
+    .four-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
+    .five-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
+    .six-col-grid-mobile   {grid-template-columns: repeat(6, 1fr);}
+    .seven-col-grid-mobile {grid-template-columns: repeat(7, 1fr);}
+    .eight-col-grid-mobile {grid-template-columns: repeat(8, 1fr);}
+
     .headline {
         font-size: var(--headline-mobile);
     }
