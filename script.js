@@ -38,34 +38,9 @@ if (textToModify) {
     }, 3);
 }
 
-// Open and close the menu
+// Reveal and hide the menu
 
-const menu = document.getElementById('menu-page');
-const menuTrigger = document.getElementById('menu-trigger');
-
-menuTrigger.addEventListener('click', function() {
-    menuTriggerClickHandler();
-})
-
-function menuTriggerClickHandler() {
-    // check if closed
-    if (menu.classList.contains('menu-closed')) {
-        // then "open" the menu by adding and removing the right class
-        menu.classList.remove('menu-closed');
-        menu.classList.add('menu-open');
-
-        // make the html non scrollable
-        document.body.style.overflow = 'hidden';
-
-    } else if (menu.classList.contains('menu-open')) {
-        // then close the menu back down
-        menu.classList.remove('menu-open');
-        menu.classList.add('menu-closed');
-
-        // make the html scrollable again
-        document.body.style.overflow = 'auto';
-    }
-}
+// to do if needed
 
 // Code to add a random project to the bottom of each project page
 
