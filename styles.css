@@ -5,8 +5,9 @@
     --tertiary-color: #262626;
     --accent-color: #CBC3A7;
     --background-color: rgba(22, 22, 22, 1);
-    --background-color-nav: rgba(22, 22, 22, 0.8);
-    --available-color: #00FF85;
+    --background-color-nav: rgba(22, 22, 22, 0.5);
+    --available-color: rgb(0, 255, 133);
+    --available-color-nav-button: rgba(0, 255, 133, 0.2);
 
     /* fonts */
     --monospace-font: "Geist Mono Medium";
@@ -191,27 +192,38 @@ a:hover {
 nav {
     position: fixed;
     display: flex;
+    justify-content: space-between;
     bottom: 32px;
-    gap: 8px;
     background: var(--background-color-nav);
-    padding: 8px;
     backdrop-filter: blur(16px);
-    /* border-radius: 16px; */
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 10px;
+    padding: 4px;
+    gap:     4px;
+    width: 400px;
 }
-nav > a > button {
+nav > div > a > button {
     background: transparent;
-    color: var(--accent-color);
     outline: none;
     border: none;
     padding: var(--grid-gap);
     transition: var(--transition);
     cursor: pointer;
-    /* border-radius: 8px; */
+    border-radius: 6px;
 }
-nav > a:hover > button {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--accent-color);
+nav > div > a:hover > button {
+    background: var(--tertiary-color);
+    /* color: var(--primary-color) !important; */
 }
+.button-special {
+    background: var(--available-color-nav-button);
+    color: var(--available-color) !important;
+}
+.button-special:hover {
+    background: var(--available-color);
+    color: var(--background-color) !important;
+}
+
 ul.monospace {
     padding-left: 0px;
     color: var(--accent-color);
@@ -408,6 +420,9 @@ li > a {
     p {
         font-size: var(--p-desktop-xl);
     }
+    nav {
+        width: 440px;
+    }
     nav, .monospace {
         font-size: var(--monospace-desktop-xl);
     }
@@ -427,6 +442,9 @@ li > a {
     }
     nav, .monospace {
         font-size: var(--monospace-tablet);
+    }
+    nav {
+        width: 400px;
     }
     section, footer {
         padding-top:    var(--spacing-tablet);
@@ -475,6 +493,11 @@ li > a {
     }
     nav, .monospace {
         font-size: var(--monospace-mobile);
+    }
+    nav {
+        /* width: 330px; */
+        width: 87%;
+        bottom: 16px;
     }
     section, footer {
         padding-top:    var(--spacing-mobile);
