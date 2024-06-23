@@ -3,7 +3,8 @@
     --primary-color:    #DBDBDB;
     --secondary-color: #ABABAB;
     --accent-color: #CBC3A7;
-    --background-color: #161616;
+    --background-color: rgba(22, 22, 22, 1);
+    --background-color-nav: rgba(22, 22, 22, 0.8);
     --available-color: #00FF85;
 
     /* fonts */
@@ -42,9 +43,10 @@
 
     /* spacings */
     --spacing-desktop: 80px;
+    --spacing-desktop-double: 160px;
     --spacing-tablet:  40px;
     --spacing-mobile:  24px;
-    --grid-gap: 8px;
+    --grid-gap: 16px;
 
     /* overall widths */
     --width-desktop-xl: 100%;
@@ -193,28 +195,30 @@ a {
 a:hover {
     color: var(--available-color);
 }
+/* navigation */
 nav {
+    position: fixed;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    width: var(--width-desktop);
-    height: 80px;
-    padding-left: var(--padding-w-desktop);
-    padding-right: var(--padding-w-desktop);
-    background: var(--background-color);
-    font-family: var(--monospace-font);
-    font-size: var(--monospace-desktop);
-    color: var(--primary-color);
-    text-transform: uppercase;
-    z-index: 998;
+    bottom: 32px;
+    gap: 8px;
+    background: var(--background-color-nav);
+    padding: 8px;
+    backdrop-filter: blur(16px);
+    /* border-radius: 16px; */
 }
-nav > button {
-    width: 48px;
-    height: 48px;
+nav > a > button {
     background: transparent;
+    color: var(--accent-color);
+    outline: none;
     border: none;
+    padding: var(--grid-gap);
+    transition: var(--transition);
+    cursor: pointer;
+    /* border-radius: 8px; */
+}
+nav > a:hover > button {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
 }
 ul.monospace {
     padding-left: 0px;
@@ -239,7 +243,7 @@ footer {
     padding-left:   var(--padding-w-desktop);
     padding-right:  var(--padding-w-desktop);
     padding-top:    var(--spacing-desktop);
-    padding-bottom: var(--spacing-desktop);
+    padding-bottom: var(--spacing-desktop-double);
     /* make the footer stick to the bottom */
     margin-top: auto;
 }
@@ -402,7 +406,7 @@ li > a {
 
 /* Extra wide monitor */
 @media screen and (min-width: 2400px) {
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-desktop-xl);
         padding-left:  var(--padding-w-desktop-xl);
     }
@@ -425,7 +429,7 @@ li > a {
     body, section, nav, footer {
         width: var(--width-tablet);
     }
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-tablet);
         padding-left:  var(--padding-w-tablet);
     }
@@ -465,7 +469,7 @@ li > a {
     body, section, nav, footer {
         width: var(--width-mobile);
     }
-    section, nav, footer {
+    section, footer {
         padding-right: var(--padding-w-mobile);
         padding-left:  var(--padding-w-mobile);
     }
