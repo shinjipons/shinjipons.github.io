@@ -20,63 +20,23 @@
     --monospace-weight: 500;
 
     /* font sizes */
-    --p-desktop-xl: 16px;
     --p-desktop:    14px;
-    --p-tablet:     17px;
-    --p-mobile:     14px;
-
-    --monospace-desktop-xl: 14px;
     --monospace-desktop:    12px;
-    --monospace-tablet:     12px;
-    --monospace-mobile:     12px;
-
     --h1-desktop: 20px;
-    --h1-tablet:  22px;
-    --h1-mobile:  18px;
-
-    --h1-menu-desktop: 48px;
-    --h1-menu-tablet:  48px;
-    --h1-menu-mobile:  48px;
-
-    --headline-desktop-xl: 50px;
     --headline-desktop:    40px;
-    --headline-tablet:     30px;
-    --headline-mobile:     18px;
 
     /* spacings */
     --spacing-desktop: 80px;
     --spacing-desktop-double: 160px;
-    --spacing-tablet:  40px;
-    --spacing-mobile:  40px;
-    --grid-gap: 16px;
+    --grid-gap:      16px;
+    --grid-gap-half:  8px;
 
     /* overall widths */
-    --width-desktop-xl: 100%;
-    --padding-w-desktop-xl: 20%;
-
     --width-desktop: 100%;
     --padding-w-desktop: 15%;
 
-    --width-tablet: 100%;
-    --padding-w-tablet: 10%;
-
-    --width-mobile: 100%;
-    --padding-w-mobile: 2.5%;
-
     /* transition */
     --transition: 0.1s all ease-in-out;
-}
-
-@keyframes AvailableBlinkAnimation {
-    0%, 80% {
-        color: var(--secondary-color);
-    }
-	88%, 90% {
-        color: var(--background-color);
-	}
-    100% {
-        color: var(--available-color);
-    }
 }
 
 /* @font-face and @keyframes */
@@ -113,67 +73,18 @@ h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Grids */
-.one-col-grid,.one-col-grid-mobile, .one-col-grid-tablet,
-.two-col-grid,.two-col-grid-tablet, .two-col-grid-mobile,
-.three-col-grid,.three-col-grid-tablet, .three-col-grid-mobile,
-.four-col-grid,.four-col-grid-tablet, .four-col-grid-mobile,
-.five-col-grid,.five-col-grid-tablet, .five-col-grid-mobile,
-.six-col-grid,.six-col-grid-tablet, .six-col-grid-mobile,
-.seven-col-grid,.seven-col-grid-tablet, .seven-col-grid-mobile,
-.eight-col-grid,.eight-col-grid-tablet, .eight-col-grid-mobile {
-    display: grid;
-    grid-column-gap: var(--grid-gap);
-    grid-row-gap:    var(--grid-gap);
-    grid-template-rows: repeat(1, 1fr);
-}
-.one-col-grid   {grid-template-columns: repeat(1, 1fr);}
-.two-col-grid   {grid-template-columns: repeat(2, 1fr);}
-.three-col-grid {grid-template-columns: repeat(3, 1fr);}
-.four-col-grid  {grid-template-columns: repeat(4, 1fr);}
-.five-col-grid  {grid-template-columns: repeat(4, 1fr);}
-.six-col-grid   {grid-template-columns: repeat(6, 1fr);}
-.seven-col-grid {grid-template-columns: repeat(7, 1fr);}
-.eight-col-grid {grid-template-columns: repeat(8, 1fr);}
-
 /* everywhere */
-.menu {
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width:  100dvw;
-    height: 100dvh;
-    background: var(--background-color);
-    z-index: 99;
-    color: var(--primary-color);
-    user-select: none;
-    overflow: hidden;
-}
-.menu > div > a > h1 {
-    margin: 0px;
-    font-size: var(--h1-menu-desktop);
-    text-align: center;
-}
-.menu >div > a:hover > h1 {
-    color: var(--accent-color);
-    transition: var(--transition);
-}
-.menu-open {
-    display: flex;
-}
-.menu-closed {
-    display: none;
-}
-section {
+main, section {
     width: var(--width-desktop);
     padding-top:    var(--spacing-desktop);
     padding-bottom: var(--spacing-desktop);
     padding-left:  var(--padding-w-desktop);
     padding-right: var(--padding-w-desktop);
     transition: var(--transition);
+}
+main {
+    display: flex;
+    overflow-y: auto;
 }
 img {
     width: 100%;
@@ -188,32 +99,44 @@ a {
 a:hover {
     color: var(--available-color);
 }
+
+/* Left and right columns */
+.left-column {
+    position: sticky;
+    top: 100px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    padding-right: $grid-gap-half;
+}
+.right-column {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    padding-left: $grid-gap-half;
+}
+
 /* navigation */
 nav {
-    position: fixed;
     display: flex;
     justify-content: space-between;
-    bottom: 32px;
-    background: var(--background-color-nav);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 4px;
-    gap:     4px;
-    width: 400px;
 }
 nav > div > a > button {
     background: transparent;
     outline: none;
     border: none;
-    padding: var(--grid-gap);
+    padding: $grid-gap;
     transition: var(--transition);
     cursor: pointer;
     border-radius: 6px;
 }
 nav > div > a:hover > button {
-    background: var(--tertiary-color);
-    /* color: var(--primary-color) !important; */
+    background: var(--background-color);
 }
 .button-special {
     background: var(--available-color-nav-button);
@@ -242,12 +165,13 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 16px;
     width: var(--width-desktop);
+
     padding-left:   var(--padding-w-desktop);
     padding-right:  var(--padding-w-desktop);
     padding-top:    var(--spacing-desktop);
     padding-bottom: var(--spacing-desktop-double);
+
     /* make the footer stick to the bottom */
     margin-top: auto;
 }
@@ -301,13 +225,6 @@ h1.monospace {
 li > a {
     color: var(--primary-color);
 }
-.headline {
-    font-size: var(--headline-desktop);
-    font-weight: var(--headline-weight);
-    color: var(--accent-color);
-    text-indent: 10ch;
-    orphans: 3;
-}
 
 /* index.html */
 .available-for-work {
@@ -315,12 +232,6 @@ li > a {
     transition: var(--transition);
     overflow-wrap: break-word;
     hyphens: none;
-}
-.availability-confirmed {
-    animation: AvailableBlinkAnimation 1s ease-in-out 0s 1 normal forwards;
-}
-.cta-block {
-    grid-column: span 3;
 }
 .cta {
     width: 100%;
@@ -335,6 +246,7 @@ li > a {
     padding-bottom: 16px;
     line-height: 100%;
     transition: none;
+    border-radius: 10px;
 }
 .cta:hover {
     background: var(--accent-color);
@@ -347,13 +259,14 @@ li > a {
 .cta:hover > a {
     color: var(--background-color);
 }
+
+/* Project grid */
 .project > a > h1 {
     margin-top: 8px;
     transition: var(--transition);
 }
 .project > a > img {
-    /* 300px for MacBook Pro, 500px for 27 inch monitor */
-    height: 300px;
+    height: 600px;
     object-fit: cover;
 }
 .project:hover > a > h1 {
@@ -403,157 +316,4 @@ li > a {
     margin-bottom: 24px;
     transition: var(--transition);
     background: linear-gradient(90deg, var(--accent-color) 0%, var(--background-color) 40% 60%, var(--accent-color) 100%);
-}
-.desktop-and-tablet {
-    display: inline-block;
-}
-
-/* Extra wide monitor */
-@media screen and (min-width: 2400px) {
-    section, footer {
-        padding-right: var(--padding-w-desktop-xl);
-        padding-left:  var(--padding-w-desktop-xl);
-    }
-    .project > a > img {
-        height: 400px;
-    }
-    p {
-        font-size: var(--p-desktop-xl);
-    }
-    nav {
-        width: 440px;
-    }
-    nav, .monospace {
-        font-size: var(--monospace-desktop-xl);
-    }
-    .headline {
-        font-size: var(--headline-desktop-xl);
-    }
-}
-
-/* Tablet styles */
-@media screen and (min-width: 690px) and (max-width: 1200px) {
-    body, section, nav, footer {
-        width: var(--width-tablet);
-    }
-    section, footer {
-        padding-right: var(--padding-w-tablet);
-        padding-left:  var(--padding-w-tablet);
-    }
-    nav, .monospace {
-        font-size: var(--monospace-tablet);
-    }
-    nav {
-        width: 400px;
-    }
-    section, footer {
-        padding-top:    var(--spacing-tablet);
-        padding-bottom: var(--spacing-tablet);
-    }
-    .project > a > img {
-        height: 300px;
-    }
-    h1 {
-        font-size: var(--h1-tablet);
-    }
-    p {
-        font-size: var(--p-tablet);
-    }
-    .menu > div > a > h1 {
-        font-size: var(--h1-menu-tablet);
-    }
-    .project-text-block > .project-text, .about-me > div {
-        grid-column-start: 2;
-        grid-column-end:   8;
-    }
-    .desktop-and-tablet {
-        display: inline-block;
-    }
-    .headline {
-        font-size: var(--headline-tablet);
-    }
-    .one-col-grid-tablet   {grid-template-columns: repeat(1, 1fr);}
-    .two-col-grid-tablet   {grid-template-columns: repeat(2, 1fr);}
-    .three-col-grid-tablet {grid-template-columns: repeat(3, 1fr);}
-    .four-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
-    .five-col-grid-tablet  {grid-template-columns: repeat(4, 1fr);}
-    .six-col-grid-tablet   {grid-template-columns: repeat(6, 1fr);}
-    .seven-col-grid-tablet {grid-template-columns: repeat(7, 1fr);}
-    .eight-col-grid-tablet {grid-template-columns: repeat(8, 1fr);}
-}
-
-/* Mobile styles */
-@media screen and (max-width: 679px) {
-    body, section, nav, footer {
-        width: var(--width-mobile);
-    }
-    section, footer {
-        padding-right: var(--padding-w-mobile);
-        padding-left:  var(--padding-w-mobile);
-    }
-    nav, .monospace {
-        font-size: var(--monospace-mobile);
-    }
-    nav {
-        /* width: 330px; */
-        width: 87%;
-        bottom: 16px;
-    }
-    section, footer {
-        padding-top:    var(--spacing-mobile);
-        padding-bottom: var(--spacing-mobile);
-    }
-    h1 {
-        font-size: var(--h1-mobile);
-    }
-    p {
-        font-size: var(--p-mobile);
-    }
-    .menu > div > a > h1 {
-        font-size: var(--h1-menu-mobile);
-    }
-    .desktop-and-tablet {
-        display: none;
-    }
-    .two-col-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .project > a > img {
-        height: 240px;
-    }
-    .next-project > a > img {
-        height: 190px;
-    }
-    .next-project::before {
-        margin-bottom: var(--spacing-mobile);
-    }
-    .project-text-block > .project-text, .about-me > div {
-        grid-column-start: 1;
-        grid-column-end:   9;
-    }
-    .one-col-grid,
-    .two-col-grid,
-    .three-col-grid,
-    .four-col-grid,
-    .five-col-grid,
-    .six-col-grid,
-    .seven-col-grid,
-    .eight-col-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .one-col-grid-mobile   {grid-template-columns: repeat(1, 1fr);}
-    .two-col-grid-mobile   {grid-template-columns: repeat(2, 1fr);}
-    .three-col-grid-mobile {grid-template-columns: repeat(3, 1fr);}
-    .four-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
-    .five-col-grid-mobile  {grid-template-columns: repeat(4, 1fr);}
-    .six-col-grid-mobile   {grid-template-columns: repeat(6, 1fr);}
-    .seven-col-grid-mobile {grid-template-columns: repeat(7, 1fr);}
-    .eight-col-grid-mobile {grid-template-columns: repeat(8, 1fr);}
-
-    .headline {
-        font-size: var(--headline-mobile);
-    }
-    .experience > .two-col-grid > div {
-        grid-column: span 2;
-    }
 }
