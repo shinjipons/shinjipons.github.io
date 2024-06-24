@@ -11,54 +11,69 @@ $available-color:            rgba(  0, 255, 133, 1.0);
 $available-color-nav-button: rgba(  0, 255, 133, 0.2);
 
 // overall widths
-$width-desktop: 100%;
+$width-full: 100%; // leave it at 100%
 $padding-w-desktop: 15%;
+$padding-w-tablet:  6%;
+$padding-w-mobile:  3%;
 
 // fonts
-
 $monospace-font: "Geist Mono Medium";
 $regular-font: "Manrope";
-
 $p-weight:         600;
 $h1-weight:        600;
 $headline-weight:  600;
-
 $p-desktop:         14px;
 $monospace-desktop: 12px;
 $h1-desktop:        20px;
 
 // control general spacing of things
-
+$spacing-xs:   8px;
+$spacing-s:   24px;
+$spacing-m:   40px;
 $spacing-l:   80px;
 $spacing-xl: 160px;
 
 // control the spacing between the two columns, and other secondary things
-
 $grid-gap: 16px;
 $grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
+$left-column-width-desktop:  20svw;
+$right-column-width-desktop: 100svw - $left-column-width-desktop;
 
-$left-column-width:  20svw;
-$right-column-width: 100svw - $left-column-width;
+$left-column-width-tablet:   30svw;
+$right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-
 $button-border-radius: 10px;
 $nav-border-radius-outer: $button-border-radius;
 $nav-border-padding: 4px;
 $nav-border-radius-inner: $nav-border-radius-outer - $nav-border-padding;
 
 // transition
-
 $transition: 0.1s all ease-in-out;
+
+// mixins for media queries
+$breakpoint-tablet:  1100px;
+$breakpoint-desktop: 1800px;
+
+@mixin tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @media screen and (min-width: $breakpoint-tablet + 1px) and (max-width: $breakpoint-desktop - 1px) {
+        @content;
+    }
+}
+
+@mixin mobile-styles($breakpoint-tablet) {
+    @media screen and (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
 
 /* @font-face and @keyframes */
 @font-face {
     font-family: "Geist Mono Medium";
     src: url("../../fonts/GeistMono-Medium.ttf");
 }
-
 @font-face {
     font-family: "Manrope";
     src: url("../../fonts/Manrope-VariableFont_wght.ttf");
@@ -80,7 +95,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    width: $width-desktop;
+    width: $width-full;
     min-height: 100svh;
     padding-bottom: $spacing-l;
 }
@@ -94,23 +109,31 @@ video {
 }
 
 /* everywhere */
-main, section {
-    width: $width-desktop;
+main {
+    width: $width-full;
     padding-top:    $spacing-l;
     padding-bottom: $spacing-l;
     padding-left:   $padding-w-desktop;
     padding-right:  $padding-w-desktop;
     transition: $transition;
-}
-main {
     display: flex;
     overflow-y: auto;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        padding-left:   $padding-w-tablet;
+        padding-right:  $padding-w-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        flex-direction: column;
+        padding-left:   $padding-w-mobile;
+        padding-right:   $padding-w-mobile;
+        gap: $grid-gap;
+    }
 }
 img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    // border-radius: $button-border-radius;
 }
 a {
     color: $primary-color;
@@ -125,19 +148,39 @@ a:hover {
 .left-column {
     position: fixed;
     top: $spacing-l;
-    width: $left-column-width;
+    width: $left-column-width-desktop;
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
     padding-right: $grid-gap-half;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        width: $left-column-width-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        position: relative;
+        width: 100%;
+        top: 0px;
+        padding-right: 0px;
+    }
 }
 .right-column {
-    width: $right-column-width;
+    width: $right-column-width-desktop;
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
     padding-left: $grid-gap-half;
-    margin-left: $left-column-width;
+    margin-left: $left-column-width-desktop;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        width:       $right-column-width-tablet;
+        margin-left: $left-column-width-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        width: 100%;
+        padding-left: 0px;
+        margin-left: 0px;
+    }
 }
 
 /* navigation */
@@ -255,6 +298,14 @@ li > a {
 .project > a > img {
     height: 600px;
     object-fit: cover;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        height: 450px;
+    }
+
+    @include mobile-styles($breakpoint-tablet) {
+        height: 370px;
+    }
 }
 .project:hover > a > h1 {
     color: $accent-color;
