@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | Apple Bubble Letter</title>
     <meta name="description" content="Enhance your 3D design experience with Autodesk Alias SubD. Learn how Shinji Pons improved user integration, streamlining workflows and reducing learning curves for efficient, high-quality modeling.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://shinjipons.com">
@@ -29,7 +29,10 @@
 </head>
 <body>
 
-    <nav>
+    <main>
+        <!-- Left column -->
+        <div class="left-column">
+            <nav>
         <div>
             <a href="index.html"><button class="monospace">Work</button></a>
             <a href="about.html"><button class="monospace">About</button></a>
@@ -40,60 +43,38 @@
         </div>
     </nav>
 
-    <!-- The first image -->
-    <section class="one-col-grid">
-        <img src="images/apple-letter//apple-letter-01.webp">
-    </section>
+            <ul class="monospace">About
+                <li>As part of an interview loop, I did this bubble letter of a capital R. I haven't yet solved it without making some major compromises to the surfaces at the intersection of the letter's stems. Perhaps when I have more free time, I will give it another try.</li>
+                <li>The brief was to model a bubble letter with a circular profile while avoiding flat areas at the intersection and, of course, maintaining perfect continuity and clean geometry. The real challenge is that avoiding flat areas means making some compromises in continuity.</li>
+            </ul>
 
-    <section>
-        <div class="eight-col-grid project-text-block">
-            <div class="project-text">
-                <h1 class="monospace">About</h1>
-                <p>As part of an interview loop, I did this bubble letter of a capital R. I haven't yet solved it without making some major compromises to the surfaces at the intersection of the letter's stems. Perhaps when I have more free time, I will give it another try.</p>
-                <p>The brief was to model a bubble letter with a circular profile while avoiding flat areas at the intersection and, of course, maintaining perfect continuity and clean geometry. The real challenge is that avoiding flat areas means making some compromises in continuity.</p>
-                <h1 class="monospace">My role</h1>
-                <p>The biggest challenge in this exercise to avoid flat planes in the transition areas where the main pipes of the bubble letter meet. If I were to only aim for G2 continuity and didn't care too much for heavy surfaces, it could work. But what would be the fun in that? While this result looks OK, there is lots I can improve on.</p>
-                <p>The transition areas are too flat and I went for too much of a pill-shaped profile. If you are willing to teach me the proper techniques, please get in touch.</p>
-            </div>
+            <ul class="monospace">My role
+                <li>The biggest challenge in this exercise to avoid flat planes in the transition areas where the main pipes of the bubble letter meet. If I were to only aim for G2 continuity and didn't care too much for heavy surfaces, it could work. But what would be the fun in that? While this result looks OK, there is lots I can improve on.</li>
+                <li>The transition areas are too flat and I went for too much of a pill-shaped profile. If you are willing to teach me the proper techniques, please get in touch.</li>
+            </ul>
+
         </div>
-    </section>
 
-    <!-- All the other images -->
-    <section class="one-col-grid">
-        <img src="images/apple-letter//apple-letter-02.webp">
+        <!-- Right column -->
+        <div class="right-column">
+            <img src="images/apple-letter//apple-letter-01.webp">
+            <img src="images/apple-letter//apple-letter-02.webp">
 		<img src="images/apple-letter//apple-letter-03.webp">
 		<img src="images/apple-letter//apple-letter-04.webp">
 		<img src="images/apple-letter//apple-letter-05.webp">
 		<img src="images/apple-letter//apple-letter-06.webp">
-    </section>
 
-    <!-- Next project -->
-    <section class="next-project">
-        <a href="" id="next-project-link">
-            <h1>Next</h1>
-            <h1 id="next-project-title">Project Title</h1>
-            <img id="next-project-image" src="" alt="">
-        </a>
-    </section>
+            <!-- Next project -->
+            <!-- <section class="next-project">
+                <a href="" id="next-project-link">
+                    <h1>Next</h1>
+                    <h1 id="next-project-title">Project Title</h1>
+                    <img id="next-project-image" src="" alt="">
+                </a>
+            </section> -->
+        </div>
 
-    <footer class="two-col-grid">
-			<div>
-				<h1>Located in France.</h1>
-				<h1>Accessible globally.</h1>
-				<h1><a href="mailto:contact@shinjipons.com">Drop a greeting.</a></h1>
-			</div>
-			<ul class="monospace">
-				<li><a href="mailto:contact@shinjipons.com">E-mail</a></li>
-				<li><a href="https://linkedin.com/in/shinjipons" target="_blank">LinkedIn</a></li>
-				<li><a href="https://read.cv/shinjipons" target="_blank">Read.cv</a></li>
-				<li><a href="https://posts.cv/shinjipons" target="_blank">Posts.cv</a></li>
-				<li><a href="https://layers.to/shinjipons" target="_blank">Layers.to</a></li>
-				<li><a href="https://twitter.com/shinjipons" target="_blank">x.com</a></li>
-				<li><a href="https://cara.app/shinjipons/all" target="_blank">Cara</a></li>
-				<li><a href="https://instagram.com/shinji.pons" target="_blank">Instagram</a></li>
-				<li><a href="https://dribbble.com/shinjipons" target="_blank">Dribbble</a></li>
-			</ul>
-		</footer>
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | High quality 3D model of a Chevrolet Corvette C6</title>
     <meta name="description" content="Explore Shinji Pons' high-quality 3D model of the Chevrolet Corvette C6, created using advanced modeling techniques in Blender. Learn how he mastered surface quality and polygonal modeling through self-paced learning.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://shinjipons.com">
@@ -29,7 +29,10 @@
 </head>
 <body>
 
-    <nav>
+    <main>
+        <!-- Left column -->
+        <div class="left-column">
+            <nav>
         <div>
             <a href="index.html"><button class="monospace">Work</button></a>
             <a href="about.html"><button class="monospace">About</button></a>
@@ -40,27 +43,22 @@
         </div>
     </nav>
 
-    <!-- The first image -->
-    <section class="one-col-grid">
-        <img src="images/corvette/corvette-01.webp">
-    </section>
+            <ul class="monospace">About
+                <li>I took a self-learning course called Master Car Creation in Blender by CGMasters. The course focuses on advanced modelling techniques to achieve the highest quality in terms of reflections. By using a guide mesh and Blender's modifier stack, it is possible to get excellent looking surfaces by only using SubDs. I completed this self-paced course during my free time between Spring 2021 and Spring 2022.</li>
+                <li>After working on the Autodesk Alias SubD toolset, I wanted to improve my polygonal modelling skills. While poly models are more easily editable, their surface quality is perceptibly lower than with NURBS surfaces.</li>
+            </ul>
 
-    <section>
-        <div class="eight-col-grid project-text-block">
-            <div class="project-text">
-                <h1 class="monospace">About</h1>
-                <p>I took a self-learning course called Master Car Creation in Blender by CGMasters. The course focuses on advanced modelling techniques to achieve the highest quality in terms of reflections. By using a guide mesh and Blender's modifier stack, it is possible to get excellent looking surfaces by only using SubDs. I completed this self-paced course during my free time between Spring 2021 and Spring 2022.</p>
-                <p>After working on the Autodesk Alias SubD toolset, I wanted to improve my polygonal modelling skills. While poly models are more easily editable, their surface quality is perceptibly lower than with NURBS surfaces.</p>
-                <h1 class="monospace">My role</h1>
-                <p>This course teaches a technique which consists of using a lower res mesh which is shrink-wrapped to a high res guide mesh. This achieves great surface quality while retaining the flexibility of polygonal modelling.</p>
-                <p>Compared to Alias, Blender was quicker and more productive at the beginning of the process. Modelling and shading all surfaces in one software package is great but I did miss the flawless quality of NURBS surfaces.</p>
-            </div>
+            <ul class="monospace">My role
+                <li>This course teaches a technique which consists of using a lower res mesh which is shrink-wrapped to a high res guide mesh. This achieves great surface quality while retaining the flexibility of polygonal modelling.</li>
+                <li>Compared to Alias, Blender was quicker and more productive at the beginning of the process. Modelling and shading all surfaces in one software package is great but I did miss the flawless quality of NURBS surfaces.</li>
+            </ul>
+
         </div>
-    </section>
 
-    <!-- All the other images -->
-    <section class="one-col-grid">
-        <img src="images/corvette/corvette-02.webp">
+        <!-- Right column -->
+        <div class="right-column">
+            <img src="images/corvette/corvette-01.webp">
+            <img src="images/corvette/corvette-02.webp">
 		<img src="images/corvette/corvette-03.webp">
 		<img src="images/corvette/corvette-04.webp">
 		<img src="images/corvette/corvette-05.webp">
@@ -75,35 +73,18 @@
 		<img src="images/corvette/corvette-14.webp">
 		<img src="images/corvette/corvette-15.webp">
 		<img src="images/corvette/corvette-16.webp">
-    </section>
 
-    <!-- Next project -->
-    <section class="next-project">
-        <a href="" id="next-project-link">
-            <h1>Next</h1>
-            <h1 id="next-project-title">Project Title</h1>
-            <img id="next-project-image" src="" alt="">
-        </a>
-    </section>
+            <!-- Next project -->
+            <!-- <section class="next-project">
+                <a href="" id="next-project-link">
+                    <h1>Next</h1>
+                    <h1 id="next-project-title">Project Title</h1>
+                    <img id="next-project-image" src="" alt="">
+                </a>
+            </section> -->
+        </div>
 
-    <footer class="two-col-grid">
-			<div>
-				<h1>Located in France.</h1>
-				<h1>Accessible globally.</h1>
-				<h1><a href="mailto:contact@shinjipons.com">Drop a greeting.</a></h1>
-			</div>
-			<ul class="monospace">
-				<li><a href="mailto:contact@shinjipons.com">E-mail</a></li>
-				<li><a href="https://linkedin.com/in/shinjipons" target="_blank">LinkedIn</a></li>
-				<li><a href="https://read.cv/shinjipons" target="_blank">Read.cv</a></li>
-				<li><a href="https://posts.cv/shinjipons" target="_blank">Posts.cv</a></li>
-				<li><a href="https://layers.to/shinjipons" target="_blank">Layers.to</a></li>
-				<li><a href="https://twitter.com/shinjipons" target="_blank">x.com</a></li>
-				<li><a href="https://cara.app/shinjipons/all" target="_blank">Cara</a></li>
-				<li><a href="https://instagram.com/shinji.pons" target="_blank">Instagram</a></li>
-				<li><a href="https://dribbble.com/shinjipons" target="_blank">Dribbble</a></li>
-			</ul>
-		</footer>
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
 

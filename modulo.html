@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | Modulo</title>
     <meta name="description" content="Explore Shinji Pons' creation of Modulo, a typeface based on a 128-unit square grid. Learn about his meticulous design process, overcoming technical challenges, and gaining expertise in Bézier splines and professional-grade typeface development.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://shinjipons.com">
@@ -29,7 +29,10 @@
 </head>
 <body>
 
-    <nav>
+    <main>
+        <!-- Left column -->
+        <div class="left-column">
+            <nav>
         <div>
             <a href="index.html"><button class="monospace">Work</button></a>
             <a href="about.html"><button class="monospace">About</button></a>
@@ -40,27 +43,22 @@
         </div>
     </nav>
 
-    <!-- The first image -->
-    <section class="one-col-grid">
-        <img src="images/modulo/modulo-01.webp">
-    </section>
+            <ul class="monospace">About
+                <li>Modulo is a typeface based on a 128 units square grid. After designing the typeface, I made posters to display the typeface, which is free and open-source.</li>
+                <li>I wanted to learn the intricate details of typeface design and development, while making something I could use for myself in future design work. A layered typeface was something that I always wanted to try.</li>
+            </ul>
 
-    <section>
-        <div class="eight-col-grid project-text-block">
-            <div class="project-text">
-                <h1 class="monospace">About</h1>
-                <p>Modulo is a typeface based on a 128 units square grid. After designing the typeface, I made posters to display the typeface, which is free and open-source.</p>
-                <p>I wanted to learn the intricate details of typeface design and development, while making something I could use for myself in future design work. A layered typeface was something that I always wanted to try.</p>
-                <h1 class="monospace">My role</h1>
-                <p>I had to restart making all 168 font files five or six times after realizing that I fell in technical pitfalls such as using incorrect UPM sizes, path directions, undesired optical corrections in Glyphs, forgetting glyphs...</p>
-                <p>This project made realize the amount of work, care and detail that goes into making professional grade typefaces. More importantly, it gave me my first opportunity to learn about Bézier splines, which are important in Alias.</p>
-            </div>
+            <ul class="monospace">My role
+                <li>I had to restart making all 168 font files five or six times after realizing that I fell in technical pitfalls such as using incorrect UPM sizes, path directions, undesired optical corrections in Glyphs, forgetting glyphs...</li>
+                <li>This project made realize the amount of work, care and detail that goes into making professional grade typefaces. More importantly, it gave me my first opportunity to learn about Bézier splines, which are important in Alias.</li>
+            </ul>
+
         </div>
-    </section>
 
-    <!-- All the other images -->
-    <section class="one-col-grid">
-        <img src="images/modulo/modulo-02.webp">
+        <!-- Right column -->
+        <div class="right-column">
+            <img src="images/modulo/modulo-01.webp">
+            <img src="images/modulo/modulo-02.webp">
 		<img src="images/modulo/modulo-03.webp">
 		<img src="images/modulo/modulo-04.webp">
 		<img src="images/modulo/modulo-05.webp">
@@ -72,35 +70,18 @@
 		<img src="images/modulo/modulo-11.webp">
 		<img src="images/modulo/modulo-12.webp">
 		<img src="images/modulo/modulo-13.webp">
-    </section>
 
-    <!-- Next project -->
-    <section class="next-project">
-        <a href="" id="next-project-link">
-            <h1>Next</h1>
-            <h1 id="next-project-title">Project Title</h1>
-            <img id="next-project-image" src="" alt="">
-        </a>
-    </section>
+            <!-- Next project -->
+            <!-- <section class="next-project">
+                <a href="" id="next-project-link">
+                    <h1>Next</h1>
+                    <h1 id="next-project-title">Project Title</h1>
+                    <img id="next-project-image" src="" alt="">
+                </a>
+            </section> -->
+        </div>
 
-    <footer class="two-col-grid">
-			<div>
-				<h1>Located in France.</h1>
-				<h1>Accessible globally.</h1>
-				<h1><a href="mailto:contact@shinjipons.com">Drop a greeting.</a></h1>
-			</div>
-			<ul class="monospace">
-				<li><a href="mailto:contact@shinjipons.com">E-mail</a></li>
-				<li><a href="https://linkedin.com/in/shinjipons" target="_blank">LinkedIn</a></li>
-				<li><a href="https://read.cv/shinjipons" target="_blank">Read.cv</a></li>
-				<li><a href="https://posts.cv/shinjipons" target="_blank">Posts.cv</a></li>
-				<li><a href="https://layers.to/shinjipons" target="_blank">Layers.to</a></li>
-				<li><a href="https://twitter.com/shinjipons" target="_blank">x.com</a></li>
-				<li><a href="https://cara.app/shinjipons/all" target="_blank">Cara</a></li>
-				<li><a href="https://instagram.com/shinji.pons" target="_blank">Instagram</a></li>
-				<li><a href="https://dribbble.com/shinjipons" target="_blank">Dribbble</a></li>
-			</ul>
-		</footer>
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
 
