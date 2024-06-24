@@ -140,46 +140,6 @@ li:first-child {
   margin-top: 14px;
 }
 
-footer {
-  background: rgb(38, 38, 38);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-top: 80px;
-  padding-bottom: var(160px);
-  /* make the footer stick to the bottom */
-  margin-top: auto;
-}
-
-footer > div > h1 {
-  margin: 0px;
-  text-transform: capitalize;
-}
-
-footer > div > h1 > a {
-  color: rgb(203, 195, 167);
-}
-
-footer > ul {
-  margin-top: 0px;
-}
-
-footer > ul > li {
-  margin-bottom: 8px;
-}
-
-footer > ul > li > a {
-  color: rgb(171, 171, 171);
-}
-
-footer > ul > li > a:hover {
-  color: rgb(230, 230, 230);
-}
-
 /* typography */
 h1, p {
   font-family: "Manrope";

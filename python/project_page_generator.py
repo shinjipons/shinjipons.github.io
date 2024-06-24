@@ -6,8 +6,8 @@ with open('python/shared_nav.html', 'r') as file:
     shared_nav = file.read()
 
 # Read the shared footer from a file
-with open('python/shared_footer.html', 'r') as file:
-    shared_footer = file.read()
+# with open('python/shared_footer.html', 'r') as file:
+#     shared_footer = file.read()
 
 # Function to get all webp images from a specific folder
 def get_image_tags(image_folder):
