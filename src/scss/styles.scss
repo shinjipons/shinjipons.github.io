@@ -227,6 +227,10 @@ nav > div > a:hover > button {
     background: $available-color;
     color: $background-color !important;
 }
+ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 ul.monospace {
     padding-left: 0px;
     color: $accent-color;

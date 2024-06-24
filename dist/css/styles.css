@@ -176,6 +176,11 @@ nav > div > a:hover > button {
   color: rgb(22, 22, 22) !important;
 }
 
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 ul.monospace {
   padding-left: 0px;
   color: rgb(203, 195, 167);
