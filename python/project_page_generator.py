@@ -36,7 +36,7 @@ def generate_page(page_key, page_data):
 
     # Include the shared HTML block, the first image, and other image tags in the page data dictionary
     page_data['shared_nav'] = shared_nav
-    page_data['shared_footer'] = shared_footer
+    # page_data['shared_footer'] = shared_footer
     page_data['first_image'] = first_image_tag
     page_data['other_images'] = '\n'.join(other_image_tags)
 
@@ -48,7 +48,7 @@ def generate_page(page_key, page_data):
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | {title}</title>
     <meta name="description" content="{description}">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://shinjipons.com">
@@ -72,41 +72,39 @@ def generate_page(page_key, page_data):
 </head>
 <body>
 
-    {shared_nav}
+    <main>
+        <!-- Left column -->
+        <div class="left-column">
+            {shared_nav}
 
-    <!-- The first image -->
-    <section class="one-col-grid">
-        {first_image}
-    </section>
+            <ul class="monospace">About
+                <li>{paragraph_1}</li>
+                <li>{paragraph_2}</li>
+            </ul>
 
-    <section>
-        <div class="eight-col-grid project-text-block">
-            <div class="project-text">
-                <h1 class="monospace">About</h1>
-                <p>{paragraph_1}</p>
-                <p>{paragraph_2}</p>
-                <h1 class="monospace">My role</h1>
-                <p>{paragraph_3}</p>
-                <p>{paragraph_4}</p>
-            </div>
+            <ul class="monospace">My role
+                <li>{paragraph_3}</li>
+                <li>{paragraph_4}</li>
+            </ul>
+
         </div>
-    </section>
 
-    <!-- All the other images -->
-    <section class="one-col-grid">
-        {other_images}
-    </section>
+        <!-- Right column -->
+        <div class="right-column">
+            {first_image}
+            {other_images}
 
-    <!-- Next project -->
-    <section class="next-project">
-        <a href="" id="next-project-link">
-            <h1>Next</h1>
-            <h1 id="next-project-title">Project Title</h1>
-            <img id="next-project-image" src="" alt="">
-        </a>
-    </section>
+            <!-- Next project -->
+            <!-- <section class="next-project">
+                <a href="" id="next-project-link">
+                    <h1>Next</h1>
+                    <h1 id="next-project-title">Project Title</h1>
+                    <img id="next-project-image" src="" alt="">
+                </a>
+            </section> -->
+        </div>
 
-    {shared_footer}
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
 
