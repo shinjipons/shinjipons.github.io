@@ -6,7 +6,7 @@ $secondary-color:            rgba(171, 171, 171, 1.0);
 $tertiary-color:             rgba( 38,  38,  38, 1.0);
 $accent-color:               rgba(203, 195, 167, 1.0);
 $background-color    :       rgba( 22,  22,  22, 1.0);
-$background-color-nav:       rgba(255, 255, 255, 0.1);
+$background-color-nav:       rgba(  0,   0,   0, 0.66);
 $available-color:            rgba(  0, 255, 133, 1.0);
 $available-color-nav-button: rgba(  0, 255, 133, 0.2);
 
@@ -45,7 +45,8 @@ $left-column-width-tablet:   30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-$button-border-radius: 10px;
+$button-border-radius: 4px;
+$image-border-radius: $button-border-radius;
 $nav-border-radius-outer: $button-border-radius;
 $nav-border-padding: 4px;
 $nav-border-radius-inner: $nav-border-radius-outer - $nav-border-padding;
@@ -106,6 +107,7 @@ video {
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: $image-border-radius;
 }
 
 /* everywhere */
@@ -125,6 +127,7 @@ main {
     }
     @include mobile-styles($breakpoint-tablet) {
         flex-direction: column;
+        padding-top:    $spacing-s;
         padding-left:   $padding-w-mobile;
         padding-right:   $padding-w-mobile;
         gap: $grid-gap;
@@ -134,6 +137,7 @@ img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    border-radius: $image-border-radius;
 }
 a {
     color: $primary-color;
@@ -162,6 +166,7 @@ a:hover {
         width: 100%;
         top: 0px;
         padding-right: 0px;
+        padding-top: $spacing-l;
     }
 }
 .right-column {
@@ -190,6 +195,15 @@ nav {
     background: $background-color-nav;
     border-radius: $nav-border-radius-outer;
     padding: $nav-border-padding;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    @include mobile-styles($breakpoint-tablet) {
+        width: 100% - $padding-w-mobile * 2;
+        position: fixed;
+        top: $spacing-xs;
+    }
 }
 nav > div > a > button {
     background: transparent;
@@ -198,11 +212,11 @@ nav > div > a > button {
     padding: $grid-gap;
     transition: $transition;
     cursor: pointer;
-    border-radius: $nav-border-radius-inner;
+    border-radius: $button-border-radius;
     color: $secondary-color !important;
 }
 nav > div > a:hover > button {
-    background: $background-color;
+    background: $tertiary-color;
     color: $primary-color !important;
 }
 .button-special {
@@ -268,14 +282,13 @@ li > a {
     font-family: $monospace-font;
     text-transform: uppercase;
     background-color: rgba(203, 195, 167, 0.05);
-    border-radius: 0px;
     border: none;
     outline: none;
     padding-top:    16px;
     padding-bottom: 16px;
     line-height: 100%;
     transition: none;
-    border-radius: 10px;
+    border-radius: $button-border-radius;
 }
 .cta:hover {
     background: $accent-color;
@@ -304,7 +317,7 @@ li > a {
     }
 
     @include mobile-styles($breakpoint-tablet) {
-        height: 370px;
+        height: 300px;
     }
 }
 .project:hover > a > h1 {
