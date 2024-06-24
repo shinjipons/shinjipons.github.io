@@ -1,36 +1,45 @@
 const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
-// Watch for changes in *.html files and reload the browser automatically
-function html() {
-  return gulp.src('*.html')
-    .pipe(browserSync.reload({ stream: true }));
-}
-
-// Watch for changes in *.css files and stream changes to the browser automatically
-function css() {
-  return gulp.src('*.css')
-    .pipe(browserSync.stream());
-}
-
-// New: watch for changes in *.js files and reload the browser automatically
-function js() {
-  return gulp.src('*.js')
-    .pipe(browserSync.stream()); // let's try streaming tho it prollyh won't work
-}
-
-// Watch task to set up the watchers for *.html and *.css files
-function watch() {
-  browserSync.init({
-    server: {
-      baseDir: './'
+// Paths
+const paths = {
+    scss: {
+        src: 'src/scss/*.scss',
+        dest: 'dist/css'
     },
-    notify: false
-  });
+    html: {
+        src: '*.html'
+    },
+    js: {
+        src: '*.js'
+    }
+};
 
-  gulp.watch('*.html', html);
-  gulp.watch('*.css', css);
-  gulp.watch('*.js', js);
+// Compile SCSS to CSS
+function style() {
+    return gulp.src(paths.scss.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(paths.scss.dest))
+        .pipe(browserSync.stream());
 }
 
+// Watch and Serve
+function watch() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch(paths.scss.src, style);
+    gulp.watch(paths.html.src).on('change', browserSync.reload);
+    gulp.watch(paths.js.src).on('change', browserSync.reload);
+}
+
+// Define complex tasks
+const build = gulp.series(style, watch);
+
+// Export tasks
+exports.style = style;
 exports.watch = watch;
+exports.build = build;

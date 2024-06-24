@@ -1,0 +1,359 @@
+// VARIABLES
+
+// colors!
+$primary-color:              rgba(230, 230, 230, 1.0);
+$secondary-color:            rgba(171, 171, 171, 1.0);
+$tertiary-color:             rgba( 38,  38,  38, 1.0);
+$accent-color:               rgba(203, 195, 167, 1.0);
+$background-color    :       rgba( 22,  22,  22, 1.0);
+$background-color-nav:       rgba(  0,   0,   0, 0.66);
+$available-color:            rgba(  0, 255, 133, 1.0);
+$available-color-nav-button: rgba(  0, 255, 133, 0.2);
+
+// overall widths
+$width-full: 100%; // leave it at 100%
+$padding-w-desktop: 15%;
+$padding-w-tablet:  6%;
+$padding-w-mobile:  3%;
+
+// fonts
+$monospace-font: "Geist Mono Medium";
+$regular-font: "Manrope";
+$p-weight:         600;
+$h1-weight:        600;
+$headline-weight:  600;
+$p-desktop:         14px;
+$monospace-desktop: 12px;
+$h1-desktop:        20px;
+
+// control general spacing of things
+$spacing-xs:   8px;
+$spacing-s:   24px;
+$spacing-m:   40px;
+$spacing-l:   80px;
+$spacing-xl: 160px;
+
+// control the spacing between the two columns, and other secondary things
+$grid-gap: 16px;
+$grid-gap-half: ($grid-gap * 0.5);
+
+// control the width of the two columns
+$left-column-width-desktop:  20svw;
+$right-column-width-desktop: 100svw - $left-column-width-desktop;
+
+$left-column-width-tablet:   30svw;
+$right-column-width-tablet:  100svw - $left-column-width-tablet;
+
+// control the border radii of the button and the nav items
+$button-border-radius: 4px;
+$image-border-radius: $button-border-radius;
+$nav-border-radius-outer: $button-border-radius;
+$nav-border-padding: 4px;
+$nav-border-radius-inner: $nav-border-radius-outer - $nav-border-padding;
+
+// transition
+$transition: 0.1s all ease-in-out;
+
+// mixins for media queries
+$breakpoint-tablet:  1100px;
+$breakpoint-desktop: 1800px;
+
+@mixin tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @media screen and (min-width: $breakpoint-tablet + 1px) and (max-width: $breakpoint-desktop - 1px) {
+        @content;
+    }
+}
+
+@mixin mobile-styles($breakpoint-tablet) {
+    @media screen and (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+/* @font-face and @keyframes */
+@font-face {
+    font-family: "Geist Mono Medium";
+    src: url("../../fonts/GeistMono-Medium.ttf");
+}
+@font-face {
+    font-family: "Manrope";
+    src: url("../../fonts/Manrope-VariableFont_wght.ttf");
+    font-weight: 600;
+}
+
+/* General */
+* {
+    box-sizing: border-box;
+}
+html {
+    background: $background-color;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    width: $width-full;
+    min-height: 100svh;
+    padding-bottom: $spacing-l;
+}
+h1, h2, h3, h4, p {
+    -webkit-font-smoothing: antialiased;
+}
+video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: $image-border-radius;
+}
+
+/* everywhere */
+main {
+    width: $width-full;
+    padding-top:    $spacing-l;
+    padding-bottom: $spacing-l;
+    padding-left:   $padding-w-desktop;
+    padding-right:  $padding-w-desktop;
+    transition: $transition;
+    display: flex;
+    overflow-y: auto;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        padding-left:   $padding-w-tablet;
+        padding-right:  $padding-w-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        flex-direction: column;
+        padding-top:    $spacing-s;
+        padding-left:   $padding-w-mobile;
+        padding-right:   $padding-w-mobile;
+        gap: $grid-gap;
+    }
+}
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: $image-border-radius;
+}
+a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: $transition;
+}
+a:hover {
+    color: $available-color;
+}
+
+/* Left and right columns */
+.left-column {
+    position: fixed;
+    top: $spacing-l;
+    width: $left-column-width-desktop;
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    padding-right: $grid-gap-half;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        width: $left-column-width-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        position: relative;
+        width: 100%;
+        top: 0px;
+        padding-right: 0px;
+        padding-top: $spacing-l;
+    }
+}
+.right-column {
+    width: $right-column-width-desktop;
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    padding-left: $grid-gap-half;
+    margin-left: $left-column-width-desktop;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        width:       $right-column-width-tablet;
+        margin-left: $left-column-width-tablet;
+    }
+    @include mobile-styles($breakpoint-tablet) {
+        width: 100%;
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+}
+
+/* navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: $background-color-nav;
+    border-radius: $nav-border-radius-outer;
+    padding: $nav-border-padding;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    @include mobile-styles($breakpoint-tablet) {
+        width: 100% - $padding-w-mobile * 2;
+        position: fixed;
+        top: $spacing-xs;
+    }
+}
+nav > div > a > button {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: $grid-gap;
+    transition: $transition;
+    cursor: pointer;
+    border-radius: $button-border-radius;
+    color: $secondary-color !important;
+}
+nav > div > a:hover > button {
+    background: $tertiary-color;
+    color: $primary-color !important;
+}
+.button-special {
+    background: $available-color-nav-button;
+    color: $available-color !important;
+}
+.button-special:hover {
+    background: $available-color;
+    color: $background-color !important;
+}
+ul.monospace {
+    padding-left: 0px;
+    color: $accent-color;
+}
+li {
+    list-style-type: none;
+    color: $primary-color;
+}
+li:first-child {
+    margin-top: 14px;
+}
+
+/* typography */
+h1, p {
+    font-family: $regular-font;
+    color: $primary-color;
+}
+p {
+    font-size: $p-desktop;
+    font-weight: var($p-weight);
+}
+h1 {
+    font-size: $h1-desktop;
+    font-weight: var($h1-weight);
+}
+.monospace {
+    font-family: $monospace-font;
+    color: $primary-color;
+    letter-spacing: 0.05ch;
+    font-size: $monospace-desktop;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+h1.monospace {
+    color: $accent-color;
+    margin-bottom: 14px;
+}
+li > a {
+    color: $primary-color;
+}
+
+/* AVAILABLE FOR WORK */
+
+.available-for-work {
+    color: $available-color;
+    transition: $transition;
+    overflow-wrap: break-word;
+    hyphens: none;
+}
+.cta {
+    width: 100%;
+    color: $accent-color;
+    font-family: $monospace-font;
+    text-transform: uppercase;
+    background-color: rgba(203, 195, 167, 0.05);
+    border: none;
+    outline: none;
+    padding-top:    16px;
+    padding-bottom: 16px;
+    line-height: 100%;
+    transition: none;
+    border-radius: $button-border-radius;
+}
+.cta:hover {
+    background: $accent-color;
+    color: $background-color;
+}
+.cta > a {
+    color: $accent-color;
+    transition: none;
+}
+.cta:hover > a {
+    color: $background-color;
+}
+
+/* PROJECT INDEX */
+
+.project > a > h1 {
+    margin-top: 8px;
+    transition: $transition;
+}
+.project > a > img {
+    height: 600px;
+    object-fit: cover;
+
+    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+        height: 450px;
+    }
+
+    @include mobile-styles($breakpoint-tablet) {
+        height: 300px;
+    }
+}
+.project:hover > a > h1 {
+    color: $accent-color;
+}
+
+/* PROJECT PAGE RELATED STYLES */
+
+.project-text-block > .project-text {
+    grid-column-start: 3;
+    grid-column-end:   7;
+}
+.next-project {
+    padding-bottom: 0px;
+}
+.next-project > a > h1 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.next-project > a > h1:nth-child(2) {
+    color: $accent-color;
+}
+.next-project > a > img {
+    margin-top: 24px;
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    transition: $transition;
+    object-position: 50% 0%;
+}
+.next-project::before {
+    display: inline-block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    margin-bottom: 24px;
+    transition: $transition;
+    background: linear-gradient(90deg, $accent-color 0%, $background-color 40% 60%, $accent-color 100%);
+}

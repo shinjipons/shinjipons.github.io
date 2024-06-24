@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | Computational Typography in InDesign</title>
     <meta name="description" content="Discover how Shinji Pons used Basil.js to automate and innovate in Adobe InDesign, transforming manual, tedious tasks into efficient, error-free processes, enhancing creative possibilities in computational typography.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://shinjipons.com">
@@ -29,38 +29,36 @@
 </head>
 <body>
 
-    <nav>
-        <div>
-            <a href="index.html"><button class="monospace">Work</button></a>
-            <a href="about.html"><button class="monospace">About</button></a>
-            <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><button class="monospace">Resume</button></a>
-        </div>
-        <div>
-            <a href="mailto:contact@shinjipons.com"><button class="monospace button-special">Email</button></a>
-        </div>
-    </nav>
+    <main>
+        <!-- Left column -->
+        <div class="left-column">
+            <nav>
+    <div>
+        <a href="index.html"><button class="monospace">Work</button></a>
+        <a href="about.html"><button class="monospace">About</button></a>
+        <a href="./files/Shinji-Pons-Resume.pdf" target="_blank"><button class="monospace">Resume</button></a>
+    </div>
+    <div>
+        <a href="mailto:contact@shinjipons.com"><button class="monospace button-special">Contact</button></a>
+    </div>
+</nav>
 
-    <!-- The first image -->
-    <section class="one-col-grid">
-        <img src="images/basiljs/basiljs-01.webp">
-    </section>
+            <ul class="monospace">About
+                <li>My final major project at the London College of Communication was around exploring scripting inside of Adobe InDesign using a library called basil.js to create artwork that would impossible to make using the graphical user interface.</li>
+                <li>While working on Modulo, my layered typeface, I realized how tedious and inefficient it was to manually overlay hundreds of individual text frames for my type tests. I researched using the raw InDesign SDK and Processing but settled on Basil.js.</li>
+            </ul>
 
-    <section>
-        <div class="eight-col-grid project-text-block">
-            <div class="project-text">
-                <h1 class="monospace">About</h1>
-                <p>My final major project at the London College of Communication was around exploring scripting inside of Adobe InDesign using a library called basil.js to create artwork that would impossible to make using the graphical user interface.</p>
-                <p>While working on Modulo, my layered typeface, I realized how tedious and inefficient it was to manually overlay hundreds of individual text frames for my type tests. I researched using the raw InDesign SDK and Processing but settled on Basil.js.</p>
-                <h1 class="monospace">My role</h1>
-                <p>People at the Basel School of Design have open-sourced a library that allows anyone with access to InDesign to use scripting.</p>
-                <p>Thanks to this project, I understood that code could be used for creative purposes but more importantly, that it was an incredible way to automate tedious tasks and reduce errors while creating work that would have been unfeasible by hand. All while using open source!</p>
-            </div>
+            <ul class="monospace">My role
+                <li>People at the Basel School of Design have open-sourced a library that allows anyone with access to InDesign to use scripting.</li>
+                <li>Thanks to this project, I understood that code could be used for creative purposes but more importantly, that it was an incredible way to automate tedious tasks and reduce errors while creating work that would have been unfeasible by hand. All while using open source!</li>
+            </ul>
+
         </div>
-    </section>
 
-    <!-- All the other images -->
-    <section class="one-col-grid">
-        <img src="images/basiljs/basiljs-02.webp">
+        <!-- Right column -->
+        <div class="right-column">
+            <img src="images/basiljs/basiljs-01.webp">
+            <img src="images/basiljs/basiljs-02.webp">
 		<img src="images/basiljs/basiljs-03.webp">
 		<img src="images/basiljs/basiljs-04.webp">
 		<img src="images/basiljs/basiljs-05.webp">
@@ -69,35 +67,18 @@
 		<img src="images/basiljs/basiljs-08.webp">
 		<img src="images/basiljs/basiljs-09.webp">
 		<img src="images/basiljs/basiljs-10.webp">
-    </section>
 
-    <!-- Next project -->
-    <section class="next-project">
-        <a href="" id="next-project-link">
-            <h1>Next</h1>
-            <h1 id="next-project-title">Project Title</h1>
-            <img id="next-project-image" src="" alt="">
-        </a>
-    </section>
+            <!-- Next project -->
+            <!-- <section class="next-project">
+                <a href="" id="next-project-link">
+                    <h1>Next</h1>
+                    <h1 id="next-project-title">Project Title</h1>
+                    <img id="next-project-image" src="" alt="">
+                </a>
+            </section> -->
+        </div>
 
-    <footer class="two-col-grid">
-			<div>
-				<h1>Located in France.</h1>
-				<h1>Accessible globally.</h1>
-				<h1><a href="mailto:contact@shinjipons.com">Drop a greeting.</a></h1>
-			</div>
-			<ul class="monospace">
-				<li><a href="mailto:contact@shinjipons.com">E-mail</a></li>
-				<li><a href="https://linkedin.com/in/shinjipons" target="_blank">LinkedIn</a></li>
-				<li><a href="https://read.cv/shinjipons" target="_blank">Read.cv</a></li>
-				<li><a href="https://posts.cv/shinjipons" target="_blank">Posts.cv</a></li>
-				<li><a href="https://layers.to/shinjipons" target="_blank">Layers.to</a></li>
-				<li><a href="https://twitter.com/shinjipons" target="_blank">x.com</a></li>
-				<li><a href="https://cara.app/shinjipons/all" target="_blank">Cara</a></li>
-				<li><a href="https://instagram.com/shinji.pons" target="_blank">Instagram</a></li>
-				<li><a href="https://dribbble.com/shinjipons" target="_blank">Dribbble</a></li>
-			</ul>
-		</footer>
+    </main>
 
     <script type="text/javascript" src="script.js"></script>
 
