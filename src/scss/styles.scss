@@ -1,12 +1,12 @@
 // VARIABLES
 
 // colors!
-$primary-color:              rgba(219, 219, 219, 1.0);
+$primary-color:              rgba(230, 230, 230, 1.0);
 $secondary-color:            rgba(171, 171, 171, 1.0);
 $tertiary-color:             rgba( 38,  38,  38, 1.0);
 $accent-color:               rgba(203, 195, 167, 1.0);
 $background-color    :       rgba( 22,  22,  22, 1.0);
-$background-color-nav:       rgba( 22,  22,  22, 0.5);
+$background-color-nav:       rgba(255, 255, 255, 0.1);
 $available-color:            rgba(  0, 255, 133, 1.0);
 $available-color-nav-button: rgba(  0, 255, 133, 0.2);
 
@@ -22,7 +22,6 @@ $regular-font: "Manrope";
 $p-weight:         600;
 $h1-weight:        600;
 $headline-weight:  600;
-$monospace-weight: 500;
 
 $p-desktop:         14px;
 $monospace-desktop: 12px;
@@ -30,13 +29,13 @@ $h1-desktop:        20px;
 
 // control general spacing of things
 
-$spacing-l:           80px;
-$spacing-desktop-xl: 160px;
+$spacing-l:   80px;
+$spacing-xl: 160px;
 
 // control the spacing between the two columns, and other secondary things
 
 $grid-gap: 16px;
-$grid-gap-half: ($grid-gap / 2);
+$grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
 
@@ -88,12 +87,17 @@ body {
 h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
 }
+video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* everywhere */
 main, section {
     width: $width-desktop;
-    padding-top:    $spacing-desktop;
-    padding-bottom: $spacing-desktop;
+    padding-top:    $spacing-l;
+    padding-bottom: $spacing-l;
     padding-left:   $padding-w-desktop;
     padding-right:  $padding-w-desktop;
     transition: $transition;
@@ -106,6 +110,7 @@ img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    // border-radius: $button-border-radius;
 }
 a {
     color: $primary-color;
@@ -139,7 +144,6 @@ a:hover {
 nav {
     display: flex;
     justify-content: space-between;
-    // background: rgba(255, 255, 255, 0.1);
     background: $background-color-nav;
     border-radius: $nav-border-radius-outer;
     padding: $nav-border-padding;
@@ -152,9 +156,11 @@ nav > div > a > button {
     transition: $transition;
     cursor: pointer;
     border-radius: $nav-border-radius-inner;
+    color: $secondary-color !important;
 }
 nav > div > a:hover > button {
     background: $background-color;
+    color: $primary-color !important;
 }
 .button-special {
     background: $available-color-nav-button;
@@ -168,7 +174,7 @@ nav > div > a:hover > button {
 ul.monospace {
     padding-left: 0px;
     color: $accent-color;
-    font-weight: var($monospace-weight);
+
 }
 li {
     list-style-type: none;
@@ -188,8 +194,8 @@ footer {
 
     padding-left:   $padding-w-desktop;
     padding-right:  $padding-w-desktop;
-    padding-top:    $spacing-desktop;
-    padding-bottom: var($spacing-desktop-xl);
+    padding-top:    $spacing-l;
+    padding-bottom: var($spacing-xl);
 
     /* make the footer stick to the bottom */
     margin-top: auto;
@@ -234,12 +240,10 @@ h1 {
     font-size: $monospace-desktop;
     line-height: 120%;
     text-transform: uppercase;
-    font-weight: var($monospace-weight);
 }
 h1.monospace {
     color: $accent-color;
     margin-bottom: 14px;
-    font-weight: var($monospace-weight);
 }
 li > a {
     color: $primary-color;
