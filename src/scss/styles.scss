@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // VARIABLES
 
 // colors!
@@ -58,13 +60,13 @@ $transition: 0.1s all ease-in-out;
 $breakpoint-tablet:  1100px;
 $breakpoint-desktop: 1800px;
 
-@mixin tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+@mixin tablet-styles() {
     @media screen and (min-width: $breakpoint-tablet + 1px) and (max-width: $breakpoint-desktop - 1px) {
         @content;
     }
 }
 
-@mixin mobile-styles($breakpoint-tablet) {
+@mixin mobile-styles() {
     @media screen and (max-width: $breakpoint-tablet) {
         @content;
     }
@@ -121,11 +123,11 @@ main {
     display: flex;
     overflow-y: auto;
 
-    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @include tablet-styles() {
         padding-left:   $padding-w-tablet;
         padding-right:  $padding-w-tablet;
     }
-    @include mobile-styles($breakpoint-tablet) {
+    @include mobile-styles() {
         flex-direction: column;
         padding-top:    $spacing-s;
         padding-left:   $padding-w-mobile;
@@ -158,10 +160,10 @@ a:hover {
     gap: $grid-gap;
     padding-right: $grid-gap-half;
 
-    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @include tablet-styles() {
         width: $left-column-width-tablet;
     }
-    @include mobile-styles($breakpoint-tablet) {
+    @include mobile-styles() {
         position: relative;
         width: 100%;
         top: 0px;
@@ -177,11 +179,11 @@ a:hover {
     padding-left: $grid-gap-half;
     margin-left: $left-column-width-desktop;
 
-    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @include tablet-styles() {
         width:       $right-column-width-tablet;
         margin-left: $left-column-width-tablet;
     }
-    @include mobile-styles($breakpoint-tablet) {
+    @include mobile-styles() {
         width: 100%;
         padding-left: 0px;
         margin-left: 0px;
@@ -199,7 +201,7 @@ nav {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    @include mobile-styles($breakpoint-tablet) {
+    @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
         position: fixed;
         top: $spacing-xs;
@@ -219,13 +221,13 @@ nav > div > a:hover > button {
     background: $tertiary-color;
     color: $primary-color !important;
 }
-.button-special {
-    background: $available-color-nav-button;
-    color: $available-color !important;
-}
-.button-special:hover {
+.button-call-to-action {
     background: $available-color;
     color: $background-color !important;
+}
+.button-call-to-action:hover {
+    color: $available-color !important;
+    background: transparentize($available-color, 0.8);
 }
 ul {
     margin-top: 0px;
@@ -242,6 +244,29 @@ li {
 li:first-child {
     margin-top: 14px;
 }
+.social-links-block {
+    display: flex;
+    gap: $grid-gap-half;
+    margin-top: $grid-gap;
+}
+.social-button {
+    outline: none;
+    font-family: $monospace-font;
+    font-size: $monospace-desktop;
+    text-transform: uppercase;
+    padding: $grid-gap;
+    border-radius: $button-border-radius;
+    border: 0px;
+    background: $tertiary-color;
+    color: $accent-color;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        background: $accent-color;
+        color: $background-color;
+    }
+}
 
 /* typography */
 h1, p {
@@ -250,11 +275,11 @@ h1, p {
 }
 p {
     font-size: $p-desktop;
-    font-weight: var($p-weight);
+    font-weight: $p-weight;
 }
 h1 {
     font-size: $h1-desktop;
-    font-weight: var($h1-weight);
+    font-weight: $h1-weight;
 }
 .monospace {
     font-family: $monospace-font;
@@ -285,11 +310,11 @@ li > a {
     color: $accent-color;
     font-family: $monospace-font;
     text-transform: uppercase;
-    background-color: rgba(203, 195, 167, 0.05);
+    background: $tertiary-color;
     border: none;
     outline: none;
-    padding-top:    16px;
-    padding-bottom: 16px;
+    padding-top:    $grid-gap;
+    padding-bottom: $grid-gap;
     line-height: 100%;
     transition: none;
     border-radius: $button-border-radius;
@@ -316,11 +341,11 @@ li > a {
     height: 600px;
     object-fit: cover;
 
-    @include tablet-styles($breakpoint-tablet, $breakpoint-desktop) {
+    @include tablet-styles() {
         height: 450px;
     }
 
-    @include mobile-styles($breakpoint-tablet) {
+    @include mobile-styles() {
         height: 300px;
     }
 }
