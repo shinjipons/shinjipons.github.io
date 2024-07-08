@@ -9,7 +9,8 @@ const paths = {
         dest: 'dist/css'
     },
     html: {
-        src: '*.html'
+        // src: '*.html'
+        src: (['*.html', 'blog/*.html'])
     },
     js: {
         src: '*.js'
