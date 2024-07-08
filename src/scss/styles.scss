@@ -20,7 +20,11 @@ $padding-w-mobile:  3%;
 
 // fonts
 $monospace-font: "Geist Mono Medium";
+
+// $regular-font: "Innovator Grotesk Regular";
 $regular-font: "Manrope";
+// $regular-font: "FT System Blank Book";
+
 $p-weight:         600;
 $h1-weight:        600;
 $headline-weight:  600;
@@ -61,7 +65,7 @@ $breakpoint-tablet:  1100px;
 $breakpoint-desktop: 1800px;
 
 @mixin tablet-styles() {
-    @media screen and (min-width: $breakpoint-tablet + 1px) and (max-width: $breakpoint-desktop - 1px) {
+    @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
         @content;
     }
 }
@@ -78,10 +82,19 @@ $breakpoint-desktop: 1800px;
     src: url("../../fonts/GeistMono-Medium.ttf");
 }
 @font-face {
+    font-family: "FT System Blank Book";
+    src: url("../../fonts/FTSystem-BlankBook.otf");
+}
+@font-face {
+    font-family: "Innovator Grotesk Regular";
+    src: url("../../fonts/InnovatorGrotesk-Regular.otf");
+}
+@font-face {
     font-family: "Manrope";
     src: url("../../fonts/Manrope-VariableFont_wght.ttf");
     font-weight: 600;
 }
+
 
 /* General */
 * {
@@ -169,6 +182,7 @@ a:hover {
         top: 0px;
         padding-right: 0px;
         padding-top: $spacing-l;
+        margin-bottom: $spacing-l;
     }
 }
 .right-column {

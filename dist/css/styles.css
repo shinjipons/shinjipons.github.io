@@ -4,6 +4,14 @@
   src: url("../../fonts/GeistMono-Medium.ttf");
 }
 @font-face {
+  font-family: "FT System Blank Book";
+  src: url("../../fonts/FTSystem-BlankBook.otf");
+}
+@font-face {
+  font-family: "Innovator Grotesk Regular";
+  src: url("../../fonts/InnovatorGrotesk-Regular.otf");
+}
+@font-face {
   font-family: "Manrope";
   src: url("../../fonts/Manrope-VariableFont_wght.ttf");
   font-weight: 600;
@@ -52,7 +60,7 @@ main {
   display: flex;
   overflow-y: auto;
 }
-@media screen and (min-width: 1101px) and (max-width: 1799px) {
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
   main {
     padding-left: 6%;
     padding-right: 6%;
@@ -95,7 +103,7 @@ a:hover {
   gap: 16px;
   padding-right: 8px;
 }
-@media screen and (min-width: 1101px) and (max-width: 1799px) {
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
   .left-column {
     width: 30svw;
   }
@@ -107,6 +115,7 @@ a:hover {
     top: 0px;
     padding-right: 0px;
     padding-top: 80px;
+    margin-bottom: 80px;
   }
 }
 
@@ -118,7 +127,7 @@ a:hover {
   padding-left: 8px;
   margin-left: 20svw;
 }
-@media screen and (min-width: 1101px) and (max-width: 1799px) {
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
   .right-column {
     width: 70svw;
     margin-left: 30svw;
@@ -300,7 +309,7 @@ li > a {
   height: 600px;
   object-fit: cover;
 }
-@media screen and (min-width: 1101px) and (max-width: 1799px) {
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project > a > img {
     height: 450px;
   }
