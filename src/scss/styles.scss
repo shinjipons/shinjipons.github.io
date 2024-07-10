@@ -213,6 +213,7 @@ nav {
     background: $background-color-nav;
     border-radius: $nav-border-radius-outer;
     padding: $nav-border-padding;
+    z-index: 99;
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
