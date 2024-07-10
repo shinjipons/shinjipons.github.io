@@ -13,7 +13,7 @@ const paths = {
         src: (['*.html', 'blog/*.html'])
     },
     js: {
-        src: '*.js'
+        src: (['*.js', 'components/*.js'])
     }
 };
 
