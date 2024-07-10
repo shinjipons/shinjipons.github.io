@@ -1,0 +1,42 @@
+<!-- src/blog.html -->
+<!DOCTYPE html>
+<html lang="en">
+	@@include('partials/head.html')
+	<body>
+        <main>
+            <div class="left-column">
+                @@include('partials/nav.html')
+				@@include('partials/info.html')
+			</div>
+
+			<div class="right-column">
+                <div class="blog-articles-list-container">
+                    <a href="blog/blog-article-template.html">
+                        <div class="blog-article-item">
+                            <h1>This is a blog article title</h1>
+                            <h1>July 8, 2024</h1>
+                        </div>
+                    </a>
+
+                    <a href="blog/blog-article-template.html">
+                        <div class="blog-article-item">
+                            <h1>Titles should be that long</h1>
+                            <h1>July 8, 2024</h1>
+                        </div>
+                    </a>
+
+                    <a href="blog/blog-article-template.html">
+                        <div class="blog-article-item">
+                            <h1>Don't make titles too long</h1>
+                            <h1>July 8, 2024</h1>
+                        </div>
+                    </a>
+                </div>
+			</div>
+		</main>
+
+		<script type="text/javascript" src="script.js"></script>
+
+	</body>
+
+</html>
