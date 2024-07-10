@@ -420,6 +420,9 @@ li > a {
 .blog-article-content picture:first-child {
   margin-top: 0px;
 }
+.blog-article-content picture img {
+  border: 1.33px solid rgb(171, 171, 171);
+}
 .blog-article-content .caption {
   font-size: 14px;
   text-align: center;

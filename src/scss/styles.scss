@@ -467,6 +467,9 @@ li > a {
         &:first-child {
             margin-top: 0px;
         }
+        img {
+            border: 1.33px solid $secondary-color;
+        }
     }
     .caption {
         font-size: 14px;
