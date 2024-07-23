@@ -38,14 +38,13 @@ function watch() {
             baseDir: './'
         }
     });
-
     gulp.watch(paths.scss.src, style);
     gulp.watch(paths.html.src).on('change', browserSync.reload);
     gulp.watch(paths.js.src).on('change', browserSync.reload);
 }
 
 // Define task in series
-const build = gulp.series(style, watch);
+const build = gulp.series(style, js, watch);
 
 // Export tasks
 exports.style = style;
