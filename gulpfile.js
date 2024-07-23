@@ -8,6 +8,9 @@ const paths = {
     scss: {
         src:'src/scss/*.scss',
         dest: 'dist/css'
+    },
+    html: {
+        src: '*.html'
     }
 }
 
@@ -27,6 +30,7 @@ function watch() {
         }
     });
     gulp.watch(paths.scss.src, style);
+    gulp.watch(paths.html.src).on('change', browserSync.reload);
 }
 
 // Define task in series
