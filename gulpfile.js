@@ -1,16 +1,19 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
-const fileInclude = require('gulp-file-include');
 
 // paths
 const paths = {
     scss: {
         src:'src/scss/*.scss',
-        dest: 'dist/css'
+        dest: './dist/css'
     },
     html: {
         src: '*.html'
+    },
+    js: {
+        src: 'src/js/*.js',
+        dest: './dist/js'
     }
 }
 
@@ -22,6 +25,12 @@ function style() {
         .pipe(browserSync.stream());
 }
 
+function js() {
+    return gulp.src(paths.js.src)
+        .pipe(gulp.dest(paths.js.dest))
+        .pipe(browserSync.stream()); // I don't think that stream will work
+}
+
 // Watch everything and serve
 function watch() {
     browserSync.init({
@@ -29,8 +38,10 @@ function watch() {
             baseDir: './'
         }
     });
+
     gulp.watch(paths.scss.src, style);
     gulp.watch(paths.html.src).on('change', browserSync.reload);
+    gulp.watch(paths.js.src).on('change', browserSync.reload);
 }
 
 // Define task in series
