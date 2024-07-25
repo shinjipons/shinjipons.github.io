@@ -1,52 +1,53 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
+const fileInclude = require('gulp-file-include');
 
-// paths
-const paths = {
-    scss: {
-        src:'src/scss/*.scss',
-        dest: './dist/css'
-    },
-    html: {
-        src: '*.html'
-    },
-    js: {
-        src: 'src/js/*.js',
-        dest: './dist/js'
-    }
+// HTML include task
+function html() {
+    return gulp.src(['src/html/*.html'])
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
 }
 
 // Compile SCSS to CSS
 function style() {
-    return gulp.src(paths.scss.src)
+    return gulp.src('src/scss/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(paths.scss.dest))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 }
 
 function js() {
-    return gulp.src(paths.js.src)
-        .pipe(gulp.dest(paths.js.dest))
-        .pipe(browserSync.stream()); // I don't think that stream will work
+    return gulp.src('src/js/*.js')
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream());
 }
 
 // Watch everything and serve
 function watch() {
     browserSync.init({
         server: {
-            baseDir: './'
+            baseDir: 'dist'
         }
     });
-    gulp.watch(paths.scss.src, style);
-    gulp.watch(paths.html.src).on('change', browserSync.reload);
-    gulp.watch(paths.js.src).on('change', browserSync.reload);
+    // gulp.watch("src/**/*.html").on('change', browserSync.reload);
+    // gulp.watch(["src/**/*.html"], ["src/js/*.js"]).on('change', browserSync.reload);
+    // gulp.watch("").on('change', browserSync.reload);
+    gulp.watch("src/scss/*.scss", style);
+    gulp.watch("src/**/*.html").on('change', html);
+    gulp.watch("src/js/*.js").on('change', js);
 }
 
 // Define task in series
-const build = gulp.series(style, js, watch);
+const build = gulp.series(html, style, js, watch);
 
 // Export tasks
+exports.html = html;
 exports.style = style;
 exports.watch = watch;
 exports.build = build;
