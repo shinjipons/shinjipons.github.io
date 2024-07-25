@@ -1,16 +1,21 @@
 import os
 from pages_data import pages as pages_data
 
+# Set the output folder
+OUTPUT_FOLDER = 'dist'
+
+# Create the output folder if it doesn't exist
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
+
 # Read the shared footer from a file
 with open('src/python/shared_nav.html', 'r') as file:
     shared_nav = file.read()
 
 # Function to get all webp images from a specific folder
 def get_image_tags(image_folder):
-
     # Get all webp images and sort them
-    files = sorted([f for f in os.listdir(image_folder) if f.endswith('.webp')])
-
+    files = sorted([f for f in os.listdir("dist/" + image_folder) if f.endswith('.webp')])
     # Separate the first image if the list is not empty
     first_img_tag = ''
     other_img_tags = []
@@ -23,7 +28,6 @@ def get_image_tags(image_folder):
         ]
     # Purely cosmetic: the first image tag needs more tab spaces
     other_img_tags[0] = other_img_tags[0].replace("\t\t", "")
-
     return first_img_tag, other_img_tags
 
 # You can then generate each page by using the key for that page
@@ -44,7 +48,7 @@ def generate_page(page_key, page_data):
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Shinji Pons | Product Designer of 3D Tools & Beyond | {title}</title>
     <meta name="description"          content="{description}">
-    <link rel="stylesheet" href="../dist/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta property="og:url"           content="https://shinjipons.com">
     <meta property="og:type"          content="website">
     <meta property="og:title"         content="Shinji Pons | Product Designer of 3D Tools & Beyond | {title}">
@@ -95,7 +99,9 @@ def generate_page(page_key, page_data):
 
     formatted_html = html_template.format(**page_data)
 
-    with open(f"{page_key}.html", "w") as html_file:
+    output_path = os.path.join(OUTPUT_FOLDER, f"{page_key}.html")
+    # with open(f"{page_key}.html", "w") as html_file:
+    with open(output_path, "w") as html_file:
         html_file.write(formatted_html)
 
 # Generate all pages
