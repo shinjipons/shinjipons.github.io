@@ -6,12 +6,12 @@ pages = {
         "client": "Personal Project",
         "type": "Alias Modelling",
         "year": "2020",
+        "image_folder": "images/apple-letter/",
         "description": "Enhance your 3D design experience with Autodesk Alias SubD. Learn how Shinji Pons improved user integration, streamlining workflows and reducing learning curves for efficient, high-quality modeling.",
         "paragraph_1": "As part of an interview loop, I did this bubble letter of a capital R. I haven't yet solved it without making some major compromises to the surfaces at the intersection of the letter's stems. Perhaps when I have more free time, I will give it another try.",
         "paragraph_2": "The brief was to model a bubble letter with a circular profile while avoiding flat areas at the intersection and, of course, maintaining perfect continuity and clean geometry. The real challenge is that avoiding flat areas means making some compromises in continuity.",
         "paragraph_3": "The biggest challenge in this exercise to avoid flat planes in the transition areas where the main pipes of the bubble letter meet. If I were to only aim for G2 continuity and didn't care too much for heavy surfaces, it could work. But what would be the fun in that? While this result looks OK, there is lots I can improve on.",
         "paragraph_4": "The transition areas are too flat and I went for too much of a pill-shaped profile. If you are willing to teach me the proper techniques, please get in touch.",
-        "image_folder": "images/apple-letter/"
     },
     "louvre-abu-dhabi": {
         "title": "Louvre Abu Dhabi",
@@ -20,11 +20,11 @@ pages = {
         "type": "Graphic Design",
         "year": "2012",
         "description": "Discover Shinji Pons' work on the Louvre Abu Dhabi, where he collaborated on typographic signage and icon design, ensuring clarity and elegance across French, English, and Arabic for a global audience.",
+        "image_folder": "images/louvre-abu-dhabi/",
         "paragraph_1": "While at Ateliers Jean Nouvel, I worked on the typographic signage and icon design for the Louvre Abu Dhabi museum. Under the the creative direction of Philippe Apeloig and Clovis Vallois, I sketched, designed and mocked up several physical designs for the typographic system in French, English and Arabic.",
         "paragraph_2": "The graphic designers were in constant collaboration with the architects to decide the size and location of the signage, but also to remove walls where needed to increase signage visibility.",
         "paragraph_3": "To accompany the building's unique design, Philippe Apeloig had devised a system using the dome's light patterns. The challenge was to make the icons understandable from every culture.",
         "paragraph_4": "After many iterations, the result was an elegant and timeless system for a global audience. I am still very proud to have contributed to this project to this day.",
-        "image_folder": "images/louvre-abu-dhabi/"
     },
     "lego-digital-designer-pro": {
         "title": "LEGO Digital Designer Pro",
@@ -33,11 +33,11 @@ pages = {
         "type": "UX Design",
         "year": "2021",
         "description": "Discover how Shinji Pons enhanced the LEGO Digital Designer Pro, streamlining workflows and automating tasks to boost efficiency and reduce costs for LEGO's virtual set design process.",
-        "paragraph_1": "While at the LEGO Group, I had the privilege of working on designing tools and workflows for LEGO's in-house software for designing virtual LEGO sets and authoring digital building instructions. Along with another product designer, I was tasked with improving efficiency and reducing costs for the business by streamlining processes and automating tedious tasks.",
         "image_folder": "images/ldd-pro",
-        "paragraph_2": "LEGO's design process is hindered by manual labor, as brick counting and instruction creation are time-consuming and error-prone. Streamlining these steps could improve efficiency and reduce risks to the business. The LEGO Group was in the transition phase from relying on an outdated Maya plugin to LEGO Digital Designer Pro. However, redesigning the entire pipeline came with huge challenges in supporting customers during this transition phase without disrupting the normal flow of business.",
-        "paragraph_3": "The design process of LEGO sets and building instructions was ripe for automation. Many of the steps, such as determining the manufacturing cost of a set, detecting duplicate assemblies, and creating marketing material, were still done manually by humans instead of machines and software. The principle was to let computers do as much of the boring work as possible.",
-        "paragraph_4": "Some of my work ended up saving LEGO model designers a lot of time when building their sets. While most of the designs were not the most innovative, the basics were much more efficient and quicker than with the Maya plugin."
+        "paragraph_1": "While at the LEGO Group, I designed tools and workflows for LEGO's in-house software for designing virtual LEGO sets and authoring digital building instructions.",
+        "paragraph_2": "My role was to improve efficiency and reducing costs for the business by streamlining processes and automating tedious tasks.",
+        "paragraph_3": "Many of the steps were still done manually by humans instead of machines and software.",
+        "paragraph_4": "My work ended up saving LEGO model designers a lot of time when building their sets."
     },
     "alias-subd": {
         "title": "Autodesk Alias SubD",
@@ -138,10 +138,8 @@ pages = {
         "year": "2024",
         "description": "Explore Shinji's collection of images generated using Midjourney.",
         "image_folder": "images/midjourney",
-        "paragraph_1": "This is an evergrowing compilation of my images generated using Midjourney.",
-        "paragraph_2": "More images will be added on a regular basis.",
-        "paragraph_3": "I just type words.",
-        "paragraph_4": "And pretty images come out."
+        "paragraph_1": "I just type words.",
+        "paragraph_2": "And pretty images come out."
     }
 }
 
