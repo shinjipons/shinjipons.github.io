@@ -19,11 +19,10 @@ $padding-w-tablet:   6%;
 $padding-w-mobile:   3%;
 
 // fonts
-$monospace-font: "Geist Mono Medium";
-
 // $regular-font: "Innovator Grotesk Regular";
-$regular-font: "Manrope";
 // $regular-font: "FT System Blank Book";
+$monospace-font: "Geist Mono Medium";
+$regular-font: "Manrope";
 
 $p-weight:         600;
 $h1-weight:        600;
@@ -294,7 +293,7 @@ li:first-child {
 }
 
 /* typography */
-h1, p {
+h1, p, ul {
     font-family: $regular-font;
     color: $primary-color;
 }
@@ -439,11 +438,11 @@ li > a {
     &:hover {
         background: $tertiary-color;
         h1:first-child {
-            transform: translateX($spacing-xs);
+            // transform: translateX($spacing-xs);
             color: $accent-color;
         }
         h1:last-child {
-            transform: translateX($spacing-xs * -1);
+            // transform: translateX($spacing-xs * -1);
         }
     }
 }
