@@ -1,59 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <meta charset="UTF-8">
-        <meta name="viewport"             content="width=device-width, initial-scale=1, minimum-scale=1">
-        <title>Shinji Pons | Product Designer of 3D Tools & Beyond</title>
-        <meta name="description"          content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things.">
-        <link rel="stylesheet"            href="dist/css/styles.css">
-        <meta property="og:url"           content="https://shinjipons.com">
-        <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Shinji Pons | Product Designer of 3D Tools & Beyond">
-        <meta property="og:description"   content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things.">
-        <meta property="og:image"         content="https://www.shinjipons.com/images/opengraph.jpg">
-        <meta name="twitter:card"         content="summary_large_image">
-        <meta property="twitter:domain"   content="shinjipons.com">
-        <meta property="twitter:url"      content="https://shinjipons.com">
-        <meta name="twitter:title"        content="Shinji Pons | Product Designer of 3D Tools & Beyond">
-        <meta name="twitter:description"  content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things.">
-        <meta name="twitter:image"        content="https://www.shinjipons.com/images/opengraph.jpg">
-        <link rel="icon" type="image/png" sizes="32x32"   href="/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16"   href="/icons/favicon-16x16.png">
-        <link rel="apple-touch-icon"      sizes="180x180" href="/icons/favicon-ios.png">
+        @@include('./partials/head.html')
     </head>
 	<body>
         <main>
-            <!-- left column -->
             <div class="left-column">
-                <nav>
-                    <div>
-                        <a class="monospace" href="index.html">Work</a>
-                        <a class="monospace" href="about.html">About</a>
-                        <a class="monospace" href="blog.html">Blog</a>
-                    </div>
-                    <div>
-                        <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
-                    </div>
-                </nav>
-				<ul class="monospace">About
-                    <li>A product designer from France.</li>
-                    <li>I specialize in the design and user experience of complex applications for creative professionals.</li>
-                </ul>
-                <ul class="monospace">Status
-                    <li class="available-for-work">Available for work</li>
-                </ul>
-                <ul class="monospace">Online
-                    <div class="social-links-block">
-                        <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="social-button">LinkedIn</button></a>
-                        <a href="https://instagram.com/shinji.pons"   target="_blank"><button class="social-button">Instagram</button></a>
-                        <a href="https://bento.me/shinjipons"         target="_blank"><button class="social-button">Bento</button></a>
-                    </div>
-                </ul>
-                <ul class="monospace">Location
-                    <li>Toulouse, France</li>
-                </ul>
+                @@include('./partials/navigation.html')
+				@@include('./partials/information.html')
 			</div>
-            <!-- right column -->
 			<div class="right-column">
                 <div class="blog-articles-list-container">
                     <a href="blog/blog-article-template.html">
