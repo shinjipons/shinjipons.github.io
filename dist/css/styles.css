@@ -338,6 +338,7 @@ li > a {
 }
 
 .next-project {
+  margin-top: 80px;
   padding-bottom: 0px;
 }
 
@@ -357,16 +358,6 @@ li > a {
   object-fit: cover;
   transition: 0.1s all ease-in-out;
   object-position: 50% 0%;
-}
-
-.next-project::before {
-  display: inline-block;
-  content: "";
-  height: 2px;
-  width: 100%;
-  margin-bottom: 24px;
-  transition: 0.1s all ease-in-out;
-  background: linear-gradient(90deg, rgb(203, 195, 167) 0%, rgb(22, 22, 22) 40% 60%, rgb(203, 195, 167) 100%);
 }
 
 /* BLOG RELATED ITEMS */
@@ -415,9 +406,6 @@ li > a {
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;
-}
-.blog-article-content picture img {
-  border: 1.33px solid rgb(171, 171, 171);
 }
 .blog-article-content .caption {
   font-size: 14px;
