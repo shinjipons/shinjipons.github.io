@@ -73,26 +73,22 @@ def generate_page(page_key, page_data):
                 <li>{paragraph_1}</li>
                 <li>{paragraph_2}</li>
             </ul>
-            <ul class="monospace">My role
-                <li>{paragraph_3}</li>
-                <li>{paragraph_4}</li>
-            </ul>
         </div>
         <!-- Right column -->
         <div class="right-column">
             {first_image}
             {other_images}
             <!-- Next project -->
-            <!-- <section class="next-project">
+            <section class="next-project">
                 <a href="" id="next-project-link">
                     <h1>Next</h1>
                     <h1 id="next-project-title">Project Title</h1>
                     <img id="next-project-image" src="" alt="">
                 </a>
-            </section> -->
+            </section>
         </div>
     </main>
-    <script type="text/javascript" src="../dist/js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
 """

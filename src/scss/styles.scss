@@ -384,6 +384,7 @@ li > a {
     grid-column-end:   7;
 }
 .next-project {
+    margin-top: $spacing-l;
     padding-bottom: 0px;
 }
 .next-project > a > h1 {
@@ -400,15 +401,6 @@ li > a {
     object-fit: cover;
     transition: $transition;
     object-position: 50% 0%;
-}
-.next-project::before {
-    display: inline-block;
-    content: "";
-    height: 2px;
-    width: 100%;
-    margin-bottom: 24px;
-    transition: $transition;
-    background: linear-gradient(90deg, $accent-color 0%, $background-color 40% 60%, $accent-color 100%);
 }
 
 /* BLOG RELATED ITEMS */
@@ -466,9 +458,6 @@ li > a {
         display: block;
         &:first-child {
             margin-top: 0px;
-        }
-        img {
-            border: 1.33px solid $secondary-color;
         }
     }
     .caption {
