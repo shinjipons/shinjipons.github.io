@@ -2,10 +2,11 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
+const concat = require('gulp-concat');
 
 // HTML include task
 function html() {
-    return gulp.src(['src/html/*.html'])
+    return gulp.src(['src/html/**/*.html'])
         .pipe(fileInclude({
             prefix: '@@',
             basepath: '@file'
@@ -24,6 +25,8 @@ function style() {
 
 function js() {
     return gulp.src('src/js/*.js')
+        .pipe(concat('script.js'))
+        // .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
 }
@@ -35,11 +38,6 @@ function watch() {
             baseDir: 'dist'
         }
     });
-    // gulp.watch("src/**/*.html").on('change', browserSync.reload);
-    // gulp.watch(["src/**/*.html"], ["src/js/*.js"]).on('change', browserSync.reload);
-    // gulp.watch("").on('change', browserSync.reload);
-    // gulp.watch("src/**/*.html").on('change', html);
-    // gulp.watch("src/**/*.html").on('change', browserSync.reload);
     gulp.watch("src/scss/*.scss", style);
     gulp.watch("src/**/*.html").on('change', html);
     gulp.watch("dist/**/*.html").on('change', browserSync.reload);
