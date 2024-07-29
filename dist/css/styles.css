@@ -35,7 +35,6 @@ body {
   margin: 0px;
   width: 100%;
   min-height: 100svh;
-  padding-bottom: 80px;
 }
 
 h1, h2, h3, h4, p {
@@ -120,6 +119,9 @@ a:hover {
 }
 .left-column .monospace {
   padding-left: 16px;
+}
+.left-column .monospace.padding-between-items * {
+  padding-bottom: 16px;
 }
 
 .right-column {
@@ -385,9 +387,20 @@ li > a {
 .blog-article-item:hover h1:first-child {
   color: rgb(203, 195, 167);
 }
+
 .blog-article-content {
-  width: 50%;
+  width: 60%;
   padding-left: 16px;
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .blog-article-content {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .blog-article-content {
+    width: 100%;
+  }
 }
 .blog-article-content h1 {
   margin-top: 40px;
@@ -415,19 +428,25 @@ li > a {
   position: relative;
 }
 .blog-article-content .blog-paragraph-with-note .blog-note {
+  width: 60%;
   position: absolute;
   color: rgb(203, 195, 167);
   font-size: 14px;
   top: -8px;
   left: 105%;
-  width: 50%;
   padding-left: 16px;
   border-left: 2px solid rgb(203, 195, 167);
 }
-
-.blog-outline a > li {
-  color: rgb(171, 171, 171);
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .blog-article-content .blog-paragraph-with-note .blog-note {
+    width: 60%;
+  }
 }
-.blog-outline a > li:hover {
-  color: rgb(230, 230, 230);
+@media screen and (max-width: 1100px) {
+  .blog-article-content .blog-paragraph-with-note .blog-note {
+    width: 100%;
+    position: relative;
+    left: 0%;
+    margin-top: 40px;
+  }
 }
