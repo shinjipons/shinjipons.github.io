@@ -69,7 +69,7 @@ def generate_page(page_key, page_data):
         <!-- Left column -->
         <div class="left-column">
             {shared_nav}
-            <ul class="monospace">About
+            <ul class="monospace padding-between-items">About
                 <li>{paragraph_1}</li>
                 <li>{paragraph_2}</li>
             </ul>
