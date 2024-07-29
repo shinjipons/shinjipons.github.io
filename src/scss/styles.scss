@@ -112,7 +112,6 @@ body {
     margin: 0px;
     width: $width-full;
     min-height: 100svh;
-    padding-bottom: $spacing-l;
 }
 h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
@@ -184,6 +183,11 @@ a:hover {
     }
     .monospace {
         padding-left: $grid-gap;
+        &.padding-between-items {
+            * {
+                padding-bottom: $grid-gap;
+            }
+        }
     }
 }
 .right-column {
@@ -405,10 +409,6 @@ li > a {
 
 /* BLOG RELATED ITEMS */
 
-// .blog-articles-list-container {
-    // padding-top: $spacing-l;
-// }
-
 .blog-article-item {
     display: flex;
     flex-direction: row;
@@ -430,18 +430,25 @@ li > a {
     &:hover {
         background: $tertiary-color;
         h1:first-child {
-            // transform: translateX($spacing-xs);
             color: $accent-color;
-        }
-        h1:last-child {
-            // transform: translateX($spacing-xs * -1);
         }
     }
 }
 
 .blog-article-content {
-    width: 50%;
+    $blog-article-content-width-desktop: 60%;
+    $blog-article-content-width-tablet:  60%;
+    $blog-article-content-width-mobile:  100%;
+
+    width: $blog-article-content-width-desktop;
     padding-left: $grid-gap;
+
+    @include tablet-styles() {
+        width: $blog-article-content-width-tablet;
+    }
+    @include mobile-styles() {
+        width: $blog-article-content-width-mobile;
+    }
     h1 {
         margin-top: $spacing-m;
         &:first-child {
@@ -467,23 +474,23 @@ li > a {
     .blog-paragraph-with-note {
         position: relative;
         .blog-note {
+            width: 60%;
             position: absolute;
             color: $accent-color;
             font-size: 14px;
             top: $grid-gap-half * -1;
             left: 105%;
-            width: 50%;
             padding-left: $grid-gap;
             border-left: 2px solid $accent-color;
-        }
-    }
-}
-
-.blog-outline {
-    a > li {
-        color: $secondary-color;
-        &:hover {
-            color: $primary-color;
+            @include tablet-styles() {
+                width: 60%;
+            }
+            @include mobile-styles() {
+                width: 100%;
+                position: relative;
+                left: 0%;
+                margin-top: $spacing-m;
+            }
         }
     }
 }
