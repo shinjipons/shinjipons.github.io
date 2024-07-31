@@ -26,7 +26,6 @@ function style() {
 function js() {
     return gulp.src('src/js/*.js')
         .pipe(concat('script.js'))
-        // .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
 }
