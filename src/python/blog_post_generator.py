@@ -278,7 +278,5 @@ for markdown_filepath in get_all_markdown_filepaths(markdown_src_directory):
         else: # don't do anything
             html_lines_b_a_ul_ol_code.append(line)
 
-    print(html_lines[0])
-
     # Generate a single page
     generate_page(html_filename, post_description, html_lines_b_a_ul_ol_code)
