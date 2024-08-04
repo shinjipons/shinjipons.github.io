@@ -82,7 +82,7 @@ And as I suspected, there is no way to get the app to open to the Calendar direc
 
 So Apple Calendar isn't a viable option because of the Windows experience. On iOS, I used [Fantastical](https://flexibits.com/fantastical) but they don't have a client for Windows.
 
-At this point, I needed a way to find alternatives in a time-efficient manner. Luckily, I stumbled onto [this page inside of the cal.com app](https://flexibits.com/fantastical) that lists a bunch of calendar apps that are compatible with cal.com!
+At this point, I needed a way to find alternatives in a time-efficient manner. Luckily, I stumbled onto [this page inside of the cal.com app](https://app.cal.com/apps/categories/calendar) that lists a bunch of calendar apps that are compatible with cal.com!
 
 Let's go through them one by one.
 
@@ -137,7 +137,7 @@ I will be checking out Amie and Notion Calendar in more detail in the coming wee
 In Chrome, which I do not use as my daily browser it seems possible to "auto dark mode" web contents using Chrome flags. But I don't think it's a viable or desirable option.
 
 ```
-chrome://flags
+chrome://flags/#enable-force-dark
 ```
 
 Amie's pricing is a bit high and their upselling is too noticeable but on the other hand, their desktop app for Windows is absolutely gorgeous and I noticed that the iOS app does not annoyingly prompt me about editing one instance of a repeating event (although that is useful 5% of the time).
