@@ -19,19 +19,22 @@ $padding-w-tablet:   6%;
 $padding-w-mobile:   3%;
 
 // fonts
+$monospace-font: "Geist Mono Medium", monospace;
 // $regular-font: "Innovator Grotesk Regular";
-// $regular-font: "FT System Blank Book";
-$monospace-font: "Geist Mono Medium";
-$regular-font: "Manrope";
+// $regular-font: "FT System Blank Book"; // shit
+// $regular-font: "Manrope";
+$regular-font: "Geist Regular", sans-serif;
+$bold-font: "Geist Bold", sans-serif;
 
 $p-weight:         600;
 $h1-weight:        600;
 $headline-weight:  600;
-$p-desktop:         14px;
+$p-desktop:         16px;
 $monospace-desktop: 12px;
 $h1-desktop:        20px;
 
 // control general spacing of things
+$spacing-xxs:  4px;
 $spacing-xs:   8px;
 $spacing-s:   24px;
 $spacing-m:   40px;
@@ -75,25 +78,37 @@ $breakpoint-desktop: 1800px;
     }
 }
 
+@mixin blog-media-border() {
+    border: 2px solid transparentize($primary-color, 0.8);
+    border-radius: $image-border-radius;
+}
+
 /* @font-face and @keyframes */
 @font-face {
     font-family: "Geist Mono Medium";
     src: url("../../fonts/GeistMono-Medium.ttf");
 }
+// @font-face {
+//     font-family: "FT System Blank Book";
+//     src: url("../../fonts/FTSystem-BlankBook.otf");
+// }
+// @font-face {
+//     font-family: "Innovator Grotesk Regular";
+//     src: url("../../fonts/InnovatorGrotesk-Regular.otf");
+// }
+// @font-face {
+//     font-family: "Manrope";
+//     src: url("../../fonts/Manrope-VariableFont_wght.ttf");
+//     font-weight: 600;
+// }
 @font-face {
-    font-family: "FT System Blank Book";
-    src: url("../../fonts/FTSystem-BlankBook.otf");
+    font-family: "Geist Regular";
+    src: url("../../fonts/Geist-Regular.otf");
 }
 @font-face {
-    font-family: "Innovator Grotesk Regular";
-    src: url("../../fonts/InnovatorGrotesk-Regular.otf");
+    font-family: "Geist Bold";
+    src: url("../../fonts/Geist-SemiBold.otf");
 }
-@font-face {
-    font-family: "Manrope";
-    src: url("../../fonts/Manrope-VariableFont_wght.ttf");
-    font-weight: 600;
-}
-
 
 /* General */
 * {
@@ -303,11 +318,11 @@ h1, p, ul {
 }
 p {
     font-size: $p-desktop;
-    font-weight: $p-weight;
+    // font-weight: $p-weight;
 }
 h1 {
     font-size: $h1-desktop;
-    font-weight: $h1-weight;
+    // font-weight: $h1-weight;
 }
 .monospace {
     font-family: $monospace-font;
@@ -450,26 +465,98 @@ li > a {
         width: $blog-article-content-width-mobile;
     }
     h1 {
-        margin-top: $spacing-m;
+        margin-top:  $spacing-m;
+        font-size: $p-desktop;
+        font-family: $bold-font;
+        font-weight: normal;
         &:first-child {
             margin-top: 0px;
         }
     }
     p {
-        font-size: 16px;
-        color: $secondary-color;
+        font-size: $p-desktop;
+        color: $primary-color;
         line-height: 160%;
+        &:first-child {
+            margin-top: 0px;
+        }
+        a {
+            color: $available-color;
+            &::after {
+                font-family: $monospace-font;
+                content: "▲";
+                margin-left: 0.3ch;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    * {
+        b {
+            font-family: $bold-font;
+            font-weight: normal;
+        }
+    }
+    .blog-callout-block {
+        background: $tertiary-color;
+        padding: $spacing-s;
+        border-radius: $image-border-radius;
+        margin-top:    $spacing-s;
+        margin-bottom: $spacing-s;
+        p {
+            margin: 0px;
+            &:before {
+                // content: "😅";
+                content: "💡";
+                margin-right: 0.5ch;
+            }
+        }
+    }
+    .blog-code-block {
+        padding: $spacing-s;
+        background: $tertiary-color;
+        border-radius: $image-border-radius;
+        margin-top:    $spacing-s;
+        margin-bottom: $spacing-s;
+        p {
+            margin: 0px;
+            font-family: $monospace-font;
+            font-size: $p-desktop * 0.9;
+        }
+    }
+    video {
+        @include blog-media-border();
     }
     picture {
-        margin-top: $spacing-m;
         display: block;
+        margin-top: $spacing-s;
+        img {
+            @include blog-media-border();
+        }
         &:first-child {
             margin-top: 0px;
         }
     }
+    ul {
+        li {
+            list-style-type: square;
+            line-height: 140%;
+        }
+    }
+    ol {
+        li {
+            font-family: $regular-font;
+            list-style-type: leading-zero;
+            padding-left: $spacing-xs;
+
+        }
+    }
     .caption {
-        font-size: 14px;
+        font-size: $p-desktop * 0.8;
+        color: $secondary-color;
         text-align: center;
+        margin-bottom: $spacing-m;
     }
     .blog-paragraph-with-note {
         position: relative;

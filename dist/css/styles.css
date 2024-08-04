@@ -1,20 +1,16 @@
+@charset "UTF-8";
 /* @font-face and @keyframes */
 @font-face {
   font-family: "Geist Mono Medium";
   src: url("../../fonts/GeistMono-Medium.ttf");
 }
 @font-face {
-  font-family: "FT System Blank Book";
-  src: url("../../fonts/FTSystem-BlankBook.otf");
+  font-family: "Geist Regular";
+  src: url("../../fonts/Geist-Regular.otf");
 }
 @font-face {
-  font-family: "Innovator Grotesk Regular";
-  src: url("../../fonts/InnovatorGrotesk-Regular.otf");
-}
-@font-face {
-  font-family: "Manrope";
-  src: url("../../fonts/Manrope-VariableFont_wght.ttf");
-  font-weight: 600;
+  font-family: "Geist Bold";
+  src: url("../../fonts/Geist-SemiBold.otf");
 }
 /* General */
 * {
@@ -221,7 +217,7 @@ li:first-child {
 
 .social-button {
   outline: none;
-  font-family: "Geist Mono Medium";
+  font-family: "Geist Mono Medium", monospace;
   font-size: 12px;
   text-transform: uppercase;
   padding: 16px;
@@ -239,22 +235,20 @@ li:first-child {
 
 /* typography */
 h1, p, ul {
-  font-family: "Manrope";
+  font-family: "Geist Regular", sans-serif;
   color: rgb(230, 230, 230);
 }
 
 p {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
 }
 
 h1 {
   font-size: 20px;
-  font-weight: 600;
 }
 
 .monospace {
-  font-family: "Geist Mono Medium";
+  font-family: "Geist Mono Medium", monospace;
   color: rgb(230, 230, 230);
   letter-spacing: 0.05ch;
   font-size: 12px;
@@ -282,7 +276,7 @@ li > a {
 .cta {
   width: 100%;
   color: rgb(203, 195, 167);
-  font-family: "Geist Mono Medium";
+  font-family: "Geist Mono Medium", monospace;
   text-transform: uppercase;
   background: rgb(38, 38, 38);
   border: none;
@@ -404,25 +398,91 @@ li > a {
 }
 .blog-article-content h1 {
   margin-top: 40px;
+  font-size: 16px;
+  font-family: "Geist Bold", sans-serif;
+  font-weight: normal;
 }
 .blog-article-content h1:first-child {
   margin-top: 0px;
 }
 .blog-article-content p {
   font-size: 16px;
-  color: rgb(171, 171, 171);
+  color: rgb(230, 230, 230);
   line-height: 160%;
 }
+.blog-article-content p:first-child {
+  margin-top: 0px;
+}
+.blog-article-content p a {
+  color: rgb(0, 255, 133);
+}
+.blog-article-content p a::after {
+  font-family: "Geist Mono Medium", monospace;
+  content: "▲";
+  margin-left: 0.3ch;
+}
+.blog-article-content p a:hover {
+  text-decoration: underline;
+}
+.blog-article-content * b {
+  font-family: "Geist Bold", sans-serif;
+  font-weight: normal;
+}
+.blog-article-content .blog-callout-block {
+  background: rgb(38, 38, 38);
+  padding: 24px;
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.blog-article-content .blog-callout-block p {
+  margin: 0px;
+}
+.blog-article-content .blog-callout-block p:before {
+  content: "💡";
+  margin-right: 0.5ch;
+}
+.blog-article-content .blog-code-block {
+  padding: 24px;
+  background: rgb(38, 38, 38);
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.blog-article-content .blog-code-block p {
+  margin: 0px;
+  font-family: "Geist Mono Medium", monospace;
+  font-size: 14.4px;
+}
+.blog-article-content video {
+  border: 2px solid rgba(230, 230, 230, 0.2);
+  border-radius: 4px;
+}
 .blog-article-content picture {
-  margin-top: 40px;
   display: block;
+  margin-top: 24px;
+}
+.blog-article-content picture img {
+  border: 2px solid rgba(230, 230, 230, 0.2);
+  border-radius: 4px;
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;
 }
+.blog-article-content ul li {
+  list-style-type: square;
+  line-height: 140%;
+}
+.blog-article-content ol li {
+  font-family: "Geist Regular", sans-serif;
+  list-style-type: leading-zero;
+  padding-left: 8px;
+}
 .blog-article-content .caption {
-  font-size: 14px;
+  font-size: 12.8px;
+  color: rgb(171, 171, 171);
   text-align: center;
+  margin-bottom: 40px;
 }
 .blog-article-content .blog-paragraph-with-note {
   position: relative;
