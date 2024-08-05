@@ -18,7 +18,7 @@
 }
 
 html {
-  background: rgb(22, 22, 22);
+  background: rgb(10, 10, 10);
   display: flex;
   justify-content: center;
   overflow-y: auto;
@@ -79,7 +79,7 @@ img {
 }
 
 a {
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   transition: 0.1s all ease-in-out;
 }
@@ -146,7 +146,7 @@ a:hover {
 nav {
   display: flex;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.66);
+  background: rgba(79, 79, 79, 0.2);
   border-radius: 4px;
   padding: 4px;
   z-index: 99;
@@ -174,16 +174,16 @@ nav div a {
   transition: 0.1s all ease-in-out;
   cursor: pointer;
   border-radius: 4px;
-  color: rgb(171, 171, 171) !important;
+  color: rgb(167, 167, 167) !important;
 }
 nav div a:hover {
-  background: rgb(38, 38, 38);
-  color: rgb(230, 230, 230) !important;
+  background: rgb(79, 79, 79);
+  color: rgb(255, 255, 255) !important;
 }
 
 .button-call-to-action {
   background: rgb(0, 255, 133);
-  color: rgb(22, 22, 22) !important;
+  color: rgb(10, 10, 10) !important;
 }
 .button-call-to-action:hover {
   color: rgb(0, 255, 133) !important;
@@ -202,7 +202,7 @@ ul.monospace {
 
 li {
   list-style-type: none;
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
 }
 
 li:first-child {
@@ -223,20 +223,20 @@ li:first-child {
   padding: 16px;
   border-radius: 4px;
   border: 0px;
-  background: rgb(38, 38, 38);
-  color: rgb(203, 195, 167);
+  background: rgb(79, 79, 79);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.1s all ease-in-out;
 }
 .social-button:hover {
   background: rgb(203, 195, 167);
-  color: rgb(22, 22, 22);
+  color: rgb(10, 10, 10);
 }
 
 /* typography */
 h1, p, ul {
   font-family: "Geist Regular", sans-serif;
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
 }
 
 p {
@@ -249,7 +249,7 @@ h1 {
 
 .monospace {
   font-family: "Geist Mono Medium", monospace;
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
   letter-spacing: 0.05ch;
   font-size: 12px;
   line-height: 120%;
@@ -262,7 +262,7 @@ h1.monospace {
 }
 
 li > a {
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
 }
 
 /* AVAILABLE FOR WORK */
@@ -278,7 +278,7 @@ li > a {
   color: rgb(203, 195, 167);
   font-family: "Geist Mono Medium", monospace;
   text-transform: uppercase;
-  background: rgb(38, 38, 38);
+  background: rgb(79, 79, 79);
   border: none;
   outline: none;
   padding-top: 16px;
@@ -290,7 +290,7 @@ li > a {
 
 .cta:hover {
   background: rgb(203, 195, 167);
-  color: rgb(22, 22, 22);
+  color: rgb(10, 10, 10);
 }
 
 .cta > a {
@@ -299,7 +299,7 @@ li > a {
 }
 
 .cta:hover > a {
-  color: rgb(22, 22, 22);
+  color: rgb(10, 10, 10);
 }
 
 /* PROJECT INDEX */
@@ -368,15 +368,12 @@ li > a {
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item h1:first-child {
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item h1:last-child {
-  color: rgb(171, 171, 171);
+  color: rgb(167, 167, 167);
   transition: 0.1s all ease-in-out;
-}
-.blog-article-item:hover {
-  background: rgb(38, 38, 38);
 }
 .blog-article-item:hover h1:first-child {
   color: rgb(203, 195, 167);
@@ -397,8 +394,9 @@ li > a {
   }
 }
 .blog-article-content h1 {
+  color: rgb(203, 195, 167);
   margin-top: 40px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Geist Bold", sans-serif;
   font-weight: normal;
 }
@@ -407,21 +405,20 @@ li > a {
 }
 .blog-article-content p {
   font-size: 16px;
-  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
   line-height: 160%;
 }
 .blog-article-content p:first-child {
   margin-top: 0px;
 }
-.blog-article-content p a {
+.blog-article-content * a {
   color: rgb(0, 255, 133);
 }
-.blog-article-content p a::after {
+.blog-article-content * a::after {
   font-family: "Geist Mono Medium", monospace;
-  content: "▲";
   margin-left: 0.3ch;
 }
-.blog-article-content p a:hover {
+.blog-article-content * a:hover {
   text-decoration: underline;
 }
 .blog-article-content * b {
@@ -429,7 +426,7 @@ li > a {
   font-weight: normal;
 }
 .blog-article-content .blog-callout-block {
-  background: rgb(38, 38, 38);
+  background: rgb(79, 79, 79);
   padding: 24px;
   border-radius: 4px;
   margin-top: 24px;
@@ -444,7 +441,9 @@ li > a {
 }
 .blog-article-content .blog-code-block {
   padding: 24px;
-  background: rgb(38, 38, 38);
+  background: rgb(10, 10, 10);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
   border-radius: 4px;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -455,7 +454,7 @@ li > a {
   font-size: 14.4px;
 }
 .blog-article-content video {
-  border: 2px solid rgba(230, 230, 230, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 .blog-article-content picture {
@@ -463,7 +462,7 @@ li > a {
   margin-top: 24px;
 }
 .blog-article-content picture img {
-  border: 2px solid rgba(230, 230, 230, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 .blog-article-content picture:first-child {
@@ -480,7 +479,7 @@ li > a {
 }
 .blog-article-content .caption {
   font-size: 12.8px;
-  color: rgb(171, 171, 171);
+  color: rgb(167, 167, 167);
   text-align: center;
   margin-bottom: 40px;
 }
