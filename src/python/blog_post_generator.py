@@ -7,6 +7,7 @@ ul_list_item_class = "bullet-point-list-item"
 ol_list_item_class = "numbered-list-item"
 quote_line_class = "blog-callout-block"
 code_block_class = "blog-code-block"
+blog_article_item_class = "blog-article-item"
 
 # Create the output folder if it doesn't exist
 if not os.path.exists(OUTPUT_FOLDER):
@@ -280,3 +281,133 @@ for markdown_filepath in get_all_markdown_filepaths(markdown_src_directory):
 
     # Generate a single page
     generate_page(html_filename, post_description, html_lines_b_a_ul_ol_code)
+
+# Function for making the blog.html page
+
+def format_date(date_string):
+    year, month, day = date_string.split('-')
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    month_name = months[int(month) - 1]
+
+    # Add original suffix to day
+    day_int = int(day)
+    if 4 <= day_int <= 20 or 24 <= day_int <= 30:
+        suffix = "th"
+    else:
+        suffix = ["st", "nd", "rd"][day_int % 10 - 1]
+
+    # format the final string
+    formatted_date = f"{month_name} {day_int}{suffix}, {year}"
+
+    return formatted_date
+
+def link_blog_post_html_generator(source_directory):
+    result = []
+    post_title = ""
+    post_date = ""
+    post_url = ""
+
+    for markdown_filepath in get_all_markdown_filepaths(source_directory):
+        with open(markdown_filepath, "r") as file:
+            markdown_content = file.read()
+            lines = markdown_content.split('\n')
+            for line in lines:
+                if line.startswith("title: "):
+                    post_title = line.lstrip("title: ")
+                elif line.startswith("date: "):
+                    post_date = format_date(line.lstrip("date: "))
+            post_url = markdown_filepath.removeprefix(markdown_src_directory).removeprefix("/").removesuffix(".md") + ".html"
+            post_url = "blog/" + post_url
+
+        html = f"""
+        <a href="{post_url}">
+            <div class="{blog_article_item_class}">
+                <h1>{post_title}</h1>
+                <h1>{post_date}</h1>
+            </div>
+        <a>
+        """
+        result.append(html)
+
+    return result
+
+def blog_html_page_generator(html_lines):
+    new_line = "\n"
+    blog_html_template = f"""<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+                <title>Shinji Pons | Product Designer of 3D Tools & Beyond</title>
+                <meta name="description" content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things." />
+                <link rel="stylesheet" href="css/styles.css" />
+                <meta property="og:url" content="https://shinjipons.com" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond" />
+                <meta property="og:description" content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things." />
+                <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:domain" content="shinjipons.com" />
+                <meta property="twitter:url" content="https://shinjipons.com" />
+                <meta name="twitter:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond" />
+                <meta name="twitter:description" content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things." />
+                <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.jpg" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-ios.png" />
+            </head>
+            <body>
+                <main>
+                    <div class="left-column">
+                        <nav>
+                            <div>
+                                <a class="monospace" href="index.html">Work</a>
+                                <a class="monospace" href="blog.html">Blog</a>
+                            </div>
+                            <div>
+                                <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
+                            </div>
+                        </nav>
+                        <ul class="monospace padding-between-items"
+                            >About
+                            <li>A product designer from France.</li>
+                            <li>I specialize in the design and user experience of complex applications for creative professionals.</li>
+                        </ul>
+                        <ul class="monospace"
+                            >Status
+                            <li class="available-for-work">Available for work</li>
+                        </ul>
+                        <ul class="monospace"
+                            >Online
+                            <div class="social-links-block">
+                                <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="social-button">LinkedIn</button></a>
+                                <a href="https://instagram.com/shinji.pons" target="_blank"><button class="social-button">Instagram</button></a>
+                                <a href="https://bento.me/shinjipons" target="_blank"><button class="social-button">Bento</button></a>
+                            </div>
+                        </ul>
+                        <ul class="monospace"
+                            >Location
+                            <li>Toulouse, France</li>
+                        </ul>
+                        <ul class="monospace"
+                            >Previously at
+                            <li>Ragdoll Dynamics</li>
+                            <li>Electronic Arts</li>
+                            <li>The LEGO Group</li>
+                            <li>Autodesk</li>
+                            <li>Microsoft</li>
+                            <li>Thomson Reuters</li>
+                        </ul>
+                    </div>
+                    <div class="right-column">
+                        <div class="blog-articles-list-container">
+                            {f"{new_line.join(html_lines)}"}
+                        </div>
+                    </div>
+                </main>
+                <script type="text/javascript" src="js/script.js"></script>
+            </body>
+        </html>
+        """
+
+    # continue here
