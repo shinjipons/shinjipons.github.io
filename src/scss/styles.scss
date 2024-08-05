@@ -2,13 +2,13 @@
 
 // VARIABLES
 
-// colors!
-$primary-color:              rgba(230, 230, 230, 1.0);
-$secondary-color:            rgba(171, 171, 171, 1.0);
-$tertiary-color:             rgba( 38,  38,  38, 1.0);
+// colors
+$primary-color:              rgba(255, 255, 255, 1.0);
+$secondary-color:            rgba(167, 167, 167, 1.0);
+$tertiary-color:             rgba( 79,  79,  79, 1.0);
 $accent-color:               rgba(203, 195, 167, 1.0);
-$background-color    :       rgba( 22,  22,  22, 1.0);
-$background-color-nav:       rgba(  0,   0,   0, 0.66);
+$background-color    :       rgba( 10,  10,  10, 1.0);
+$background-color-nav:       transparentize($tertiary-color, 0.8);
 $available-color:            rgba(  0, 255, 133, 1.0);
 $available-color-nav-button: rgba(  0, 255, 133, 0.2);
 
@@ -20,9 +20,6 @@ $padding-w-mobile:   3%;
 
 // fonts
 $monospace-font: "Geist Mono Medium", monospace;
-// $regular-font: "Innovator Grotesk Regular";
-// $regular-font: "FT System Blank Book"; // shit
-// $regular-font: "Manrope";
 $regular-font: "Geist Regular", sans-serif;
 $bold-font: "Geist Bold", sans-serif;
 
@@ -301,7 +298,7 @@ li:first-child {
     border-radius: $button-border-radius;
     border: 0px;
     background: $tertiary-color;
-    color: $accent-color;
+    color: $primary-color;
     cursor: pointer;
     transition: $transition;
 
@@ -443,7 +440,7 @@ li > a {
         transition: $transition;
     }
     &:hover {
-        background: $tertiary-color;
+        // background: $tertiary-color;
         h1:first-child {
             color: $accent-color;
         }
@@ -465,8 +462,9 @@ li > a {
         width: $blog-article-content-width-mobile;
     }
     h1 {
+        color: $accent-color;
         margin-top:  $spacing-m;
-        font-size: $p-desktop;
+        font-size: $h1-desktop;
         font-family: $bold-font;
         font-weight: normal;
         &:first-child {
@@ -480,19 +478,18 @@ li > a {
         &:first-child {
             margin-top: 0px;
         }
+    }
+    * {
         a {
             color: $available-color;
             &::after {
                 font-family: $monospace-font;
-                content: "▲";
                 margin-left: 0.3ch;
             }
             &:hover {
                 text-decoration: underline;
             }
         }
-    }
-    * {
         b {
             font-family: $bold-font;
             font-weight: normal;
@@ -507,7 +504,6 @@ li > a {
         p {
             margin: 0px;
             &:before {
-                // content: "😅";
                 content: "💡";
                 margin-right: 0.5ch;
             }
@@ -515,7 +511,8 @@ li > a {
     }
     .blog-code-block {
         padding: $spacing-s;
-        background: $tertiary-color;
+        background: $background-color;
+        @include blog-media-border();
         border-radius: $image-border-radius;
         margin-top:    $spacing-s;
         margin-bottom: $spacing-s;
