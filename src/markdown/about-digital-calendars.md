@@ -15,17 +15,17 @@ I am not a very busy guy but I rely on my digital calendar to keep track of few 
 I'm a Windows user with an iPhone. My MacBook Pro from 2015 is collecting dust. I need a solution that works on both Windows and iPhone. Browser based solutions are acceptable for Windows but native apps are much preferred.
 
 Here are my requirements:
-- Cross platform, Windows and iOS as a bare minimum
-- No ads
-- No subscription, freemium is ok
-- Free/busy status embedded into events
-- Repeating events
-- Events can be shared with other people
+- Cross platform, Windows and iOS as a bare minimum.
+- No ads.
+- No subscription, freemium is ok.
+- Free/busy status embedded into events.
+- Repeating events.
+- Events can be shared with other people.
 - Adding other calendars such as official holidays and sports events such as Premier League fixtures and Formula 1 races.
 
 Nice-to-haves:
-- have a one-click add to calendar working with my email provider [Proton Mail](https://protonmail.com/).
-- integrates with Cal.com
+- Have a one-click add to calendar working with my email provider [Proton Mail](https://protonmail.com/).
+- Integrates with [Cal.com](https://cal.com/).
 
 # The problems
 
@@ -36,11 +36,11 @@ Apple Calendar offers a very poor experience for Windows users, perhaps willingl
 !(iCloud on the Web isn't made for people who use their calendar every day)[media/about-calendars/icloud-web.png]
 
 Its main downsides are:
-- Lack of dark mode
-- Text is very small on my 27-in monitor
-- Impossible to change how many hours are shown inside of the visible screen area
-- Deleting an event requires a double click to show a modal window that contains the "delete" button
-- The typeface used isn't very beautiful
+- Lack of dark mode.
+- Text is very small on my 27-in monitor.
+- Impossible to change how many hours are shown inside of the visible screen area.
+- Deleting an event requires a double click to show a modal window that contains the "delete" button.
+- The typeface used isn't very beautiful.
 
 # The obvious candidate: Outlook
 
