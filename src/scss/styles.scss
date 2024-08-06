@@ -58,11 +58,11 @@ $left-column-width-tablet:   30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-$button-border-radius: 4px;
-$nav-border-padding: $button-border-radius;
-$image-border-radius: $button-border-radius;
-$nav-border-radius-outer: $image-border-radius;
-$nav-border-radius-inner: $nav-border-radius-outer - $nav-border-padding;
+$button-border-radius:    8px;
+$nav-border-padding:      4px;
+$image-border-radius:     $button-border-radius;
+$nav-border-radius:       $image-border-radius;
+$nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 
 // transition
 $transition: 0.1s all ease-in-out;
@@ -223,7 +223,7 @@ nav {
     display: flex;
     justify-content: space-between;
     background: $background-color-nav;
-    border-radius: $nav-border-radius-outer;
+    border-radius: $nav-border-radius;
     padding: $nav-border-padding;
     z-index: 99;
 
@@ -247,7 +247,7 @@ nav {
             padding: $grid-gap*0.8 $grid-gap $grid-gap $grid-gap;
             transition: $transition;
             cursor: pointer;
-            border-radius: $button-border-radius;
+            border-radius: $nav-border-radius-inner;
             color: $primary-color;
             &:hover {
                 background: $primary-color;
