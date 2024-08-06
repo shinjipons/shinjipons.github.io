@@ -6,13 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
         headers[i].id = i + 1; // off by one
     }
 
-    headers.forEach(header => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = `#${header.id}`;
-        a.textContent = header.textContent;
-        li.appendChild(a);
-        articleOutline.appendChild(li);
+    headers.forEach((header, index) => {
+        if (index !== 0) {
+            // All the headers, except the very first one
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${header.id}`;
+            a.textContent = header.textContent;
+            li.appendChild(a);
+            articleOutline.appendChild(li);
+        }
     });
 });
 // Code to add a random project to the bottom of each project page
