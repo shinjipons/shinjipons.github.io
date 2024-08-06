@@ -5,6 +5,7 @@ OUTPUT_FOLDER_BLOG_POSTS = 'dist/blog'
 OUTPUT_FOLDER_BLOG_INDEX = 'dist/'
 markdown_src_directory   = "src/markdown"
 
+# CSS classes
 ul_list_item_class       = "bullet-point-list-item"
 ol_list_item_class       = "numbered-list-item"
 quote_line_class         = "blog-callout-block"
