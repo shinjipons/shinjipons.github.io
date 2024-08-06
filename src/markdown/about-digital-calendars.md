@@ -120,7 +120,7 @@ Some events can be added at a click of a button, while some others show me a cry
 
 On top of that, it's not allowing me to mark certain events as free or busy on a per-event basis inside of the event options:
 
-!()[media/about-calendars/proton-calendar-no-free-busy.png]
+!(While very capable, Proton Calendar isn't the best for collaboration.)[media/about-calendars/proton-calendar-no-free-busy.png]
 
 After some back and forth with the Proton Mail support team, I was told that my use of SimpleLogin with my shinjipons.com domain, combined disabling my old shinjipons.com email adresses in the Proton Mail settings meant that this error was unavoidable.
 
