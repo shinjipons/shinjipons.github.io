@@ -2,15 +2,23 @@
 
 // VARIABLES
 
-// colors
-$primary-color:              rgba(255, 255, 255, 1.0);
-$secondary-color:            rgba(167, 167, 167, 1.0);
-$tertiary-color:             rgba( 79,  79,  79, 1.0);
-$accent-color:               rgba(203, 195, 167, 1.0);
-$background-color    :       rgba( 10,  10,  10, 1.0);
-$background-color-nav:       transparentize($tertiary-color, 0.8);
-$available-color:            rgba(  0, 255, 133, 1.0);
-$available-color-nav-button: rgba(  0, 255, 133, 0.2);
+// colors for dark mode
+// $primary-color:              rgba(255, 255, 255, 1.0);
+// $secondary-color:            rgba(167, 167, 167, 1.0);
+// $tertiary-color:             rgba( 79,  79,  79, 1.0);
+// $accent-color:               rgba(203, 195, 167, 1.0);
+// $background-color    :       rgba( 10,  10,  10, 1.0);
+// $background-color-nav:       transparentize($tertiary-color, 0.8);
+// $link-color:                 rgba(  0, 255, 133, 1.0);
+
+// colors for light mode
+$primary-color: rgba(0, 0, 0, 1.0);
+$secondary-color:#9F9F9E;
+$tertiary-color:rgba(79, 79, 79, 1.0);
+$accent-color:rgba(203, 195, 167, 1.0);
+$background-color:rgba( 255, 255, 255, 1.0);
+$background-color-nav: transparentize($tertiary-color, 0.8);
+$link-color:rgb(0, 98, 255);
 
 // overall widths
 $width-full: 100%; // leave it at 100%
@@ -75,8 +83,10 @@ $breakpoint-desktop: 1800px;
     }
 }
 
+// mixin for blog
 @mixin blog-media-border() {
-    border: 2px solid transparentize($primary-color, 0.8);
+    border: 2px solid $background-color-nav;
+    background: $background-color-nav;
     border-radius: $image-border-radius;
 }
 
@@ -85,19 +95,6 @@ $breakpoint-desktop: 1800px;
     font-family: "Geist Mono Medium";
     src: url("../../fonts/GeistMono-Medium.ttf");
 }
-// @font-face {
-//     font-family: "FT System Blank Book";
-//     src: url("../../fonts/FTSystem-BlankBook.otf");
-// }
-// @font-face {
-//     font-family: "Innovator Grotesk Regular";
-//     src: url("../../fonts/InnovatorGrotesk-Regular.otf");
-// }
-// @font-face {
-//     font-family: "Manrope";
-//     src: url("../../fonts/Manrope-VariableFont_wght.ttf");
-//     font-weight: 600;
-// }
 @font-face {
     font-family: "Geist Regular";
     src: url("../../fonts/Geist-Regular.otf");
@@ -147,14 +144,14 @@ main {
     overflow-y: auto;
 
     @include tablet-styles() {
-        padding-left:   $padding-w-tablet;
-        padding-right:  $padding-w-tablet;
+        padding-left:  $padding-w-tablet;
+        padding-right: $padding-w-tablet;
     }
     @include mobile-styles() {
         flex-direction: column;
-        padding-top:    $spacing-s;
-        padding-left:   $padding-w-mobile;
-        padding-right:   $padding-w-mobile;
+        padding-top:   $spacing-s;
+        padding-left:  $padding-w-mobile;
+        padding-right: $padding-w-mobile;
         gap: $grid-gap;
     }
 }
@@ -170,7 +167,7 @@ a {
     transition: $transition;
 }
 a:hover {
-    color: $available-color;
+    color: $link-color;
 }
 
 /* Left and right columns */
@@ -251,21 +248,21 @@ nav {
             transition: $transition;
             cursor: pointer;
             border-radius: $button-border-radius;
-            color: $secondary-color !important;
+            color: $primary-color;
             &:hover {
-                background: $tertiary-color;
-                color: $primary-color !important;
+                background: $primary-color;
+                color: $background-color;
             }
         }
     }
 }
 
 .button-call-to-action {
-    background: $available-color;
+    background: $link-color;
     color: $background-color !important;
     &:hover {
-        color: $available-color !important;
-        background: transparentize($available-color, 0.8);
+        color: $link-color !important;
+        background: transparentize($link-color, 0.8);
     }
 }
 
@@ -275,7 +272,7 @@ ul {
 }
 ul.monospace {
     padding-left: 0px;
-    color: $accent-color;
+    color: $secondary-color;
 }
 li {
     list-style-type: none;
@@ -286,7 +283,7 @@ li:first-child {
 }
 .social-links-block {
     display: flex;
-    gap: $grid-gap-half;
+    grid-gap: $nav-border-padding;
     margin-top: $grid-gap;
 }
 .social-button {
@@ -297,13 +294,14 @@ li:first-child {
     padding: $grid-gap;
     border-radius: $button-border-radius;
     border: 0px;
-    background: $tertiary-color;
-    color: $primary-color;
     cursor: pointer;
     transition: $transition;
 
+    background: $secondary-color;
+    background: $background-color-nav;
+    color: $primary-color;
     &:hover {
-        background: $accent-color;
+        background: $primary-color;
         color: $background-color;
     }
 }
@@ -315,11 +313,10 @@ h1, p, ul {
 }
 p {
     font-size: $p-desktop;
-    // font-weight: $p-weight;
 }
 h1 {
     font-size: $h1-desktop;
-    // font-weight: $h1-weight;
+    font-weight: normal;
 }
 .monospace {
     font-family: $monospace-font;
@@ -340,35 +337,10 @@ li > a {
 /* AVAILABLE FOR WORK */
 
 .available-for-work {
-    color: $available-color;
+    color: $link-color;
     transition: $transition;
     overflow-wrap: break-word;
     hyphens: none;
-}
-.cta {
-    width: 100%;
-    color: $accent-color;
-    font-family: $monospace-font;
-    text-transform: uppercase;
-    background: $tertiary-color;
-    border: none;
-    outline: none;
-    padding-top:    $grid-gap;
-    padding-bottom: $grid-gap;
-    line-height: 100%;
-    transition: none;
-    border-radius: $button-border-radius;
-}
-.cta:hover {
-    background: $accent-color;
-    color: $background-color;
-}
-.cta > a {
-    color: $accent-color;
-    transition: none;
-}
-.cta:hover > a {
-    color: $background-color;
 }
 
 /* PROJECT INDEX */
@@ -390,7 +362,7 @@ li > a {
     }
 }
 .project:hover > a > h1 {
-    color: $accent-color;
+    color: $link-color;
 }
 
 /* PROJECT PAGE RELATED STYLES */
@@ -440,9 +412,8 @@ li > a {
         transition: $transition;
     }
     &:hover {
-        // background: $tertiary-color;
         h1:first-child {
-            color: $accent-color;
+            color: $link-color;
         }
     }
 }
@@ -454,6 +425,7 @@ li > a {
 
     width: $blog-article-content-width-desktop;
     padding-left: $grid-gap;
+    margin-bottom: $spacing-xl;
 
     @include tablet-styles() {
         width: $blog-article-content-width-tablet;
@@ -462,9 +434,8 @@ li > a {
         width: $blog-article-content-width-mobile;
     }
     h1 {
-        color: $accent-color;
         margin-top:  $spacing-m;
-        font-size: $h1-desktop;
+        font-size: $p-desktop;
         font-family: $bold-font;
         font-weight: normal;
         &:first-child {
@@ -481,7 +452,7 @@ li > a {
     }
     * {
         a {
-            color: $available-color;
+            color: $link-color;
             &::after {
                 font-family: $monospace-font;
                 margin-left: 0.3ch;
@@ -495,23 +466,25 @@ li > a {
             font-weight: normal;
         }
     }
+    .blog-post-date {
+        color: $secondary-color;
+    }
     .blog-callout-block {
-        background: $tertiary-color;
         padding: $spacing-s;
+        @include blog-media-border();
         border-radius: $image-border-radius;
         margin-top:    $spacing-s;
         margin-bottom: $spacing-s;
         p {
             margin: 0px;
-            &:before {
-                content: "💡";
-                margin-right: 0.5ch;
-            }
+            // &:before {
+            //     content: "💡";
+            //     margin-right: 0.5ch;
+            // }
         }
     }
     .blog-code-block {
         padding: $spacing-s;
-        background: $background-color;
         @include blog-media-border();
         border-radius: $image-border-radius;
         margin-top:    $spacing-s;
@@ -546,14 +519,14 @@ li > a {
             font-family: $regular-font;
             list-style-type: leading-zero;
             padding-left: $spacing-xs;
-
         }
     }
     .caption {
-        font-size: $p-desktop * 0.8;
+        font-size: $p-desktop;
         color: $secondary-color;
         text-align: center;
         margin-bottom: $spacing-m;
+        margin-top: $spacing-xs;
     }
     .blog-paragraph-with-note {
         position: relative;
