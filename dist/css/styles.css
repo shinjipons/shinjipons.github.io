@@ -4,17 +4,12 @@
   src: url("../../fonts/GeistMono-Medium.ttf");
 }
 @font-face {
-  font-family: "FT System Blank Book";
-  src: url("../../fonts/FTSystem-BlankBook.otf");
+  font-family: "Geist Regular";
+  src: url("../../fonts/Geist-Regular.otf");
 }
 @font-face {
-  font-family: "Innovator Grotesk Regular";
-  src: url("../../fonts/InnovatorGrotesk-Regular.otf");
-}
-@font-face {
-  font-family: "Manrope";
-  src: url("../../fonts/Manrope-VariableFont_wght.ttf");
-  font-weight: 600;
+  font-family: "Geist Bold";
+  src: url("../../fonts/Geist-SemiBold.otf");
 }
 /* General */
 * {
@@ -22,7 +17,7 @@
 }
 
 html {
-  background: rgb(22, 22, 22);
+  background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   overflow-y: auto;
@@ -35,7 +30,6 @@ body {
   margin: 0px;
   width: 100%;
   min-height: 100svh;
-  padding-bottom: 80px;
 }
 
 h1, h2, h3, h4, p {
@@ -84,13 +78,13 @@ img {
 }
 
 a {
-  color: rgb(230, 230, 230);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.1s all ease-in-out;
 }
 
 a:hover {
-  color: rgb(0, 255, 133);
+  color: rgb(0, 98, 255);
 }
 
 /* Left and right columns */
@@ -117,6 +111,12 @@ a:hover {
     padding-top: 80px;
     margin-bottom: 80px;
   }
+}
+.left-column .monospace {
+  padding-left: 16px;
+}
+.left-column .monospace.padding-between-items * {
+  padding-bottom: 16px;
 }
 
 .right-column {
@@ -145,9 +145,10 @@ a:hover {
 nav {
   display: flex;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.66);
-  border-radius: 8px;
+  background: rgba(79, 79, 79, 0.2);
+  border-radius: 4px;
   padding: 4px;
+  z-index: 99;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -158,31 +159,34 @@ nav {
     top: 8px;
   }
 }
-
-nav > div > a > button {
+nav div {
+  display: flex;
+  height: 40px;
+  grid-gap: 4px;
+}
+nav div a {
+  line-height: 0px;
   background: transparent;
   outline: none;
   border: none;
-  padding: 16px;
+  padding: 12.8px 16px 16px 16px;
   transition: 0.1s all ease-in-out;
   cursor: pointer;
   border-radius: 4px;
-  color: rgb(171, 171, 171) !important;
+  color: rgb(0, 0, 0);
 }
-
-nav > div > a:hover > button {
-  background: rgb(38, 38, 38);
-  color: rgb(230, 230, 230) !important;
+nav div a:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .button-call-to-action {
-  background: rgb(0, 255, 133);
-  color: rgb(22, 22, 22) !important;
+  background: rgb(0, 98, 255);
+  color: rgb(255, 255, 255) !important;
 }
-
 .button-call-to-action:hover {
-  color: rgb(0, 255, 133) !important;
-  background: rgba(0, 255, 133, 0.2);
+  color: rgb(0, 98, 255) !important;
+  background: rgba(0, 98, 255, 0.2);
 }
 
 ul {
@@ -192,12 +196,12 @@ ul {
 
 ul.monospace {
   padding-left: 0px;
-  color: rgb(203, 195, 167);
+  color: #9F9F9E;
 }
 
 li {
   list-style-type: none;
-  color: rgb(230, 230, 230);
+  color: rgb(0, 0, 0);
 }
 
 li:first-child {
@@ -206,47 +210,47 @@ li:first-child {
 
 .social-links-block {
   display: flex;
-  gap: 8px;
+  grid-gap: 4px;
   margin-top: 16px;
 }
 
 .social-button {
   outline: none;
-  font-family: "Geist Mono Medium";
+  font-family: "Geist Mono Medium", monospace;
   font-size: 12px;
   text-transform: uppercase;
   padding: 16px;
   border-radius: 4px;
   border: 0px;
-  background: rgb(38, 38, 38);
-  color: rgb(203, 195, 167);
   cursor: pointer;
   transition: 0.1s all ease-in-out;
+  background: #9F9F9E;
+  background: rgba(79, 79, 79, 0.2);
+  color: rgb(0, 0, 0);
 }
 .social-button:hover {
-  background: rgb(203, 195, 167);
-  color: rgb(22, 22, 22);
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 /* typography */
-h1, p {
-  font-family: "Manrope";
-  color: rgb(230, 230, 230);
+h1, p, ul {
+  font-family: "Geist Regular", sans-serif;
+  color: rgb(0, 0, 0);
 }
 
 p {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
 }
 
 h1 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .monospace {
-  font-family: "Geist Mono Medium";
-  color: rgb(230, 230, 230);
+  font-family: "Geist Mono Medium", monospace;
+  color: rgb(0, 0, 0);
   letter-spacing: 0.05ch;
   font-size: 12px;
   line-height: 120%;
@@ -259,44 +263,15 @@ h1.monospace {
 }
 
 li > a {
-  color: rgb(230, 230, 230);
+  color: rgb(0, 0, 0);
 }
 
 /* AVAILABLE FOR WORK */
 .available-for-work {
-  color: rgb(0, 255, 133);
+  color: rgb(0, 98, 255);
   transition: 0.1s all ease-in-out;
   overflow-wrap: break-word;
   hyphens: none;
-}
-
-.cta {
-  width: 100%;
-  color: rgb(203, 195, 167);
-  font-family: "Geist Mono Medium";
-  text-transform: uppercase;
-  background: rgb(38, 38, 38);
-  border: none;
-  outline: none;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  line-height: 100%;
-  transition: none;
-  border-radius: 4px;
-}
-
-.cta:hover {
-  background: rgb(203, 195, 167);
-  color: rgb(22, 22, 22);
-}
-
-.cta > a {
-  color: rgb(203, 195, 167);
-  transition: none;
-}
-
-.cta:hover > a {
-  color: rgb(22, 22, 22);
 }
 
 /* PROJECT INDEX */
@@ -321,7 +296,7 @@ li > a {
 }
 
 .project:hover > a > h1 {
-  color: rgb(203, 195, 167);
+  color: rgb(0, 98, 255);
 }
 
 /* PROJECT PAGE RELATED STYLES */
@@ -331,6 +306,7 @@ li > a {
 }
 
 .next-project {
+  margin-top: 80px;
   padding-bottom: 0px;
 }
 
@@ -352,12 +328,160 @@ li > a {
   object-position: 50% 0%;
 }
 
-.next-project::before {
-  display: inline-block;
-  content: "";
-  height: 2px;
-  width: 100%;
-  margin-bottom: 24px;
+/* BLOG RELATED ITEMS */
+.blog-article-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
   transition: 0.1s all ease-in-out;
-  background: linear-gradient(90deg, rgb(203, 195, 167) 0%, rgb(22, 22, 22) 40% 60%, rgb(203, 195, 167) 100%);
+}
+.blog-article-item h1:first-child {
+  color: rgb(0, 0, 0);
+  transition: 0.1s all ease-in-out;
+}
+.blog-article-item h1:last-child {
+  color: #9F9F9E;
+  transition: 0.1s all ease-in-out;
+}
+.blog-article-item:hover h1:first-child {
+  color: rgb(0, 98, 255);
+}
+
+.blog-article-content {
+  width: 60%;
+  padding-left: 16px;
+  margin-bottom: 160px;
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .blog-article-content {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .blog-article-content {
+    width: 100%;
+  }
+}
+.blog-article-content h1 {
+  margin-top: 40px;
+  font-size: 16px;
+  font-family: "Geist Bold", sans-serif;
+  font-weight: normal;
+}
+.blog-article-content h1:first-child {
+  margin-top: 0px;
+}
+.blog-article-content p {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 160%;
+}
+.blog-article-content p:first-child {
+  margin-top: 0px;
+}
+.blog-article-content * a {
+  color: rgb(0, 98, 255);
+}
+.blog-article-content * a::after {
+  font-family: "Geist Mono Medium", monospace;
+  margin-left: 0.3ch;
+}
+.blog-article-content * a:hover {
+  text-decoration: underline;
+}
+.blog-article-content * b {
+  font-family: "Geist Bold", sans-serif;
+  font-weight: normal;
+}
+.blog-article-content .blog-post-date {
+  color: #9F9F9E;
+}
+.blog-article-content .blog-callout-block {
+  padding: 24px;
+  border: 2px solid rgba(79, 79, 79, 0.2);
+  background: rgba(79, 79, 79, 0.2);
+  border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.blog-article-content .blog-callout-block p {
+  margin: 0px;
+}
+.blog-article-content .blog-code-block {
+  padding: 24px;
+  border: 2px solid rgba(79, 79, 79, 0.2);
+  background: rgba(79, 79, 79, 0.2);
+  border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.blog-article-content .blog-code-block p {
+  margin: 0px;
+  font-family: "Geist Mono Medium", monospace;
+  font-size: 14.4px;
+}
+.blog-article-content video {
+  border: 2px solid rgba(79, 79, 79, 0.2);
+  background: rgba(79, 79, 79, 0.2);
+  border-radius: 4px;
+}
+.blog-article-content picture {
+  display: block;
+  margin-top: 24px;
+}
+.blog-article-content picture img {
+  border: 2px solid rgba(79, 79, 79, 0.2);
+  background: rgba(79, 79, 79, 0.2);
+  border-radius: 4px;
+}
+.blog-article-content picture:first-child {
+  margin-top: 0px;
+}
+.blog-article-content ul li {
+  list-style-type: square;
+  line-height: 140%;
+}
+.blog-article-content ol li {
+  font-family: "Geist Regular", sans-serif;
+  list-style-type: leading-zero;
+  padding-left: 8px;
+}
+.blog-article-content .caption {
+  font-size: 16px;
+  color: #9F9F9E;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 8px;
+}
+.blog-article-content .blog-paragraph-with-note {
+  position: relative;
+}
+.blog-article-content .blog-paragraph-with-note .blog-note {
+  width: 60%;
+  position: absolute;
+  color: rgb(203, 195, 167);
+  font-size: 14px;
+  top: -8px;
+  left: 105%;
+  padding-left: 16px;
+  border-left: 2px solid rgb(203, 195, 167);
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .blog-article-content .blog-paragraph-with-note .blog-note {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .blog-article-content .blog-paragraph-with-note .blog-note {
+    width: 100%;
+    position: relative;
+    left: 0%;
+    margin-top: 40px;
+  }
 }
