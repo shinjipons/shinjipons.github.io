@@ -8,10 +8,6 @@ OUTPUT_FOLDER = 'dist'
 if not os.path.exists(OUTPUT_FOLDER):
     os.makedirs(OUTPUT_FOLDER)
 
-# Read the shared footer from a file
-with open('src/python/shared_nav.html', 'r') as file:
-    shared_nav = file.read()
-
 # Function to get all webp images from a specific folder
 def get_image_tags(image_folder):
     # Get all webp images and sort them
@@ -36,7 +32,6 @@ def generate_page(page_key, page_data):
     first_image_tag, other_image_tags = get_image_tags(image_folder) if image_folder else ('', [])
 
     # Include the shared HTML block, the first image, and other image tags in the page data dictionary
-    page_data['shared_nav'] = shared_nav
     page_data['first_image'] = first_image_tag
     page_data['other_images'] = '\n'.join(other_image_tags)
 
@@ -65,10 +60,22 @@ def generate_page(page_key, page_data):
     <link rel="apple-touch-icon"      sizes="180x180" href="/icons/favicon-ios.png">
 </head>
 <body>
+    <nav>
+        <div>
+            <a class="monospace" href="index.html">Shinji Pons</a>
+        </div>
+        <div>
+            <a class="monospace" href="index.html">Work</a>
+            <a class="monospace" href="blog.html">Blog</a>
+            <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+        </div>
+        <div>
+            <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
+        </div>
+    </nav>
     <main>
         <!-- Left column -->
         <div class="left-column">
-            {shared_nav}
             <ul class="monospace padding-between-items">About
                 <li>{paragraph_1}</li>
                 <li>{paragraph_2}</li>
