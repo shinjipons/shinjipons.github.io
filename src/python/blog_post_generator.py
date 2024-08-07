@@ -250,17 +250,21 @@ def generate_blog_post_html(post_title, post_description, html_lines):
         <link rel="apple-touch-icon"      sizes="180x180" href="/icons/favicon-ios.png">
     </head>
     <body>
+        <nav>
+            <div>
+                <a class="monospace" href="../index.html">Shinji Pons</a>
+            </div>
+            <div>
+                <a class="monospace" href="../index.html">Work</a>
+                <a class="monospace" href="../blog.html">Blog</a>
+                <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+            </div>
+            <div>
+                <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
+            </div>
+        </nav>
         <main>
             <div class="left-column">
-                <nav>
-                    <div>
-                        <a class="monospace" href="../index.html">Work</a>
-                        <a class="monospace" href="../blog.html">Blog</a>
-                    </div>
-                    <div>
-                        <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
-                    </div>
-                </nav>
                 <ul id="article-outline" class="monospace padding-between-items">Outline
                 </ul>
             </div>
@@ -369,7 +373,7 @@ def link_blog_post_html_generator(source_directory):
                 <h1>{post_title}</h1>
                 <h1>{post_date}</h1>
             </div>
-        <a>
+        </a>
         """
         result.append(html)
 
@@ -402,46 +406,47 @@ def blog_html_page_generator(html_lines):
                 <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-ios.png" />
             </head>
             <body>
+                <nav>
+                    <div>
+                        <a class="monospace" href="index.html">Shinji Pons</a>
+                    </div>
+                    <div>
+                        <a class="monospace" href="index.html">Work</a>
+                        <a class="monospace" href="blog.html">Blog</a>
+                        <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+                    </div>
+                    <div>
+                        <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
+                    </div>
+                </nav>
                 <main>
                     <div class="left-column">
-                        <nav>
-                            <div>
-                                <a class="monospace" href="index.html">Work</a>
-                                <a class="monospace" href="blog.html">Blog</a>
-                            </div>
-                            <div>
-                                <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
-                            </div>
-                        </nav>
-                        <ul class="monospace padding-between-items"
-                            >About
-                            <li>A product designer from France.</li>
-                            <li>I specialize in the design and user experience of complex applications for creative professionals.</li>
+                        <div>
+                            <ul class="monospace padding-between-items">About
+                                <li>A product designer from France.</li>
+                                <li>I specialize in the design and user experience of complex applications for creative professionals.</li>
+                            </ul>
+                            <ul class="monospace">Previously at
+                                <li>Ragdoll Dynamics</li>
+                                <li>Electronic Arts</li>
+                                <li>The LEGO Group</li>
+                                <li>Autodesk</li>
+                                <li>Microsoft</li>
+                                <li>Thomson Reuters</li>
+                            </ul>
+                        </div>
+                        <ul class="monospace">Status
+                            <li class="available-for-work">Available</li>
                         </ul>
-                        <ul class="monospace"
-                            >Status
-                            <li class="available-for-work">Available for work</li>
-                        </ul>
-                        <ul class="monospace"
-                            >Online
+                        <ul class="monospace">Online
                             <div class="social-links-block">
                                 <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="social-button">LinkedIn</button></a>
                                 <a href="https://instagram.com/shinji.pons" target="_blank"><button class="social-button">Instagram</button></a>
                                 <a href="https://bento.me/shinjipons" target="_blank"><button class="social-button">Bento</button></a>
                             </div>
                         </ul>
-                        <ul class="monospace"
-                            >Location
+                        <ul class="monospace">Location
                             <li>Toulouse, France</li>
-                        </ul>
-                        <ul class="monospace"
-                            >Previously at
-                            <li>Ragdoll Dynamics</li>
-                            <li>Electronic Arts</li>
-                            <li>The LEGO Group</li>
-                            <li>Autodesk</li>
-                            <li>Microsoft</li>
-                            <li>Thomson Reuters</li>
                         </ul>
                     </div>
                     <div class="right-column">
