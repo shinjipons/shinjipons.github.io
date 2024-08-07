@@ -46,12 +46,13 @@ video {
 /* everywhere */
 main {
   width: 100%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 160px;
   padding-left: 15%;
   padding-right: 15%;
+  grid-gap: 32px;
   transition: 0.1s all ease-in-out;
   display: flex;
+  flex-direction: column;
   overflow-y: auto;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
@@ -89,13 +90,16 @@ a:hover {
 
 /* Left and right columns */
 .left-column {
-  position: fixed;
   top: 80px;
-  width: 20svw;
-  display: flex;
+  width: 100%;
   flex-direction: column;
-  gap: 16px;
   padding-right: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.left-column nav {
+  display: none;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .left-column {
@@ -120,12 +124,10 @@ a:hover {
 }
 
 .right-column {
-  width: 80svw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-left: 8px;
-  margin-left: 20svw;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .right-column {
@@ -144,13 +146,13 @@ a:hover {
 /* navigation */
 nav {
   display: flex;
+  position: fixed;
+  width: 70%;
   justify-content: space-between;
-  background: rgba(79, 79, 79, 0.2);
-  border-radius: 8px;
-  padding: 4px;
+  background: rgb(255, 255, 255);
+  padding-top: 4px;
+  padding-bottom: 4px;
   z-index: 99;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 @media screen and (max-width: 1100px) {
   nav {
@@ -173,16 +175,16 @@ nav div a {
   transition: 0.1s all ease-in-out;
   cursor: pointer;
   border-radius: 4px;
-  color: rgb(0, 0, 0);
+  color: #9F9F9E !important;
 }
 nav div a:hover {
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
 }
 
 .button-call-to-action {
   background: rgb(0, 98, 255);
   color: rgb(255, 255, 255) !important;
+  border-radius: 8px;
 }
 .button-call-to-action:hover {
   color: rgb(0, 98, 255) !important;
@@ -275,13 +277,19 @@ li > a {
 }
 
 /* PROJECT INDEX */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .project > a > h1 {
   margin-top: 8px;
   transition: 0.1s all ease-in-out;
+  padding-left: 16px;
 }
 
 .project > a > img {
-  height: 600px;
+  height: 500px;
   object-fit: cover;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
@@ -309,14 +317,18 @@ li > a {
   margin-top: 80px;
   padding-bottom: 0px;
 }
+.next-project:hover a > h1:nth-child(2) {
+  color: rgb(0, 98, 255);
+}
 
 .next-project > a > h1 {
   margin-top: 4px;
   margin-bottom: 4px;
+  padding-left: 16px;
 }
 
 .next-project > a > h1:nth-child(2) {
-  color: rgb(203, 195, 167);
+  color: #9F9F9E;
 }
 
 .next-project > a > img {
@@ -326,9 +338,20 @@ li > a {
   object-fit: cover;
   transition: 0.1s all ease-in-out;
   object-position: 50% 0%;
+  border-radius: 8px 8px 0px 0px;
 }
 
 /* BLOG RELATED ITEMS */
+.blog-articles-list-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  align-items: center;
+}
+.blog-articles-list-container a {
+  width: 100%;
+}
+
 .blog-article-item {
   display: flex;
   flex-direction: row;
@@ -336,8 +359,10 @@ li > a {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 8px;
-  margin-bottom: 8px;
   transition: 0.1s all ease-in-out;
+}
+.blog-article-item:hover {
+  background: rgba(0, 98, 255, 0.2);
 }
 .blog-article-item h1:first-child {
   color: rgb(0, 0, 0);
@@ -349,6 +374,9 @@ li > a {
 }
 .blog-article-item:hover h1:first-child {
   color: rgb(0, 98, 255);
+}
+.blog-article-item:hover h1:last-child {
+  color: rgb(0, 0, 0);
 }
 
 .blog-article-content {

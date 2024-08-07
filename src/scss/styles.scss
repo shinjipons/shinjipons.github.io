@@ -51,8 +51,8 @@ $grid-gap: 16px;
 $grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
-$left-column-width-desktop:  20svw;
-$right-column-width-desktop: 100svw - $left-column-width-desktop;
+$left-column-width-desktop:  100%;
+$right-column-width-desktop:  100%;
 
 $left-column-width-tablet:   30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
@@ -135,12 +135,13 @@ video {
 /* everywhere */
 main {
     width: $width-full;
-    padding-top:    $spacing-l;
-    padding-bottom: $spacing-l;
+    padding-top:    $spacing-xl;
     padding-left:   $padding-w-desktop;
     padding-right:  $padding-w-desktop;
+    grid-gap: $grid-gap * 2;
     transition: $transition;
     display: flex;
+    flex-direction: column;
     overflow-y: auto;
 
     @include tablet-styles() {
@@ -172,13 +173,17 @@ a:hover {
 
 /* Left and right columns */
 .left-column {
-    position: fixed;
     top: $spacing-l;
     width: $left-column-width-desktop;
-    display: flex;
     flex-direction: column;
-    gap: $grid-gap;
     padding-right: $grid-gap-half;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $grid-gap;
+    nav {
+        display: none;
+    }
     @include tablet-styles() {
         width: $left-column-width-tablet;
     }
@@ -204,8 +209,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
-    padding-left: $grid-gap-half;
-    margin-left: $left-column-width-desktop;
 
     @include tablet-styles() {
         width:       $right-column-width-tablet;
@@ -221,14 +224,18 @@ a:hover {
 /* navigation */
 nav {
     display: flex;
+    position: fixed;
+    width: $width-full - $padding-w-desktop * 2;
     justify-content: space-between;
-    background: $background-color-nav;
-    border-radius: $nav-border-radius;
-    padding: $nav-border-padding;
+    background: $background-color;
+    padding-top: $nav-border-padding;
+    padding-bottom: $nav-border-padding;
     z-index: 99;
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    // blurring behind the nav
+    // background: transparentize($background-color, 0.5);
+    // backdrop-filter:         blur($grid-gap * 3);
+    // -webkit-backdrop-filter: blur($grid-gap * 3);
 
     @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
@@ -248,10 +255,9 @@ nav {
             transition: $transition;
             cursor: pointer;
             border-radius: $nav-border-radius-inner;
-            color: $primary-color;
+            color: $secondary-color !important;
             &:hover {
-                background: $primary-color;
-                color: $background-color;
+                color: $primary-color !important;
             }
         }
     }
@@ -260,6 +266,7 @@ nav {
 .button-call-to-action {
     background: $link-color;
     color: $background-color !important;
+    border-radius: $button-border-radius;
     &:hover {
         color: $link-color !important;
         background: transparentize($link-color, 0.8);
@@ -335,7 +342,6 @@ li > a {
 }
 
 /* AVAILABLE FOR WORK */
-
 .available-for-work {
     color: $link-color;
     transition: $transition;
@@ -344,13 +350,18 @@ li > a {
 }
 
 /* PROJECT INDEX */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 .project > a > h1 {
     margin-top: 8px;
     transition: $transition;
+    padding-left: $grid-gap;
 }
 .project > a > img {
-    height: 600px;
+    height: 500px;
     object-fit: cover;
 
     @include tablet-styles() {
@@ -366,7 +377,6 @@ li > a {
 }
 
 /* PROJECT PAGE RELATED STYLES */
-
 .project-text-block > .project-text {
     grid-column-start: 3;
     grid-column-end:   7;
@@ -374,13 +384,19 @@ li > a {
 .next-project {
     margin-top: $spacing-l;
     padding-bottom: 0px;
+    &:hover {
+        a > h1:nth-child(2) {
+            color: $link-color;
+        }
+    }
 }
 .next-project > a > h1 {
     margin-top: 4px;
     margin-bottom: 4px;
+    padding-left: $grid-gap;
 }
 .next-project > a > h1:nth-child(2) {
-    color: $accent-color;
+    color: $secondary-color;
 }
 .next-project > a > img {
     margin-top: 24px;
@@ -389,9 +405,23 @@ li > a {
     object-fit: cover;
     transition: $transition;
     object-position: 50% 0%;
+    border-radius: $image-border-radius $image-border-radius 0px 0px;
 }
 
 /* BLOG RELATED ITEMS */
+$blog-article-content-width-desktop: 60%;
+$blog-article-content-width-tablet:  60%;
+$blog-article-content-width-mobile:  100%;
+
+.blog-articles-list-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    align-items: center;
+    a {
+        width: 100%;
+    }
+}
 
 .blog-article-item {
     display: flex;
@@ -400,9 +430,10 @@ li > a {
     padding-left: $grid-gap;
     padding-right: $grid-gap;
     border-radius: $button-border-radius;
-    margin-bottom: $spacing-xs;
     transition: $transition;
-
+    &:hover {
+        background: transparentize($link-color, 0.8);
+    }
     h1:first-child {
         color: $primary-color;
         transition: $transition;
@@ -415,14 +446,13 @@ li > a {
         h1:first-child {
             color: $link-color;
         }
+        h1:last-child {
+            color: $primary-color;
+        }
     }
 }
 
 .blog-article-content {
-    $blog-article-content-width-desktop: 60%;
-    $blog-article-content-width-tablet:  60%;
-    $blog-article-content-width-mobile:  100%;
-
     width: $blog-article-content-width-desktop;
     padding-left: $grid-gap;
     margin-bottom: $spacing-xl;
@@ -477,10 +507,6 @@ li > a {
         margin-bottom: $spacing-s;
         p {
             margin: 0px;
-            // &:before {
-            //     content: "💡";
-            //     margin-right: 0.5ch;
-            // }
         }
     }
     .blog-code-block {
