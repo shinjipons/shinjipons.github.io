@@ -472,8 +472,7 @@ li > a {
 }
 .blog-article-content .blog-callout-block {
   padding: 24px;
-  border: 2px solid rgba(79, 79, 79, 0.2);
-  background: rgba(79, 79, 79, 0.2);
+  border: 2px solid #9F9F9E;
   border-radius: 8px;
   border-radius: 8px;
   margin-top: 24px;
@@ -489,21 +488,21 @@ li > a {
 }
 .blog-article-content .blog-code-block {
   padding: 24px;
-  border: 2px solid rgba(79, 79, 79, 0.2);
-  background: rgba(79, 79, 79, 0.2);
+  border: 2px solid #9F9F9E;
   border-radius: 8px;
   border-radius: 8px;
   margin-top: 24px;
   margin-bottom: 24px;
+  background: rgb(255, 255, 255);
 }
 .blog-article-content .blog-code-block p {
+  color: rgb(0, 0, 0);
   margin: 0px;
   font-family: "Geist Mono Medium", monospace;
   font-size: 14.4px;
 }
 .blog-article-content video {
-  border: 2px solid rgba(79, 79, 79, 0.2);
-  background: rgba(79, 79, 79, 0.2);
+  border: 2px solid #9F9F9E;
   border-radius: 8px;
 }
 .blog-article-content picture {
@@ -511,9 +510,10 @@ li > a {
   margin-top: 24px;
 }
 .blog-article-content picture img {
-  border: 2px solid rgba(79, 79, 79, 0.2);
-  background: rgba(79, 79, 79, 0.2);
+  border: 2px solid #9F9F9E;
   border-radius: 8px;
+  object-fit: contain;
+  max-height: 60svh;
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;
@@ -539,7 +539,7 @@ li > a {
 }
 .blog-article-content .caption {
   font-size: 16px;
-  color: #9F9F9E;
+  color: rgb(0, 0, 0);
   text-align: center;
   margin-bottom: 40px;
   margin-top: 8px;

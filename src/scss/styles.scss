@@ -85,9 +85,9 @@ $breakpoint-desktop: 1800px;
 
 // mixin for blog
 @mixin blog-media-border() {
-    border: 2px solid $background-color-nav;
-    background: $background-color-nav;
+    border: 2px solid $secondary-color;
     border-radius: $image-border-radius;
+    // padding: $grid-gap;
 }
 
 /* @font-face and @keyframes */
@@ -554,7 +554,9 @@ $blog-article-content-width-mobile:  100%;
         border-radius: $image-border-radius;
         margin-top:    $spacing-s;
         margin-bottom: $spacing-s;
+        background: $background-color;
         p {
+            color: $primary-color;
             margin: 0px;
             font-family: $monospace-font;
             font-size: $p-desktop * 0.9;
@@ -568,6 +570,8 @@ $blog-article-content-width-mobile:  100%;
         margin-top: $spacing-s;
         img {
             @include blog-media-border();
+            object-fit: contain;
+            max-height: 60svh;
         }
         &:first-child {
             margin-top: 0px;
@@ -594,7 +598,7 @@ $blog-article-content-width-mobile:  100%;
     }
     .caption {
         font-size: $p-desktop;
-        color: $secondary-color;
+        color: $primary-color;
         text-align: center;
         margin-bottom: $spacing-m;
         margin-top: $spacing-xs;
