@@ -181,9 +181,6 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: $grid-gap;
-    nav {
-        display: none;
-    }
     @include tablet-styles() {
         width: $left-column-width-tablet;
     }
@@ -194,9 +191,13 @@ a:hover {
         padding-right: 0px;
         padding-top: $spacing-l;
         margin-bottom: $spacing-l;
+        grid-template-columns: repeat(1, 1fr);
     }
     .monospace {
         padding-left: $grid-gap;
+        @include mobile-styles() {
+            padding-left: 0px;
+        }
         &.padding-between-items {
             * {
                 padding-bottom: $grid-gap;
@@ -240,7 +241,13 @@ nav {
     @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
         position: fixed;
-        top: $spacing-xs;
+    }
+    div:first-child {
+        a:first-child {
+            @include mobile-styles() {
+                padding-left: 0px;
+            }
+        }
     }
     div {
         display: flex;
@@ -353,6 +360,9 @@ li > a {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    @include mobile-styles() {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .project > a > h1 {
@@ -434,6 +444,11 @@ $blog-article-content-width-mobile:  100%;
     &:hover {
         background: transparentize($link-color, 0.8);
     }
+    h1 {
+        @include mobile-styles() {
+            margin: 0px;
+        }
+    }
     h1:first-child {
         color: $primary-color;
         transition: $transition;
@@ -450,6 +465,11 @@ $blog-article-content-width-mobile:  100%;
             color: $primary-color;
         }
     }
+    @include mobile-styles() {
+        padding-left: 0px;
+        padding-right: 0px;
+        flex-direction: column;
+    }
 }
 
 .blog-article-content {
@@ -462,6 +482,7 @@ $blog-article-content-width-mobile:  100%;
     }
     @include mobile-styles() {
         width: $blog-article-content-width-mobile;
+        padding-left: 0px;
     }
     h1 {
         margin-top:  $spacing-m;
@@ -505,6 +526,9 @@ $blog-article-content-width-mobile:  100%;
         border-radius: $image-border-radius;
         margin-top:    $spacing-s;
         margin-bottom: $spacing-s;
+        @include mobile-styles() {
+            padding: $spacing-s;
+        }
         p {
             margin: 0px;
         }
@@ -535,12 +559,18 @@ $blog-article-content-width-mobile:  100%;
         }
     }
     ul {
+        @include mobile-styles() {
+            padding-left: $spacing-s;
+        }
         li {
             list-style-type: square;
             line-height: 140%;
         }
     }
     ol {
+        @include mobile-styles() {
+            padding-left: $spacing-s;
+        }
         li {
             font-family: $regular-font;
             list-style-type: leading-zero;

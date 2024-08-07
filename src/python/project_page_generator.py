@@ -61,9 +61,9 @@ def generate_page(page_key, page_data):
 </head>
 <body>
     <nav>
-        <div>
+        <!-- <div>
             <a class="monospace" href="index.html">Shinji Pons</a>
-        </div>
+        </div> -->
         <div>
             <a class="monospace" href="index.html">Work</a>
             <a class="monospace" href="blog.html">Blog</a>
