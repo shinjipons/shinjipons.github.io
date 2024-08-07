@@ -101,6 +101,7 @@ a:hover {
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .left-column {
     width: 30svw;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -135,7 +136,8 @@ a:hover {
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .right-column {
     width: 70svw;
-    margin-left: 30svw;
+    width: 100%;
+    margin-left: 0px;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -160,6 +162,12 @@ nav {
 @media screen and (max-width: 1100px) {
   nav {
     width: 94%;
+    position: fixed;
+  }
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  nav {
+    width: 88%;
     position: fixed;
   }
 }
@@ -400,6 +408,15 @@ li > a {
     padding-left: 0px;
     padding-right: 0px;
     flex-direction: column;
+  }
+  .blog-article-item:hover {
+    background: rgb(255, 255, 255);
+  }
+  .blog-article-item:hover h1:first-child {
+    color: rgb(0, 98, 255);
+  }
+  .blog-article-item:hover h1:last-child {
+    color: rgb(0, 0, 0);
   }
 }
 

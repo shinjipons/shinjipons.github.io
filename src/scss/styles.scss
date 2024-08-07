@@ -183,6 +183,7 @@ a:hover {
     gap: $grid-gap;
     @include tablet-styles() {
         width: $left-column-width-tablet;
+        width: 100%;
     }
     @include mobile-styles() {
         position: relative;
@@ -213,7 +214,8 @@ a:hover {
 
     @include tablet-styles() {
         width:       $right-column-width-tablet;
-        margin-left: $left-column-width-tablet;
+        width: 100%;
+        margin-left: 0px;
     }
     @include mobile-styles() {
         width: 100%;
@@ -240,6 +242,10 @@ nav {
 
     @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
+        position: fixed;
+    }
+    @include tablet-styles() {
+        width: 100% - $padding-w-tablet * 2;
         position: fixed;
     }
     div:first-child {
@@ -469,6 +475,15 @@ $blog-article-content-width-mobile:  100%;
         padding-left: 0px;
         padding-right: 0px;
         flex-direction: column;
+        &:hover {
+            background: $background-color;
+            h1:first-child {
+                color: $link-color;
+            }
+            h1:last-child {
+                color: $primary-color;
+            }
+        }
     }
 }
 
