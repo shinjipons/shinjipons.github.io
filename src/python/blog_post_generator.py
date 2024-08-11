@@ -93,7 +93,7 @@ def replace_bold(text):
             i += 1
     return result
 
-def replace_italics(text):
+def replace_italics(text): # it's not working...
     i = 0
     result = ""
     while i < len(text):
@@ -251,9 +251,6 @@ def generate_blog_post_html(post_title, post_description, html_lines):
     </head>
     <body>
         <nav>
-            <!-- <div>
-                <a class="monospace" href="index.html">Shinji Pons</a>
-            </div> -->
             <div>
                 <a class="monospace" href="../index.html">Work</a>
                 <a class="monospace" href="../blog.html">Blog</a>
