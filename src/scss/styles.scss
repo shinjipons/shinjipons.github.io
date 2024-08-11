@@ -365,7 +365,10 @@ li > a {
 /* PROJECT INDEX */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    @include tablet-styles() {
+        grid-template-columns: repeat(2, 1fr);
+    }
     @include mobile-styles() {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -377,9 +380,9 @@ li > a {
     padding-left: $grid-gap;
 }
 .project > a > img {
-    height: 500px;
     object-fit: cover;
 
+    height: 300px;
     @include tablet-styles() {
         height: 450px;
     }

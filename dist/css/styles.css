@@ -294,7 +294,12 @@ li > a {
 /* PROJECT INDEX */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 1100px) {
   .project-grid {
@@ -309,8 +314,8 @@ li > a {
 }
 
 .project > a > img {
-  height: 500px;
   object-fit: cover;
+  height: 300px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project > a > img {
