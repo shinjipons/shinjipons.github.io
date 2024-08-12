@@ -372,6 +372,7 @@ li > a {
     h1 {
         font-size: $h1-desktop * 2;
         text-transform: capitalize;
+        padding-left: $grid-gap;
         span {
             color: $secondary-color;
             font-family: $light-font;

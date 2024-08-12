@@ -300,6 +300,7 @@ li > a {
 .headline-introduction h1 {
   font-size: 40px;
   text-transform: capitalize;
+  padding-left: 16px;
 }
 .headline-introduction h1 span {
   color: #9F9F9E;
