@@ -12,13 +12,14 @@
 // $link-color:                 rgba(  0, 255, 133, 1.0);
 
 // colors for light mode
-$primary-color: rgba(0, 0, 0, 1.0);
-$secondary-color:#9F9F9E;
-$tertiary-color:rgba(79, 79, 79, 1.0);
-$accent-color:rgba(203, 195, 167, 1.0);
-$background-color:rgba( 255, 255, 255, 1.0);
-$background-color-nav: transparentize($tertiary-color, 0.8);
-$link-color:rgb(0, 98, 255);
+$primary-color:       rgba(0, 0, 0, 1.0);
+$secondary-color:     #9F9F9E;
+$tertiary-color:      rgba(79, 79, 79, 1.0);
+$accent-color:        rgba(203, 195, 167, 1.0);
+$background-color:    rgba(255, 255, 255, 1.0);
+$background-color-nav:  transparentize($tertiary-color, 0.9);
+$link-color:          rgb(0, 98, 255);
+$link-background-color: transparentize($link-color, 0.9);
 
 // overall widths
 $width-full: 100%; // leave it at 100%
@@ -29,7 +30,8 @@ $padding-w-mobile:   3%;
 // fonts
 $monospace-font: "Geist Mono Medium", monospace;
 $regular-font: "Geist Regular", sans-serif;
-$bold-font: "Geist Bold", sans-serif;
+$bold-font: "Geist SemiBold", sans-serif;
+$light-font: "Geist Light", sans-serif;
 
 $p-weight:         600;
 $h1-weight:        600;
@@ -87,7 +89,6 @@ $breakpoint-desktop: 1800px;
 @mixin blog-media-border() {
     border: 2px solid $secondary-color;
     border-radius: $image-border-radius;
-    // padding: $grid-gap;
 }
 
 /* @font-face and @keyframes */
@@ -100,8 +101,12 @@ $breakpoint-desktop: 1800px;
     src: url("../../fonts/Geist-Regular.otf");
 }
 @font-face {
-    font-family: "Geist Bold";
+    font-family: "Geist SemiBold";
     src: url("../../fonts/Geist-SemiBold.otf");
+}
+@font-face {
+    font-family: "Geist Light";
+    src: url("../../fonts/Geist-Light.otf");
 }
 
 /* General */
@@ -136,6 +141,7 @@ video {
 main {
     width: $width-full;
     padding-top:    $spacing-xl;
+    padding-bottom: $spacing-xl;
     padding-left:   $padding-w-desktop;
     padding-right:  $padding-w-desktop;
     grid-gap: $grid-gap * 2;
@@ -150,9 +156,10 @@ main {
     }
     @include mobile-styles() {
         flex-direction: column;
-        padding-top:   $spacing-s;
-        padding-left:  $padding-w-mobile;
-        padding-right: $padding-w-mobile;
+        padding-top:    $spacing-s;
+        padding-bottom: $spacing-s;
+        padding-left:   $padding-w-mobile;
+        padding-right:  $padding-w-mobile;
         gap: $grid-gap;
     }
 }
@@ -316,8 +323,6 @@ li:first-child {
     border: 0px;
     cursor: pointer;
     transition: $transition;
-
-    background: $secondary-color;
     background: $background-color-nav;
     color: $primary-color;
     &:hover {
@@ -363,6 +368,17 @@ li > a {
 }
 
 /* PROJECT INDEX */
+.headline-introduction {
+    h1 {
+        font-size: $h1-desktop * 2;
+        text-transform: capitalize;
+        span {
+            color: $secondary-color;
+            font-family: $light-font;
+        }
+    }
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -374,57 +390,70 @@ li > a {
     }
 }
 
-.project > a > h1 {
-    margin-top: 8px;
+.project {
+    border-radius: $image-border-radius;
     transition: $transition;
-    padding-left: $grid-gap;
-}
-.project > a > img {
-    object-fit: cover;
-
-    height: 300px;
-    @include tablet-styles() {
-        height: 450px;
+    a {
+        h1 {
+            margin-top: 8px;
+            transition: $transition;
+            padding-left: $grid-gap;
+        }
+        img {
+            object-fit: cover;
+            height: 300px;
+            @include tablet-styles() {
+                height: 450px;
+            }
+            @include mobile-styles() {
+                height: 300px;
+            }
+        }
     }
-
-    @include mobile-styles() {
-        height: 300px;
+    &:hover {
+        background: $link-background-color;
+        a {
+            h1 {
+                color: $link-color;
+            }
+        }
     }
-}
-.project:hover > a > h1 {
-    color: $link-color;
 }
 
 /* PROJECT PAGE RELATED STYLES */
-.project-text-block > .project-text {
-    grid-column-start: 3;
-    grid-column-end:   7;
+.project-text-block {
+    .project-text {
+        grid-column-start: 3;
+        grid-column-end:   7;
+    }
 }
 .next-project {
     margin-top: $spacing-l;
     padding-bottom: 0px;
+    a {
+        h1 {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding-left: $grid-gap;
+            &:nth-child(2) {
+                color: $secondary-color;
+            }
+        }
+        img {
+            margin-top: 24px;
+            display: block;
+            height: 300px;
+            object-fit: cover;
+            transition: $transition;
+            object-position: 50% 0%;
+            border-radius: $image-border-radius $image-border-radius 0px 0px;
+        }
+    }
     &:hover {
         a > h1:nth-child(2) {
             color: $link-color;
         }
     }
-}
-.next-project > a > h1 {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding-left: $grid-gap;
-}
-.next-project > a > h1:nth-child(2) {
-    color: $secondary-color;
-}
-.next-project > a > img {
-    margin-top: 24px;
-    display: block;
-    height: 300px;
-    object-fit: cover;
-    transition: $transition;
-    object-position: 50% 0%;
-    border-radius: $image-border-radius $image-border-radius 0px 0px;
 }
 
 /* BLOG RELATED ITEMS */
@@ -451,7 +480,7 @@ $blog-article-content-width-mobile:  100%;
     border-radius: $button-border-radius;
     transition: $transition;
     &:hover {
-        background: transparentize($link-color, 0.8);
+        background: $link-background-color;
     }
     h1 {
         @include mobile-styles() {
@@ -493,7 +522,6 @@ $blog-article-content-width-mobile:  100%;
 .blog-article-content {
     width: $blog-article-content-width-desktop;
     padding-left: $grid-gap;
-    margin-bottom: $spacing-xl;
 
     @include tablet-styles() {
         width: $blog-article-content-width-tablet;
@@ -608,7 +636,7 @@ $blog-article-content-width-mobile:  100%;
     }
     .blog-paragraph-with-note {
         position: relative;
-        .blog-note {
+        .blog-note { // unused for now...
             width: 60%;
             position: absolute;
             color: $accent-color;

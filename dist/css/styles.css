@@ -8,8 +8,12 @@
   src: url("../../fonts/Geist-Regular.otf");
 }
 @font-face {
-  font-family: "Geist Bold";
+  font-family: "Geist SemiBold";
   src: url("../../fonts/Geist-SemiBold.otf");
+}
+@font-face {
+  font-family: "Geist Light";
+  src: url("../../fonts/Geist-Light.otf");
 }
 /* General */
 * {
@@ -47,6 +51,7 @@ video {
 main {
   width: 100%;
   padding-top: 160px;
+  padding-bottom: 160px;
   padding-left: 15%;
   padding-right: 15%;
   grid-gap: 32px;
@@ -65,6 +70,7 @@ main {
   main {
     flex-direction: column;
     padding-top: 24px;
+    padding-bottom: 24px;
     padding-left: 3%;
     padding-right: 3%;
     gap: 16px;
@@ -241,8 +247,7 @@ li:first-child {
   border: 0px;
   cursor: pointer;
   transition: 0.1s all ease-in-out;
-  background: #9F9F9E;
-  background: rgba(79, 79, 79, 0.2);
+  background: rgba(79, 79, 79, 0.1);
   color: rgb(0, 0, 0);
 }
 .social-button:hover {
@@ -292,6 +297,15 @@ li > a {
 }
 
 /* PROJECT INDEX */
+.headline-introduction h1 {
+  font-size: 40px;
+  text-transform: capitalize;
+}
+.headline-introduction h1 span {
+  color: #9F9F9E;
+  font-family: "Geist Light", sans-serif;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -307,33 +321,38 @@ li > a {
   }
 }
 
-.project > a > h1 {
+.project {
+  border-radius: 8px;
+  transition: 0.1s all ease-in-out;
+}
+.project a h1 {
   margin-top: 8px;
   transition: 0.1s all ease-in-out;
   padding-left: 16px;
 }
-
-.project > a > img {
+.project a img {
   object-fit: cover;
   height: 300px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
-  .project > a > img {
+  .project a img {
     height: 450px;
   }
 }
 @media screen and (max-width: 1100px) {
-  .project > a > img {
+  .project a img {
     height: 300px;
   }
 }
-
-.project:hover > a > h1 {
+.project:hover {
+  background: rgba(0, 98, 255, 0.1);
+}
+.project:hover a h1 {
   color: rgb(0, 98, 255);
 }
 
 /* PROJECT PAGE RELATED STYLES */
-.project-text-block > .project-text {
+.project-text-block .project-text {
   grid-column-start: 3;
   grid-column-end: 7;
 }
@@ -342,21 +361,15 @@ li > a {
   margin-top: 80px;
   padding-bottom: 0px;
 }
-.next-project:hover a > h1:nth-child(2) {
-  color: rgb(0, 98, 255);
-}
-
-.next-project > a > h1 {
+.next-project a h1 {
   margin-top: 4px;
   margin-bottom: 4px;
   padding-left: 16px;
 }
-
-.next-project > a > h1:nth-child(2) {
+.next-project a h1:nth-child(2) {
   color: #9F9F9E;
 }
-
-.next-project > a > img {
+.next-project a img {
   margin-top: 24px;
   display: block;
   height: 300px;
@@ -364,6 +377,9 @@ li > a {
   transition: 0.1s all ease-in-out;
   object-position: 50% 0%;
   border-radius: 8px 8px 0px 0px;
+}
+.next-project:hover a > h1:nth-child(2) {
+  color: rgb(0, 98, 255);
 }
 
 /* BLOG RELATED ITEMS */
@@ -387,7 +403,7 @@ li > a {
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item:hover {
-  background: rgba(0, 98, 255, 0.2);
+  background: rgba(0, 98, 255, 0.1);
 }
 @media screen and (max-width: 1100px) {
   .blog-article-item h1 {
@@ -428,7 +444,6 @@ li > a {
 .blog-article-content {
   width: 60%;
   padding-left: 16px;
-  margin-bottom: 160px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .blog-article-content {
@@ -444,7 +459,7 @@ li > a {
 .blog-article-content h1 {
   margin-top: 40px;
   font-size: 16px;
-  font-family: "Geist Bold", sans-serif;
+  font-family: "Geist SemiBold", sans-serif;
   font-weight: normal;
 }
 .blog-article-content h1:first-child {
@@ -469,7 +484,7 @@ li > a {
   text-decoration: underline;
 }
 .blog-article-content * b {
-  font-family: "Geist Bold", sans-serif;
+  font-family: "Geist SemiBold", sans-serif;
   font-weight: normal;
 }
 .blog-article-content .blog-post-date {
