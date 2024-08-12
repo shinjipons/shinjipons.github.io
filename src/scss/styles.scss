@@ -126,6 +126,7 @@ body {
     margin: 0px;
     width: $width-full;
     min-height: 100svh;
+    overflow-y: auto;
 }
 h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
@@ -139,27 +140,18 @@ video {
 
 /* everywhere */
 main {
-    width: $width-full;
-    padding-top:    $spacing-xl;
-    padding-bottom: $spacing-xl;
-    padding-left:   $padding-w-desktop;
-    padding-right:  $padding-w-desktop;
-    grid-gap: $grid-gap * 2;
-    transition: $transition;
     display: flex;
+    width: $width-full;
+    padding: $spacing-l $padding-w-desktop;
+    grid-gap: $grid-gap * 2;
     flex-direction: column;
-    overflow-y: auto;
-
+    transition: $transition;
     @include tablet-styles() {
-        padding-left:  $padding-w-tablet;
-        padding-right: $padding-w-tablet;
+        padding: $spacing-l $padding-w-tablet;
     }
     @include mobile-styles() {
         flex-direction: column;
-        padding-top:    $spacing-s;
-        padding-bottom: $spacing-s;
-        padding-left:   $padding-w-mobile;
-        padding-right:  $padding-w-mobile;
+        padding: $spacing-s $padding-w-mobile;
         gap: $grid-gap;
     }
 }
@@ -173,9 +165,9 @@ a {
     color: $primary-color;
     text-decoration: none;
     transition: $transition;
-}
-a:hover {
-    color: $link-color;
+    &:hover {
+        color: $link-color;
+    }
 }
 
 /* Left and right columns */
@@ -184,7 +176,6 @@ a:hover {
     width: $left-column-width-desktop;
     flex-direction: column;
     padding-right: $grid-gap-half;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: $grid-gap;
@@ -218,7 +209,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
-
     @include tablet-styles() {
         width:       $right-column-width-tablet;
         width: 100%;
@@ -277,7 +267,7 @@ nav {
             border-radius: $nav-border-radius-inner;
             color: $secondary-color !important;
             &:hover {
-                color: $primary-color !important;
+                color: $link-color !important;
             }
         }
     }
@@ -304,9 +294,9 @@ ul.monospace {
 li {
     list-style-type: none;
     color: $primary-color;
-}
-li:first-child {
-    margin-top: 14px;
+    &:first-child {
+        margin-top: 14px;
+    }
 }
 .social-links-block {
     display: flex;
@@ -326,8 +316,8 @@ li:first-child {
     background: $background-color-nav;
     color: $primary-color;
     &:hover {
-        background: $primary-color;
-        color: $background-color;
+        background: $link-background-color;
+        color: $link-color;
     }
 }
 
@@ -355,9 +345,12 @@ h1.monospace {
     color: $accent-color;
     margin-bottom: 14px;
 }
-li > a {
-    color: $primary-color;
+li {
+    a {
+        color: $primary-color;
+    }
 }
+
 
 /* AVAILABLE FOR WORK */
 .available-for-work {
@@ -451,8 +444,10 @@ li > a {
         }
     }
     &:hover {
-        a > h1:nth-child(2) {
+        a {
+            h1:nth-child(2) {
             color: $link-color;
+            }
         }
     }
 }
@@ -487,14 +482,14 @@ $blog-article-content-width-mobile:  100%;
         @include mobile-styles() {
             margin: 0px;
         }
-    }
-    h1:first-child {
-        color: $primary-color;
-        transition: $transition;
-    }
-    h1:last-child {
-        color: $secondary-color;
-        transition: $transition;
+        &:first-child {
+            color: $primary-color;
+            transition: $transition;
+        }
+        &:last-child {
+            color: $secondary-color;
+            transition: $transition;
+        }
     }
     &:hover {
         h1:first-child {
@@ -510,11 +505,13 @@ $blog-article-content-width-mobile:  100%;
         flex-direction: column;
         &:hover {
             background: $background-color;
-            h1:first-child {
-                color: $link-color;
-            }
-            h1:last-child {
-                color: $primary-color;
+            h1 {
+                &:first-child {
+                    color: $link-color;
+                }
+                &:last-child {
+                    color: $primary-color;
+                }
             }
         }
     }

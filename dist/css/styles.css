@@ -34,6 +34,7 @@ body {
   margin: 0px;
   width: 100%;
   min-height: 100svh;
+  overflow-y: auto;
 }
 
 h1, h2, h3, h4, p {
@@ -49,30 +50,22 @@ video {
 
 /* everywhere */
 main {
-  width: 100%;
-  padding-top: 160px;
-  padding-bottom: 160px;
-  padding-left: 15%;
-  padding-right: 15%;
-  grid-gap: 32px;
-  transition: 0.1s all ease-in-out;
   display: flex;
+  width: 100%;
+  padding: 80px 15%;
+  grid-gap: 32px;
   flex-direction: column;
-  overflow-y: auto;
+  transition: 0.1s all ease-in-out;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   main {
-    padding-left: 6%;
-    padding-right: 6%;
+    padding: 80px 6%;
   }
 }
 @media screen and (max-width: 1100px) {
   main {
     flex-direction: column;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 24px 3%;
     gap: 16px;
   }
 }
@@ -89,7 +82,6 @@ a {
   text-decoration: none;
   transition: 0.1s all ease-in-out;
 }
-
 a:hover {
   color: rgb(0, 98, 255);
 }
@@ -199,7 +191,7 @@ nav div a {
   color: #9F9F9E !important;
 }
 nav div a:hover {
-  color: rgb(0, 0, 0) !important;
+  color: rgb(0, 98, 255) !important;
 }
 
 .button-call-to-action {
@@ -226,7 +218,6 @@ li {
   list-style-type: none;
   color: rgb(0, 0, 0);
 }
-
 li:first-child {
   margin-top: 14px;
 }
@@ -251,8 +242,8 @@ li:first-child {
   color: rgb(0, 0, 0);
 }
 .social-button:hover {
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background: rgba(0, 98, 255, 0.1);
+  color: rgb(0, 98, 255);
 }
 
 /* typography */
@@ -284,7 +275,7 @@ h1.monospace {
   margin-bottom: 14px;
 }
 
-li > a {
+li a {
   color: rgb(0, 0, 0);
 }
 
@@ -379,7 +370,7 @@ li > a {
   object-position: 50% 0%;
   border-radius: 8px 8px 0px 0px;
 }
-.next-project:hover a > h1:nth-child(2) {
+.next-project:hover a h1:nth-child(2) {
   color: rgb(0, 98, 255);
 }
 
