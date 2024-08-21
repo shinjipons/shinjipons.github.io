@@ -36,6 +36,7 @@ $light-font: "Geist Light", sans-serif;
 $p-weight:         600;
 $h1-weight:        600;
 $headline-weight:  600;
+
 $p-desktop:         16px;
 $monospace-desktop: 12px;
 $h1-desktop:        20px;
@@ -151,7 +152,7 @@ main {
     }
     @include mobile-styles() {
         flex-direction: column;
-        padding: $spacing-s $padding-w-mobile;
+        padding: $spacing-l $padding-w-mobile;
         gap: $grid-gap;
     }
 }
@@ -188,8 +189,9 @@ a {
         width: 100%;
         top: 0px;
         padding-right: 0px;
-        padding-top: $spacing-l;
-        margin-bottom: $spacing-l;
+        // padding-top: $spacing-l;
+        // margin-bottom: $spacing-l;
+        margin-bottom: $grid-gap;
         grid-template-columns: repeat(1, 1fr);
     }
     .monospace {
@@ -366,6 +368,14 @@ li {
         font-size: $h1-desktop * 2;
         text-transform: capitalize;
         padding-left: $grid-gap;
+        @include tablet-styles() {
+            font-size: $h1-desktop * 1.4;
+        }
+        @include mobile-styles() {
+            font-size: $h1-desktop * 1.2;
+            padding: 0px;
+            margin: 0px;
+        }
         span {
             color: $secondary-color;
             font-family: $light-font;
