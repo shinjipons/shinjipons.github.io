@@ -404,9 +404,6 @@ def blog_html_page_generator(html_lines):
             </head>
             <body>
                 <nav>
-                    <!-- <div>
-                        <a class="monospace" href="index.html">Shinji Pons</a>
-                    </div> -->
                     <div>
                         <a class="monospace" href="index.html">Work</a>
                         <a class="monospace" href="blog.html">Blog</a>
