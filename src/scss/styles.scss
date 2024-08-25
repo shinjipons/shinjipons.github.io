@@ -61,9 +61,9 @@ $left-column-width-tablet:   30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-$button-border-radius:    8px;
+$button-border-radius:    999px;
 $nav-border-padding:      4px;
-$image-border-radius:     $button-border-radius;
+$image-border-radius:     8px;
 $nav-border-radius:       $image-border-radius;
 $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 

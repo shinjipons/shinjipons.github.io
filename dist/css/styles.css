@@ -196,7 +196,7 @@ nav div a:hover {
 .button-call-to-action {
   background: rgb(0, 98, 255);
   color: rgb(255, 255, 255) !important;
-  border-radius: 8px;
+  border-radius: 999px;
 }
 .button-call-to-action:hover {
   color: rgb(0, 98, 255) !important;
@@ -233,7 +233,7 @@ li:first-child {
   font-size: 12px;
   text-transform: uppercase;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 999px;
   border: 0px;
   cursor: pointer;
   transition: 0.1s all ease-in-out;
@@ -402,7 +402,7 @@ li a {
   justify-content: space-between;
   padding-left: 16px;
   padding-right: 16px;
-  border-radius: 8px;
+  border-radius: 999px;
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item:hover {
