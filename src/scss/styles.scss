@@ -193,7 +193,8 @@ a {
         grid-template-columns: repeat(1, 1fr);
     }
     .monospace {
-        padding-left: $grid-gap;
+        // padding-left: $grid-gap;
+        padding-left: 0px; // typographic adjustment
         @include mobile-styles() {
             padding-left: 0px;
         }
@@ -247,9 +248,10 @@ nav {
     }
     div:first-child {
         a:first-child {
-            @include mobile-styles() {
-                padding-left: 0px;
-            }
+            padding-left: 0px;
+            // @include mobile-styles() {
+            //     padding-left: 0px;
+            // }
         }
     }
     div {
@@ -365,7 +367,8 @@ li {
     h1 {
         font-size: $h1-desktop * 2;
         text-transform: capitalize;
-        padding-left: $grid-gap;
+        // padding-left: $grid-gap;
+        padding-left: 0px; // typographic adjustment
         @include tablet-styles() {
             font-size: $h1-desktop * 1.4;
         }
@@ -399,25 +402,55 @@ li {
         h1 {
             margin-top: 8px;
             transition: $transition;
-            padding-left: $grid-gap;
+            // padding-left: $grid-gap;
+            padding-left: 0px; // typographic adjustment
         }
         img {
             object-fit: cover;
-            height: 300px;
+            height: 300px; // project image height for desktop
             @include tablet-styles() {
-                height: 450px;
+                height: 350px; // project image height for tablet
             }
             @include mobile-styles() {
-                height: 300px;
+                height: 300px; // project image height for mobile
             }
         }
     }
     &:hover {
-        background: $link-background-color;
+        // background: $link-background-color;
         a {
             h1 {
                 color: $link-color;
             }
+        }
+    }
+}
+
+footer {
+    padding: $grid-gap $padding-w-desktop;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile-styles() {
+        padding: $grid-gap;
+    }
+    @include tablet-styles() {
+        padding: $grid-gap $padding-w-tablet;
+    }
+    .big-button {
+        width: 100%;
+        text-align: center;
+        background: $link-color;
+        font-size: $h1-desktop;
+        font-family: $monospace-font;
+        text-transform: uppercase;
+        padding: $spacing-l;
+        color: $background-color;
+        border-radius: $image-border-radius;
+        &:hover {
+            background: $link-background-color;
+            color: $link-color;
         }
     }
 }
@@ -479,13 +512,15 @@ $blog-article-content-width-mobile:  100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
+    // padding-left:  $grid-gap;
+    // padding-right: $grid-gap;
+    padding-left:  0px; // typographic adjustment
+    padding-right: 0px; // typographic adjustment
     border-radius: $button-border-radius;
     transition: $transition;
-    &:hover {
-        background: $link-background-color;
-    }
+    // &:hover {
+    //     // background: $link-background-color;
+    // }
     h1 {
         @include mobile-styles() {
             margin: 0px;
@@ -527,7 +562,8 @@ $blog-article-content-width-mobile:  100%;
 
 .blog-article-content {
     width: $blog-article-content-width-desktop;
-    padding-left: $grid-gap;
+    // padding-left: $grid-gap;
+    padding-left: 0px; // typographic adjustment
 
     @include tablet-styles() {
         width: $blog-article-content-width-tablet;
@@ -609,6 +645,7 @@ $blog-article-content-width-mobile:  100%;
             @include blog-media-border();
             object-fit: contain;
             max-height: 60svh;
+            background: rgba(0, 0, 0, 0.05);
         }
         &:first-child {
             margin-top: 0px;

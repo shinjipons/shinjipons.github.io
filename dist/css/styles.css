@@ -113,7 +113,7 @@ a:hover {
   }
 }
 .left-column .monospace {
-  padding-left: 16px;
+  padding-left: 0px;
 }
 @media screen and (max-width: 1100px) {
   .left-column .monospace {
@@ -168,10 +168,8 @@ nav {
     position: fixed;
   }
 }
-@media screen and (max-width: 1100px) {
-  nav div:first-child a:first-child {
-    padding-left: 0px;
-  }
+nav div:first-child a:first-child {
+  padding-left: 0px;
 }
 nav div {
   display: flex;
@@ -290,7 +288,7 @@ li a {
 .headline-introduction h1 {
   font-size: 40px;
   text-transform: capitalize;
-  padding-left: 16px;
+  padding-left: 0px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .headline-introduction h1 {
@@ -331,7 +329,7 @@ li a {
 .project a h1 {
   margin-top: 8px;
   transition: 0.1s all ease-in-out;
-  padding-left: 16px;
+  padding-left: 0px;
 }
 .project a img {
   object-fit: cover;
@@ -339,7 +337,7 @@ li a {
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project a img {
-    height: 450px;
+    height: 350px;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -347,10 +345,40 @@ li a {
     height: 300px;
   }
 }
-.project:hover {
-  background: rgba(0, 98, 255, 0.1);
-}
 .project:hover a h1 {
+  color: rgb(0, 98, 255);
+}
+
+footer {
+  padding: 16px 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1100px) {
+  footer {
+    padding: 16px;
+  }
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  footer {
+    padding: 16px 6%;
+  }
+}
+footer .big-button {
+  width: 100%;
+  text-align: center;
+  background: rgb(0, 98, 255);
+  font-size: 20px;
+  font-family: "Geist Mono Medium", monospace;
+  text-transform: uppercase;
+  padding: 80px;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+footer .big-button:hover {
+  background: rgba(0, 98, 255, 0.1);
   color: rgb(0, 98, 255);
 }
 
@@ -400,13 +428,10 @@ li a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 0px;
+  padding-right: 0px;
   border-radius: 999px;
   transition: 0.1s all ease-in-out;
-}
-.blog-article-item:hover {
-  background: rgba(0, 98, 255, 0.1);
 }
 @media screen and (max-width: 1100px) {
   .blog-article-item h1 {
@@ -446,7 +471,7 @@ li a {
 
 .blog-article-content {
   width: 60%;
-  padding-left: 16px;
+  padding-left: 0px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .blog-article-content {
@@ -537,6 +562,7 @@ li a {
   border-radius: 8px;
   object-fit: contain;
   max-height: 60svh;
+  background: rgba(0, 0, 0, 0.05);
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;

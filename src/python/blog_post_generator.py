@@ -417,16 +417,7 @@ def blog_html_page_generator(html_lines):
                     <div class="left-column">
                         <div>
                             <ul class="monospace padding-between-items">About
-                                <li>A product designer from France.</li>
                                 <li>I specialize in the design and user experience of complex applications for creative professionals.</li>
-                            </ul>
-                            <ul class="monospace">Previously at
-                                <li>Ragdoll Dynamics</li>
-                                <li>Electronic Arts</li>
-                                <li>The LEGO Group</li>
-                                <li>Autodesk</li>
-                                <li>Microsoft</li>
-                                <li>Thomson Reuters</li>
                             </ul>
                         </div>
                         <ul class="monospace">Status
