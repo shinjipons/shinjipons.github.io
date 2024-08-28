@@ -20,6 +20,7 @@ $background-color:    rgba(255, 255, 255, 1.0);
 $background-color-nav:  transparentize($tertiary-color, 0.9);
 $link-color:          rgb(0, 98, 255);
 $link-background-color: transparentize($link-color, 0.9);
+$available-color:     rgb(0, 199, 23);
 
 // overall widths
 $width-full: 100%; // leave it at 100%
@@ -178,7 +179,7 @@ a {
     flex-direction: column;
     padding-right: $grid-gap-half;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: $grid-gap;
     @include tablet-styles() {
         width: 100%;
@@ -304,6 +305,8 @@ li {
     display: flex;
     grid-gap: $nav-border-padding;
     margin-top: $grid-gap;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .social-button {
     outline: none;
@@ -317,9 +320,37 @@ li {
     transition: $transition;
     background: $background-color-nav;
     color: $primary-color;
-    &:hover {
+    &:hover { // default style
         background: $link-background-color;
         color: $link-color;
+    }
+    &.linkedin:hover {
+        background: #2268C0;
+        color: #FFFFFF;
+    }
+    &.instagram:hover {
+        background: linear-gradient(45deg, rgba(255,207,0,1) 0%, rgba(233,37,73,1) 35%, rgba(242,0,152,1) 50%, rgba(195,16,197,1) 65%, rgba(111,65,244,1) 100%);
+        color: #FFFFFF;
+    }
+    &.twitter:hover {
+        background: #000000;
+        color: #FFFFFF;
+    }
+    &.layers:hover {
+        background: #27272A;
+        color: #E4E4E7;
+    }
+    &.github:hover {
+        background: linear-gradient(0deg, rgba(106,68,197,1) 0%, rgba(116,67,195,1) 100%);
+        color: #FFFFFF;
+    }
+    &.readcv:hover {
+        background: #333333;
+        color: #eeeeee;
+    }
+    &.caldotcom:hover {
+        background: #1d1d20;
+        color: #ffffff;
     }
 }
 
@@ -380,6 +411,11 @@ li {
         span {
             color: $secondary-color;
             font-family: $light-font;
+            margin-left: 0px;
+            &:last-of-type {
+                margin-left: 0.25em;
+                color: $available-color;
+            }
         }
     }
 }

@@ -93,7 +93,7 @@ a:hover {
   flex-direction: column;
   padding-right: 8px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
@@ -223,6 +223,8 @@ li:first-child {
   display: flex;
   grid-gap: 4px;
   margin-top: 16px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .social-button {
@@ -241,6 +243,34 @@ li:first-child {
 .social-button:hover {
   background: rgba(0, 98, 255, 0.1);
   color: rgb(0, 98, 255);
+}
+.social-button.linkedin:hover {
+  background: #2268C0;
+  color: #FFFFFF;
+}
+.social-button.instagram:hover {
+  background: linear-gradient(45deg, rgb(255, 207, 0) 0%, rgb(233, 37, 73) 35%, rgb(242, 0, 152) 50%, rgb(195, 16, 197) 65%, rgb(111, 65, 244) 100%);
+  color: #FFFFFF;
+}
+.social-button.twitter:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+.social-button.layers:hover {
+  background: #27272A;
+  color: #E4E4E7;
+}
+.social-button.github:hover {
+  background: linear-gradient(0deg, rgb(106, 68, 197) 0%, rgb(116, 67, 195) 100%);
+  color: #FFFFFF;
+}
+.social-button.readcv:hover {
+  background: #333333;
+  color: #eeeeee;
+}
+.social-button.caldotcom:hover {
+  background: #1d1d20;
+  color: #ffffff;
 }
 
 /* typography */
@@ -305,6 +335,11 @@ li a {
 .headline-introduction h1 span {
   color: #9F9F9E;
   font-family: "Geist Light", sans-serif;
+  margin-left: 0px;
+}
+.headline-introduction h1 span:last-of-type {
+  margin-left: 0.25em;
+  color: rgb(0, 199, 23);
 }
 
 .project-grid {
