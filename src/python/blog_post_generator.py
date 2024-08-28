@@ -238,13 +238,13 @@ def generate_blog_post_html(post_title, post_description, html_lines):
         <meta property="og:type"          content="website">
         <meta property="og:title"         content="Shinji Pons | Product Designer of 3D Tools & Beyond | {post_title}">
         <meta property="og:description"   content="{post_description}">
-        <meta property="og:image"         content="https://www.shinjipons.com/images/opengraph.jpg">
+        <meta property="og:image"         content="https://www.shinjipons.com/images/opengraph.png">
         <meta name="twitter:card"         content="summary_large_image">
         <meta property="twitter:domain"   content="shinjipons.com">
         <meta property="twitter:url"      content="https://shinjipons.com">
         <meta name="twitter:title"        content="Shinji Pons | Product Designer of 3D Tools & Beyond | {post_title}">
         <meta name="twitter:description"  content="{post_description}">
-        <meta name="twitter:image"        content="https://www.shinjipons.com/images/opengraph.jpg">
+        <meta name="twitter:image"        content="https://www.shinjipons.com/images/opengraph.png">
         <link rel="icon" type="image/png" sizes="32x32"   href="/icons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16"   href="/icons/favicon-16x16.png">
         <link rel="apple-touch-icon"      sizes="180x180" href="/icons/favicon-ios.png">
@@ -391,13 +391,13 @@ def blog_html_page_generator(html_lines):
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond" />
                 <meta property="og:description" content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things." />
-                <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.jpg" />
+                <meta property="og:image" content="https://www.shinjipons.com/images/opengraph.png" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="shinjipons.com" />
                 <meta property="twitter:url" content="https://shinjipons.com" />
                 <meta name="twitter:title" content="Shinji Pons | Product Designer of 3D Tools & Beyond" />
                 <meta name="twitter:description" content="Shinji is an experienced 3D software designer based in Toulouse, France. Making 3D tools, workflows and 3D models amongst many other things." />
-                <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.jpg" />
+                <meta name="twitter:image" content="https://www.shinjipons.com/images/opengraph.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-ios.png" />
