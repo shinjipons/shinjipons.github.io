@@ -344,7 +344,7 @@ li a {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project-grid {
@@ -368,7 +368,7 @@ li a {
 }
 .project a img {
   object-fit: cover;
-  height: 300px;
+  height: 400px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project a img {

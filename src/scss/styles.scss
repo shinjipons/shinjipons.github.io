@@ -422,7 +422,7 @@ li {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     @include tablet-styles() {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -443,7 +443,7 @@ li {
         }
         img {
             object-fit: cover;
-            height: 300px; // project image height for desktop
+            height: 400px; // project image height for desktop
             @include tablet-styles() {
                 height: 350px; // project image height for tablet
             }
