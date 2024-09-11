@@ -2,18 +2,9 @@
 
 // VARIABLES
 
-// colors for dark mode
-// $primary-color:              rgba(255, 255, 255, 1.0);
-// $secondary-color:            rgba(167, 167, 167, 1.0);
-// $tertiary-color:             rgba( 79,  79,  79, 1.0);
-// $accent-color:               rgba(203, 195, 167, 1.0);
-// $background-color    :       rgba( 10,  10,  10, 1.0);
-// $background-color-nav:       transparentize($tertiary-color, 0.8);
-// $link-color:                 rgba(  0, 255, 133, 1.0);
-
 // colors for light mode
 $primary-color:       rgba(0, 0, 0, 1.0);
-$secondary-color:     #9F9F9E;
+$secondary-color:     #8a8a8a;
 $tertiary-color:      rgba(79, 79, 79, 1.0);
 $accent-color:        rgba(203, 195, 167, 1.0);
 $background-color:    rgba(255, 255, 255, 1.0);
@@ -28,19 +19,23 @@ $padding-w-desktop: 15%;
 $padding-w-tablet:   6%;
 $padding-w-mobile:   3%;
 
-// fonts
+// font Outfit
 $monospace-font: "Geist Mono Medium", monospace;
-$regular-font: "Geist Regular", sans-serif;
-$bold-font: "Geist SemiBold", sans-serif;
-$light-font: "Geist Light", sans-serif;
+$regular-font:   "Outfit", sans-serif;
+$bold-font:      "Outfit", sans-serif;
+$light-font:     "Outfit", sans-serif;
 
-$p-weight:         600;
-$h1-weight:        600;
-$headline-weight:  600;
+// Font weight new
+$p-weight:             400;
+$h1-weight:            400;
+$main-headline-weight: 220;
 
-$p-desktop:         16px;
+$p-line-height: 160%; // seems a bit high but ok...
+
+// Font sizes
+$p-desktop:         20px;
 $monospace-desktop: 12px;
-$h1-desktop:        20px;
+$h1-desktop:        22px;
 
 // control general spacing of things
 $spacing-xxs:  4px;
@@ -56,9 +51,9 @@ $grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
 $left-column-width-desktop:  100%;
-$right-column-width-desktop:  100%;
+$right-column-width-desktop: 100%;
 
-$left-column-width-tablet:   30svw;
+$left-column-width-tablet:    30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
@@ -98,17 +93,10 @@ $breakpoint-desktop: 1800px;
     font-family: "Geist Mono Medium";
     src: url("../../fonts/GeistMono-Medium.ttf");
 }
+
 @font-face {
-    font-family: "Geist Regular";
-    src: url("../../fonts/Geist-Regular.otf");
-}
-@font-face {
-    font-family: "Geist SemiBold";
-    src: url("../../fonts/Geist-SemiBold.otf");
-}
-@font-face {
-    font-family: "Geist Light";
-    src: url("../../fonts/Geist-Light.otf");
+    font-family: "Outfit";
+    src: url("../../fonts/Outfit-VariableFont_wght.ttf");
 }
 
 /* General */
@@ -132,6 +120,9 @@ body {
 }
 h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
+}
+p, li {
+    line-height: $p-line-height;
 }
 video {
     width: 100%;
@@ -181,6 +172,15 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $grid-gap;
+    &.project-page {
+        grid-template-columns: repeat(3, 1fr);
+        @include tablet-styles() {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile-styles() {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
     @include tablet-styles() {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
@@ -193,8 +193,7 @@ a {
         margin-bottom: $grid-gap;
         grid-template-columns: repeat(1, 1fr);
     }
-    .monospace {
-        // padding-left: $grid-gap;
+    ul {
         padding-left: 0px; // typographic adjustment
         @include mobile-styles() {
             padding-left: 0px;
@@ -234,11 +233,6 @@ nav {
     padding-bottom: $nav-border-padding;
     z-index: 99;
 
-    // blurring behind the nav
-    // background: transparentize($background-color, 0.5);
-    // backdrop-filter:         blur($grid-gap * 3);
-    // -webkit-backdrop-filter: blur($grid-gap * 3);
-
     @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
         position: fixed;
@@ -250,9 +244,6 @@ nav {
     div:first-child {
         a:first-child {
             padding-left: 0px;
-            // @include mobile-styles() {
-            //     padding-left: 0px;
-            // }
         }
     }
     div {
@@ -289,6 +280,8 @@ nav {
 ul {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: $p-desktop;
+    font-weight: $p-weight;
 }
 ul.monospace {
     padding-left: 0px;
@@ -297,6 +290,8 @@ ul.monospace {
 li {
     list-style-type: none;
     color: $primary-color;
+    font-size: $p-desktop;
+    font-weight: $p-weight;
     &:first-child {
         margin-top: 14px;
     }
@@ -320,7 +315,7 @@ li {
     transition: $transition;
     background: $background-color-nav;
     color: $primary-color;
-    &:hover { // default style
+    &:hover {
         background: $link-background-color;
         color: $link-color;
     }
@@ -397,8 +392,8 @@ li {
 .headline-introduction {
     h1 {
         font-size: $h1-desktop * 2;
+        font-weight: $main-headline-weight;
         text-transform: capitalize;
-        // padding-left: $grid-gap;
         padding-left: 0px; // typographic adjustment
         @include tablet-styles() {
             font-size: $h1-desktop * 1.4;
@@ -440,6 +435,7 @@ li {
             transition: $transition;
             // padding-left: $grid-gap;
             padding-left: 0px; // typographic adjustment
+            font-weight: $h1-weight;
         }
         img {
             object-fit: cover;
@@ -453,7 +449,6 @@ li {
         }
     }
     &:hover {
-        // background: $link-background-color;
         a {
             h1 {
                 color: $link-color;
@@ -474,30 +469,9 @@ footer {
     @include tablet-styles() {
         padding: $grid-gap $padding-w-tablet;
     }
-    .big-button {
-        width: 100%;
-        text-align: center;
-        background: $link-color;
-        font-size: $h1-desktop;
-        font-family: $monospace-font;
-        text-transform: uppercase;
-        padding: $spacing-l;
-        color: $background-color;
-        border-radius: $image-border-radius;
-        &:hover {
-            background: $link-background-color;
-            color: $link-color;
-        }
-    }
 }
 
 /* PROJECT PAGE RELATED STYLES */
-.project-text-block {
-    .project-text {
-        grid-column-start: 3;
-        grid-column-end:   7;
-    }
-}
 .next-project {
     margin-top: $spacing-l;
     padding-bottom: 0px;
@@ -548,15 +522,10 @@ $blog-article-content-width-mobile:  100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    // padding-left:  $grid-gap;
-    // padding-right: $grid-gap;
     padding-left:  0px; // typographic adjustment
     padding-right: 0px; // typographic adjustment
     border-radius: $button-border-radius;
     transition: $transition;
-    // &:hover {
-    //     // background: $link-background-color;
-    // }
     h1 {
         @include mobile-styles() {
             margin: 0px;
@@ -598,9 +567,10 @@ $blog-article-content-width-mobile:  100%;
 
 .blog-article-content {
     width: $blog-article-content-width-desktop;
-    // padding-left: $grid-gap;
     padding-left: 0px; // typographic adjustment
-
+    max-width: 810px;
+    display: flex;
+    flex-direction: column;
     @include tablet-styles() {
         width: $blog-article-content-width-tablet;
     }
@@ -612,18 +582,16 @@ $blog-article-content-width-mobile:  100%;
         margin-top:  $spacing-m;
         font-size: $p-desktop;
         font-family: $bold-font;
-        font-weight: normal;
+        font-weight: 600;
         &:first-child {
             margin-top: 0px;
         }
     }
     p {
         font-size: $p-desktop;
+        font-weight: $p-weight;
         color: $primary-color;
-        line-height: 160%;
-        &:first-child {
-            margin-top: 0px;
-        }
+        margin-top: 0px;
     }
     * {
         a {
@@ -648,24 +616,28 @@ $blog-article-content-width-mobile:  100%;
         padding: $spacing-s;
         @include blog-media-border();
         border-radius: $image-border-radius;
+        border-color: #e1aa11;
+        background: lighten(#e1aa11, 50%);
         margin-top:    $spacing-s;
         margin-bottom: $spacing-s;
         @include mobile-styles() {
             padding: $spacing-s;
         }
         p {
+            color: darken(#e1aa11, 20%);
             margin: 0px;
         }
     }
     .blog-code-block {
         padding: $spacing-s;
         @include blog-media-border();
+        border-color: $primary-color;
         border-radius: $image-border-radius;
-        margin-top:    $spacing-s;
+        margin-top:    0px;
         margin-bottom: $spacing-s;
-        background: $background-color;
+        background: $primary-color;
         p {
-            color: $primary-color;
+            color: $background-color;
             margin: 0px;
             font-family: $monospace-font;
             font-size: $p-desktop * 0.9;
@@ -675,8 +647,9 @@ $blog-article-content-width-mobile:  100%;
         @include blog-media-border();
     }
     picture {
-        display: block;
-        margin-top: $spacing-s;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $spacing-s;
         img {
             @include blog-media-border();
             object-fit: contain;
@@ -688,15 +661,20 @@ $blog-article-content-width-mobile:  100%;
         }
     }
     ul {
+        margin-bottom: $spacing-s;
         @include mobile-styles() {
             padding-left: $spacing-s;
         }
         li {
             list-style-type: square;
-            line-height: 140%;
+            font-size: $p-desktop;
+            &:first-child {
+                margin-top: 0px;
+            }
         }
     }
     ol {
+        margin-bottom: $spacing-s;
         @include mobile-styles() {
             padding-left: $spacing-s;
         }
@@ -704,24 +682,28 @@ $blog-article-content-width-mobile:  100%;
             font-family: $regular-font;
             list-style-type: leading-zero;
             padding-left: $spacing-xs;
+            font-size: $p-desktop;
+            &:first-child {
+                margin-top: 0px;
+            }
         }
     }
     .caption {
         font-size: $p-desktop;
-        color: $primary-color;
+        color: $secondary-color;
         text-align: center;
-        margin-bottom: $spacing-m;
+        margin-bottom: 0px;
         margin-top: $spacing-xs;
     }
     .blog-paragraph-with-note {
         position: relative;
         .blog-note { // unused for now...
-            width: 60%;
             position: absolute;
-            color: $accent-color;
-            font-size: 14px;
+            width: 60%;
             top: $grid-gap-half * -1;
             left: 105%;
+            color: $accent-color;
+            font-size: 14px;
             padding-left: $grid-gap;
             border-left: 2px solid $accent-color;
             @include tablet-styles() {
