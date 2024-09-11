@@ -75,8 +75,8 @@ def generate_page(page_key, page_data):
     </nav>
     <main>
         <!-- Left column -->
-        <div class="left-column">
-            <ul class="monospace padding-between-items">About
+        <div class="left-column project-page">
+            <ul class="padding-between-items">
                 <li>{paragraph_1}</li>
                 <li>{paragraph_2}</li>
             </ul>

@@ -4,16 +4,8 @@
   src: url("../../fonts/GeistMono-Medium.ttf");
 }
 @font-face {
-  font-family: "Geist Regular";
-  src: url("../../fonts/Geist-Regular.otf");
-}
-@font-face {
-  font-family: "Geist SemiBold";
-  src: url("../../fonts/Geist-SemiBold.otf");
-}
-@font-face {
-  font-family: "Geist Light";
-  src: url("../../fonts/Geist-Light.otf");
+  font-family: "Outfit";
+  src: url("../../fonts/Outfit-VariableFont_wght.ttf");
 }
 /* General */
 * {
@@ -39,6 +31,10 @@ body {
 
 h1, h2, h3, h4, p {
   -webkit-font-smoothing: antialiased;
+}
+
+p, li {
+  line-height: 160%;
 }
 
 video {
@@ -96,6 +92,19 @@ a:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+.left-column.project-page {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (min-width: 1100px) and (max-width: 1800px) {
+  .left-column.project-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .left-column.project-page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .left-column {
     width: 100%;
@@ -112,15 +121,15 @@ a:hover {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.left-column .monospace {
+.left-column ul {
   padding-left: 0px;
 }
 @media screen and (max-width: 1100px) {
-  .left-column .monospace {
+  .left-column ul {
     padding-left: 0px;
   }
 }
-.left-column .monospace.padding-between-items * {
+.left-column ul.padding-between-items * {
   padding-bottom: 16px;
 }
 
@@ -185,7 +194,7 @@ nav div a {
   transition: 0.1s all ease-in-out;
   cursor: pointer;
   border-radius: 4px;
-  color: #9F9F9E !important;
+  color: #8a8a8a !important;
 }
 nav div a:hover {
   color: rgb(0, 98, 255) !important;
@@ -204,16 +213,20 @@ nav div a:hover {
 ul {
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 ul.monospace {
   padding-left: 0px;
-  color: #9F9F9E;
+  color: #8a8a8a;
 }
 
 li {
   list-style-type: none;
   color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
 }
 li:first-child {
   margin-top: 14px;
@@ -275,16 +288,16 @@ li:first-child {
 
 /* typography */
 h1, p, ul {
-  font-family: "Geist Regular", sans-serif;
+  font-family: "Outfit", sans-serif;
   color: rgb(0, 0, 0);
 }
 
 p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: normal;
 }
 
@@ -316,25 +329,26 @@ li a {
 
 /* PROJECT INDEX */
 .headline-introduction h1 {
-  font-size: 40px;
+  font-size: 44px;
+  font-weight: 220;
   text-transform: capitalize;
   padding-left: 0px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .headline-introduction h1 {
-    font-size: 28px;
+    font-size: 30.8px;
   }
 }
 @media screen and (max-width: 1100px) {
   .headline-introduction h1 {
-    font-size: 24px;
+    font-size: 26.4px;
     padding: 0px;
     margin: 0px;
   }
 }
 .headline-introduction h1 span {
-  color: #9F9F9E;
-  font-family: "Geist Light", sans-serif;
+  color: #8a8a8a;
+  font-family: "Outfit", sans-serif;
   margin-left: 0px;
 }
 .headline-introduction h1 span:last-of-type {
@@ -365,6 +379,7 @@ li a {
   margin-top: 8px;
   transition: 0.1s all ease-in-out;
   padding-left: 0px;
+  font-weight: 400;
 }
 .project a img {
   object-fit: cover;
@@ -401,28 +416,8 @@ footer {
     padding: 16px 6%;
   }
 }
-footer .big-button {
-  width: 100%;
-  text-align: center;
-  background: rgb(0, 98, 255);
-  font-size: 20px;
-  font-family: "Geist Mono Medium", monospace;
-  text-transform: uppercase;
-  padding: 80px;
-  color: rgb(255, 255, 255);
-  border-radius: 8px;
-}
-footer .big-button:hover {
-  background: rgba(0, 98, 255, 0.1);
-  color: rgb(0, 98, 255);
-}
 
 /* PROJECT PAGE RELATED STYLES */
-.project-text-block .project-text {
-  grid-column-start: 3;
-  grid-column-end: 7;
-}
-
 .next-project {
   margin-top: 80px;
   padding-bottom: 0px;
@@ -433,7 +428,7 @@ footer .big-button:hover {
   padding-left: 16px;
 }
 .next-project a h1:nth-child(2) {
-  color: #9F9F9E;
+  color: #8a8a8a;
 }
 .next-project a img {
   margin-top: 24px;
@@ -478,7 +473,7 @@ footer .big-button:hover {
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item h1:last-child {
-  color: #9F9F9E;
+  color: #8a8a8a;
   transition: 0.1s all ease-in-out;
 }
 .blog-article-item:hover h1:first-child {
@@ -507,6 +502,9 @@ footer .big-button:hover {
 .blog-article-content {
   width: 60%;
   padding-left: 0px;
+  max-width: 810px;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .blog-article-content {
@@ -521,19 +519,17 @@ footer .big-button:hover {
 }
 .blog-article-content h1 {
   margin-top: 40px;
-  font-size: 16px;
-  font-family: "Geist SemiBold", sans-serif;
-  font-weight: normal;
+  font-size: 20px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
 }
 .blog-article-content h1:first-child {
   margin-top: 0px;
 }
 .blog-article-content p {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 400;
   color: rgb(0, 0, 0);
-  line-height: 160%;
-}
-.blog-article-content p:first-child {
   margin-top: 0px;
 }
 .blog-article-content * a {
@@ -547,17 +543,19 @@ footer .big-button:hover {
   text-decoration: underline;
 }
 .blog-article-content * b {
-  font-family: "Geist SemiBold", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: normal;
 }
 .blog-article-content .blog-post-date {
-  color: #9F9F9E;
+  color: #8a8a8a;
 }
 .blog-article-content .blog-callout-block {
   padding: 24px;
-  border: 2px solid #9F9F9E;
+  border: 2px solid #8a8a8a;
   border-radius: 8px;
   border-radius: 8px;
+  border-color: #e1aa11;
+  background: #fefbf3;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -567,33 +565,36 @@ footer .big-button:hover {
   }
 }
 .blog-article-content .blog-callout-block p {
+  color: #82620a;
   margin: 0px;
 }
 .blog-article-content .blog-code-block {
   padding: 24px;
-  border: 2px solid #9F9F9E;
+  border: 2px solid #8a8a8a;
   border-radius: 8px;
+  border-color: rgb(0, 0, 0);
   border-radius: 8px;
-  margin-top: 24px;
+  margin-top: 0px;
   margin-bottom: 24px;
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 .blog-article-content .blog-code-block p {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: 0px;
   font-family: "Geist Mono Medium", monospace;
-  font-size: 14.4px;
+  font-size: 18px;
 }
 .blog-article-content video {
-  border: 2px solid #9F9F9E;
+  border: 2px solid #8a8a8a;
   border-radius: 8px;
 }
 .blog-article-content picture {
-  display: block;
-  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
 }
 .blog-article-content picture img {
-  border: 2px solid #9F9F9E;
+  border: 2px solid #8a8a8a;
   border-radius: 8px;
   object-fit: contain;
   max-height: 60svh;
@@ -602,6 +603,9 @@ footer .big-button:hover {
 .blog-article-content picture:first-child {
   margin-top: 0px;
 }
+.blog-article-content ul {
+  margin-bottom: 24px;
+}
 @media screen and (max-width: 1100px) {
   .blog-article-content ul {
     padding-left: 24px;
@@ -609,7 +613,13 @@ footer .big-button:hover {
 }
 .blog-article-content ul li {
   list-style-type: square;
-  line-height: 140%;
+  font-size: 20px;
+}
+.blog-article-content ul li:first-child {
+  margin-top: 0px;
+}
+.blog-article-content ol {
+  margin-bottom: 24px;
 }
 @media screen and (max-width: 1100px) {
   .blog-article-content ol {
@@ -617,27 +627,31 @@ footer .big-button:hover {
   }
 }
 .blog-article-content ol li {
-  font-family: "Geist Regular", sans-serif;
+  font-family: "Outfit", sans-serif;
   list-style-type: leading-zero;
   padding-left: 8px;
+  font-size: 20px;
+}
+.blog-article-content ol li:first-child {
+  margin-top: 0px;
 }
 .blog-article-content .caption {
-  font-size: 16px;
-  color: rgb(0, 0, 0);
+  font-size: 20px;
+  color: #8a8a8a;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   margin-top: 8px;
 }
 .blog-article-content .blog-paragraph-with-note {
   position: relative;
 }
 .blog-article-content .blog-paragraph-with-note .blog-note {
-  width: 60%;
   position: absolute;
-  color: rgb(203, 195, 167);
-  font-size: 14px;
+  width: 60%;
   top: -8px;
   left: 105%;
+  color: rgb(203, 195, 167);
+  font-size: 14px;
   padding-left: 16px;
   border-left: 2px solid rgb(203, 195, 167);
 }
