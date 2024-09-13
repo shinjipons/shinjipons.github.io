@@ -684,7 +684,7 @@ $blog-article-content-width-mobile:  100%;
         li {
             list-style-type: square;
             font-size: $p-desktop;
-            font-weight: $p-weight * 0.8;
+            font-weight: $p-weight;
             &:first-child {
                 margin-top: 0px;
             }

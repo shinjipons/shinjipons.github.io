@@ -618,7 +618,7 @@ footer {
 .blog-article-content ul li, .blog-article-content ol li {
   list-style-type: square;
   font-size: 16px;
-  font-weight: 288;
+  font-weight: 360;
 }
 .blog-article-content ul li:first-child, .blog-article-content ol li:first-child {
   margin-top: 0px;
