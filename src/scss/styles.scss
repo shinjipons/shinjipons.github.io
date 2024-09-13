@@ -14,7 +14,7 @@ $link-background-color: transparentize($link-color, 0.9);
 $available-color:     rgb(0, 199, 23);
 
 // overall widths
-$width-full: 100%; // leave it at 100%
+$width-full:       100%; // leave it at 100%
 $padding-w-desktop: 15%;
 $padding-w-tablet:   6%;
 $padding-w-mobile:   3%;
@@ -26,16 +26,17 @@ $bold-font:      "Outfit", sans-serif;
 $light-font:     "Outfit", sans-serif;
 
 // Font weight new
-$p-weight:             400;
+$p-weight:             360;
+$bold-weight:          530;
 $h1-weight:            400;
 $main-headline-weight: 220;
 
 $p-line-height: 160%; // seems a bit high but ok...
 
 // Font sizes
-$p-desktop:         20px;
-$monospace-desktop: 12px;
-$h1-desktop:        22px;
+$p-desktop:         16px; // old value: 20px
+$monospace-desktop: 10px; // old value: 12px
+$h1-desktop:        18px; // old value: 22px
 
 // control general spacing of things
 $spacing-xxs:  4px;
@@ -59,7 +60,7 @@ $right-column-width-tablet:  100svw - $left-column-width-tablet;
 // control the border radii of the button and the nav items
 $button-border-radius:    999px;
 $nav-border-padding:      4px;
-$image-border-radius:     8px;
+$image-border-radius:     8px * 0;
 $nav-border-radius:       $image-border-radius;
 $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 
@@ -67,10 +68,17 @@ $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 $transition: 0.1s all ease-in-out;
 
 // mixins for media queries
-$breakpoint-tablet:  1100px;
-$breakpoint-desktop: 1800px;
+$breakpoint-tablet:       1100px;
+$breakpoint-desktop:      1800px;
+$breakpoint-desktop-wide: 2300px;
 
-@mixin tablet-styles() {
+@mixin desktop-wide-styles() {
+    @media screen and (min-width: $breakpoint-desktop-wide) {
+        @content;
+    }
+}
+
+@mixin laptop-styles() {
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
         @content;
     }
@@ -139,7 +147,7 @@ main {
     grid-gap: $grid-gap * 2;
     flex-direction: column;
     transition: $transition;
-    @include tablet-styles() {
+    @include laptop-styles() {
         padding: $spacing-l $padding-w-tablet;
     }
     @include mobile-styles() {
@@ -174,14 +182,14 @@ a {
     gap: $grid-gap;
     &.project-page {
         grid-template-columns: repeat(3, 1fr);
-        @include tablet-styles() {
+        @include laptop-styles() {
             grid-template-columns: repeat(2, 1fr);
         }
         @include mobile-styles() {
             grid-template-columns: repeat(1, 1fr);
         }
     }
-    @include tablet-styles() {
+    @include laptop-styles() {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -210,7 +218,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
-    @include tablet-styles() {
+    @include laptop-styles() {
         width:       $right-column-width-tablet;
         width: 100%;
         margin-left: 0px;
@@ -237,7 +245,7 @@ nav {
         width: 100% - $padding-w-mobile * 2;
         position: fixed;
     }
-    @include tablet-styles() {
+    @include laptop-styles() {
         width: 100% - $padding-w-tablet * 2;
         position: fixed;
     }
@@ -395,7 +403,7 @@ li {
         font-weight: $main-headline-weight;
         text-transform: capitalize;
         padding-left: 0px; // typographic adjustment
-        @include tablet-styles() {
+        @include laptop-styles() {
             font-size: $h1-desktop * 1.4;
         }
         @include mobile-styles() {
@@ -418,8 +426,8 @@ li {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    @include tablet-styles() {
-        grid-template-columns: repeat(2, 1fr);
+    @include laptop-styles() {
+        grid-template-columns: repeat(3, 1fr);
     }
     @include mobile-styles() {
         grid-template-columns: repeat(1, 1fr);
@@ -431,17 +439,20 @@ li {
     transition: $transition;
     a {
         h1 {
-            margin-top: 8px;
+            margin-top: $spacing-xxs;
             transition: $transition;
             // padding-left: $grid-gap;
             padding-left: 0px; // typographic adjustment
             font-weight: $h1-weight;
+            display: none;
         }
         img {
+            display: block;
             object-fit: cover;
             height: 400px; // project image height for desktop
-            @include tablet-styles() {
-                height: 350px; // project image height for tablet
+            transition: $transition;
+            @include laptop-styles() {
+                height: 280px; // project image height for tablet
             }
             @include mobile-styles() {
                 height: 300px; // project image height for mobile
@@ -452,6 +463,9 @@ li {
         a {
             h1 {
                 color: $link-color;
+            }
+            img {
+                opacity: 0.7;
             }
         }
     }
@@ -466,7 +480,7 @@ footer {
     @include mobile-styles() {
         padding: $grid-gap;
     }
-    @include tablet-styles() {
+    @include laptop-styles() {
         padding: $grid-gap $padding-w-tablet;
     }
 }
@@ -571,7 +585,7 @@ $blog-article-content-width-mobile:  100%;
     max-width: 810px;
     display: flex;
     flex-direction: column;
-    @include tablet-styles() {
+    @include laptop-styles() {
         width: $blog-article-content-width-tablet;
     }
     @include mobile-styles() {
@@ -579,10 +593,10 @@ $blog-article-content-width-mobile:  100%;
         padding-left: 0px;
     }
     h1 {
-        margin-top:  $spacing-m;
+        margin-top:  $spacing-s;
         font-size: $p-desktop;
         font-family: $bold-font;
-        font-weight: 600;
+        font-weight: $bold-weight;
         &:first-child {
             margin-top: 0px;
         }
@@ -606,7 +620,7 @@ $blog-article-content-width-mobile:  100%;
         }
         b {
             font-family: $bold-font;
-            font-weight: normal;
+            font-weight: $bold-weight;
         }
     }
     .blog-post-date {
@@ -614,11 +628,10 @@ $blog-article-content-width-mobile:  100%;
     }
     .blog-callout-block {
         padding: $spacing-s;
-        @include blog-media-border();
         border-radius: $image-border-radius;
         border-color: #e1aa11;
         background: lighten(#e1aa11, 50%);
-        margin-top:    $spacing-s;
+        margin-top:    $spacing-xs;
         margin-bottom: $spacing-s;
         @include mobile-styles() {
             padding: $spacing-s;
@@ -630,7 +643,6 @@ $blog-article-content-width-mobile:  100%;
     }
     .blog-code-block {
         padding: $spacing-s;
-        @include blog-media-border();
         border-color: $primary-color;
         border-radius: $image-border-radius;
         margin-top:    0px;
@@ -643,46 +655,36 @@ $blog-article-content-width-mobile:  100%;
             font-size: $p-desktop * 0.9;
         }
     }
-    video {
-        @include blog-media-border();
-    }
     picture {
         display: flex;
         flex-direction: column;
+        margin-top: $spacing-xs;
         margin-bottom: $spacing-s;
         img {
-            @include blog-media-border();
             object-fit: contain;
-            max-height: 60svh;
             background: rgba(0, 0, 0, 0.05);
+            padding: $spacing-s;
         }
         &:first-child {
             margin-top: 0px;
         }
     }
-    ul {
+    video {
+        background: rgba(0, 0, 0, 0.05);
+        padding: $spacing-s;
+    }
+    ul, ol {
         margin-bottom: $spacing-s;
+        font-weight: $p-weight;
+        padding-left: $spacing-s;
+        font-family: $regular-font;
         @include mobile-styles() {
             padding-left: $spacing-s;
         }
         li {
             list-style-type: square;
             font-size: $p-desktop;
-            &:first-child {
-                margin-top: 0px;
-            }
-        }
-    }
-    ol {
-        margin-bottom: $spacing-s;
-        @include mobile-styles() {
-            padding-left: $spacing-s;
-        }
-        li {
-            font-family: $regular-font;
-            list-style-type: leading-zero;
-            padding-left: $spacing-xs;
-            font-size: $p-desktop;
+            font-weight: $p-weight * 0.8;
             &:first-child {
                 margin-top: 0px;
             }
@@ -706,7 +708,7 @@ $blog-article-content-width-mobile:  100%;
             font-size: 14px;
             padding-left: $grid-gap;
             border-left: 2px solid $accent-color;
-            @include tablet-styles() {
+            @include laptop-styles() {
                 width: 60%;
             }
             @include mobile-styles() {

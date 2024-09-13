@@ -41,7 +41,7 @@ video {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 /* everywhere */
@@ -70,7 +70,7 @@ img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 a {
@@ -193,7 +193,7 @@ nav div a {
   padding: 12.8px 16px 16px 16px;
   transition: 0.1s all ease-in-out;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: -4px;
   color: #8a8a8a !important;
 }
 nav div a:hover {
@@ -213,8 +213,8 @@ nav div a:hover {
 ul {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 360;
 }
 
 ul.monospace {
@@ -225,8 +225,8 @@ ul.monospace {
 li {
   list-style-type: none;
   color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 360;
 }
 li:first-child {
   margin-top: 14px;
@@ -243,7 +243,7 @@ li:first-child {
 .social-button {
   outline: none;
   font-family: "Geist Mono Medium", monospace;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   padding: 16px;
   border-radius: 999px;
@@ -293,11 +293,11 @@ h1, p, ul {
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: normal;
 }
 
@@ -305,7 +305,7 @@ h1 {
   font-family: "Geist Mono Medium", monospace;
   color: rgb(0, 0, 0);
   letter-spacing: 0.05ch;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 120%;
   text-transform: uppercase;
 }
@@ -329,19 +329,19 @@ li a {
 
 /* PROJECT INDEX */
 .headline-introduction h1 {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 220;
   text-transform: capitalize;
   padding-left: 0px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .headline-introduction h1 {
-    font-size: 30.8px;
+    font-size: 25.2px;
   }
 }
 @media screen and (max-width: 1100px) {
   .headline-introduction h1 {
-    font-size: 26.4px;
+    font-size: 21.6px;
     padding: 0px;
     margin: 0px;
   }
@@ -362,7 +362,7 @@ li a {
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (max-width: 1100px) {
@@ -372,22 +372,25 @@ li a {
 }
 
 .project {
-  border-radius: 8px;
+  border-radius: 0px;
   transition: 0.1s all ease-in-out;
 }
 .project a h1 {
-  margin-top: 8px;
+  margin-top: 4px;
   transition: 0.1s all ease-in-out;
   padding-left: 0px;
   font-weight: 400;
+  display: none;
 }
 .project a img {
+  display: block;
   object-fit: cover;
   height: 400px;
+  transition: 0.1s all ease-in-out;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project a img {
-    height: 350px;
+    height: 280px;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -397,6 +400,9 @@ li a {
 }
 .project:hover a h1 {
   color: rgb(0, 98, 255);
+}
+.project:hover a img {
+  opacity: 0.7;
 }
 
 footer {
@@ -437,7 +443,7 @@ footer {
   object-fit: cover;
   transition: 0.1s all ease-in-out;
   object-position: 50% 0%;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
 }
 .next-project:hover a h1:nth-child(2) {
   color: rgb(0, 98, 255);
@@ -518,17 +524,17 @@ footer {
   }
 }
 .blog-article-content h1 {
-  margin-top: 40px;
-  font-size: 20px;
+  margin-top: 24px;
+  font-size: 16px;
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
+  font-weight: 530;
 }
 .blog-article-content h1:first-child {
   margin-top: 0px;
 }
 .blog-article-content p {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 360;
   color: rgb(0, 0, 0);
   margin-top: 0px;
 }
@@ -544,19 +550,17 @@ footer {
 }
 .blog-article-content * b {
   font-family: "Outfit", sans-serif;
-  font-weight: normal;
+  font-weight: 530;
 }
 .blog-article-content .blog-post-date {
   color: #8a8a8a;
 }
 .blog-article-content .blog-callout-block {
   padding: 24px;
-  border: 2px solid #8a8a8a;
-  border-radius: 8px;
-  border-radius: 8px;
+  border-radius: 0px;
   border-color: #e1aa11;
   background: #fefbf3;
-  margin-top: 24px;
+  margin-top: 8px;
   margin-bottom: 24px;
 }
 @media screen and (max-width: 1100px) {
@@ -570,10 +574,8 @@ footer {
 }
 .blog-article-content .blog-code-block {
   padding: 24px;
-  border: 2px solid #8a8a8a;
-  border-radius: 8px;
   border-color: rgb(0, 0, 0);
-  border-radius: 8px;
+  border-radius: 0px;
   margin-top: 0px;
   margin-bottom: 24px;
   background: rgb(0, 0, 0);
@@ -582,61 +584,47 @@ footer {
   color: rgb(255, 255, 255);
   margin: 0px;
   font-family: "Geist Mono Medium", monospace;
-  font-size: 18px;
-}
-.blog-article-content video {
-  border: 2px solid #8a8a8a;
-  border-radius: 8px;
+  font-size: 14.4px;
 }
 .blog-article-content picture {
   display: flex;
   flex-direction: column;
+  margin-top: 8px;
   margin-bottom: 24px;
 }
 .blog-article-content picture img {
-  border: 2px solid #8a8a8a;
-  border-radius: 8px;
   object-fit: contain;
-  max-height: 60svh;
   background: rgba(0, 0, 0, 0.05);
+  padding: 24px;
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;
 }
-.blog-article-content ul {
+.blog-article-content video {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 24px;
+}
+.blog-article-content ul, .blog-article-content ol {
   margin-bottom: 24px;
-}
-@media screen and (max-width: 1100px) {
-  .blog-article-content ul {
-    padding-left: 24px;
-  }
-}
-.blog-article-content ul li {
-  list-style-type: square;
-  font-size: 20px;
-}
-.blog-article-content ul li:first-child {
-  margin-top: 0px;
-}
-.blog-article-content ol {
-  margin-bottom: 24px;
-}
-@media screen and (max-width: 1100px) {
-  .blog-article-content ol {
-    padding-left: 24px;
-  }
-}
-.blog-article-content ol li {
+  font-weight: 360;
+  padding-left: 24px;
   font-family: "Outfit", sans-serif;
-  list-style-type: leading-zero;
-  padding-left: 8px;
-  font-size: 20px;
 }
-.blog-article-content ol li:first-child {
+@media screen and (max-width: 1100px) {
+  .blog-article-content ul, .blog-article-content ol {
+    padding-left: 24px;
+  }
+}
+.blog-article-content ul li, .blog-article-content ol li {
+  list-style-type: square;
+  font-size: 16px;
+  font-weight: 288;
+}
+.blog-article-content ul li:first-child, .blog-article-content ol li:first-child {
   margin-top: 0px;
 }
 .blog-article-content .caption {
-  font-size: 20px;
+  font-size: 16px;
   color: #8a8a8a;
   text-align: center;
   margin-bottom: 0px;
