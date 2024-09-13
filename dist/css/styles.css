@@ -591,11 +591,13 @@ footer {
   flex-direction: column;
   margin-top: 8px;
   margin-bottom: 24px;
+  max-height: 760px;
 }
 .blog-article-content picture img {
   object-fit: contain;
   background: rgba(0, 0, 0, 0.05);
   padding: 24px;
+  height: 100%;
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;

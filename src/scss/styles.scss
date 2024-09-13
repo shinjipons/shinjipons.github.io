@@ -22,8 +22,8 @@ $padding-w-mobile:   3%;
 // font Outfit
 $monospace-font: "Geist Mono Medium", monospace;
 $regular-font:   "Outfit", sans-serif;
-$bold-font:      "Outfit", sans-serif;
-$light-font:     "Outfit", sans-serif;
+$bold-font:      $regular-font;
+$light-font:     $regular-font;
 
 // Font weight new
 $p-weight:             360;
@@ -660,10 +660,12 @@ $blog-article-content-width-mobile:  100%;
         flex-direction: column;
         margin-top: $spacing-xs;
         margin-bottom: $spacing-s;
+        max-height: 760px;
         img {
             object-fit: contain;
             background: rgba(0, 0, 0, 0.05);
             padding: $spacing-s;
+            height: 100%;
         }
         &:first-child {
             margin-top: 0px;
