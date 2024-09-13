@@ -592,22 +592,29 @@ footer {
   margin-top: 8px;
   margin-bottom: 24px;
   max-height: 760px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border-radius: 8px;
 }
 .blog-article-content picture img {
   object-fit: contain;
-  background: rgba(0, 0, 0, 0.05);
-  padding: 24px;
   height: 100%;
 }
 .blog-article-content picture:first-child {
   margin-top: 0px;
 }
+.blog-article-content picture:has(> .caption) {
+  background: rgba(0, 0, 0, 0.08);
+}
 .blog-article-content video {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.08);
   padding: 24px;
+  border-radius: 8px;
 }
 .blog-article-content ul, .blog-article-content ol {
   margin-bottom: 24px;
+  margin-top: 0px;
   font-weight: 360;
   padding-left: 24px;
   font-family: "Outfit", sans-serif;
@@ -627,10 +634,10 @@ footer {
 }
 .blog-article-content .caption {
   font-size: 16px;
-  color: #8a8a8a;
+  color: rgb(0, 0, 0);
   text-align: center;
   margin-bottom: 0px;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 .blog-article-content .blog-paragraph-with-note {
   position: relative;
