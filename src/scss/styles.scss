@@ -443,7 +443,6 @@ li {
         h1 {
             margin-top: $spacing-xxs;
             transition: $transition;
-            // padding-left: $grid-gap;
             padding-left: 0px; // typographic adjustment
             font-weight: $h1-weight;
             display: none;
@@ -451,8 +450,8 @@ li {
         img {
             display: block;
             object-fit: cover;
-            height: 400px; // project image height for desktop
             transition: $transition;
+            height: 400px; // project image height for desktop
             @include laptop-styles() {
                 height: 280px; // project image height for tablet
             }
@@ -646,7 +645,7 @@ $blog-article-content-width-mobile:  100%;
     .blog-code-block {
         padding: $spacing-s;
         border-color: $primary-color;
-        border-radius: $image-border-radius;
+        border-radius: $blog-media-outer-radius;
         margin-top:    0px;
         margin-bottom: $spacing-s;
         background: $primary-color;

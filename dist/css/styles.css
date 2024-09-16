@@ -385,8 +385,8 @@ li a {
 .project a img {
   display: block;
   object-fit: cover;
-  height: 400px;
   transition: 0.1s all ease-in-out;
+  height: 400px;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .project a img {
@@ -575,7 +575,7 @@ footer {
 .blog-article-content .blog-code-block {
   padding: 24px;
   border-color: rgb(0, 0, 0);
-  border-radius: 0px;
+  border-radius: 8px;
   margin-top: 0px;
   margin-bottom: 24px;
   background: rgb(0, 0, 0);
