@@ -12,7 +12,7 @@ $background-color-nav:  transparentize($tertiary-color, 0.9);
 $link-color:          rgb(0, 98, 255);
 $link-background-color: transparentize($link-color, 0.9);
 $available-color:     rgb(0, 199, 23);
-$blog-media-background-color: rgba(0, 0, 0, 0.08);
+$blog-media-background-color: rgba(0, 0, 0, 0.04);
 
 // overall widths
 $width-full:       100%; // leave it at 100%
@@ -60,14 +60,14 @@ $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
 $button-border-radius:    999px;
-$nav-border-padding:      4px;
-$image-border-radius:     8px * 0;
-$blog-media-outer-radius: 8px * 1;
+$nav-border-padding:      8px;
+$image-border-radius:     0px;
+$blog-media-outer-radius: 8px;
 $nav-border-radius:       $image-border-radius;
 $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 
 // transition
-$transition: 0.1s all ease-in-out;
+$transition: 150ms all ease-in-out;
 
 // mixins for media queries
 $breakpoint-tablet:       1100px;
@@ -239,7 +239,7 @@ nav {
     width: $width-full - $padding-w-desktop * 2;
     justify-content: space-between;
     background: $background-color;
-    padding-top: $nav-border-padding;
+    padding-top:    $nav-border-padding;
     padding-bottom: $nav-border-padding;
     z-index: 99;
 
@@ -439,12 +439,14 @@ li {
 .project {
     border-radius: $image-border-radius;
     transition: $transition;
+    overflow: hidden;
     a {
         h1 {
             margin-top: $spacing-xxs;
             transition: $transition;
             padding-left: 0px; // typographic adjustment
             font-weight: $h1-weight;
+            margin-top: $spacing-xs;
             display: none;
         }
         img {
@@ -452,6 +454,8 @@ li {
             object-fit: cover;
             transition: $transition;
             height: 400px; // project image height for desktop
+            border-radius: $image-border-radius;
+            transform: scale(1.09);
             @include laptop-styles() {
                 height: 280px; // project image height for tablet
             }
@@ -466,7 +470,8 @@ li {
                 color: $link-color;
             }
             img {
-                opacity: 0.7;
+                // opacity: 0.7;
+                transform: scale(1);
             }
         }
     }
@@ -489,12 +494,18 @@ footer {
 /* PROJECT PAGE RELATED STYLES */
 .next-project {
     margin-top: $spacing-l;
+    margin-bottom: $spacing-l * -1;
     padding-bottom: 0px;
+    @include laptop-styles() {
+        margin-bottom: $spacing-l * -1;
+    }
+    @include mobile-styles() {
+        margin-bottom: $spacing-l * -1;
+    }
     a {
         h1 {
             margin-top: 4px;
             margin-bottom: 4px;
-            padding-left: $grid-gap;
             &:nth-child(2) {
                 color: $secondary-color;
             }
@@ -502,7 +513,7 @@ footer {
         img {
             margin-top: 24px;
             display: block;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
             transition: $transition;
             object-position: 50% 0%;
@@ -683,6 +694,7 @@ $blog-article-content-width-mobile:  100%;
         background: $blog-media-background-color;
         padding: $spacing-s;
         border-radius: $blog-media-outer-radius;
+        margin-top: $spacing-xs;
     }
     ul, ol {
         margin-bottom: $spacing-s;
