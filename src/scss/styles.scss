@@ -7,12 +7,12 @@ $primary-color:       rgba(0, 0, 0, 1.0);
 $secondary-color:     #8a8a8a;
 $tertiary-color:      rgba(79, 79, 79, 1.0);
 $accent-color:        rgba(203, 195, 167, 1.0);
-$background-color:    rgba(255, 255, 255, 1.0);
-$background-color-nav:  transparentize($tertiary-color, 0.9);
 $link-color:          rgb(0, 98, 255);
 $link-background-color: transparentize($link-color, 0.9);
 $available-color:     rgb(0, 199, 23);
-$blog-media-background-color: rgba(0, 0, 0, 0.04);
+$background-color:    rgba(255, 255, 255, 1.0);
+$background-color-nav:  transparentize($tertiary-color, 0.93);
+$blog-media-background-color: $background-color-nav;
 
 // overall widths
 $width-full:       100%; // leave it at 100%
@@ -35,20 +35,21 @@ $main-headline-weight: 220;
 $p-line-height: 160%; // seems a bit high but ok...
 
 // Font sizes
-$p-desktop:         16px; // old value: 20px
-$monospace-desktop: 10px; // old value: 12px
-$h1-desktop:        18px; // old value: 22px
+$base-font-size:      10px; // controls the relative font size for the whole site
+$p-desktop:         1.6rem; // old value: 16px // old value: 20px
+$monospace-desktop:   1rem; // old value: 12px
+$h1-desktop:        1.8rem; // old value: 22px
 
 // control general spacing of things
-$spacing-xxs:  4px;
-$spacing-xs:   8px;
-$spacing-s:   24px;
-$spacing-m:   40px;
-$spacing-l:   80px;
-$spacing-xl: 160px;
+$spacing-xxs: 0.4rem;
+$spacing-xs:  0.8rem;
+$spacing-s:   2.4rem;
+$spacing-m:   4.0rem;
+$spacing-l:   8.0rem;
+$spacing-xl: 16.0rem;
 
 // control the spacing between the two columns, and other secondary things
-$grid-gap: 16px;
+$grid-gap: 1.6rem;
 $grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
@@ -59,9 +60,9 @@ $left-column-width-tablet:    30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-$button-border-radius:    999px;
 $nav-border-padding:      8px;
-$image-border-radius:     0px;
+$image-border-radius:     4px;
+$button-border-radius:    4px;
 $blog-media-outer-radius: 8px;
 $nav-border-radius:       $image-border-radius;
 $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
@@ -118,12 +119,13 @@ html {
     display: flex;
     justify-content: center;
     overflow-y: auto;
+    font-size: $base-font-size;
 }
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
+    margin: 0rem;
     width: $width-full;
     min-height: 100svh;
     overflow-y: auto;
@@ -198,8 +200,8 @@ a {
     @include mobile-styles() {
         position: relative;
         width: 100%;
-        top: 0px;
-        padding-right: 0px;
+        top: 0rem;
+        padding-right: 0rem;
         margin-bottom: $grid-gap;
         grid-template-columns: repeat(1, 1fr);
     }
@@ -223,12 +225,12 @@ a {
     @include laptop-styles() {
         width:       $right-column-width-tablet;
         width: 100%;
-        margin-left: 0px;
+        margin-left: 0rem;
     }
     @include mobile-styles() {
         width: 100%;
-        padding-left: 0px;
-        margin-left: 0px;
+        padding-left: 0rem;
+        margin-left:  0rem;
     }
 }
 
@@ -253,7 +255,7 @@ nav {
     }
     div:first-child {
         a:first-child {
-            padding-left: 0px;
+            padding-left: 0rem;
         }
     }
     div {
@@ -261,11 +263,11 @@ nav {
         height: $spacing-m;
         grid-gap: $nav-border-padding;
         a {
-            line-height: 0px;
+            line-height: 0rem;
             background: transparent;
             outline: none;
             border: none;
-            padding: $grid-gap*0.8 $grid-gap $grid-gap $grid-gap;
+            padding: $grid-gap * 0.8 $grid-gap $grid-gap $grid-gap;
             transition: $transition;
             cursor: pointer;
             border-radius: $nav-border-radius-inner;
@@ -288,13 +290,13 @@ nav {
 }
 
 ul {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top:    0rem;
+    margin-bottom: 0rem;
     font-size: $p-desktop;
     font-weight: $p-weight;
 }
 ul.monospace {
-    padding-left: 0px;
+    padding-left: 0rem;
     color: $secondary-color;
 }
 li {
@@ -303,7 +305,7 @@ li {
     font-size: $p-desktop;
     font-weight: $p-weight;
     &:first-child {
-        margin-top: 14px;
+        margin-top: 1.4rem;
     }
 }
 .social-links-block {
@@ -320,7 +322,7 @@ li {
     text-transform: uppercase;
     padding: $grid-gap;
     border-radius: $button-border-radius;
-    border: 0px;
+    border: 0rem;
     cursor: pointer;
     transition: $transition;
     background: $background-color-nav;
@@ -357,6 +359,10 @@ li {
         background: #1d1d20;
         color: #ffffff;
     }
+    &.contra:hover {
+        background: #6A57E3;
+        color: white;
+    }
 }
 
 /* typography */
@@ -366,6 +372,11 @@ h1, p, ul {
 }
 p {
     font-size: $p-desktop;
+}
+li {
+    a {
+        color: $primary-color;
+    }
 }
 h1 {
     font-size: $h1-desktop;
@@ -381,14 +392,8 @@ h1 {
 }
 h1.monospace {
     color: $accent-color;
-    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
 }
-li {
-    a {
-        color: $primary-color;
-    }
-}
-
 
 /* AVAILABLE FOR WORK */
 .available-for-work {
@@ -404,21 +409,21 @@ li {
         font-size: $h1-desktop * 2;
         font-weight: $main-headline-weight;
         text-transform: capitalize;
-        padding-left: 0px; // typographic adjustment
+        padding-left: 0rem; // typographic adjustment
         @include laptop-styles() {
             font-size: $h1-desktop * 1.4;
         }
         @include mobile-styles() {
             font-size: $h1-desktop * 1.2;
-            padding: 0px;
-            margin: 0px;
+            padding: 0rem;
+            margin:  0rem;
         }
         span {
             color: $secondary-color;
             font-family: $light-font;
-            margin-left: 0px;
+            margin-left: 0rem;
             &:last-of-type {
-                margin-left: 0.25em;
+                margin-left: 0.25rem;
                 color: $available-color;
             }
         }
@@ -434,48 +439,48 @@ li {
     @include mobile-styles() {
         grid-template-columns: repeat(1, 1fr);
     }
-}
-
-.project {
-    border-radius: $image-border-radius;
-    transition: $transition;
-    overflow: hidden;
-    a {
-        h1 {
-            margin-top: $spacing-xxs;
-            transition: $transition;
-            padding-left: 0px; // typographic adjustment
-            font-weight: $h1-weight;
-            margin-top: $spacing-xs;
-            display: none;
-        }
-        img {
-            display: block;
-            object-fit: cover;
-            transition: $transition;
-            height: 400px; // project image height for desktop
-            border-radius: $image-border-radius;
-            transform: scale(1.09);
-            @include laptop-styles() {
-                height: 280px; // project image height for tablet
-            }
-            @include mobile-styles() {
-                height: 300px; // project image height for mobile
-            }
-        }
-    }
-    &:hover {
+    .project {
+        border-radius: $image-border-radius;
+        transition: $transition;
+        overflow: hidden;
         a {
             h1 {
-                color: $link-color;
+                margin-top: $spacing-xxs;
+                transition: $transition;
+                padding-left: 0rem; // typographic adjustment
+                font-weight: $h1-weight;
+                margin-top: $spacing-xs;
+                display: none;
             }
             img {
-                // opacity: 0.7;
-                transform: scale(1);
+                display: block;
+                object-fit: cover;
+                transition: $transition;
+                height: 40rem; // project image height for desktop
+                border-radius: $image-border-radius;
+                opacity: 1;
+                @include laptop-styles() {
+                    height: 28rem; // project image height for tablet
+                }
+                @include mobile-styles() {
+                    height: 30rem; // project image height for mobile
+                }
+            }
+        }
+        &:hover {
+            a {
+                h1 {
+                    color: $link-color;
+                }
+                img {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
             }
         }
     }
 }
+
 
 footer {
     padding: $grid-gap $padding-w-desktop;
@@ -495,7 +500,7 @@ footer {
 .next-project {
     margin-top: $spacing-l;
     margin-bottom: $spacing-l * -1;
-    padding-bottom: 0px;
+    padding-bottom: 0rem;
     @include laptop-styles() {
         margin-bottom: $spacing-l * -1;
     }
@@ -504,20 +509,20 @@ footer {
     }
     a {
         h1 {
-            margin-top: 4px;
-            margin-bottom: 4px;
+            margin-top:    0.4rem;
+            margin-bottom: 0.4rem;
             &:nth-child(2) {
                 color: $secondary-color;
             }
         }
         img {
-            margin-top: 24px;
+            margin-top: 2.4rem;
             display: block;
-            height: 200px;
+            height: 20rem;
             object-fit: cover;
             transition: $transition;
             object-position: 50% 0%;
-            border-radius: $image-border-radius $image-border-radius 0px 0px;
+            border-radius: $image-border-radius $image-border-radius 0rem 0rem;
         }
     }
     &:hover {
@@ -537,7 +542,7 @@ $blog-article-content-width-mobile:  100%;
 .blog-articles-list-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 0px;
+    padding-bottom: 0rem;
     align-items: center;
     a {
         width: 100%;
@@ -548,13 +553,13 @@ $blog-article-content-width-mobile:  100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left:  0px; // typographic adjustment
-    padding-right: 0px; // typographic adjustment
+    padding-left:  0rem; // typographic adjustment
+    padding-right: 0rem; // typographic adjustment
     border-radius: $button-border-radius;
     transition: $transition;
     h1 {
         @include mobile-styles() {
-            margin: 0px;
+            margin: 0rem;
         }
         &:first-child {
             color: $primary-color;
@@ -574,8 +579,8 @@ $blog-article-content-width-mobile:  100%;
         }
     }
     @include mobile-styles() {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left:  0rem;
+        padding-right: 0rem;
         flex-direction: column;
         &:hover {
             background: $background-color;
@@ -593,8 +598,8 @@ $blog-article-content-width-mobile:  100%;
 
 .blog-article-content {
     width: $blog-article-content-width-desktop;
-    padding-left: 0px; // typographic adjustment
-    max-width: 810px;
+    padding-left: 0rem; // typographic adjustment
+    max-width: 81rem;
     display: flex;
     flex-direction: column;
     @include laptop-styles() {
@@ -602,7 +607,7 @@ $blog-article-content-width-mobile:  100%;
     }
     @include mobile-styles() {
         width: $blog-article-content-width-mobile;
-        padding-left: 0px;
+        padding-left: 0rem;
     }
     h1 {
         margin-top:  $spacing-s;
@@ -610,14 +615,14 @@ $blog-article-content-width-mobile:  100%;
         font-family: $bold-font;
         font-weight: $bold-weight;
         &:first-child {
-            margin-top: 0px;
+            margin-top: 0rem;
         }
     }
     p {
         font-size: $p-desktop;
         font-weight: $p-weight;
         color: $primary-color;
-        margin-top: 0px;
+        margin-top: 0rem;
     }
     * {
         a {
@@ -650,19 +655,19 @@ $blog-article-content-width-mobile:  100%;
         }
         p {
             color: darken(#e1aa11, 20%);
-            margin: 0px;
+            margin: 0rem;
         }
     }
     .blog-code-block {
         padding: $spacing-s;
         border-color: $primary-color;
         border-radius: $blog-media-outer-radius;
-        margin-top:    0px;
+        margin-top:    0rem;
         margin-bottom: $spacing-s;
         background: $primary-color;
         p {
             color: $background-color;
-            margin: 0px;
+            margin: 0rem;
             font-family: $monospace-font;
             font-size: $p-desktop * 0.9;
         }
@@ -672,7 +677,7 @@ $blog-article-content-width-mobile:  100%;
         flex-direction: column;
         margin-top: $spacing-xs;
         margin-bottom: $spacing-s;
-        max-height: 760px;
+        max-height: 76rem;
         padding: $spacing-s;
         background: $blog-media-background-color;
         overflow: hidden;
@@ -680,13 +685,11 @@ $blog-article-content-width-mobile:  100%;
         img {
             object-fit: contain;
             height: 100%;
-            // box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.32); // removed because the "portrait" images make the box shadow look all fucked up
         }
         &:first-child {
             margin-top: 0px;
         }
         &:has(> .caption) {
-            // background: linear-gradient(0deg, opacify($blog-media-background-color, 0.05) 0%, $blog-media-background-color 20%);
             background: $blog-media-background-color;
         }
     }
@@ -698,7 +701,7 @@ $blog-article-content-width-mobile:  100%;
     }
     ul, ol {
         margin-bottom: $spacing-s;
-        margin-top: 0px;
+        margin-top: 0rem;
         font-weight: $p-weight;
         padding-left: $spacing-s;
         font-family: $regular-font;
@@ -710,7 +713,7 @@ $blog-article-content-width-mobile:  100%;
             font-size: $p-desktop;
             font-weight: $p-weight;
             &:first-child {
-                margin-top: 0px;
+                margin-top: 0rem;
             }
         }
     }
@@ -718,7 +721,7 @@ $blog-article-content-width-mobile:  100%;
         font-size: $p-desktop;
         color: $primary-color;
         text-align: center;
-        margin-bottom: 0px;
+        margin-bottom: 0rem;
         margin-top: $spacing-s;
     }
     .blog-paragraph-with-note {
@@ -729,15 +732,15 @@ $blog-article-content-width-mobile:  100%;
             top: $grid-gap-half * -1;
             left: 105%;
             color: $accent-color;
-            font-size: 14px;
+            font-size: 1.4rem;
             padding-left: $grid-gap;
-            border-left: 2px solid $accent-color;
+            border-left: 0.2rem solid $accent-color;
             @include laptop-styles() {
                 width: 60%;
             }
             @include mobile-styles() {
-                width: 100%;
                 position: relative;
+                width: 100%;
                 left: 0%;
                 margin-top: $spacing-m;
             }
@@ -755,7 +758,7 @@ $factor: 0.66;
     }
     to {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0rem);
     }
 }
 
