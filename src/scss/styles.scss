@@ -49,7 +49,7 @@ $spacing-l:   8.0rem;
 $spacing-xl: 16.0rem;
 
 // control the spacing between the two columns, and other secondary things
-$grid-gap: 1.6rem;
+$grid-gap: 0.8rem;
 $grid-gap-half: ($grid-gap * 0.5);
 
 // control the width of the two columns
@@ -60,10 +60,11 @@ $left-column-width-tablet:    30svw;
 $right-column-width-tablet:  100svw - $left-column-width-tablet;
 
 // control the border radii of the button and the nav items
-$nav-border-padding:      8px;
-$image-border-radius:     4px;
-$button-border-radius:    4px;
-$blog-media-outer-radius: 8px;
+$nav-border-padding:      0.8rem;
+$image-border-radius:     0.4rem;
+$button-border-radius:    0.4rem;
+$button-padding:          $grid-gap * 2;
+$blog-media-outer-radius: 0.8rem;
 $nav-border-radius:       $image-border-radius;
 $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 
@@ -71,18 +72,18 @@ $nav-border-radius-inner: $nav-border-radius - $nav-border-padding;
 $transition: 150ms all ease-in-out;
 
 // mixins for media queries
-$breakpoint-tablet:       1100px;
-$breakpoint-desktop:      1800px;
-$breakpoint-desktop-wide: 2300px;
+$breakpoint-tablet:      1100px;
+$breakpoint-laptop:      1800px;
+$breakpoint-desktop:     2300px;
 
-@mixin desktop-wide-styles() {
-    @media screen and (min-width: $breakpoint-desktop-wide) {
+@mixin desktop-styles() {
+    @media screen and (min-width: $breakpoint-desktop) {
         @content;
     }
 }
 
 @mixin laptop-styles() {
-    @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
         @content;
     }
 }
@@ -118,7 +119,7 @@ html {
     background: $background-color;
     display: flex;
     justify-content: center;
-    overflow-y: auto;
+    overflow-y: scroll;
     font-size: $base-font-size;
 }
 body {
@@ -151,6 +152,7 @@ main {
     grid-gap: $grid-gap * 2;
     flex-direction: column;
     transition: $transition;
+    overflow-y: hidden;
     @include laptop-styles() {
         padding: $spacing-l $padding-w-tablet;
     }
@@ -182,20 +184,13 @@ a {
     flex-direction: column;
     padding-right: $grid-gap-half;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: $grid-gap;
-    &.project-page {
-        grid-template-columns: repeat(3, 1fr);
-        @include laptop-styles() {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @include mobile-styles() {
-            grid-template-columns: repeat(1, 1fr);
-        }
+    @include desktop-styles() {
+        grid-template-columns: repeat(1, 1fr);
     }
     @include laptop-styles() {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     @include mobile-styles() {
         position: relative;
@@ -204,6 +199,15 @@ a {
         padding-right: 0rem;
         margin-bottom: $grid-gap;
         grid-template-columns: repeat(1, 1fr);
+    }
+    &.project-page {
+        grid-template-columns: repeat(3, 1fr);
+        @include laptop-styles() {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile-styles() {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     ul {
         padding-left: 0px; // typographic adjustment
@@ -244,7 +248,6 @@ nav {
     padding-top:    $nav-border-padding;
     padding-bottom: $nav-border-padding;
     z-index: 99;
-
     @include mobile-styles() {
         width: 100% - $padding-w-mobile * 2;
         position: fixed;
@@ -260,14 +263,13 @@ nav {
     }
     div {
         display: flex;
-        height: $spacing-m;
         grid-gap: $nav-border-padding;
         a {
             line-height: 0rem;
             background: transparent;
             outline: none;
             border: none;
-            padding: $grid-gap * 0.8 $grid-gap $grid-gap $grid-gap;
+            padding: $button-padding;
             transition: $transition;
             cursor: pointer;
             border-radius: $nav-border-radius-inner;
@@ -320,7 +322,7 @@ li {
     font-family: $monospace-font;
     font-size: $monospace-desktop;
     text-transform: uppercase;
-    padding: $grid-gap;
+    padding: $button-padding;
     border-radius: $button-border-radius;
     border: 0rem;
     cursor: pointer;
@@ -433,6 +435,7 @@ h1.monospace {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding-top: $spacing-s;
     @include laptop-styles() {
         grid-template-columns: repeat(3, 1fr);
     }
