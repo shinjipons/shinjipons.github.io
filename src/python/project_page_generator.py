@@ -73,11 +73,13 @@ def generate_page(page_key, page_data):
     <main>
         <!-- Left column -->
         <div class="left-column project-page headline">
-            <h1>{title}</h1>
-            <ul class="padding-between-items">
-                <li>{paragraph_1}</li>
-                <li>{paragraph_2}</li>
-            </ul>
+            <div>
+                <h1>{title}</h1>
+                <ul class="padding-between-items">
+                    <li>{paragraph_1}</li>
+                    <li>{paragraph_2}</li>
+                </ul>
+            </div>
         </div>
         <!-- Right column -->
         <div class="right-column">
