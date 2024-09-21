@@ -61,13 +61,10 @@ def generate_page(page_key, page_data):
 </head>
 <body>
     <nav>
-        <!-- <div>
-            <a class="monospace" href="index.html">Shinji Pons</a>
-        </div> -->
         <div>
-            <a class="monospace" href="index.html">Work</a>
-            <a class="monospace" href="blog.html">Blog</a>
-            <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+            <a class="monospace button" href="index.html">Work</a>
+            <a class="monospace button" href="blog.html">Blog</a>
+            <a class="monospace button" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
         </div>
         <div>
             <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
@@ -75,7 +72,8 @@ def generate_page(page_key, page_data):
     </nav>
     <main>
         <!-- Left column -->
-        <div class="left-column project-page">
+        <div class="left-column project-page headline">
+            <h1>{title}</h1>
             <ul class="padding-between-items">
                 <li>{paragraph_1}</li>
                 <li>{paragraph_2}</li>

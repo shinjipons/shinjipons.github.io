@@ -183,9 +183,6 @@ nav {
     position: fixed;
   }
 }
-nav div:first-child a:first-child {
-  padding-left: 0rem;
-}
 nav div {
   display: flex;
   grid-gap: 0.8rem;
@@ -195,7 +192,7 @@ nav div a {
   background: transparent;
   outline: none;
   border: none;
-  padding: 1.6rem;
+  padding: 1.12rem 1.6rem;
   transition: 150ms all ease-in-out;
   cursor: pointer;
   border-radius: -0.4rem;
@@ -245,12 +242,12 @@ li:first-child {
   width: 100%;
 }
 
-.social-button {
+.button {
   outline: none;
   font-family: "Geist Mono Medium", monospace;
   font-size: 1rem;
   text-transform: uppercase;
-  padding: 1.6rem;
+  padding: 1.12rem 1.6rem;
   border-radius: 0.4rem;
   border: 0rem;
   cursor: pointer;
@@ -258,39 +255,39 @@ li:first-child {
   background: rgba(79, 79, 79, 0.07);
   color: rgb(0, 0, 0);
 }
-.social-button:hover {
+.button:hover {
   background: rgba(0, 98, 255, 0.1);
   color: rgb(0, 98, 255);
 }
-.social-button.linkedin:hover {
+.button.linkedin:hover {
   background: #2268C0;
   color: #FFFFFF;
 }
-.social-button.instagram:hover {
+.button.instagram:hover {
   background: linear-gradient(45deg, rgb(255, 207, 0) 0%, rgb(233, 37, 73) 35%, rgb(242, 0, 152) 50%, rgb(195, 16, 197) 65%, rgb(111, 65, 244) 100%);
   color: #FFFFFF;
 }
-.social-button.twitter:hover {
+.button.twitter:hover {
   background: #000000;
   color: #FFFFFF;
 }
-.social-button.layers:hover {
+.button.layers:hover {
   background: #27272A;
   color: #E4E4E7;
 }
-.social-button.github:hover {
+.button.github:hover {
   background: linear-gradient(0deg, rgb(106, 68, 197) 0%, rgb(116, 67, 195) 100%);
   color: #FFFFFF;
 }
-.social-button.readcv:hover {
+.button.readcv:hover {
   background: #333333;
   color: #eeeeee;
 }
-.social-button.caldotcom:hover {
+.button.caldotcom:hover {
   background: #1d1d20;
   color: #ffffff;
 }
-.social-button.contra:hover {
+.button.contra:hover {
   background: #6A57E3;
   color: white;
 }
@@ -337,30 +334,30 @@ h1.monospace {
 }
 
 /* PROJECT INDEX */
-.headline-introduction h1 {
+.headline h1 {
   font-size: 3.6rem;
   font-weight: 220;
   text-transform: capitalize;
   padding-left: 0rem;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
-  .headline-introduction h1 {
+  .headline h1 {
     font-size: 2.52rem;
   }
 }
 @media screen and (max-width: 1100px) {
-  .headline-introduction h1 {
+  .headline h1 {
     font-size: 2.16rem;
     padding: 0rem;
     margin: 0rem;
   }
 }
-.headline-introduction h1 span {
+.headline h1 span {
   color: #8a8a8a;
   font-family: "Outfit", sans-serif;
   margin-left: 0rem;
 }
-.headline-introduction h1 span:last-of-type {
+.headline h1 span:last-of-type {
   margin-left: 0.25rem;
   color: rgb(0, 199, 23);
 }
@@ -391,7 +388,6 @@ h1.monospace {
   padding-left: 0rem;
   font-weight: 400;
   margin-top: 0.8rem;
-  display: none;
 }
 .project-grid .project a img {
   display: block;
@@ -701,7 +697,7 @@ footer {
     transform: translateY(0rem);
   }
 }
-nav, .headline-introduction, .left-column, .right-column {
+nav, .headline, .left-column, .right-column {
   opacity: 0;
   animation: fadeInUp 140ms ease-in-out;
   animation-delay: 140ms;
@@ -712,7 +708,7 @@ nav {
   animation-delay: 184.8ms;
 }
 
-.headline-introduction {
+.headline {
   animation-delay: 277.2ms;
 }
 

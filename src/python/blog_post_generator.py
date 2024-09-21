@@ -376,7 +376,7 @@ def link_blog_post_html_generator(source_directory):
 
     return result
 
-# Function for writing the blog.html file into dist/
+# Function for writing the **blog.html** file into dist/
 def blog_html_page_generator(html_lines):
     new_line = "\n"
     blog_html_template = f"""<!DOCTYPE html>
@@ -405,16 +405,16 @@ def blog_html_page_generator(html_lines):
             <body>
                 <nav>
                     <div>
-                        <a class="monospace" href="index.html">Work</a>
-                        <a class="monospace" href="blog.html">Blog</a>
-                        <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+                        <a class="monospace button" href="index.html">Work</a>
+                        <a class="monospace button" href="blog.html">Blog</a>
+                        <a class="monospace button" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
                     </div>
                     <div>
                         <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
                     </div>
                 </nav>
                 <main>
-                    <div class="headline-introduction">
+                    <div class="headline">
                         <h1>I'm Shinji, a product designer.<br />
                             <span>Focused on Product, Visual, UI and 3D Design.<br />Based in Toulouse, France.</span><span>Currently Available.</span>
                         </h1>
@@ -423,13 +423,13 @@ def blog_html_page_generator(html_lines):
                         <ul class="monospace"
                             >Online
                             <div class="social-links-block">
-                                <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="social-button linkedin">LinkedIn</button></a>
-                                <a href="https://instagram.com/shinji.pons" target="_blank"><button class="social-button instagram">Instagram</button></a>
-                                <a href="https://twitter.com/shinjipons" target="_blank"><button class="social-button twitter">Twitter</button></a>
-                                <a href="https://layers.to/shinjipons" target="_blank"><button class="social-button layers">Layers</button></a>
-                                <a href="https://github.com/shinjipons" target="_blank"><button class="social-button github">GitHub</button></a>
-                                <a href="https://read.cv/shinjipons" target="_blank"><button class="social-button readcv">Read.cv</button></a>
-                                <a href="https://cal.com/shinjipons" target="_blank"><button class="social-button caldotcom">Cal.com</button></a>
+                                <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="button linkedin">LinkedIn</button></a>
+                                <a href="https://instagram.com/shinji.pons" target="_blank"><button class="button instagram">Instagram</button></a>
+                                <a href="https://twitter.com/shinjipons" target="_blank"><button class="button twitter">Twitter</button></a>
+                                <a href="https://layers.to/shinjipons" target="_blank"><button class="button layers">Layers</button></a>
+                                <a href="https://github.com/shinjipons" target="_blank"><button class="button github">GitHub</button></a>
+                                <a href="https://read.cv/shinjipons" target="_blank"><button class="button readcv">Read.cv</button></a>
+                                <a href="https://cal.com/shinjipons" target="_blank"><button class="button caldotcom">Cal.com</button></a>
                             </div>
                         </ul>
                     </div>
