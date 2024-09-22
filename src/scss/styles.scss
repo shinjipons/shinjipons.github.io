@@ -3,16 +3,15 @@
 // VARIABLES
 
 // colors for light mode
-$primary-color:       rgba(0, 0, 0, 1.0);
-$secondary-color:     #8a8a8a;
-$tertiary-color:      rgba(79, 79, 79, 1.0);
-$accent-color:        rgba(203, 195, 167, 1.0);
-$link-color:          rgb(0, 98, 255);
+$primary-color:       rgb(  0,   0,   0);
+$secondary-color:     rgb(138, 138, 138);
+$tertiary-color:      rgb( 79,  79,  79);
+$link-color:          rgb(  0,  98, 255);
 $link-background-color: transparentize($link-color, 0.9);
-$available-color:     rgb(0, 199, 23);
-$background-color:    rgba(255, 255, 255, 1.0);
-$background-color-nav:  transparentize($tertiary-color, 0.93);
-$blog-media-background-color: $background-color-nav;
+$available-color:     rgb(  0, 199,  23);
+$background-color:    rgb(255, 255, 255);
+$button-background-color:  transparentize($tertiary-color, 0.9);
+$blog-media-background-color: $button-background-color;
 
 // overall widths
 $width-full:       100%; // leave it at 100%
@@ -23,27 +22,27 @@ $padding-w-mobile:   3%;
 // font Outfit
 $monospace-font: "Geist Mono Medium", monospace;
 $regular-font:   "Outfit", sans-serif;
-$bold-font:      $regular-font;
-$light-font:     $regular-font;
 
 // Font weight new
 $p-weight:             360;
 $bold-weight:          530;
 $h1-weight:            400;
-$headline-weight: 220;
+$headline-weight:      220;
 
 $p-line-height: 160%; // seems a bit high but ok...
 
 // Font sizes
 $base-font-size: 10px;
 
-$h1-desktop: 2.0rem;
-$p-desktop:  1.8rem;
+    // Desktop font sizes
+    $h1-desktop: 2.0rem;
+    $p-desktop:  1.8rem;
 
-$headline-laptop:  3.6rem;
-$h1-laptop:        1.8rem;
-$p-laptop:         1.6rem;
-$monospace-laptop: 1.0rem;
+    // Laptop font sizes
+    $headline-laptop:  3.6rem;
+    $h1-laptop:        1.8rem;
+    $p-laptop:         1.6rem;
+    $monospace-laptop: 1.0rem;
 
 // control general spacing of things
 $spacing-xxs: 0.4rem;
@@ -330,7 +329,7 @@ li {
     border: 0rem;
     cursor: pointer;
     transition: $transition;
-    background: $background-color-nav;
+    background: $button-background-color;
     color: $primary-color;
     &:hover {
         background: $link-background-color;
@@ -395,10 +394,10 @@ h1 {
     line-height: 120%;
     text-transform: uppercase;
 }
-h1.monospace {
-    color: $accent-color;
-    margin-bottom: 1.4rem;
-}
+// h1.monospace {
+//     color: $accent-color;
+//     margin-bottom: 1.4rem;
+// }
 
 /* AVAILABLE FOR WORK */
 .available-for-work {
@@ -425,7 +424,7 @@ h1.monospace {
         }
         span {
             color: $secondary-color;
-            font-family: $light-font;
+            font-family: $regular-font;
             margin-left: 0rem;
             &:last-of-type {
                 margin-left: 0.25rem;
@@ -623,7 +622,7 @@ $blog-article-content-width-mobile:  100%;
     h1 {
         margin-top:  $spacing-s;
         font-size: $p-laptop;
-        font-family: $bold-font;
+        font-family: $regular-font;
         font-weight: $bold-weight;
         &:first-child {
             margin-top: 0rem;
@@ -647,7 +646,7 @@ $blog-article-content-width-mobile:  100%;
             }
         }
         b {
-            font-family: $bold-font;
+            font-family: $regular-font;
             font-weight: $bold-weight;
         }
     }
@@ -742,10 +741,10 @@ $blog-article-content-width-mobile:  100%;
             width: 60%;
             top: $grid-gap-half * -1;
             left: 105%;
-            color: $accent-color;
+            color: red;
             font-size: 1.4rem;
             padding-left: $grid-gap;
-            border-left: 0.2rem solid $accent-color;
+            border-left: 0.2rem solid red;
             @include laptop-styles() {
                 width: 60%;
             }

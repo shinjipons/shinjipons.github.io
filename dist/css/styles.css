@@ -196,7 +196,7 @@ nav div a {
   transition: 150ms all ease-in-out;
   cursor: pointer;
   border-radius: -0.4rem;
-  color: #8a8a8a !important;
+  color: rgb(138, 138, 138) !important;
 }
 nav div a:hover {
   color: rgb(0, 98, 255) !important;
@@ -221,7 +221,7 @@ ul {
 
 ul.monospace {
   padding-left: 0rem;
-  color: #8a8a8a;
+  color: rgb(138, 138, 138);
 }
 
 li {
@@ -257,7 +257,7 @@ li:first-child {
   border: 0rem;
   cursor: pointer;
   transition: 150ms all ease-in-out;
-  background: rgba(79, 79, 79, 0.07);
+  background: rgba(79, 79, 79, 0.1);
   color: rgb(0, 0, 0);
 }
 .button:hover {
@@ -325,11 +325,6 @@ h1 {
   text-transform: uppercase;
 }
 
-h1.monospace {
-  color: rgb(203, 195, 167);
-  margin-bottom: 1.4rem;
-}
-
 /* AVAILABLE FOR WORK */
 .available-for-work {
   color: rgb(0, 98, 255);
@@ -358,7 +353,7 @@ h1.monospace {
   }
 }
 .headline h1 span {
-  color: #8a8a8a;
+  color: rgb(138, 138, 138);
   font-family: "Outfit", sans-serif;
   margin-left: 0rem;
 }
@@ -468,7 +463,7 @@ footer {
   margin-bottom: 0.4rem;
 }
 .next-project a h1:nth-child(2) {
-  color: #8a8a8a;
+  color: rgb(138, 138, 138);
 }
 .next-project a img {
   margin-top: 2.4rem;
@@ -513,7 +508,7 @@ footer {
   transition: 150ms all ease-in-out;
 }
 .blog-article-item h1:last-child {
-  color: #8a8a8a;
+  color: rgb(138, 138, 138);
   transition: 150ms all ease-in-out;
 }
 .blog-article-item:hover h1:first-child {
@@ -587,7 +582,7 @@ footer {
   font-weight: 530;
 }
 .blog-article-content .blog-post-date {
-  color: #8a8a8a;
+  color: rgb(138, 138, 138);
 }
 .blog-article-content .blog-callout-block {
   padding: 2.4rem;
@@ -627,7 +622,7 @@ footer {
   margin-bottom: 2.4rem;
   max-height: 76rem;
   padding: 2.4rem;
-  background: rgba(79, 79, 79, 0.07);
+  background: rgba(79, 79, 79, 0.1);
   overflow: hidden;
   border-radius: 0.8rem;
 }
@@ -639,10 +634,10 @@ footer {
   margin-top: 0px;
 }
 .blog-article-content picture:has(> .caption) {
-  background: rgba(79, 79, 79, 0.07);
+  background: rgba(79, 79, 79, 0.1);
 }
 .blog-article-content video {
-  background: rgba(79, 79, 79, 0.07);
+  background: rgba(79, 79, 79, 0.1);
   padding: 2.4rem;
   border-radius: 0.8rem;
   margin-top: 0.8rem;
@@ -682,10 +677,10 @@ footer {
   width: 60%;
   top: -0.4rem;
   left: 105%;
-  color: rgb(203, 195, 167);
+  color: red;
   font-size: 1.4rem;
   padding-left: 0.8rem;
-  border-left: 0.2rem solid rgb(203, 195, 167);
+  border-left: 0.2rem solid red;
 }
 @media screen and (min-width: 1100px) and (max-width: 1800px) {
   .blog-article-content .blog-paragraph-with-note .blog-note {
