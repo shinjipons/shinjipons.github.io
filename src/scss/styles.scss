@@ -649,6 +649,7 @@ footer {
     }
     @include tablet-styles() {
         width: $blog-article-content-width-tablet;
+        // width: $blog-article-content-width-tablet;
     }
     @include mobile-styles() {
         width: $blog-article-content-width-mobile;
