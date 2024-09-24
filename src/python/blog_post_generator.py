@@ -252,9 +252,9 @@ def generate_blog_post_html(post_title, post_description, html_lines):
     <body>
         <nav>
             <div>
-                <a class="monospace" href="../index.html">Work</a>
-                <a class="monospace" href="../blog.html">Blog</a>
-                <a class="monospace" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
+                <a class="monospace button" href="../index.html">Work</a>
+                <a class="monospace button" href="../blog.html">Blog</a>
+                <a class="monospace button" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
             </div>
             <div>
                 <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
