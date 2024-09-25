@@ -628,16 +628,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: grid;
     @include desktop-styles() {
         grid-column: 3/7;
-        display: grid;
         grid-template-columns: repeat(8, 1fr);
         * {
             grid-column: 3/7;
         }
         picture {
             grid-column: 2/8;
-            display: grid;
             grid-template-columns: repeat(6, 1fr);
             img, .caption {
                 grid-column: 2/6;
@@ -645,10 +644,22 @@ footer {
         }
     }
     @include laptop-styles() {
-        width: $blog-article-content-width-laptop;
+        grid-column: 3/7;
+        grid-template-columns: repeat(8, 1fr);
+        * {
+            grid-column: 3/7;
+            background: red;
+        }
+        picture {
+            grid-column: 2/8;
+            grid-template-columns: repeat(6, 1fr);
+            img, .caption {
+                grid-column: 2/6;
+            }
+        }
     }
     @include tablet-styles() {
-        width: $blog-article-content-width-tablet;
+        // width: $blog-article-content-width-tablet;
         // width: $blog-article-content-width-tablet;
     }
     @include mobile-styles() {
@@ -741,6 +752,7 @@ footer {
         }
     }
     picture {
+        display: grid;
         background: $blog-media-background-color;
         object-fit: contain;
         overflow: hidden;
@@ -790,7 +802,7 @@ footer {
         font-size: $p-laptop;
         color: $primary-color;
         text-align: center;
-        margin-top:    $spacing-s;
+        margin-top: $spacing-s;
         margin-bottom: 0rem;
     }
     .blog-paragraph-with-note {
