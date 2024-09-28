@@ -82,8 +82,8 @@ $blog-article-content-width-tablet:   60%;
 $blog-article-content-width-mobile:  100%;
 
 // mixins for media queries
-$breakpoint-mobile:  500px;
-$breakpoint-desktop: 1000px;
+$breakpoint-mobile:   390px;
+$breakpoint-desktop: 1440px;
 
 @mixin desktop-styles() {
     @media screen and (min-width: $breakpoint-desktop) {
@@ -92,13 +92,13 @@ $breakpoint-desktop: 1000px;
 }
 
 @mixin tablet-styles() {
-    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop) {
+    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop - 1px) {
         @content;
     }
 }
 
 @mixin mobile-styles() {
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-mobile - 1px) {
         @content;
     }
 }
@@ -118,6 +118,7 @@ $breakpoint-desktop: 1000px;
 @font-face {
     font-family: "Outfit";
     src: url("../../fonts/Outfit-VariableFont_wght.ttf");
+    font-weight: 100 900; // check https://github.com/Outfitio/Outfit-Fonts for min and max weights
 }
 
 /* General */
@@ -194,14 +195,15 @@ a {
 nav {
     display: flex;
     position: fixed;
-    width: $width-full - $padding-w-desktop * 2;
-    max-width: 1500px;
     justify-content: space-between;
     background: $background-color;
     padding-top:    $nav-border-padding;
     padding-bottom: $nav-border-padding;
     z-index: 99;
     @include desktop-styles() {
+        width: 100% - $padding-w-desktop * 2;
+    }
+    @include tablet-styles() {
         width: 100% - $padding-w-tablet * 2;
     }
     @include mobile-styles() {
@@ -241,9 +243,12 @@ nav {
         padding-right: 0rem;
         margin-bottom: $grid-gap;
     }
-    &.project-page {
+    &.project-page-information {
         @include desktop-styles() {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(8, 1fr);
+            * {
+                grid-column: 3/7;
+            }
         }
         @include tablet-styles() {
             grid-template-columns: repeat(2, 1fr);
@@ -466,7 +471,7 @@ h1 {
     display: grid;
     padding-top: $spacing-s;
     @include desktop-styles() {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); // why isn't it working???
     }
     @include tablet-styles() {
         grid-template-columns: repeat(2, 1fr);
@@ -533,19 +538,35 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    @include mobile-styles() {
-        padding: $grid-gap $padding-w-mobile; // test this
-        // padding: $grid-gap;
+    background: $primary-color;
+    height: 300px;
+    @include desktop-styles() {
+        padding: $grid-gap $padding-w-desktop;
     }
     @include tablet-styles() {
         padding: $grid-gap $padding-w-tablet;
     }
-    @include desktop-styles() {
-        padding: $grid-gap $padding-w-desktop;
+    @include mobile-styles() {
+        padding: $grid-gap $padding-w-mobile;
+    }
+    .headline {
+        h1 {
+            color: $background-color;
+        }
     }
 }
 
 /* PROJECT PAGE RELATED STYLES */
+.project-page-images {
+    display: grid;
+    @include desktop-styles() {
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: $grid-gap;
+        img {
+            grid-column: 2/8;
+        }
+    }
+}
 .next-project {
     margin-top: $spacing-l;
     margin-bottom: $spacing-l * -1;
@@ -635,7 +656,6 @@ footer {
 }
 
 .blog-article-content {
-    display: flex;
     flex-direction: column;
     align-items: center;
     display: grid;
@@ -668,8 +688,6 @@ footer {
         }
     }
     @include mobile-styles() {
-        // width: $blog-article-content-width-mobile;
-        // padding-left: 0rem;
         grid-column: 3/7;
         grid-template-columns: repeat(8, 1fr);
         * {
@@ -815,11 +833,11 @@ footer {
         margin-bottom: $spacing-s;
         padding-left: $spacing-s;
         @include mobile-styles() {
-            padding-left: $spacing-s
+            padding-left: $spacing-s;
         }
         li {
             list-style-type: square;
-            font-weight: $p-weight;
+            font-weight: $p-weight; // it's not visually consistent although the browser says it is
             &:first-child {
                 margin-top: 0rem;
             }

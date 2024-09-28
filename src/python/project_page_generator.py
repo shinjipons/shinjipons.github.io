@@ -72,7 +72,7 @@ def generate_page(page_key, page_data):
     </nav>
     <main>
         <!-- Left column -->
-        <div class="left-column project-page headline">
+        <div class="left-column project-page-information headline">
             <div>
                 <h1>{title}</h1>
                 <ul class="padding-between-items">
@@ -83,16 +83,18 @@ def generate_page(page_key, page_data):
         </div>
         <!-- Right column -->
         <div class="right-column">
-            {first_image}
-            {other_images}
-            <!-- Next project -->
-            <section class="next-project">
-                <a href="" id="next-project-link">
-                    <h1>Next</h1>
-                    <h1 id="next-project-title">Project Title</h1>
-                    <img id="next-project-image" src="" alt="">
-                </a>
-            </section>
+            <div class="project-page-images">
+                {first_image}
+                {other_images}
+                <!-- Next project -->
+                <section class="next-project">
+                    <a href="" id="next-project-link">
+                        <h1>Next</h1>
+                        <h1 id="next-project-title">Project Title</h1>
+                        <img id="next-project-image" src="" alt="">
+                    </a>
+                </section>
+            </div>
         </div>
     </main>
     <script type="text/javascript" src="js/script.js"></script>
