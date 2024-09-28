@@ -201,7 +201,8 @@ nav {
     padding-bottom: $nav-border-padding;
     z-index: 99;
     @include desktop-styles() {
-        width: 100% - $padding-w-desktop * 2;
+        // width: 100% - $padding-w-desktop * 2;
+        width: 50svw; // use grid instead???
     }
     @include tablet-styles() {
         width: 100% - $padding-w-tablet * 2;
