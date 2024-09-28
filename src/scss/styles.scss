@@ -14,43 +14,45 @@ $button-background-color:  transparentize($tertiary-color, 0.9);
 $blog-media-background-color: $button-background-color;
 
 // overall widths
+$site-max-width: 1500px;
 $width-full:       100%; // leave it at 100%
-$padding-w-desktop:  5%;
-$padding-w-tablet:   6%;
-$padding-w-mobile:   3%;
+// $padding-w-desktop:  5%;
+$padding-w-desktop:  5rem;
+$padding-w-tablet:   6%; // needs to be absolute for the nav to work in unison
+$padding-w-mobile:   3%; // needs to be absolute for the nav to work in unison
 
 // font Outfit
 $monospace-font: "Geist Mono Medium", monospace;
 $regular-font:   "Outfit", sans-serif;
 
 // Font weight new
-$p-weight:             360;
-$bold-weight:          600;
-$h1-weight:            400;
-$headline-weight:      220;
+$p-weight:        360;
+$bold-weight:     600;
+$h1-weight:       400;
+$headline-weight: 220;
 
 $p-line-height: 160%; // seems a bit high but ok...
 
 // Font sizes
 $base-font-size: 10px;
 
-    // Desktop font sizes
-    $headline-desktop:  3.6rem;
-    $h1-desktop:        2.0rem;
-    $p-desktop:         1.8rem;
-    $monospace-desktop: 1.2rem;
+// Desktop font sizes
+$headline-desktop:  3.6rem;
+$h1-desktop:        2.0rem;
+$p-desktop:         1.8rem;
+$monospace-desktop: 1.2rem;
 
-    // Tablet font sizes
-    $headline-tablet:   3.6rem;
-    $h1-tablet:         1.8rem;
-    $p-tablet:          1.6rem;
-    $monospace-tablet:  1.0rem;
+// Tablet font sizes
+$headline-tablet:   3.6rem;
+$h1-tablet:         1.8rem;
+$p-tablet:          1.6rem;
+$monospace-tablet:  1.0rem;
 
-    // Mobile font sizes
-    $headline-mobile:   3.6rem;
-    $h1-mobile:         1.8rem;
-    $p-mobile:          1.6rem;
-    $monospace-mobile:  1.0rem;
+// Mobile font sizes
+$headline-mobile:   3.6rem;
+$h1-mobile:         1.8rem;
+$p-mobile:          1.6rem;
+$monospace-mobile:  1.0rem;
 
 // control general spacing of things
 $spacing-xxs: 0.4rem;
@@ -83,22 +85,23 @@ $blog-article-content-width-mobile:  100%;
 
 // mixins for media queries
 $breakpoint-mobile:   390px;
+$breakpoint-mobile-minus-one: $breakpoint-mobile - 1px;
 $breakpoint-desktop: 1440px;
+$breakpoint-desktop-minus-one: $breakpoint-desktop - 1px;
 
+// media queries mixins
 @mixin desktop-styles() {
     @media screen and (min-width: $breakpoint-desktop) {
         @content;
     }
 }
-
 @mixin tablet-styles() {
-    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop - 1px) {
+    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop-minus-one) {
         @content;
     }
 }
-
 @mixin mobile-styles() {
-    @media screen and (max-width: $breakpoint-mobile - 1px) {
+    @media screen and (max-width: $breakpoint-mobile-minus-one) {
         @content;
     }
 }
@@ -140,7 +143,7 @@ body {
     width: $width-full;
     min-height: 100svh;
     overflow-y: auto;
-    max-width: 1500px;
+    max-width: $site-max-width;
 }
 h1, h2, h3, h4, p {
     -webkit-font-smoothing: antialiased;
@@ -197,12 +200,13 @@ nav {
     position: fixed;
     justify-content: space-between;
     background: $background-color;
-    padding-top:    $nav-border-padding;
-    padding-bottom: $nav-border-padding;
+    // padding-top:    $nav-border-padding;
+    // padding-bottom: $nav-border-padding;
     z-index: 99;
+    width: $width-full;
+    max-width: $site-max-width;
     @include desktop-styles() {
-        // width: 100% - $padding-w-desktop * 2;
-        width: 50svw; // use grid instead???
+        padding: $nav-border-padding $padding-w-desktop;
     }
     @include tablet-styles() {
         width: 100% - $padding-w-tablet * 2;
@@ -245,8 +249,16 @@ nav {
         margin-bottom: $grid-gap;
     }
     &.project-page-information {
+        div {
+            h1 {
+                margin-top: 0rem;
+                margin-bottom: $spacing-xs;
+                // color: red;
+            }
+        }
         @include desktop-styles() {
             grid-template-columns: repeat(8, 1fr);
+            padding: $spacing-l 0rem;
             * {
                 grid-column: 3/7;
             }
@@ -472,7 +484,7 @@ h1 {
     display: grid;
     padding-top: $spacing-s;
     @include desktop-styles() {
-        grid-template-columns: repeat(3, 1fr); // why isn't it working???
+        grid-template-columns: repeat(3, 1fr);
     }
     @include tablet-styles() {
         grid-template-columns: repeat(2, 1fr);
@@ -511,7 +523,7 @@ h1 {
                     height: 28rem;
                 }
                 @include tablet-styles() {
-                    height: 24rem;
+                    height: 36rem;
                 }
                 @include mobile-styles() {
                     height: 30rem;
@@ -715,12 +727,13 @@ footer {
         @include mobile-styles() {
             font-size: $p-mobile;
         }
-        &:first-child {
+        &:first-child { // headline h1 of the blog article
             margin-top: 0rem;
             font-weight: $headline-weight;
             margin-bottom: $spacing-xs;
             @include desktop-styles() {
                 font-size: $headline-desktop;
+                padding-top: $spacing-l;
             }
             @include tablet-styles()  {
                 font-size: $headline-tablet;

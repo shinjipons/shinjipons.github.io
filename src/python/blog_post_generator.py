@@ -261,10 +261,10 @@ def generate_blog_post_html(post_title, post_description, html_lines):
             </div>
         </nav>
         <main>
-            <div class="left-column">
-                <!-- <ul id="article-outline" class="monospace padding-between-items">Outline
-                </ul> -->
-            </div>
+            <!-- <div class="left-column">
+                <ul id="article-outline" class="monospace padding-between-items">Outline
+                </ul>
+            </div> -->
             <div class="right-column">
                 <div class="blog-article-content">
                     <h1>{post_title}</h1>
