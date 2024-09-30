@@ -3,6 +3,8 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
 const concat = require('gulp-concat');
+const groupCssMediaQueries = require('gulp-group-css-media-queries');
+const cssnano = require('gulp-cssnano');
 
 // HTML include task
 function html() {
@@ -20,6 +22,8 @@ function style() {
     return gulp.src('src/scss/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('styles.css'))
+        .pipe(groupCssMediaQueries())
+        .pipe(cssnano())
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 }
