@@ -10,16 +10,17 @@ $link-color:          rgb(  0,  98, 255);
 $link-background-color: transparentize($link-color, 0.9);
 $available-color:     rgb(  0, 199,  23);
 $background-color:    rgb(255, 255, 255);
-$button-background-color:  transparentize($tertiary-color, 0.9);
+// $button-background-color:  transparentize($tertiary-color, 0.9);
+$button-background-color:  rgba(230, 230, 230, 1);
 $blog-media-background-color: $button-background-color;
 
 // overall widths
 $site-max-width: 1500px;
 $width-full:       100%; // leave it at 100%
 // $padding-w-desktop:  5%;
-$padding-w-desktop:  5rem;
-$padding-w-tablet:   6%; // needs to be absolute for the nav to work in unison
-$padding-w-mobile:   3%; // needs to be absolute for the nav to work in unison
+$padding-w-desktop: 1svw;
+$padding-w-tablet:  4svw; // was 6%
+$padding-w-mobile:  3svw; // was 3%
 
 // font Outfit
 $monospace-font: "Geist Mono Medium", monospace;
@@ -49,8 +50,8 @@ $p-tablet:          1.6rem;
 $monospace-tablet:  1.0rem;
 
 // Mobile font sizes
-$headline-mobile:   3.6rem;
-$h1-mobile:         1.8rem;
+$headline-mobile:   2.8rem;
+$h1-mobile:         2.0rem;
 $p-mobile:          1.6rem;
 $monospace-mobile:  1.0rem;
 
@@ -85,7 +86,7 @@ $blog-article-content-width-mobile:  100%;
 
 // mixins for media queries
 $breakpoint-mobile:   390px;
-$breakpoint-mobile-minus-one: $breakpoint-mobile - 1px;
+$breakpoint-mobile-plus-one: $breakpoint-mobile + 1px;
 $breakpoint-desktop: 1440px;
 $breakpoint-desktop-minus-one: $breakpoint-desktop - 1px;
 
@@ -96,12 +97,12 @@ $breakpoint-desktop-minus-one: $breakpoint-desktop - 1px;
     }
 }
 @mixin tablet-styles() {
-    @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop-minus-one) {
+    @media screen and (min-width: $breakpoint-mobile-plus-one) and (max-width: $breakpoint-desktop-minus-one) {
         @content;
     }
 }
 @mixin mobile-styles() {
-    @media screen and (max-width: $breakpoint-mobile-minus-one) {
+    @media screen and (max-width: $breakpoint-mobile) {
         @content;
     }
 }
@@ -162,22 +163,20 @@ video {
 main {
     display: flex;
     width: $width-full;
-    padding-top: $spacing-l;
-    padding-bottom: $spacing-l;
-    grid-gap: $grid-gap * 2;
     flex-direction: column;
     transition: $transition;
     overflow-y: hidden;
     @include desktop-styles() {
         padding: $spacing-l $padding-w-desktop;
+        grid-gap: $grid-gap * 2;
     }
     @include tablet-styles() {
         padding: $spacing-l $padding-w-tablet;
+        grid-gap: $grid-gap * 2;
     }
     @include mobile-styles() {
-        flex-direction: column;
+        gap: $grid-gap * 3;
         padding: $spacing-l $padding-w-mobile;
-        gap: $grid-gap;
     }
 }
 img {
@@ -200,8 +199,6 @@ nav {
     position: fixed;
     justify-content: space-between;
     background: $background-color;
-    // padding-top:    $nav-border-padding;
-    // padding-bottom: $nav-border-padding;
     z-index: 99;
     width: $width-full;
     max-width: $site-max-width;
@@ -209,10 +206,14 @@ nav {
         padding: $nav-border-padding $padding-w-desktop;
     }
     @include tablet-styles() {
-        width: 100% - $padding-w-tablet * 2;
+        // width: 100% - $padding-w-tablet * 2;
+        // padding: $nav-border-padding 0rem;
+        padding: $nav-border-padding $padding-w-tablet;
     }
     @include mobile-styles() {
-        width: 100% - $padding-w-mobile * 2;
+        // width: 100% - $padding-w-mobile * 2;
+        // padding: $nav-border-padding 0rem;
+        padding: $nav-border-padding $padding-w-mobile;
     }
     div {
         display: flex;
@@ -253,7 +254,6 @@ nav {
             h1 {
                 margin-top: 0rem;
                 margin-bottom: $spacing-xs;
-                // color: red;
             }
         }
         @include desktop-styles() {
@@ -264,7 +264,11 @@ nav {
             }
         }
         @include tablet-styles() {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(8, 1fr);
+            padding: $spacing-l 0rem;
+            * {
+                grid-column: 1/5;
+            }
         }
         @include mobile-styles() {
             grid-template-columns: repeat(1, 1fr);
@@ -284,11 +288,19 @@ nav {
 }
 .right-column {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     gap: $grid-gap;
     margin-left: 0rem;
     padding-left: 0rem;
+    display: grid;
+    @include desktop-styles() {
+        grid-template-columns: repeat(8, 1fr);
+        .project-page-images {
+            grid-column: 1/9;
+        }
+        .next-project {
+            grid-column: 2/8;
+        }
+    }
 }
 .button-call-to-action {
     background: $link-color;
@@ -344,6 +356,7 @@ li {
     transition: $transition;
     background: $button-background-color;
     color: $primary-color;
+    // backdrop-filter: blur($spacing-l);
     cursor: pointer;
     @include desktop-styles() {
         font-size: $monospace-desktop;
@@ -487,7 +500,7 @@ h1 {
         grid-template-columns: repeat(3, 1fr);
     }
     @include tablet-styles() {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     @include mobile-styles() {
         grid-template-columns: repeat(1, 1fr);
@@ -523,7 +536,8 @@ h1 {
                     height: 28rem;
                 }
                 @include tablet-styles() {
-                    height: 36rem;
+                    // height: 36rem;
+                    height: 28rem;
                 }
                 @include mobile-styles() {
                     height: 30rem;
@@ -551,8 +565,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $primary-color;
+    background: $background-color;
     height: 300px;
+    margin-top: auto;
     @include desktop-styles() {
         padding: $grid-gap $padding-w-desktop;
     }
@@ -564,7 +579,7 @@ footer {
     }
     .headline {
         h1 {
-            color: $background-color;
+            color: $primary-color;
         }
     }
 }
@@ -572,11 +587,17 @@ footer {
 /* PROJECT PAGE RELATED STYLES */
 .project-page-images {
     display: grid;
+    grid-gap: $grid-gap;
     @include desktop-styles() {
         grid-template-columns: repeat(8, 1fr);
-        grid-gap: $grid-gap;
         img {
             grid-column: 2/8;
+        }
+    }
+    @include tablet-styles() {
+        grid-template-columns: repeat(8, 1fr);
+        img {
+            grid-column: 1/9;
         }
     }
 }
@@ -584,6 +605,9 @@ footer {
     margin-top: $spacing-l;
     margin-bottom: $spacing-l * -1;
     padding-bottom: 0rem;
+    @include desktop-styles() {
+        grid-column: 3/7;
+    }
     a {
         h1 {
             margin-top:    0.4rem;
@@ -616,6 +640,9 @@ footer {
     flex-direction: column;
     padding-bottom: 0rem;
     align-items: center;
+    @include desktop-styles() {
+        grid-column: 1/9;
+    }
     a {
         width: 100%;
     }
@@ -672,9 +699,10 @@ footer {
     flex-direction: column;
     align-items: center;
     display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column: 1/9;
+    // The blog grid setup for desktop, tablet and mobile
     @include desktop-styles() {
-        grid-column: 3/7;
-        grid-template-columns: repeat(8, 1fr);
         * {
             grid-column: 3/7;
         }
@@ -687,8 +715,6 @@ footer {
         }
     }
     @include tablet-styles() {
-        grid-column: 3/7;
-        grid-template-columns: repeat(8, 1fr);
         * {
             grid-column: 3/7;
         }
@@ -701,16 +727,15 @@ footer {
         }
     }
     @include mobile-styles() {
-        grid-column: 3/7;
-        grid-template-columns: repeat(8, 1fr);
         * {
-            grid-column: 3/7;
+            grid-column: 1/9;
         }
         picture {
-            grid-column: 2/8;
-            grid-template-columns: repeat(6, 1fr);
+            grid-column: 1/9;
+            // grid-template-columns: repeat(6, 1fr);
             img, .caption {
-                grid-column: 2/6;
+                // grid-column: 2/6;
+                padding: 0rem $spacing-s;
             }
         }
     }
