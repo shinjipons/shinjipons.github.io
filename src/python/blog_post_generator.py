@@ -261,10 +261,6 @@ def generate_blog_post_html(post_title, post_description, html_lines):
             </div>
         </nav>
         <main>
-            <!-- <div class="left-column">
-                <ul id="article-outline" class="monospace padding-between-items">Outline
-                </ul>
-            </div> -->
             <div class="right-column">
                 <div class="blog-article-content">
                     <h1>{post_title}</h1>
@@ -272,6 +268,11 @@ def generate_blog_post_html(post_title, post_description, html_lines):
                 </div>
             </div>
         </main>
+        <footer>
+            <div class="headline">
+                <h1>Thanks for reading</h1>
+            </div>
+        </footer>
         <script type="text/javascript" src="../js/script.js"></script>
     </body>
     </html>
@@ -420,6 +421,7 @@ def blog_html_page_generator(html_lines):
                         </h1>
                     </div>
                     <div class="left-column">
+                        <!-- In the future, link this block to the src/partials/information.html -->
                         <ul class="monospace"
                             >Online
                             <div class="social-links-block">
@@ -439,6 +441,11 @@ def blog_html_page_generator(html_lines):
                         </div>
                     </div>
                 </main>
+                <footer>
+                    <div class="headline">
+                        <h1>More coming soon.</h1>
+                    </div>
+                </footer>
                 <script type="text/javascript" src="js/script.js"></script>
             </body>
         </html>
