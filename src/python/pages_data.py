@@ -120,6 +120,17 @@ pages = {
         "image_folder": "images/midjourney",
         "paragraph_1": "I just type words.",
         "paragraph_2": "And pretty images come out."
+    },
+    "lovers-dew": {
+        "title": "Lovers' Dew 3D Rendering",
+        "tagline": "3D Modelling and Rendering of a Perfume Bottle for a US brand",
+        "client": "Matteo Parfums",
+        "type": "3D Rendering",
+        "year": "2024",
+        "description": "Discover Shinji's 3D modelling and rendering work for Matteo Parfums.",
+        "image_folder": "images/lovers-dew",
+        "paragraph_1": "Matteo Parfums reached out to for help on their 3D rendering project for their new scent Lovers' Dew.",
+        "paragraph_2": "I modelled the perfume bottle from schematics in Plasticity, set the creative direction and rendered the images using Blender Cycles."
     }
 }
 
