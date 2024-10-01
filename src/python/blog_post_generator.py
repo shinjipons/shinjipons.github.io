@@ -377,8 +377,13 @@ def link_blog_post_html_generator(source_directory):
 
     return result
 
+# getting the html from the information.html partial
+with open("src/html/partials/information.html", "r", encoding="utf-8") as file:
+    information_html_contents = file.readlines()
+    information_html_contents = [line.strip() for line in information_html_contents if line.strip()]
+
 # Function for writing the **blog.html** file into dist/
-def blog_html_page_generator(html_lines):
+def blog_html_page_generator(html_lines, information_html):
     new_line = "\n"
     blog_html_template = f"""<!DOCTYPE html>
         <html lang="en">
@@ -421,18 +426,7 @@ def blog_html_page_generator(html_lines):
                         </h1>
                     </div>
                     <div class="left-column">
-                        <!-- In the future, link this block to the src/partials/information.html -->
-                        <ul class="monospace"
-                            >Online
-                            <div class="social-links-block">
-                                <a href="https://linkedin.com/in/shinjipons/" target="_blank"><button class="button linkedin">LinkedIn</button></a>
-                                <a href="https://instagram.com/shinji.pons" target="_blank"><button class="button instagram">Instagram</button></a>
-                                <a href="https://twitter.com/shinjipons" target="_blank"><button class="button twitter">Twitter</button></a>
-                                <a href="https://layers.to/shinjipons" target="_blank"><button class="button layers">Layers</button></a>
-                                <a href="https://github.com/shinjipons" target="_blank"><button class="button github">GitHub</button></a>
-                                <a href="https://read.cv/shinjipons" target="_blank"><button class="button readcv">Read.cv</button></a>
-                                <a href="https://cal.com/shinjipons" target="_blank"><button class="button caldotcom">Cal.com</button></a>
-                            </div>
+                            {f"{new_line.join(information_html)}"}
                         </ul>
                     </div>
                     <div class="right-column">
@@ -459,4 +453,4 @@ def blog_html_page_generator(html_lines):
         html_file.write(blog_html_template)
 
 # The actual action
-blog_html_page_generator(link_blog_post_html_generator(markdown_src_directory))
+blog_html_page_generator(link_blog_post_html_generator(markdown_src_directory), information_html_contents)
