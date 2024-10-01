@@ -17,6 +17,16 @@ post_date_class          = "blog-post-date"
 if not os.path.exists(OUTPUT_FOLDER_BLOG_POSTS):
     os.makedirs(OUTPUT_FOLDER_BLOG_POSTS)
 
+# Getting the html from the information.html partial
+with open("src/html/partials/information.html", "r", encoding="utf-8") as file:
+    information_html_contents = file.readlines()
+    information_html_contents = [line.strip() for line in information_html_contents if line.strip()]
+
+# Getting the html from the navigation.html partial
+with open("src/html/partials/navigation.html", "r", encoding="utf-8") as file:
+    navigation_html_contents = file.readlines()
+    navigation_html_contents = [line.strip() for line in navigation_html_contents if line.strip()]
+
 # Utility functions
 def get_all_markdown_filepaths(directory_path):
     if not os.path.isdir(directory_path):
@@ -224,6 +234,7 @@ def generate_html_from_markdown(markdown_filepath):
     return html_lines
 
 # Function for writing a blog post into an html file
+# To add navigation.html partial to generate_blog_post_html, I would need to change the link to blog.html
 def generate_blog_post_html(post_title, post_description, html_lines):
     new_line = "\n"
     html_template = f"""<!DOCTYPE html>
@@ -377,13 +388,8 @@ def link_blog_post_html_generator(source_directory):
 
     return result
 
-# getting the html from the information.html partial
-with open("src/html/partials/information.html", "r", encoding="utf-8") as file:
-    information_html_contents = file.readlines()
-    information_html_contents = [line.strip() for line in information_html_contents if line.strip()]
-
 # Function for writing the **blog.html** file into dist/
-def blog_html_page_generator(html_lines, information_html):
+def blog_html_page_generator(html_lines, information_html, navigation_html):
     new_line = "\n"
     blog_html_template = f"""<!DOCTYPE html>
         <html lang="en">
@@ -409,16 +415,7 @@ def blog_html_page_generator(html_lines, information_html):
                 <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-ios.png" />
             </head>
             <body>
-                <nav>
-                    <div>
-                        <a class="monospace button" href="index.html">Work</a>
-                        <a class="monospace button" href="blog.html">Blog</a>
-                        <a class="monospace button" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
-                    </div>
-                    <div>
-                        <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
-                    </div>
-                </nav>
+                {f"{new_line.join(navigation_html)}"}
                 <main>
                     <div class="headline">
                         <h1>I'm Shinji, a product designer.<br />
@@ -453,4 +450,4 @@ def blog_html_page_generator(html_lines, information_html):
         html_file.write(blog_html_template)
 
 # The actual action
-blog_html_page_generator(link_blog_post_html_generator(markdown_src_directory), information_html_contents)
+blog_html_page_generator(link_blog_post_html_generator(markdown_src_directory), information_html_contents, navigation_html_contents)
