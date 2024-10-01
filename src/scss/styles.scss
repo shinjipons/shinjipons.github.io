@@ -17,7 +17,6 @@ $blog-media-background-color: $button-background-color;
 // overall widths
 $site-max-width: 1500px;
 $width-full:       100%; // leave it at 100%
-// $padding-w-desktop:  5%;
 $padding-w-desktop: 1svw;
 $padding-w-tablet:  4svw; // was 6%
 $padding-w-mobile:  3svw; // was 3%
@@ -186,13 +185,11 @@ img {
     border-radius: $image-border-radius;
 }
 a {
-    // color: $primary-color;
     color: $link-color;
     text-decoration: none;
     transition: $transition;
     &:hover {
         color: $link-color;
-        // text-decoration: underline;
     }
 }
 /* navigation */
@@ -208,13 +205,9 @@ nav {
         padding: $nav-border-padding $padding-w-desktop;
     }
     @include tablet-styles() {
-        // width: 100% - $padding-w-tablet * 2;
-        // padding: $nav-border-padding 0rem;
         padding: $nav-border-padding $padding-w-tablet;
     }
     @include mobile-styles() {
-        // width: 100% - $padding-w-mobile * 2;
-        // padding: $nav-border-padding 0rem;
         padding: $nav-border-padding $padding-w-mobile;
     }
     div {
@@ -358,7 +351,6 @@ li {
     transition: $transition;
     background: $button-background-color;
     color: $primary-color;
-    // backdrop-filter: blur($spacing-l);
     cursor: pointer;
     @include desktop-styles() {
         font-size: $monospace-desktop;
@@ -541,7 +533,6 @@ h1 {
                     height: 28rem;
                 }
                 @include tablet-styles() {
-                    // height: 36rem;
                     height: 28rem;
                 }
                 @include mobile-styles() {
@@ -737,9 +728,7 @@ footer {
         }
         picture {
             grid-column: 1/9;
-            // grid-template-columns: repeat(6, 1fr);
             img, .caption {
-                // grid-column: 2/6;
                 padding: 0rem $spacing-s;
             }
         }
