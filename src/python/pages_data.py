@@ -130,7 +130,7 @@ pages = {
         "description": "Discover Shinji's 3D modelling and rendering work for Matteo Parfums.",
         "image_folder": "images/lovers-dew",
         "paragraph_1": "Matteo Parfums reached out to for help on their 3D rendering project for their new scent Lovers' Dew. I modelled the perfume bottle from schematics in Plasticity, set the creative direction and rendered the images using Blender Cycles.",
-        "paragraph_2": "<a href=\"../blog.html\">Learn more about the project</a>"
+        "paragraph_2": "<a href=\"../blog/lovers-dew-case-study.html\">Learn more about the project</a>"
     }
 }
 
