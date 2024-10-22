@@ -124,3 +124,162 @@ But the initial ambition with the client was to use 3D models that represented t
 I started using these inspiration shots to make the initial sketch renders but I still wanted to have more suggestions and stumble on happy accidents along the way. One of the many tools I used to do that was [Supercraft AI](https://supercraft.ai/). I found out about it while working on this project stumbled on [their YC launch page](https://www.ycombinator.com/companies/supercraft), so I immediately joined the Supercraft AI Discord server, gave some feedback about the product and Sarang the CEO reached out through a call to find out more.
 
 !()[media/lovers-dew/supercraft-ai-screenshot.webp]
+
+By using my own renders from Blender, screenshots and images taken online, I was able to quickly generate more ideas fairly precisely using the blend feature. While its primary purpose is to help industrial designers with concept modelling, I found it useful to add variations and details when an image's composition or layout was already pleasant. You can check out the Supercraft project board [here](https://supercraft.ai/public_board?boardId=66c7a51d614fe5ecbe0c20b0).
+
+After some further discussions with my client Matthew, we settled on an initial design direction thanks to the following Flux-generated images:
+
+!()[media/lovers-dew/flux-selected-generated-images.webp]
+
+Before even considering this approach seriously, I was well aware that I wouldn't be able to 3D model organic fruits, flowers and cacti in a cost-effective manner. So I set out to find ready-to-use 3D assets on platforms such as [Sketchfab](https://sketchfab.com/), [Quixel Megascans](https://quixel.com/megascans/), [Artstation Marketplace](https://www.artstation.com/marketplace/) and [Turbosquid](https://www.turbosquid.com/).
+
+It was my first time having to rely on such platforms for professional work and let's just say that some of my doubts were justified. Here are some of the assets I bought:
+- [Juniper Berries](https://www.turbosquid.com/3d-models/juniper-berry-1541572)
+- [Amber Stones](https://www.turbosquid.com/3d-models/ambers-2245522)
+- [Balloon Cactus](https://www.turbosquid.com/3d-models/medium-balloon-cactus-blooming-pbr-2069576)
+- [Pomelo](https://www.turbosquid.com/3d-models/pomelo-1-1352229)
+- [Prickly Pears](https://sketchfab.com/3d-models/three-prickly-pears-e4b3ae714adf4a5b8533c2d7e5e46d50)
+
+However, I was quite disappointed at the texture quality of most of these models. Even the most expensive asset, the pomelo, featured sub-par textures for the skin and the pulp of the fruit, making it unusable as hero assets. And because I had purchased the assets from least expensive to most expensive, I was left holding the bag...
+
+!()[media/lovers-dew/disappointing-asset-texture-quality.webp]
+
+But I did learn a lot throughout this phase of this project. There were some promising layout using the props and certain free cloud VDBs that I downloaded from [Janga FX's website](https://jangafx.com/software/embergen/download/free-vdb-animations). And because I was struggling to get pleasant results in the shading of the volumetric clouds, I looked for guidance on YouTube and I found this [excellent tutorial](https://www.youtube.com/watch?v=HLeAqry1QZ0) made by [Marc Whitelaw](https://www.breakyourcrayons.com/), a lead artist at Industrial Light & Magic.
+
+!()[media/lovers-dew/cloud-with-and-without-custom-shader.webp]
+
+# Researching digital human solutions for Blender
+
+At this point, I had wasted precious time and effort pursuing an approach that turned out to be unworthy. So I had to redouble in my efforts in finding an idea that was both attractive and feasible.
+
+Matthew suggested to use human models to showcase the perfume bottle using partial nudity in a tasteful way. Af first, I was reluctant because digital humans are known to be difficult to pull off, but I decided to try it anyway.
+
+I remembered learning about [Humanify on Twitter](https://x.com/GabrieloAlex/status/1786362340822163479) a few months ago so I started my investigation into digital humans for Blender there. As it turns out, since then they have released a new set of hyper realistic skin textures called [Global Skin](https://globalskin.xyz/products/globalskin).
+
+!()[media/lovers-dew/global-skin-screenshot.webp]
+
+Although this set of textures wasn't what I was looking for, it gave me good pointers as to where to find industry-standard, high quality digital humans to use in Blender, such as:
+- Human Generator
+- Metahuman
+- Daz3D Genesis 9 and 8
+- Character Creator 4
+
+# Human Generator
+
+!()[media/lovers-dew/human-generator-screenshot.webp]
+
+[Human Generator](https://blendermarket.com/products/humgen3d) seemed appealing at first because it is the only product that was designed for Blender use. It's a third-party Blender add-on that creates fully customizable and rigged digital human charaters. But there is no trial and I wasn't too comfortable shelling out cash for a solution that wasn't going to work for me 100%.
+
+# Metahuman
+
+!()[media/lovers-dew/metahuman-screenshot.webp]
+
+Epic Games's digital human solution, [Metahuman](https://www.unrealengine.com/en-US/metahuman), is industry-leading but its assets cannot be rendered outside of Unreal Engine without breaking its terms of service.
+
+# Daz3D
+
+Daz3D was by far my most disliked product. Don't get me wrong - on one hand, I was glad that it offered me a way to try out their product for free, but on the other hand, their website and product offering is confusing (Their software is free of charge, but access to the 3D models is monetized with tons of paid customisations that cause information overload and ultimately convined me to look for another solution).
+
+!()[media/lovers-dew/daz3d-screenshot.webp]
+
+But I decided to try out their 3D software since it was free and it offered access to some free digital characters. And oh boy. Let's just say that the user experience and interface of Daz3D is special.
+
+!()[media/lovers-dew/daz3d-ui.webp]
+
+# Character Creator 4
+
+!()[media/lovers-dew/reallusion-website.webp]
+
+Character Creator 4 by Reallusion offers a slightly more streamlined and less confusing experience for people like me who are just looking to get started. Their free 30-day trial is generous and allows people to really get in the weeds of the software without time pressure. Their 30 character export limit is reasonable but there was a level of uncertainty the first few times I exported my character with Blender.
+
+As per usual with these sort of tools, it's never super straightforward. You have to know that you have to install their CC4 Blender add-on to import their rigged character correctly. And within a few minutes, I had a fully articulable digital character in Blender! After adding a subdivision surface modifier to the mesh, you get an extremely good looking character that renders beautifully with Blender.
+
+Immediately, I noticed that the subsurface scattering on the extremities (especially the fingers) were very pronounced, so I kept the lighting of the character to rim lighting and soft large area lights.
+
+!()[media/lovers-dew/cc4-too-much-sss.webp]
+
+My initial test render with the Character Creator 4 model looked very promising.
+
+!()[media/lovers-dew/character-creator-test-render.webp]
+
+But after soliciting feedback from Matthew, we decided to drop this concept as it was too ambitious to have two characters embrace each other in the shot. I have no knowledge in human anatomy so tweaking the soft deformation on two characters holding each other was out of my skill range for this project.
+
+# The concept for the final shot
+
+Running out of time and ideas, I went back to basics with the original idea of showcasing the perfume bottle in combination with the theme of water. Matthew and I agreed that we needed an image that showed the perfume bottle in more angles and found this reference that we both liked:
+
+!()[media/lovers-dew/painted-found-reference.webp]
+
+The framing of the shot around the rocks and the array of products showing them in multiple angles was something we both agreed we should draw inspiration from for our direction. With that in mind, I used Flux to generate more concepts featuring multiple bottles over water.
+
+!()[media/lovers-dew/flux-floating-bottles.webp]
+
+I particularly liked the one below: the simplicity of it, the contrast between the smooth water and the rough rocks. The subtle bloom and glare effects spilling from the side of the frame. And with the water's surface, it was an opportunity to show elements underneath the surface and even more bottles with the reflections.
+
+!()[media/lovers-dew/flux-selected-layout.webp]
+
+For this open water shot, I wanted to research how to make the shader for it more interesting beyond a simple glass BSDF. I tried a couple of initial approaches with the [Ocean Shader](https://www.youtube.com/watch?v=7WZMYZyuosQ) by [Chuck CG](https://chuckcg.gumroad.com/) and the very impressive [Physical Open Waters](https://blendermarket.com/products/physical-open-waters) addon I got through this year's [Humble Bundle](https://www.humblebundle.com/software).
+
+**(Insert screenshots and images of the water shots seen from the top)**
+
+Coincidentally, it was around the same time that Quixel Megascans made all their assets free for use in any software. So along with more procedural methods of generating good-looking rocks, I used some photoscanned assets.
+
+Although the problem was not as visible as with the purchased 3D fruits and props, the rocks also suffered from low resolution textures issues even at LOD0 and 8K resolutions. I wanted to solve this issue by only relying on procedural shaders but having them adapt to the structures of the scanned rocks in the little time I had left proved to be too much. Perhaps I will build my own small library of rocks for the future.
+
+Despite all of these efforts, the overall shot still looked a bit bland. The rocks looked interesting and the lighting put some details and shine on the perfume bottles but I felt that it needed more to get it over the line for the client.
+
+!()[media/lovers-dew/floating-bottles-wip-1.webp]
+
+I then proceeded to think about how to add more details that wouldn't grab too much attention away from the perfume bottles such as simulating a little bit of liquid inside each bottle, creating ripples around the rocks and adding references to the brand.
+
+Simulating detailed small-scale fluids quickly turned out to be a fool's errand but i wanted to try it quickly to see how far I could get in an hour. And as expected, the simulations turned out to be uncontrollably chaotic at such small scale.
+
+!()[media/lovers-dew/crazy-flip-fluids-simulation.webp]
+
+In the end, I modelled a simple liquid mesh using the inside faces of the glass mesh, substracting them with a boolean and manually adding the surface tension with an inset and bevel.
+
+**(insert image of the editor showing those operations)**
+
+Next, the sky in the background look too empty. The cold blue was a request from the client and the Nishita sky texture inside of Cycles with the right settings gave me the perfect look.
+
+Since clouds were disliked by the client in a previous suggestion, I went for something else: the "MP" wordmark. Because the water was already there, what if I could show the logo reflected on the water's surface?
+
+!()[media/lovers-dew/floating-bottles-wip-2.webp]
+
+But after a little reflection (pun intended), having the logo placed more prominently but more subtly higher up in the sky. The first attempt made the "MP" stand out too much but with only a little bit of shader trickery, I was able to make it much more subtle.
+
+!()[media/lovers-dew/floating-bottles-wip-3.webp]
+
+As for the ripples around the rocks just like the bottle liquid, I wanted to avoid doing a fluid simulation. But thanks to Blender's [Dynamic Paint](https://youtu.be/aea6Kb7vcmE?si=W_C5HcNtkEgjUGa1) system, it's possible to do ripples that accumulate/intersect in a physically plausible way.
+
+!()[media/lovers-dew/dynamic-paint-close-up.webp]
+
+# Color correction using Render Raw
+
+Blender has recently added GPU compositing inside of the 3D viewport. But after watching ["The Secret to Rendering Vibrant Colors with AgX in Blender is the Raw Workflow"](https://www.youtube.com/watch?v=hS7uaTquwWc) from CG Cookie, I understood the value of color correction, and what view transforms are (this other excellent YouTube video called "[AgX in Blender 4.0](https://youtu.be/YsTQEzcmD5w?si=WSQMu0XkF5NK7QM9)" by Christopher 3D explains what AgX is very well).
+
+In the CG Cookie video, they cleverly advertise their [Render Raw](https://blendermarket.com/products/render-raw) Blender add-on which greatly streamlines and simplifies the color correction and post-processing workflow in one convenient group node inside the Compositor.
+
+!()[media/lovers-dew/render-raw-blender-market.webp]
+
+Thanks to Render Raw, I could do all of my compositing mostly in real-time **without rendering**, without leaving Blender and in 32-bit color depth!
+
+(insert image of the Render Raw addon in Blender)
+
+# Rendering everything
+
+Blender could do a much better job at simplifying rendering for its users. At the moment, renders are all written into memory and cached renders don't seem to be written to the disk inside of the Render Output and Render Cache directories.
+
+!()[media/lovers-dew/blender-preferences.webp]
+
+More than once, I've had Blender crash or run out of VRAM so I had to restart from scratch. It would be awesome if Blender were able to checkpoint renders of the same scene as long as the render settings remain identical.
+
+Overmore, the **File Output** node inside of the Compositor does not seem to work in combination with the Render Raw node, which makes no sense. I need to check if it works using latest on both the add-on and Blender though.
+
+Last but not least, writing your renders to disk in EXR format is much less convenient than I thought. **Affinity Photo 2** does not seem to handle the file's color view transform out of the box, making the whole process confusing and painful.
+
+!()[media/lovers-dew/32-bit-preview-affinity-photo-2.webp]
+
+# Conclusion
+
+This was my very first time using all of my 3D modelling and rendering skills together for a freelance job. Everything wasn't perfect and compromises had to be made, but done is better than perfect. Some problems were surprisingly frustrating (like the white background problem) and software does not actually solve or accelerate the lack of creativity. But once the ideas were locked down, I loved sitting down and solving away the technical problems of modelling, shading and rendering.
