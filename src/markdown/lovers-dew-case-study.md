@@ -146,13 +146,13 @@ However, I was quite disappointed at the texture quality of most of these models
 
 But I did learn a lot throughout this phase of this project. There were some promising layout using the props and certain free cloud VDBs that I downloaded from [Janga FX's website](https://jangafx.com/software/embergen/download/free-vdb-animations). And because I was struggling to get pleasant results in the shading of the volumetric clouds, I looked for guidance on YouTube and I found this [excellent tutorial](https://www.youtube.com/watch?v=HLeAqry1QZ0) made by [Marc Whitelaw](https://www.breakyourcrayons.com/), a lead artist at Industrial Light & Magic.
 
-!()[media/lovers-dew-story/cloud-with-and-without-custom-shader.webp]
+!(Left: a principled volume shader with low density. Right: the custom setup described in Marc's tutorial)[media/lovers-dew-story/cloud-with-and-without-custom-shader.webp]
 
 # Researching digital human solutions for Blender
 
 At this point, I had wasted precious time and effort pursuing an approach that turned out to be unworthy. So I had to redouble in my efforts in finding an idea that was both attractive and feasible.
 
-Matthew suggested to use human models to showcase the perfume bottle using partial nudity in a tasteful way. Af first, I was reluctant because digital humans are known to be difficult to pull off, but I decided to try it anyway.
+Matthew suggested to use human models to showcase the perfume bottle using partial nudity in a tasteful way. At first, I was reluctant because digital humans are known to be difficult to pull off, but I decided to try it anyway.
 
 I remembered learning about [Humanify on Twitter](https://x.com/GabrieloAlex/status/1786362340822163479) a few months ago so I started my investigation into digital humans for Blender there. As it turns out, since then they have released a new set of hyper realistic skin textures called [Global Skin](https://globalskin.xyz/products/globalskin).
 
@@ -264,7 +264,7 @@ In the CG Cookie video, they cleverly advertise their [Render Raw](https://blend
 
 Thanks to Render Raw, I could do all of my compositing mostly in real-time **without rendering**, without leaving Blender and in 32-bit color depth!
 
-(insert image of the Render Raw addon in Blender)
+**(insert image of the Render Raw in action with a before and after comparison)**
 
 # Rendering everything
 

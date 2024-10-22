@@ -115,10 +115,10 @@
 <p>However, I was quite disappointed at the texture quality of most of these models. Even the most expensive asset, the pomelo, featured sub-par textures for the skin and the pulp of the fruit, making it unusable as hero assets. And because I had purchased the assets from least expensive to most expensive, I was left holding the bag...</p>
 <picture><img src="media/lovers-dew-story/disappointing-asset-texture-quality.webp"></picture>
 <p>But I did learn a lot throughout this phase of this project. There were some promising layout using the props and certain free cloud VDBs that I downloaded from <a href="https://jangafx.com/software/embergen/download/free-vdb-animations" target="_blank">Janga FX's website</a>. And because I was struggling to get pleasant results in the shading of the volumetric clouds, I looked for guidance on YouTube and I found this <a href="https://www.youtube.com/watch?v=HLeAqry1QZ0" target="_blank">excellent tutorial</a> made by <a href="https://www.breakyourcrayons.com/" target="_blank">Marc Whitelaw</a>, a lead artist at Industrial Light & Magic.</p>
-<picture><img src="media/lovers-dew-story/cloud-with-and-without-custom-shader.webp"></picture>
+<picture><img src="media/lovers-dew-story/cloud-with-and-without-custom-shader.webp"><p class="caption">Left: a principled volume shader with low density. Right: the custom setup described in Marc's tutorial</p></picture>
 <h1>Researching digital human solutions for Blender</h1>
 <p>At this point, I had wasted precious time and effort pursuing an approach that turned out to be unworthy. So I had to redouble in my efforts in finding an idea that was both attractive and feasible.</p>
-<p>Matthew suggested to use human models to showcase the perfume bottle using partial nudity in a tasteful way. Af first, I was reluctant because digital humans are known to be difficult to pull off, but I decided to try it anyway.</p>
+<p>Matthew suggested to use human models to showcase the perfume bottle using partial nudity in a tasteful way. At first, I was reluctant because digital humans are known to be difficult to pull off, but I decided to try it anyway.</p>
 <p>I remembered learning about <a href="https://x.com/GabrieloAlex/status/1786362340822163479" target="_blank">Humanify on Twitter</a> a few months ago so I started my investigation into digital humans for Blender there. As it turns out, since then they have released a new set of hyper realistic skin textures called <a href="https://globalskin.xyz/products/globalskin" target="_blank">Global Skin</a>.</p>
 <picture><img src="media/lovers-dew-story/global-skin-screenshot.webp"></picture>
 <p>Although this set of textures wasn't what I was looking for, it gave me good pointers as to where to find industry-standard, high quality digital humans to use in Blender, such as:</p>
@@ -178,7 +178,7 @@
 <p>In the CG Cookie video, they cleverly advertise their <a href="https://blendermarket.com/products/render-raw" target="_blank">Render Raw</a> Blender add-on which greatly streamlines and simplifies the color correction and post-processing workflow in one convenient group node inside the Compositor.</p>
 <picture><img src="media/lovers-dew-story/render-raw-blender-market.webp"></picture>
 <p>Thanks to Render Raw, I could do all of my compositing mostly in real-time <b>without rendering</b>, without leaving Blender and in 32-bit color depth!</p>
-<p>(insert image of the Render Raw addon in Blender)</p>
+<p><b>(insert image of the Render Raw in action with a before and after comparison)</b></p>
 <h1>Rendering everything</h1>
 <p>Blender could do a much better job at simplifying rendering for its users. At the moment, renders are all written into memory and cached renders don't seem to be written to the disk inside of the Render Output and Render Cache directories.</p>
 <picture><img src="media/lovers-dew-story/blender-preferences.webp"></picture>
