@@ -837,10 +837,10 @@ footer {
         background: $blog-media-background-color;
         object-fit: contain;
         overflow: hidden;
-        margin-top: $spacing-xs;
-        margin-bottom: $spacing-s;
-        padding-top: $spacing-s;
-        padding-bottom: $spacing-s;
+        margin-top:     $spacing-xs;
+        margin-bottom:  $spacing-s;
+        padding-top:    $spacing-m;
+        padding-bottom: $spacing-m;
         border-radius: $blog-media-outer-radius;
         img {
             object-fit: contain;

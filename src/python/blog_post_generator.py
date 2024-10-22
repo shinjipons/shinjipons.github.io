@@ -298,9 +298,7 @@ def generate_blog_post_html(post_title, post_description, html_lines):
 for markdown_filepath in get_all_markdown_filepaths(markdown_src_directory):
     html_lines = []
     html_filename = markdown_filepath.split('/')[-1].strip('.md')
-    # post_title = html_filename.replace("-", " ").capitalize()
     post_title = get_frontmatter_item(markdown_filepath, "title")
-    print(post_title)
     post_description = get_frontmatter_item(markdown_filepath, "description")
 
     # Replace the bold ** with <b> tags

@@ -47,7 +47,7 @@ Within a few minutes, I had a fully modelled accurate and editable spray nozzle.
 
 !()[media/lovers-dew-story/spray-nozzle-detail-in-plasticity.webp]
 
-## Correcting the mistakes in the vector logo
+# Correcting the mistakes in the vector logo
 
 As for the marble cap with the embossed "MP" wordmark on top of it, I wanted to avoid the hassle and imprecision of doing it through a texture, so I decided to do it with real geometry with a boolean subtract. The client has his logo in a vector format but I noticed some slight inaccuracies in the vector artwork so I manually retraced the logo to get everything lined up correctly.
 
