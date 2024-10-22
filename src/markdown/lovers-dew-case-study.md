@@ -6,6 +6,8 @@ description: A recounting behind the 3D modelling and rendering project for Matt
 
 In August 2024, I reached out to Matthew Sanchez on Twitter when he said that he was looking for a designer to produce high-quality 3D renders of his upcoming fragrance Lovers' Dew. This blog post is about the process behind the 3D modelling, the concept research phase and the execution for the whole project.
 
+!()[media/lovers-dew-story/matthew-sanchez-tweet.webp]
+
 # Initial brief
 
 This project involved creating six renders for Matteo Parfums' new fragrance called "Lover's Dew". The initial brief from the client included a written description of the creative direction and a few online references of existing fragrances and how each one advertised themselves on their respective marketing and online store.
