@@ -706,7 +706,7 @@ footer {
             grid-column: 2/8;
             grid-template-columns: repeat(6, 1fr);
             img, .caption {
-                grid-column: 2/6;
+                grid-column: 1/7;
             }
         }
     }
@@ -718,7 +718,8 @@ footer {
             grid-column: 2/8;
             grid-template-columns: repeat(6, 1fr);
             img, .caption {
-                grid-column: 2/6;
+                // grid-column: 2/6;
+                grid-column: 1/7;
             }
         }
     }
@@ -834,7 +835,7 @@ footer {
     }
     picture {
         display: grid;
-        background: $blog-media-background-color;
+        // background: $blog-media-background-color;
         object-fit: contain;
         overflow: hidden;
         margin-top:     $spacing-xs;
@@ -842,6 +843,7 @@ footer {
         padding-top:    $spacing-m;
         padding-bottom: $spacing-m;
         border-radius: $blog-media-outer-radius;
+        padding: 0px;
         img {
             object-fit: contain;
             height: 100%;
@@ -850,7 +852,7 @@ footer {
             margin-top: 0px;
         }
         &:has(> .caption) {
-            background: $blog-media-background-color;
+            // background: $blog-media-background-color;
         }
     }
     video {

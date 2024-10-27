@@ -4,7 +4,7 @@ title: Lovers' Dew Case Study
 description: A recounting behind the 3D modelling and rendering project for Matteo Parfums
 ---
 
-In August 2024, I reached out to Matthew Sanchez on Twitter when he said that he was looking for a designer to produce high-quality 3D renders of his upcoming fragrance Lovers' Dew. This blog post is about the process behind the 3D modelling, the concept research phase and the execution for the whole project.
+In August 2024, I reached out to Matthew Sanchez on Twitter when he said that he was looking for a designer to produce high-quality 3D renders of his upcoming fragrance Lovers' Dew. This blog post is about the process behind the 3D modelling, the concept research phase and the execution for the whole project, which you can check out [here](https://shinjipons.com/lovers-dew.html).
 
 !()[media/lovers-dew-story/matthew-sanchez-tweet.webp]
 
@@ -222,7 +222,7 @@ I particularly liked the one below: the simplicity of it, the contrast between t
 
 For this open water shot, I wanted to research how to make the shader for it more interesting beyond a simple glass BSDF. I tried a couple of initial approaches with the [Ocean Shader](https://www.youtube.com/watch?v=7WZMYZyuosQ) by [Chuck CG](https://chuckcg.gumroad.com/) and the very impressive [Physical Open Waters](https://blendermarket.com/products/physical-open-waters) addon I got through this year's [Humble Bundle](https://www.humblebundle.com/software).
 
-**(Insert screenshots and images of the water shots seen from the top)**
+!()[media/lovers-dew-story/blender-rocks-from-top.webp]
 
 Coincidentally, it was around the same time that Quixel Megascans made all their assets free for use in any software. So along with more procedural methods of generating good-looking rocks, I used some photoscanned assets.
 
@@ -240,7 +240,7 @@ Simulating detailed small-scale fluids quickly turned out to be a fool's errand 
 
 In the end, I modelled a simple liquid mesh using the inside faces of the glass mesh, substracting them with a boolean and manually adding the surface tension with an inset and bevel.
 
-**(insert image of the editor showing those operations)**
+!()[media/lovers-dew-story/surface-tension-blender.webp]
 
 Next, the sky in the background look too empty. The cold blue was a request from the client and the Nishita sky texture inside of Cycles with the right settings gave me the perfect look.
 
@@ -266,7 +266,7 @@ In the CG Cookie video, they cleverly advertise their [Render Raw](https://blend
 
 Thanks to Render Raw, I could do all of my compositing mostly in real-time **without rendering**, without leaving Blender and in 32-bit color depth!
 
-**(insert image of the Render Raw in action with a before and after comparison)**
+!(A comparison of the same shot rendered without and with Render Raw)[media/lovers-dew-story/render-raw-before-and-after.webp]
 
 # Rendering everything
 

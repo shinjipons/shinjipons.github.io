@@ -37,7 +37,7 @@
                 <div class="blog-article-content">
                     <h1>Lovers' Dew Case Study</h1>
                     <p class="blog-post-date">October 22nd, 2024</p>
-<p>In August 2024, I reached out to Matthew Sanchez on Twitter when he said that he was looking for a designer to produce high-quality 3D renders of his upcoming fragrance Lovers' Dew. This blog post is about the process behind the 3D modelling, the concept research phase and the execution for the whole project.</p>
+<p>In August 2024, I reached out to Matthew Sanchez on Twitter when he said that he was looking for a designer to produce high-quality 3D renders of his upcoming fragrance Lovers' Dew. This blog post is about the process behind the 3D modelling, the concept research phase and the execution for the whole project, which you can check out <a href="https://shinjipons.com/lovers-dew.html" target="_blank">here</a>.</p>
 <picture><img src="media/lovers-dew-story/matthew-sanchez-tweet.webp"></picture>
 <h1>Initial brief</h1>
 <p>This project involved creating six renders for Matteo Parfums' new fragrance called "Lover's Dew". The initial brief from the client included a written description of the creative direction and a few online references of existing fragrances and how each one advertised themselves on their respective marketing and online store.</p>
@@ -157,7 +157,7 @@
 <p>I particularly liked the one below: the simplicity of it, the contrast between the smooth water and the rough rocks. The subtle bloom and glare effects spilling from the side of the frame. And with the water's surface, it was an opportunity to show elements underneath the surface and even more bottles with the reflections.</p>
 <picture><img src="media/lovers-dew-story/flux-selected-layout.webp"></picture>
 <p>For this open water shot, I wanted to research how to make the shader for it more interesting beyond a simple glass BSDF. I tried a couple of initial approaches with the <a href="https://www.youtube.com/watch?v=7WZMYZyuosQ" target="_blank">Ocean Shader</a> by <a href="https://chuckcg.gumroad.com/" target="_blank">Chuck CG</a> and the very impressive <a href="https://blendermarket.com/products/physical-open-waters" target="_blank">Physical Open Waters</a> addon I got through this year's <a href="https://www.humblebundle.com/software" target="_blank">Humble Bundle</a>.</p>
-<p><b>(Insert screenshots and images of the water shots seen from the top)</b></p>
+<picture><img src="media/lovers-dew-story/blender-rocks-from-top.webp"></picture>
 <p>Coincidentally, it was around the same time that Quixel Megascans made all their assets free for use in any software. So along with more procedural methods of generating good-looking rocks, I used some photoscanned assets.</p>
 <p>Although the problem was not as visible as with the purchased 3D fruits and props, the rocks also suffered from low resolution textures issues even at LOD0 and 8K resolutions. I wanted to solve this issue by only relying on procedural shaders but having them adapt to the structures of the scanned rocks in the little time I had left proved to be too much. Perhaps I will build my own small library of rocks for the future.</p>
 <p>Despite all of these efforts, the overall shot still looked a bit bland. The rocks looked interesting and the lighting put some details and shine on the perfume bottles but I felt that it needed more to get it over the line for the client.</p>
@@ -166,7 +166,7 @@
 <p>Simulating detailed small-scale fluids quickly turned out to be a fool's errand but i wanted to try it quickly to see how far I could get in an hour. And as expected, the simulations turned out to be uncontrollably chaotic at such small scale.</p>
 <picture><img src="media/lovers-dew-story/crazy-flip-fluids-simulation.webp"></picture>
 <p>In the end, I modelled a simple liquid mesh using the inside faces of the glass mesh, substracting them with a boolean and manually adding the surface tension with an inset and bevel.</p>
-<p><b>(insert image of the editor showing those operations)</b></p>
+<picture><img src="media/lovers-dew-story/surface-tension-blender.webp"></picture>
 <p>Next, the sky in the background look too empty. The cold blue was a request from the client and the Nishita sky texture inside of Cycles with the right settings gave me the perfect look.</p>
 <p>Since clouds were disliked by the client in a previous suggestion, I went for something else: the "MP" wordmark. Because the water was already there, what if I could show the logo reflected on the water's surface?</p>
 <picture><img src="media/lovers-dew-story/floating-bottles-wip-2.webp"></picture>
@@ -179,7 +179,7 @@
 <p>In the CG Cookie video, they cleverly advertise their <a href="https://blendermarket.com/products/render-raw" target="_blank">Render Raw</a> Blender add-on which greatly streamlines and simplifies the color correction and post-processing workflow in one convenient group node inside the Compositor.</p>
 <picture><img src="media/lovers-dew-story/render-raw-blender-market.webp"></picture>
 <p>Thanks to Render Raw, I could do all of my compositing mostly in real-time <b>without rendering</b>, without leaving Blender and in 32-bit color depth!</p>
-<p><b>(insert image of the Render Raw in action with a before and after comparison)</b></p>
+<picture><img src="media/lovers-dew-story/render-raw-before-and-after.webp"><p class="caption">A comparison of the same shot rendered without and with Render Raw</p></picture>
 <h1>Rendering everything</h1>
 <p>Blender could do a much better job at simplifying rendering for its users. At the moment, renders are all written into memory and cached renders don't seem to be written to the disk inside of the Render Output and Render Cache directories.</p>
 <picture><img src="media/lovers-dew-story/blender-preferences.webp"></picture>
