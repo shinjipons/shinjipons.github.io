@@ -730,7 +730,7 @@ footer {
         picture {
             grid-column: 1/9;
             img, .caption {
-                padding: 0rem $spacing-s;
+                padding: 0px;
             }
         }
     }
@@ -835,7 +835,6 @@ footer {
     }
     picture {
         display: grid;
-        // background: $blog-media-background-color;
         object-fit: contain;
         overflow: hidden;
         margin-top:     $spacing-xs;
@@ -850,9 +849,6 @@ footer {
         }
         &:first-child {
             margin-top: 0px;
-        }
-        &:has(> .caption) {
-            // background: $blog-media-background-color;
         }
     }
     video {
