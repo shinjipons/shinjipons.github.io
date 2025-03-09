@@ -268,7 +268,7 @@ def generate_blog_post_html(post_title, post_description, html_lines):
                 <a class="monospace button" href="https://shinjipons.com/files/Shinji-Pons-Resume.pdf" target="_blank">Resume</a>
             </div>
             <div>
-                <a class="monospace button-call-to-action" href="mailto:website@shinjipons.com">Contact</a>
+                <a class="monospace button-call-to-action" href="mailto:unsolicited-emails-will-be-reported@shinjipons.com">Contact</a>
             </div>
         </nav>
         <main>
