@@ -279,11 +279,6 @@ def generate_blog_post_html(post_title, post_description, html_lines):
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="headline">
-                <h1>Thanks for reading</h1>
-            </div>
-        </footer>
         <script type="text/javascript" src="../js/script.js"></script>
     </body>
     </html>
@@ -432,11 +427,6 @@ def blog_html_page_generator(html_lines, information_html, navigation_html):
                         </div>
                     </div>
                 </main>
-                <footer>
-                    <div class="headline">
-                        <h1>More coming soon.</h1>
-                    </div>
-                </footer>
                 <script type="text/javascript" src="js/script.js"></script>
             </body>
         </html>
